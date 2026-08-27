@@ -1,14 +1,14 @@
 /* ============================================================
    VideoDoc — article layer (loads AFTER style.css, reuses its tokens)
    Components for /articles/, article pages, /support/ and /design/.
-   Same Node × Matrix brand: one orange accent, mono display, hairlines.
+   Same Node × Matrix brand: one blue accent, mono display, hairlines.
    ============================================================ */
 
 /* ---------- page hero (hub + support) ---------- */
 .pagehero { text-align: center; padding: 64px 0 8px; position: relative; }
 .pagehero .halo {
   position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: radial-gradient(circle at 50% 0%, rgba(255,106,44,.09), transparent 55%);
+  background: radial-gradient(circle at 50% 0%, rgba(11,132,227,.09), transparent 55%);
 }
 .pagehero h1 {
   font-size: clamp(30px, 5.4vw, 50px); line-height: 1.05;
@@ -116,7 +116,8 @@
 /* Code blocks get their own surface. --ink-bg IS --bg in dark mode, so
    using it here made every block vanish into the page. --code-bg keeps a
    terminal-dark fill in both themes and --code-border carries the edge
-   (2.56:1 against the dark page) now that the drop shadow is black. */
+   (3.34:1 against the dark page, 3.60:1 against the block) now that the
+   drop shadow is black. */
 .prose pre {
   margin: 0 0 20px; padding: 16px 18px; overflow-x: auto;
   background: var(--code-bg); color: var(--code-text);
@@ -174,7 +175,7 @@
 }
 .callout p { margin: 0; font-size: 15px; line-height: 1.65; color: var(--text-secondary); }
 .callout p + p { margin-top: 8px; }
-.callout.tested { background: var(--green-wash); border-color: rgba(86,211,100,.4); }
+.callout.tested { background: var(--green-wash); border-color: rgba(69,192,125,.4); }
 .callout.tested .lbl { color: var(--green-deep); }
 
 /* ---------- in-article CTA band ---------- */
@@ -188,7 +189,7 @@
 }
 .ctabox .halo {
   position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(circle at 12% 0%, rgba(255,106,44,.3), transparent 55%);
+  background: radial-gradient(circle at 12% 0%, rgba(63,169,245,.3), transparent 55%);
 }
 .ctabox > :not(.halo) { position: relative; }
 .ctabox .k {
@@ -196,7 +197,7 @@
   letter-spacing: .14em; text-transform: uppercase; color: var(--orange-light);
 }
 .ctabox h3 { color: #fff; font-size: 21px; margin: 10px 0 8px; letter-spacing: -0.02em; }
-.ctabox p { margin: 0 0 18px; font-size: 14.5px; line-height: 1.6; color: #9AA3AD; max-width: 520px; }
+.ctabox p { margin: 0 0 18px; font-size: 14.5px; line-height: 1.6; color: #9DAAC0; max-width: 520px; }
 .ctabox .row { display: flex; gap: 10px; flex-wrap: wrap; }
 
 /* ---------- related articles ---------- */
@@ -218,7 +219,7 @@
 }
 .artcard:hover {
   border-color: var(--accent); transform: translateY(-2px);
-  box-shadow: 0 16px 36px -26px rgba(255,106,44,.6);
+  box-shadow: 0 16px 36px -26px rgba(11,132,227,.6);
 }
 .artcard .t {
   font-family: var(--font-mono); font-weight: var(--fw-bold); font-size: 16.5px;
@@ -251,7 +252,7 @@
 .bio .avatar {
   width: 44px; height: 44px; border-radius: 12px; flex: none;
   background: var(--accent); display: inline-flex; align-items: center; justify-content: center;
-  box-shadow: 0 8px 18px -8px rgba(255,106,44,.7);
+  box-shadow: 0 8px 18px -8px rgba(11,132,227,.7);
 }
 .bio .avatar img { width: 24px; height: 24px; border: 0; border-radius: 0; box-shadow: none; margin: 0; }
 .bio .name { font-family: var(--font-mono); font-weight: var(--fw-bold); font-size: 15px; color: var(--text); }
