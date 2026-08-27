@@ -11,12 +11,17 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://videostodoc.com/mac/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="Running VideoDoc on an Apple Silicon Mac: the one-time Terminal unlock">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#F4F5F7">
 <link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "HowTo", "name": "Run VideoDoc on your Mac: the one-time unlock", "description": "VideoDoc on an Apple Silicon Mac takes one pasted Terminal line, one time. After that you just double-click the app.", "tool": [{"@type": "HowToTool", "name": "Terminal"}], "step": [{"@type": "HowToStep", "position": 1, "name": "Unzip the download", "text": "Download the zip from your Gumroad receipt and double-click it to unzip. You get a folder with VideoDoc inside. You can leave it wherever you like, you do not need to move it.", "url": "https://videostodoc.com/mac/"}, {"@type": "HowToStep", "position": 2, "name": "Open Terminal", "text": "Press Cmd+Space, type Terminal, press Return. A small text window opens. That is all you need it for.", "url": "https://videostodoc.com/mac/"}, {"@type": "HowToStep", "position": 3, "name": "Paste one line, press Return", "text": "If your download went to your Downloads folder and you did not rename it, copy the line shown on the page, paste it into Terminal, and press Return. VideoDoc unblocks and opens by itself. From then on you just double-click VideoDoc.", "url": "https://videostodoc.com/mac/"}]}
+</script>
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t){e.setAttribute('data-theme',t);var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');}}catch(x){}})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <style>
   .tp{max-width:760px;margin:0 auto;padding:0 24px}
@@ -25,13 +30,13 @@
   .mac-hero h1{font-family:var(--font-display);font-size:clamp(32px,6vw,50px);font-weight:700;letter-spacing:-.03em;margin:18px 0 12px}
   .mac-hero .lede{color:var(--text-2);font-size:17px;max-width:56ch;margin:0 auto}
   .step{display:flex;gap:16px;align-items:flex-start;margin-top:26px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow-xs)}
-  .step .n{flex:0 0 auto;width:40px;height:40px;border-radius:11px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:18px}
+  .step .n{flex:0 0 auto;width:40px;height:40px;border-radius:11px;background:var(--accent-solid);color:var(--on-accent-solid);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:18px}
   .step h2{font-family:var(--font-display);font-size:19px;margin:6px 0 6px}
   .step p{color:var(--text-2);font-size:14.5px;line-height:1.6;margin:0}
   .cmdbox{margin-top:12px;background:var(--ink-bg);border-radius:12px;overflow:hidden}
   .cmdbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08)}
   .cmdbar span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8E96A0}
-  .copybtn{font-family:var(--font-mono);font-size:12.5px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:8px;padding:10px 16px;cursor:pointer}
+  .copybtn{font-family:var(--font-mono);font-size:12.5px;font-weight:700;color:var(--on-accent-solid);background:var(--accent-solid);border:none;border-radius:8px;padding:10px 16px;cursor:pointer}
   .copybtn:hover{filter:brightness(1.06)}
   .cmdbox code{display:block;padding:14px 16px;font-family:var(--font-mono);font-size:13px;line-height:1.7;color:#E8ECF0;white-space:pre-wrap;word-break:break-all;user-select:all}
   .why{margin:34px 0 0;background:var(--surface);border:1px solid var(--orange-line,#FFD8C4);border-radius:16px;padding:22px}

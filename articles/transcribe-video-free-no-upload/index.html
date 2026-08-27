@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/transcribe-video-free-no-upload/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: transcribe a video free, without uploading it anywhere">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Transcribe a video free, without uploading it anywhere", "description": "A free transcript where the file never leaves your machine: real AI transcription in your browser, no account, no card, no upload. How it works and its limits.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/transcribe-video-free-no-upload/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Transcribe a video free, without uploading it anywhere", "description": "A free transcript where the file never leaves your machine: real AI transcription in your browser, no account, no card, no upload. How it works and its limits.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/transcribe-video-free-no-upload/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it really free with no trial limit?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The browser version is free forever, no account and no watermark. It runs on your own hardware, so it costs nothing to provide."}}, {"@type": "Question", "name": "How is this private exactly?", "acceptedAnswer": {"@type": "Answer", "text": "The AI model runs inside your browser on your machine. Your file is never uploaded, so there is no server copy, no retention policy to trust, nothing to delete."}}, {"@type": "Question", "name": "Why is my first run slow?", "acceptedAnswer": {"@type": "Answer", "text": "The speech model downloads once into your browser on first use. After that it is cached, and runs are faster, especially in Chrome or Edge where the graphics card can be used."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Privacy</span>
         <h1>Transcribe a video free, without uploading it anywhere</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>5 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>5 min read</span></div>
       </header>
 
       <div class="answer">
@@ -83,7 +84,7 @@
       </div>
 
       <div class="prose">
-        <p>"Free transcription" online usually means one of three catches: free for ten minutes then pay, free if you make an account and eat the emails, or free because your file becomes their data. I wanted one page with none of the catches, mostly because the videos I test with are my own recordings, in my own voice, and shipping those to a stranger's server to save typing never sat right with me.</p>
+        <p>"Free transcription" online usually means one of three catches: free for ten minutes then pay, free if you make an account and eat the emails, or free because your file becomes their data. I put the real options side by side in <a href="../best-video-to-text-converters/">a comparison of video to text converters</a>. I wanted one page with none of the catches, mostly because the videos I test with are my own recordings, in my own voice, and shipping those to a stranger's server to save typing never sat right with me.</p>
 
         <h2 id="how">How a browser transcribes with no server</h2>
         <p>Modern browsers can run real AI models on your own hardware, using the graphics card through WebGPU when it is available and falling back to the CPU when it is not. So the <a href="../../try/">free VideoDoc page</a> works like this: the first visit downloads the speech model once into your browser's storage, then your file is read locally, listened to locally, and written out locally. The transcript appears on your screen without one byte of your video crossing the internet. Close the tab and nothing of yours is anywhere but your machine.</p>
@@ -98,7 +99,7 @@
         <p>This page is deliberately the small tool. Your own files only, no YouTube links. Words only, no on-screen captures. And shorter videos suit it best, because a browser tab is a polite guest on your computer and does not get the machine's full strength. There is no watermark and no trial clock, it is simply free, because it costs me nothing to run: your hardware does the work.</p>
 
         <h2 id="when">When you have outgrown it</h2>
-        <p>The desktop app exists for everything the tab cannot do: links and whole playlists, 3 hour lectures, the slides and code captured as images, HD and 4K downloads, all still on your own machine with nothing uploaded, $19 once. The browser page is the honest sample of the same local-first idea, and if words-only on your own files covers your needs, keep using it forever with my blessing.</p>
+        <p>The desktop app exists for everything the tab cannot do: links and whole playlists, 3 hour lectures, <a href="../youtube-video-to-pdf/">the slides and code captured into a PDF</a>, <a href="../download-youtube-video-hd-4k/">HD and 4K downloads</a>, all still on your own machine with nothing uploaded, $19 once. The browser page is the honest sample of the same local-first idea, and if words-only on your own files covers your needs, keep using it forever with my blessing.</p>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>

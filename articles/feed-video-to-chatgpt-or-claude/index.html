@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/feed-video-to-chatgpt-or-claude/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: can ChatGPT watch a video? The honest answer">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Can ChatGPT watch a video? The honest answer", "description": "No chat AI can truly watch a video today. What really happens when you paste a YouTube link into ChatGPT or Claude, and the document bridge that works.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/feed-video-to-chatgpt-or-claude/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Can ChatGPT watch a video? The honest answer", "description": "No chat AI can truly watch a video today. What really happens when you paste a YouTube link into ChatGPT or Claude, and the document bridge that works.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/feed-video-to-chatgpt-or-claude/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can ChatGPT watch a YouTube video if I paste the link?", "acceptedAnswer": {"@type": "Answer", "text": "No. It can at best read the page and reachable captions. It never sees the actual frames, and with no captions it may answer from the title and comments instead."}}, {"@type": "Question", "name": "Can Claude watch videos?", "acceptedAnswer": {"@type": "Answer", "text": "No. Claude reads text, documents and still images. Give it a PDF holding the video's transcript and on-screen captures and it works with the full content."}}, {"@type": "Question", "name": "What is the best way to give a video to an AI?", "acceptedAnswer": {"@type": "Answer", "text": "Convert it to a document first: full timestamped transcript plus the on-screen content as images. Any AI that reads PDFs, including ChatGPT, Claude, Gemini and NotebookLM, can then use the whole video."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">AI</span>
         <h1>Can ChatGPT watch a video? The honest answer</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -96,10 +97,10 @@
         <h2 id="bridge">The bridge: give the AI what it can actually read</h2>
         <p>Chat AIs are excellent with two things: text and still images. A video is just those two things plus time. Flatten it honestly and nothing important is lost:</p>
         <ol>
-          <li><strong>The words</strong> become a timestamped transcript, so every claim keeps its address in the video.</li>
+          <li><strong>The words</strong> become <a href="../get-transcript-of-any-youtube-video/">a timestamped transcript, captions or no captions</a>, so every claim keeps its address in the video.</li>
           <li><strong>The picture</strong> becomes captures of the on-screen content, the slides, the code, the diagrams, taken sharp enough to read.</li>
         </ol>
-        <p>That is exactly the file VideoDoc builds, on your own computer, from any YouTube, TikTok, Instagram, Facebook or X link or a local file. One PDF in, and suddenly ChatGPT quotes the lecture accurately, Claude explains the diagram from slide 14, NotebookLM builds a study guide from the whole playlist.</p>
+        <p>That is exactly the file VideoDoc builds, on your own computer, from any YouTube, TikTok, Instagram, Facebook or X link or a local file, so even <a href="../tiktok-video-to-text/">a sixty second TikTok becomes text your AI can read</a>. One PDF in, and suddenly ChatGPT quotes the lecture accurately, Claude explains the diagram from slide 14, NotebookLM builds a study guide from the whole playlist, which is the backbone of <a href="../study-from-youtube-with-ai/">my daily setup for studying from YouTube with AI</a>.</p>
 
         <div class="callout">
           <span class="lbl">Why local matters here</span>

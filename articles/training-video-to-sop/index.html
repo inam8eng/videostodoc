@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/training-video-to-sop/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: turn training videos into SOPs people actually read">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Turn training videos into SOPs people actually read", "description": "Record a process once, get a written SOP with real screenshots out of it. The honest workflow from screen recording to step by step document.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/training-video-to-sop/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Turn training videos into SOPs people actually read", "description": "Record a process once, get a written SOP with real screenshots out of it. The honest workflow from screen recording to step by step document.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/training-video-to-sop/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need to talk during the recording?", "acceptedAnswer": {"@type": "Answer", "text": "It helps a lot. Your narration becomes the step descriptions and your reasons become the notes. A silent recording still yields the screenshots, but you will write the words yourself."}}, {"@type": "Question", "name": "Are the screenshots good enough to publish in the SOP?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Captures follow the screen at up to full HD with Best quality, so menus and field names stay readable. Crop in your document tool if you want tighter frames."}}, {"@type": "Question", "name": "Is this safe for internal tools and client data?", "acceptedAnswer": {"@type": "Answer", "text": "Local files process fully offline, nothing uploads. Still record with test data where you can, the same care you would take with any screenshot."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Work</span>
         <h1>Turn training videos into SOPs people actually read</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -88,9 +89,9 @@
 
         <h2 id="flow">The workflow: record once, write never</h2>
         <ol>
-          <li><strong>Record the process naturally.</strong> OBS, Teams, Loom, anything that produces a file. Talk while you click, saying the why as well as the what: "I export as CSV here because the old format breaks the tool downstream."</li>
-          <li><strong>Feed the file to VideoDoc.</strong> It runs fully offline on your machine, which your IT department will appreciate, and produces the timestamped narration with a sharp capture of every distinct screen you passed through. The screenshots you dreaded taking are simply already taken.</li>
-          <li><strong>Shape it with one prompt.</strong> Give the PDF to your AI: "Turn this into a numbered SOP. One action per step, imperative voice, keep my reasons as notes under the step they belong to, and reference the captures by timestamp." Out comes the skeleton of a real SOP.</li>
+          <li><strong>Record the process naturally.</strong> OBS, Teams, Loom, anything that produces a file. Talk while you click, saying the why as well as the what: "I export as CSV here because the old format breaks the tool downstream." To hear how the transcript reads before you commit, <a href="../transcribe-video-free-no-upload/">the free browser version takes a local file with nothing uploaded</a>.</li>
+          <li><strong>Feed the file to VideoDoc.</strong> It runs fully offline on your machine, which your IT department will appreciate and which is where local tools beat every cloud option in <a href="../best-video-to-text-converters/">my comparison of video to text converters</a>, and produces the timestamped narration with a sharp capture of every distinct screen you passed through. The screenshots you dreaded taking are simply already taken.</li>
+          <li><strong>Shape it with one prompt.</strong> Give the PDF to your AI, the same second move as <a href="../summarize-youtube-video-with-chatgpt/">summarizing a video properly with ChatGPT</a>: "Turn this into a numbered SOP. One action per step, imperative voice, keep my reasons as notes under the step they belong to, and reference the captures by timestamp." Out comes the skeleton of a real SOP.</li>
           <li><strong>Verify against reality, once.</strong> Walk the steps yourself or hand them to the newest person on the team. Where they stumble is where the recording skipped something. Fix those lines. This step is not optional, an unverified SOP is a rumor with numbering.</li>
         </ol>
 

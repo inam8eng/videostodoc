@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Get the Transcript of Any YouTube Video, Even Without Captions</title>
+<title>Get the Transcript of Any YouTube Video, No Captions</title>
 <meta name="description" content="Captions on, off, or missing, you can still get a full timestamped transcript of any YouTube video. The button method and the audio method, step by step.">
 
 <link rel="canonical" href="https://videostodoc.com/articles/get-transcript-of-any-youtube-video/">
@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/get-transcript-of-any-youtube-video/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: get the transcript of any YouTube video, even without captions">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Get the transcript of any YouTube video, even without captions", "description": "Captions on, off, or missing, you can still get a full timestamped transcript of any YouTube video. The button method and the audio method, step by step.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/get-transcript-of-any-youtube-video/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Get the transcript of any YouTube video, even without captions", "description": "Captions on, off, or missing, you can still get a full timestamped transcript of any YouTube video. The button method and the audio method, step by step.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/get-transcript-of-any-youtube-video/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does a YouTube video have no transcript button?", "acceptedAnswer": {"@type": "Answer", "text": "Either the creator turned captions off, the language is not supported by YouTube's caption engine, or the video is too new. Transcribing the audio with a tool like VideoDoc works regardless, because it does not use captions at all."}}, {"@type": "Question", "name": "Can I get a transcript with timestamps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. YouTube's transcript panel shows timestamps for captioned videos, and VideoDoc writes timestamps on every block for any video, so you can jump back to the exact moment."}}, {"@type": "Question", "name": "Does this work for languages like Urdu or Hindi?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. VideoDoc transcribes many languages including Hindi, Urdu and Arabic on your own machine. Pick the spoken language and the Best engine quality for the cleanest result."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Guide</span>
         <h1>Get the transcript of any YouTube video, even without captions</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>5 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>5 min read</span></div>
       </header>
 
       <div class="answer">
@@ -95,13 +96,13 @@
         <p>When the creator uploaded proper subtitles this text is genuinely good. When it says auto-generated, treat every technical word with suspicion, because the caption engine guesses from sound alone.</p>
 
         <h2 id="audio">Method 2: transcribe the audio, skip captions entirely</h2>
-        <p>This is what I do for anything that matters now. VideoDoc takes the link, downloads the video over your own connection, and runs AI transcription on your own machine. The result is every word with timestamps, whether the video has captions or not, because it never looks at captions in the first place.</p>
+        <p>This is what I do for anything that matters now. VideoDoc takes the link, downloads the video over your own home connection, the same path it uses to <a href="../download-youtube-video-hd-4k/">save a YouTube video in HD or 4K</a>, and runs AI transcription on your own machine. The result is every word with timestamps, whether the video has captions or not, because it never looks at captions in the first place.</p>
         <ul>
           <li>Pick the spoken language before you start. It handles many, including Hindi, Urdu, Arabic, Russian, Chinese and Japanese, with English the strongest today.</li>
           <li>Choose the Best engine setting when accuracy matters more than speed.</li>
-          <li>Long videos are fine. 3 hour lectures are the sweet spot, and a safety timer on every step means it never hangs overnight.</li>
+          <li>Long videos are fine. 3 hour lectures are the sweet spot, and a safety timer on every step means it never hangs overnight, which is most of the way to <a href="../video-lecture-to-notes/">notes the lecture writes for itself</a>.</li>
         </ul>
-        <p>You get the transcript inside a clean PDF and Markdown document, and if the video shows slides or code, those come along as images too. Nothing uploads anywhere at any point.</p>
+        <p>You get the transcript inside <a href="../youtube-video-to-pdf/">a clean PDF with the slides included</a> and a Markdown copy, and if the video shows slides or code, those come along as images too. Nothing uploads anywhere at any point.</p>
 
         <div class="callout">
           <span class="lbl">Good to know</span>

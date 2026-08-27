@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/video-lecture-to-notes/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: turn video lectures into notes, automatically">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Turn video lectures into notes, automatically", "description": "Stop pausing and scribbling through video lectures. Get the full timestamped transcript plus every slide as notes, then study on top with search and AI.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/video-lecture-to-notes/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Turn video lectures into notes, automatically", "description": "Stop pausing and scribbling through video lectures. Get the full timestamped transcript plus every slide as notes, then study on top with search and AI.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/video-lecture-to-notes/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I get notes from a lecture that has no captions?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. VideoDoc transcribes the audio itself on your machine, so captions are irrelevant. It handles many languages, with English the strongest today."}}, {"@type": "Question", "name": "Do the notes include the slides?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The on-screen content is captured as images, slides and worked examples rather than the lecturer's face, and placed beside the words spoken at that moment."}}, {"@type": "Question", "name": "Can it handle a whole semester playlist?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Give it the playlist link and choose one merged document or one per lecture. Long runs are safe: pause, resume, and a safety timer on every step."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Students</span>
         <h1>Turn video lectures into notes, automatically</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -86,13 +87,13 @@
         <p>My handwritten lecture notes had a pattern. Clean and confident for the first twenty minutes, then wobbly, then a sentence that ends mid-word where I gave up and just watched. Nobody can listen, understand, and transcribe at the same time, because writing one point means missing the next one. The night before my telecom finals I had notes that covered maybe a third of what was taught, and no memory of which third.</p>
 
         <h2 id="job">Let the lecture write its own notes</h2>
-        <p>The mechanical part of note-taking, getting the words down, is exactly what a machine should do. Point VideoDoc at the lecture, a YouTube link, a whole playlist, or a recording on your disk, and it produces the complete notes: timestamped transcript, plus every slide and worked example captured as a full HD image, placed where it appeared. It runs on your own computer, so a 3 hour lecture costs nothing and private recordings stay private.</p>
+        <p>The mechanical part of note-taking, getting the words down, is exactly what a machine should do. Point VideoDoc at the lecture, a YouTube link, a whole playlist, or a recording on your disk, and it produces the complete notes: <a href="../get-transcript-of-any-youtube-video/">a timestamped transcript, even when the lecture has no captions</a>, plus every slide and worked example captured as a full HD image, placed where it appeared. It runs on your own computer, so a 3 hour lecture costs nothing and private recordings stay private.</p>
 
         <h2 id="method">The three pass method I use on the document</h2>
         <ol>
-          <li><strong>Skim the captures first.</strong> Scrolling just the images gives you the lecture's skeleton in two minutes, because teachers put the structure on the slides.</li>
+          <li><strong>Skim the captures first.</strong> Scrolling just the images gives you the lecture's skeleton in two minutes, because teachers put the structure on the slides, and <a href="../extract-slides-from-video/">those slides come out of the video as images</a>.</li>
           <li><strong>Read with a highlighter, not a pen.</strong> The words are already written, so your whole attention goes to marking what matters and writing tiny margin thoughts. This is the difference between recording and understanding.</li>
-          <li><strong>Let an AI quiz you.</strong> Drop the PDF into ChatGPT or Claude: "Make 10 exam questions from this lecture, then grade my answers hard." The timestamps mean every question links back to the exact minute to review.</li>
+          <li><strong>Let an AI quiz you.</strong> Drop the PDF into ChatGPT or Claude, where <a href="../summarize-youtube-video-with-chatgpt/">the prompts that get an honest summary</a> work just as well: "Make 10 exam questions from this lecture, then grade my answers hard." The timestamps mean every question links back to the exact minute to review.</li>
         </ol>
 
         <h2 id="search">Search is the superpower nobody mentions</h2>

@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/offline-video-transcription-privacy/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: offline video transcription: why local beats the cloud">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Offline video transcription: why local beats the cloud", "description": "What actually happens to your video when you upload it to a cloud transcription tool, the honest math of metered pricing, and when local wins or loses.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/offline-video-transcription-privacy/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Offline video transcription: why local beats the cloud", "description": "What actually happens to your video when you upload it to a cloud transcription tool, the honest math of metered pricing, and when local wins or loses.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/offline-video-transcription-privacy/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is offline transcription as accurate as cloud transcription?", "acceptedAnswer": {"@type": "Answer", "text": "The same class of AI models runs in both places now. Accuracy differences come from audio quality and language far more than from where the model runs, and VideoDoc's Best setting uses the stronger engine."}}, {"@type": "Question", "name": "Does VideoDoc need internet at all?", "acceptedAnswer": {"@type": "Answer", "text": "Only for what genuinely needs it: downloading a linked video, or the one-time engine setup. Your own local files process fully offline."}}, {"@type": "Question", "name": "What about my company's compliance rules?", "acceptedAnswer": {"@type": "Answer", "text": "Local processing usually makes that conversation short, because the file never leaves the machine. Check your own policy, but there is no third party processor to disclose."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Privacy</span>
         <h1>Offline video transcription: why local beats the cloud</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -89,7 +90,7 @@
         <p>When a cloud tool takes your video, several things become true at once. A copy of your file exists on infrastructure you do not control. It sits there under a retention policy written by their lawyers, which you accepted by clicking. Their staff and systems can technically touch it, their breach is now your breach, and some services reserve rights to use uploads to improve their models. None of this makes cloud companies evil, most are decent, but for an NDA file, a family video or an unreleased recording, "trust us" is a weaker guarantee than "it never left".</p>
 
         <h2 id="meter">The meter never stops being a meter</h2>
-        <p>Cloud pricing is metered because their compute costs real money per minute, so heavy use gets expensive by design. Per minute credits, monthly tiers, annual plans. A student documenting a semester of lectures or an analyst processing hours of webinars burns through tiers quickly, and the bill repeats every month you keep the habit. Local flips that: your computer already exists, so after a one-time $19, a 3 hour lecture costs the same as a 3 minute clip, which is nothing. The math is boring and decisive.</p>
+        <p>Cloud pricing is metered because their compute costs real money per minute, so heavy use gets expensive by design. Per minute credits, monthly tiers, annual plans. A student documenting a semester of lectures or an analyst <a href="../webinar-recording-to-document/">turning hours of webinar recordings into documents</a> burns through tiers quickly, and the bill repeats every month you keep the habit. Local flips that: your computer already exists, so after a one-time $19, a 3 hour lecture costs the same as a 3 minute clip, which is nothing. The math is boring and decisive.</p>
 
         <h2 id="honest">Where the cloud honestly wins</h2>
         <ul>
@@ -97,11 +98,11 @@
           <li><strong>Team libraries.</strong> If ten people need to search the same transcript archive with shared accounts, a hosted service earns its subscription.</li>
           <li><strong>Phone-first work.</strong> Browsers and desktops carry local AI well, phones are still catching up. The VideoDoc Android app is on the way, and today the desktop is where local shines.</li>
         </ul>
-        <p>If your work is one of those three, use the cloud with open eyes. Everything else, the lectures, the client files, the personal archive, belongs on your own machine.</p>
+        <p>If your work is one of those three, use the cloud with open eyes. Everything else, the lectures, <a href="../course-video-to-study-notes/">the paid courses you turn into study notes</a>, the client files, the personal archive, belongs on your own machine.</p>
 
         <div class="callout tested">
           <span class="lbl">By architecture, not by promise</span>
-          <p>VideoDoc's privacy needs no policy: local files process fully offline, and links download straight to your machine. There is no server to trust because there is no server.</p>
+          <p>VideoDoc's privacy needs no policy: local files process fully offline, and links <a href="../download-youtube-video-hd-4k/">download straight to your machine in HD or 4K</a>. There is no server to trust because there is no server.</p>
         </div>
 
         <div class="ctabox">

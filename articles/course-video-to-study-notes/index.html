@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/course-video-to-study-notes/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: turn any course video into study notes you can search">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Turn any course video into study notes you can search", "description": "That course you bought becomes searchable study notes with the slides included: transcript, captures and timestamps in one file, built privately on your PC.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/course-video-to-study-notes/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Turn any course video into study notes you can search", "description": "That course you bought becomes searchable study notes with the slides included: transcript, captures and timestamps in one file, built privately on your PC.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/course-video-to-study-notes/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does this work with downloaded course files, not just YouTube?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Local video files process fully offline on your own computer, which also means private course recordings never touch the internet."}}, {"@type": "Question", "name": "Should I make one big document or one per lesson?", "acceptedAnswer": {"@type": "Answer", "text": "One per lesson for a course you will revisit selectively, one merged file when you want your AI to see the whole course at once. VideoDoc offers both, and you can run it twice for both shapes."}}, {"@type": "Question", "name": "Is it okay to make notes from a paid course?", "acceptedAnswer": {"@type": "Answer", "text": "Personal study notes from a course you bought are normal studying. Keep them private. Sharing or selling them would be sharing the course itself."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Students</span>
         <h1>Turn any course video into study notes you can search</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -86,12 +87,12 @@
         <p>Be honest, how many courses have you bought and never finished? I own several. The ones I actually completed had one thing in common: I stopped trying to absorb them by watching, and started turning them into something I could hold. A course you can search is a course you will actually use, because the barrier to "let me check that lesson again" drops from twenty minutes to twenty seconds.</p>
 
         <h2 id="convert">The conversion, once per course</h2>
-        <p>If the course lives on YouTube, paste the playlist link into VideoDoc and choose one merged document or one per lesson. If it is downloaded video files, drop those in instead, and they process fully offline. Either way the work happens on your machine: transcription with timestamps, and every slide, diagram and demo captured as a sharp image beside the words. Queue it in the evening, and the tracker sheet shows you the finished list with your morning tea.</p>
+        <p>If the course lives on YouTube, paste the playlist link into VideoDoc and choose one merged document or one per lesson. If it is <a href="../download-youtube-video-hd-4k/">video files you downloaded in HD or 4K</a>, drop those in instead, and they process fully offline. Either way the work happens on your machine: transcription with timestamps, and <a href="../extract-slides-from-video/">every slide, diagram and demo extracted from the video</a> as a sharp image beside the words. Queue it in the evening, and the tracker sheet shows you the finished list with your morning tea.</p>
 
         <h2 id="system">The simple system that survives</h2>
         <ul>
           <li><strong>Markdown into your notes app.</strong> Obsidian or Notion becomes the course's permanent home, one note per lesson, linkable to your own notes. The course stops being "that thing in my downloads" and joins your actual knowledge base.</li>
-          <li><strong>PDF into your AI.</strong> ChatGPT, Claude or NotebookLM with the whole course can explain lesson 9 using lesson 3's vocabulary, build you a revision plan, or make quizzes per module. Ask it "what does this course never explain properly" some time. Eye-opening.</li>
+          <li><strong>PDF into your AI.</strong> ChatGPT, Claude or NotebookLM with the whole course can explain lesson 9 using lesson 3's vocabulary, build you a revision plan, or make quizzes per module, which is the same reading-and-quizzing loop as <a href="../study-from-youtube-with-ai/">studying from YouTube with AI</a>. Ask it "what does this course never explain properly" some time. Eye-opening.</li>
           <li><strong>Timestamps as your way back.</strong> Notes are for finding, video is for re-feeling. When a captured slide is not enough, the timestamp beside it takes you to the exact minute to rewatch the demo.</li>
         </ul>
 

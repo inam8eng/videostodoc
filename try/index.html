@@ -11,13 +11,17 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://videostodoc.com/try/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="Try VideoDoc free: drop a video or audio file in your browser and get a transcript">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#F4F5F7">
 <link rel="stylesheet" href="../style.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "VideoDoc free browser transcriber", "url": "https://videostodoc.com/try/", "applicationCategory": "MultimediaApplication", "operatingSystem": "Any modern web browser", "browserRequirements": "Runs in a modern browser; fastest in Chrome or Edge", "description": "Drop in a video or audio file and get a clean transcript, made right here in your browser. No signup, no upload, no cost.", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "creator": {"@type": "Person", "name": "Inam Ul Haq"}, "isPartOf": {"@type": "WebSite", "name": "VideoDoc", "url": "https://videostodoc.com/"}}
+</script>
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <style>
   .tp{max-width:820px;margin:0 auto;padding:0 24px}

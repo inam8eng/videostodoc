@@ -102,18 +102,33 @@
 }
 .prose blockquote p:last-child { margin-bottom: 0; }
 
+/* Inline code was white-space:nowrap, so one long identifier or path could
+   push the whole page wider than the viewport. pre-wrap keeps the internal
+   spacing a code span needs; overflow-wrap:anywhere lets an unbreakable
+   token break rather than overflow, and shrinks min-content so the
+   surrounding block can never be forced wide. */
 .prose code {
   font-size: 14px; background: var(--surface-sunk);
   border: 1px solid var(--border); border-radius: 6px; padding: 2px 7px;
-  color: var(--text); white-space: nowrap;
+  color: var(--text);
+  white-space: pre-wrap; overflow-wrap: anywhere;
 }
+/* Code blocks get their own surface. --ink-bg IS --bg in dark mode, so
+   using it here made every block vanish into the page. --code-bg keeps a
+   terminal-dark fill in both themes and --code-border carries the edge
+   (2.56:1 against the dark page) now that the drop shadow is black. */
 .prose pre {
   margin: 0 0 20px; padding: 16px 18px; overflow-x: auto;
-  background: var(--ink-bg); color: #d4d4d4; border-radius: 11px;
+  background: var(--code-bg); color: var(--code-text);
+  border: 1px solid var(--code-border); border-radius: 11px;
   font-family: var(--font-mono); font-size: 13px; line-height: 1.8;
   box-shadow: var(--shadow-md);
 }
-.prose pre code { background: none; border: 0; padding: 0; color: inherit; white-space: pre; }
+/* Block code keeps pre: long lines scroll inside the block, they never wrap. */
+.prose pre code {
+  background: none; border: 0; padding: 0; color: inherit;
+  white-space: pre; overflow-wrap: normal;
+}
 
 .prose img {
   border: 1px solid var(--border); border-radius: var(--radius-md);
@@ -163,10 +178,13 @@
 .callout.tested .lbl { color: var(--green-deep); }
 
 /* ---------- in-article CTA band ---------- */
+/* Token overrides for this band (vivid CTA + ring) live in style.css
+   next to .finalcta, so all three dark bands stay in step. */
 .ctabox {
   position: relative; overflow: hidden; margin: 34px 0;
   background: var(--surface-dark); border-radius: var(--radius-lg);
   padding: 30px 28px; text-align: left;
+  box-shadow: inset 0 0 0 1px var(--band-edge);
 }
 .ctabox .halo {
   position: absolute; inset: 0; pointer-events: none;

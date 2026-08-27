@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/youtube-video-to-document/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: how to turn a YouTube video into a document">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"How to turn a YouTube video into a document","description":"Three honest ways to turn a YouTube video into a document: the free transcript button, a free browser tool, and a desktop app that keeps the slides too.","datePublished":"2026-07-18","dateModified":"2026-07-18","author":{"@type":"Person","name":"Inam Ul Haq"},"publisher":{"@type":"Organization","name":"VideoDoc","logo":{"@type":"ImageObject","url":"https://videostodoc.com/assets/og.png"}},"image":"https://videostodoc.com/assets/og.png","mainEntityOfPage":"https://videostodoc.com/articles/youtube-video-to-document/"}
+{"@context":"https://schema.org","@type":"Article","headline":"How to turn a YouTube video into a document","description":"Three honest ways to turn a YouTube video into a document: the free transcript button, a free browser tool, and a desktop app that keeps the slides too.","datePublished":"2026-07-18","dateModified":"2026-08-27","author":{"@type":"Person","name":"Inam Ul Haq"},"publisher":{"@type":"Organization","name":"VideoDoc","logo":{"@type":"ImageObject","url":"https://videostodoc.com/assets/og.png"}},"image":"https://videostodoc.com/assets/og.png","mainEntityOfPage":"https://videostodoc.com/articles/youtube-video-to-document/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -54,6 +54,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -78,7 +79,7 @@
       <header class="art-head">
         <span class="cat">Guide</span>
         <h1>How to turn a YouTube video into a document</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">·</span><span>Updated July 18, 2026</span><span class="dotsep">·</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">·</span><span>Updated August 27, 2026</span><span class="dotsep">·</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -92,16 +93,16 @@
 
         <h2 id="way-1">Way 1: the free transcript button</h2>
         <p>YouTube already has a transcript for many videos. Under the video, click the three dots, then <strong>Show transcript</strong>. A panel opens with every line and its timestamp. Select it all, copy, paste into a Google Doc or a text file, and you have a document of sorts.</p>
-        <p>I use this way when I need one quote fast. But it has honest problems. Many videos have no captions at all, and auto captions mangle technical words, names and anything not spoken in clear English. You get a wall of broken lines with no headings and no structure. And the biggest one for me: everything shown on the screen, the slides, the code, the diagrams, is simply gone. For a talking head interview that is fine. For a lecture or tutorial it throws away half the video.</p>
+        <p>I use this way when I need one quote fast. But it has honest problems. Many videos have no captions at all, which is when you need <a href="../get-transcript-of-any-youtube-video/">a way to get the transcript without captions</a>, and auto captions mangle technical words, names and anything not spoken in clear English. You get a wall of broken lines with no headings and no structure. And the biggest one for me: everything shown on the screen, the slides, the code, the diagrams, is simply gone. For a talking head interview that is fine. For a lecture or tutorial it throws away half the video.</p>
 
         <h2 id="way-2">Way 2: transcribe it free in your browser</h2>
         <p>If the video is a file you already have, you can skip YouTube entirely. The <a href="../../try/">free VideoDoc browser version</a> takes a video or audio file, transcribes it with AI on your own machine, and gives you the text as .txt or .md. Nothing uploads anywhere, so it costs nothing to run and your file stays yours. No signup, no card.</p>
-        <p>The limits are printed right on it: it is for your own files, not links, it does not capture screenshots, and it suits shorter videos best. It exists so you can feel what a clean transcript is like before spending anything.</p>
+        <p>The limits are printed right on it: it is for your own files, not links, it does not capture screenshots, and it suits shorter videos best. It exists so you can feel what a clean transcript is like before spending anything, and I explain <a href="../transcribe-video-free-no-upload/">how a browser transcribes a video without uploading it</a> in its own guide.</p>
 
         <h2 id="way-3">Way 3: one clean document with the slides included</h2>
         <p>This is the way I built for myself. VideoDoc Pro takes a YouTube link, a single video or a whole playlist, and does the entire job on your computer:</p>
         <ol>
-          <li>Paste the link and press Start. It downloads the video from your own home connection, which matters because YouTube routinely blocks the data center IPs cloud tools use.</li>
+          <li>Paste the link and press Start. It <a href="../download-youtube-video-hd-4k/">downloads the video from your own home connection</a>, which matters because YouTube routinely blocks the data center IPs cloud tools use.</li>
           <li>Your machine transcribes every word with timestamps, using your graphics card when it can. No minutes metered, no monthly bill, because the hardware is yours.</li>
           <li>It watches the picture too. When the video shows a screen share, the captures follow the slides and the code rather than the speaker's face, and Best quality saves them at full HD so the text inside stays readable.</li>
         </ol>

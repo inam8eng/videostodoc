@@ -17,34 +17,50 @@
   --ink:        #1A2531;
   --ink-2:      #2A3845;
   --ink-bg:     #0E1217;
-  --ink-bg-2:   #141A21;
+  --ink-bg-0:   #07090C;   /* deepest band (dark theme) */
+  --ink-bg-2:   #212934;   /* dark-theme card surface. 1.28:1 off --ink-bg: a
+                              card should not lean on its hairline alone to be
+                              seen, so the fill does part of the work too. */
+  --ink-bg-3:   #262F3A;   /* dark-theme inset well — lifted clear of the card */
 
   --page:       #F4F5F7;
   --card:       #FFFFFF;
 
-  /* — Slate ramp — */
+  /* — Slate ramp —
+     Every slate that carries body text now clears 4.5:1 on white, on --page
+     AND on --surface-sunk, so a token can move between them safely. */
   --slate:      #6B7886;
   --slate-deep: #5E6B78;
   --slate-soft: #56616E;
-  --slate-muted:#8A95A1;
-  --slate-faint:#A7B0BA;
+  --slate-muted:#5B6672;
+  --slate-faint:#636D78;
+  --slate-solid:#55606D;   /* slate surface that CARRIES white text — 6.40:1 */
 
   /* — Hairlines — */
   --line:       #E6EAEE;
   --line-2:     #DDE2E7;
 
-  /* — Orange: the one accent — */
+  /* — Orange: the one accent —
+     --orange (#FF6A2C) is DECORATION ONLY: halos, hairlines, hover borders,
+     the caret, gradients. It is 2.86:1 against white and must never sit
+     under white text. --orange-solid is the orange that carries text. */
   --orange:       #FF6A2C;
   --orange-light: #FF8746;
   --orange-press: #E85518;
+  --orange-solid:       #C2410C;  /* white text 5.18:1 */
+  --orange-solid-hover: #AE3A08;  /* white text 6.16:1 */
+  --orange-solid-press: #9A3412;  /* white text 7.31:1 */
+  --orange-ink:         #241206;  /* dark text set ON vivid --orange — 6.31:1 */
   --orange-text-lg:#D9531A;
   --orange-text:   #C2410C;
   --orange-wash:  #FFF1EA;
   --orange-line:  #FFD8C4;
+  --orange-grad-a: #C2410C;       /* large-text gradient, 4.75:1 on --page */
+  --orange-grad-b: #DD5A1E;       /* large-text gradient, 3.47:1 on --page */
 
   /* — Green: verified / live / terminal ONLY — */
-  --green:      #56D364;
-  --green-deep: #2FA63D;
+  --green:      #56D364;          /* decoration only (dots, carets) */
+  --green-deep: #1F7A2C;          /* 5.41:1 on white, 4.90:1 on --green-wash */
   --green-wash: #E7F8EA;
 
   /* — Matrix field — */
@@ -57,6 +73,7 @@
   --surface:       var(--card);
   --surface-sunk:  #EEF0F3;
   --surface-dark:  var(--ink-bg);
+  --band-edge:     transparent;   /* dark bands need no edge on a light page */
 
   --text:          var(--ink);
   --text-secondary:var(--slate-soft);
@@ -72,7 +89,27 @@
   --accent:        var(--orange);
   --accent-hover:  var(--orange-light);
   --accent-press:  var(--orange-press);
-  --focus:         var(--orange);
+
+  /* Orange surfaces that carry text. --on-accent-solid is the only colour
+     ever set on top of them, so both themes stay legible from one rule. */
+  --accent-solid:       var(--orange-solid);
+  --accent-solid-hover: var(--orange-solid-hover);
+  --accent-solid-press: var(--orange-solid-press);
+  --on-accent-solid:    var(--text-on-dark);
+  --neutral-solid:      var(--slate-solid);
+  --on-neutral-solid:   var(--text-on-dark);
+
+  --grad-accent: linear-gradient(120deg, var(--orange-grad-a) 0%, var(--orange-grad-b) 100%);
+
+  /* 4.75:1 on --page, 5.18:1 on --surface, 4.54:1 on --surface-sunk */
+  --focus:         var(--orange-text);
+
+  /* Code blocks keep their own surface so they never collapse into --bg */
+  --code-bg:       var(--ink-bg);
+  --code-border:   #232C36;
+  --code-text:     #D4D4D4;          /* 12.68:1 on --code-bg */
+  --code-chrome:   #161B22;          /* editor-mock title bar (fixed dark) */
+  --code-fn:       #8F99A6;          /* 5.99:1 on --code-chrome */
 
   --status-live:   var(--green);
   --status-live-text: var(--green-deep);
@@ -136,6 +173,8 @@
   --shadow-md: 0 14px 40px -30px rgba(20,30,45,.40);
   --shadow-lg: 0 24px 60px -34px rgba(20,30,45,.50);
   --shadow-orange: 0 10px 30px -12px rgba(255,106,44,.45);
+  --shadow-cta:       0 10px 24px -12px rgba(194,65,12,.55);
+  --shadow-cta-hover: 0 16px 34px -14px rgba(194,65,12,.60);
   --ring: 0 0 0 3px rgba(255,106,44,.32);
 
   /* — Motion — */
@@ -146,41 +185,154 @@
   --dur-slow:   360ms;
   --cursor-blink: 1.15s;
 
-  /* — Layout — */
+/* — Layout — */
   --container:  1080px;
   --container-wide: 1280px;
+
+  /* ============================================================
+     DARK PALETTE — the single definition of every dark-theme value.
+     These are inert until the mapping block below points a semantic
+     token at one, so they can live safely in the light :root.
+     ============================================================ */
+  --dk-text-secondary: #AEB7C0;   /* 9.25:1 on --ink-bg */
+  --dk-text-muted:     #9AA4AF;   /* 7.43 / 6.34 / 5.36 on bg / card / well */
+  --dk-text-faint:     #8F99A4;   /* 6.50 / 5.54 / 4.68 on bg / card / well */
+  /* 3.21:1 on the dark card, 4.11:1 on the dark page. A dark card sits
+     only 1.28:1 off the page, so this hairline IS the card boundary and
+     has to clear 3:1 on its own (WCAG 1.4.11). */
+  --dk-border:         #6B7784;
+  --dk-border-strong:  #7E8A97;
+  --dk-code-bg:        #0A0E13;
+  /* The block's fill is deliberately terminal-dark, so it sits 1.03:1 from
+     the dark page — the border is the only thing separating them. It is
+     pitched brighter than --dk-border-strong for exactly that reason:
+     2.56:1 against the page, 2.64:1 against the block. */
+  --dk-code-border:    #4C5766;
+  --dk-orange-wash:    rgba(255,106,44,.16);
+  --dk-orange-line:    rgba(255,106,44,.38);
+  --dk-green-wash:     rgba(86,211,100,.14);
+  --dk-field:          rgba(255,255,255,.10);
+  /* Navy shadows are invisible on a near-black page — dark uses black. */
+  --dk-shadow-xs: 0 1px 2px rgba(0,0,0,.5);
+  --dk-shadow-sm: 0 6px 18px -10px rgba(0,0,0,.66);
+  --dk-shadow-md: 0 14px 40px -26px rgba(0,0,0,.74);
+  --dk-shadow-lg: 0 24px 60px -34px rgba(0,0,0,.80);
+  --dk-shadow-cta:       0 10px 24px -12px rgba(255,106,44,.55);
+  --dk-shadow-cta-hover: 0 16px 34px -14px rgba(255,106,44,.60);
 }
 
-/* ===== Dark theme ===== */
+/* ============================================================
+   1b. DARK THEME
+   Two triggers, one palette. The values themselves are defined
+   exactly once, above, as --dk-*; what follows is only the mapping.
+
+     · @media (prefers-color-scheme: dark) — a dark-OS visitor gets the
+       dark site on first paint, before any toggle has been touched.
+       Guarded with :not([data-theme="light"]) so an explicit light
+       choice always wins over the OS.
+     · :root[data-theme="dark"] — the explicit toggle. Both selectors
+       compute to the SAME specificity (0,2,0), so this one wins purely
+       because it comes later in the file. Do not reorder these two
+       blocks: nothing else would stop the OS preference overriding an
+       explicit choice.
+
+   color-scheme is set alongside so form controls, scrollbars and the
+   canvas follow the theme too.
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --bg:            var(--ink-bg);
+    --surface:       var(--ink-bg-2);
+    --surface-sunk:  var(--ink-bg-3);
+    --surface-dark:  var(--ink-bg-0);
+    --band-edge:     var(--dk-border-strong);
+
+    --text:          var(--text-on-dark);
+    --text-secondary:var(--dk-text-secondary);
+    --text-muted:    var(--dk-text-muted);
+    --text-faint:    var(--dk-text-faint);
+    --text-accent:   var(--orange-light);
+    --text-accent-lg:var(--orange-light);
+
+    --border:        var(--dk-border);
+    --border-strong: var(--dk-border-strong);
+
+    /* On a dark page the vivid orange is the readable one — it carries
+       --orange-ink instead of white, at 6.31:1. */
+    --accent-solid:       var(--orange);
+    --accent-solid-hover: var(--orange-light);
+    --accent-solid-press: var(--orange-press);
+    --on-accent-solid:    var(--orange-ink);
+    --orange-grad-a:      var(--orange);
+    --orange-grad-b:      var(--orange-light);
+    --focus:              var(--orange-light);
+
+    --code-bg:       var(--dk-code-bg);
+    --code-border:   var(--dk-code-border);
+
+    --field-dark:    var(--dk-field);
+    --orange-wash:   var(--dk-orange-wash);
+    --orange-line:   var(--dk-orange-line);
+    --green-wash:    var(--dk-green-wash);
+    --green-deep:    var(--green);
+
+    --shadow-xs: var(--dk-shadow-xs);
+    --shadow-sm: var(--dk-shadow-sm);
+    --shadow-md: var(--dk-shadow-md);
+    --shadow-lg: var(--dk-shadow-lg);
+    --shadow-cta:       var(--dk-shadow-cta);
+    --shadow-cta-hover: var(--dk-shadow-cta-hover);
+  }
+}
+
 :root[data-theme="dark"] {
+  color-scheme: dark;
+
   --bg:            var(--ink-bg);
   --surface:       var(--ink-bg-2);
-  --surface-sunk:  #0A0D11;
-  --surface-dark:  #07090C;
+  --surface-sunk:  var(--ink-bg-3);
+  --surface-dark:  var(--ink-bg-0);
+  --band-edge:     var(--dk-border-strong);
 
-  --text:          #FFFFFF;
-  --text-secondary:#AEB7C0;
-  --text-muted:    #7E8893;
-  --text-faint:    #5C6671;
+  --text:          var(--text-on-dark);
+  --text-secondary:var(--dk-text-secondary);
+  --text-muted:    var(--dk-text-muted);
+  --text-faint:    var(--dk-text-faint);
   --text-accent:   var(--orange-light);
   --text-accent-lg:var(--orange-light);
-  --text-on-dark:  #FFFFFF;
 
-  --border:        #20272F;
-  --border-strong: #2A323B;
+  --border:        var(--dk-border);
+  --border-strong: var(--dk-border-strong);
 
-  --accent:        var(--orange);
-  --accent-hover:  var(--orange-light);
-  --accent-press:  var(--orange-press);
+  --accent-solid:       var(--orange);
+  --accent-solid-hover: var(--orange-light);
+  --accent-solid-press: var(--orange-press);
+  --on-accent-solid:    var(--orange-ink);
+  --orange-grad-a:      var(--orange);
+  --orange-grad-b:      var(--orange-light);
+  --focus:              var(--orange-light);
 
-  --field-dark:    rgba(255,255,255,.10);
+  --code-bg:       var(--dk-code-bg);
+  --code-border:   var(--dk-code-border);
 
-  /* washes re-tuned so tints read correctly on dark surfaces */
-  --orange-wash:   rgba(255,106,44,.13);
-  --orange-line:   rgba(255,106,44,.35);
-  --green-wash:    rgba(86,211,100,.13);
-  --green-deep:    #56D364;
+  --field-dark:    var(--dk-field);
+  --orange-wash:   var(--dk-orange-wash);
+  --orange-line:   var(--dk-orange-line);
+  --green-wash:    var(--dk-green-wash);
+  --green-deep:    var(--green);
+
+  --shadow-xs: var(--dk-shadow-xs);
+  --shadow-sm: var(--dk-shadow-sm);
+  --shadow-md: var(--dk-shadow-md);
+  --shadow-lg: var(--dk-shadow-lg);
+  --shadow-cta:       var(--dk-shadow-cta);
+  --shadow-cta-hover: var(--dk-shadow-cta-hover);
 }
+
+/* An explicit light choice must survive a dark OS. */
+:root[data-theme="light"] { color-scheme: light; }
 
 /* ============================================================
    2. LEGACY SHIM VARS — names the /try page + old markup expect.
@@ -258,12 +410,19 @@ h1, h2, h3, h4 {
 
 .skip {
   position: absolute; left: -9999px; top: 0; z-index: 100;
-  background: var(--accent); color: #fff; font-family: var(--font-mono);
+  background: var(--accent-solid); color: var(--on-accent-solid);
+  font-family: var(--font-mono);
   font-size: 13px; font-weight: 700; padding: 10px 16px; border-radius: 0 0 10px 0;
 }
 .skip:focus { left: 0; }
 
-/* focus ring */
+/* Focus ring — WCAG 2.2 SC 1.4.11 / 2.4.11.
+   The 3px offset means the ring's neighbours on both sides are the
+   surface behind the control, not the control's own fill, so --focus
+   only has to clear 3:1 against backgrounds. It does, on every one the
+   site uses: --page 4.75, --surface 5.18, --surface-sunk 4.54,
+   --orange-wash 4.69, --green-wash 4.69. The dark bands re-point
+   --focus below (7.88:1), as does the dark theme. */
 :where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
@@ -286,16 +445,21 @@ h1, h2, h3, h4 {
 .btn.big   { height: 54px; padding: 0 28px; font-size: 15.5px; border-radius: 13px; }
 .btn.full  { width: 100%; }
 
+/* The primary CTA. Fill and text move together as a pair, so the pressed
+   and hovered states stay compliant too: 5.18 / 6.16 / 7.31:1 in light,
+   6.31 / 7.56 / 4.93:1 on the vivid dark-theme fill. No brightness filter
+   here — lightening the fill at runtime is what broke the ratio before. */
 .btn.solid {
-  color: #fff; font-weight: var(--fw-bold);
-  background: var(--accent);
-  box-shadow: 0 10px 24px -12px rgba(255,106,44,.6);
+  color: var(--on-accent-solid); font-weight: var(--fw-bold);
+  background: var(--accent-solid);
+  box-shadow: var(--shadow-cta);
 }
 .btn.solid:hover {
-  filter: brightness(1.06); transform: translateY(-1px);
-  box-shadow: 0 16px 34px -14px rgba(255,106,44,.65);
+  background: var(--accent-solid-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-cta-hover);
 }
-.btn.solid:active { transform: translateY(0); background: var(--accent-press); filter: none; }
+.btn.solid:active { transform: translateY(0); background: var(--accent-solid-press); }
 
 .btn.ghost {
   color: var(--text);
@@ -332,6 +496,10 @@ h1, h2, h3, h4 {
 .nav.stuck { box-shadow: var(--shadow-xs); }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; }
+/* Stays vivid --orange on purpose. The mark holds a decorative
+   aria-hidden glyph, not text, and WCAG 1.4.3 / 1.4.11 both exempt
+   logotypes — so this is where the brand orange survives at full
+   strength. Same for .foot-brand .mark and .bio .avatar. */
 .brand .mark {
   width: 32px; height: 32px; border-radius: 10px; flex: none;
   background: var(--accent);
@@ -345,6 +513,11 @@ h1, h2, h3, h4 {
 }
 
 .navlinks { display: flex; align-items: center; gap: 4px; }
+/* Shown only inside the collapsed mobile menu; on desktop the real
+   "Try free" button is already in the nav bar. Selector has to match
+   .navlinks a's specificity (0,1,1) or the nav's own display wins. */
+.navlinks a.mobonly { display: none; }
+
 .navlinks a {
   font-family: var(--font-body); font-size: 14.5px; font-weight: var(--fw-medium);
   color: var(--text-muted); padding: 8px 12px; border-radius: 9px;
@@ -365,10 +538,17 @@ h1, h2, h3, h4 {
 .themetoggle:hover, .menutoggle:hover { border-color: var(--accent); color: var(--text); }
 .menutoggle { display: none; }
 
-/* sun by day, moon by night */
+/* Sun by day, moon by night — including the OS-dark first visit, where
+   no data-theme attribute exists yet and the icon used to lie. */
 .themetoggle .moon { display: none; }
-:root[data-theme="dark"] .themetoggle .sun  { display: none; }
-:root[data-theme="dark"] .themetoggle .moon { display: block; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .themetoggle .sun  { display: none; }
+  :root:not([data-theme="light"]) .themetoggle .moon { display: block; }
+}
+:root[data-theme="dark"] .themetoggle .sun   { display: none; }
+:root[data-theme="dark"] .themetoggle .moon  { display: block; }
+:root[data-theme="light"] .themetoggle .sun  { display: block; }
+:root[data-theme="light"] .themetoggle .moon { display: none; }
 
 /* ============================================================
    6. SHARED SECTION BITS
@@ -406,10 +586,14 @@ h1, h2, h3, h4 {
   box-shadow: none; color: #cdd3db;
 }
 
+/* Hero accent word. Only ever used inside an <h1>, so the bar is 3:1 for
+   large text: stops are 4.75:1 and 3.47:1 on --page, and the no-clip
+   fallback colour is 3.70:1. Dark mode swaps the stops back to the vivid
+   pair (6.58:1 and 7.88:1 on --bg). */
 .grad-text { color: var(--text-accent-lg); }
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
   .grad-text {
-    background: linear-gradient(120deg, #FF6A2C 0%, #FF8746 100%);
+    background: var(--grad-accent);
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent; color: transparent;
   }
@@ -512,7 +696,9 @@ h1, h2, h3, h4 {
   background: var(--surface-sunk); border: 1px solid var(--border);
   border-radius: 6px; padding: 5px 0;
 }
-.doccard .flow .arw { color: var(--accent); flex: none; }
+/* A literal "→" character, so it is judged as text, not decoration:
+   --text-accent is 5.18:1 on the card, vivid --orange was 2.86:1. */
+.doccard .flow .arw { color: var(--text-accent); flex: none; }
 
 .chip {
   display: inline-flex; align-items: center; gap: 7px; margin-top: 14px;
@@ -601,7 +787,8 @@ h1, h2, h3, h4 {
 .newpill {
   display: inline-block; font-family: var(--font-mono); font-size: 10px;
   font-weight: var(--fw-black); letter-spacing: .1em; text-transform: uppercase;
-  color: #fff; background: var(--accent); border-radius: var(--radius-pill);
+  color: var(--on-accent-solid); background: var(--accent-solid);
+  border-radius: var(--radius-pill);
   padding: 4px 10px; margin-bottom: 16px;
 }
 
@@ -613,14 +800,20 @@ h1, h2, h3, h4 {
 }
 .fcard.stat p { margin-top: 16px; font-size: 14.5px; }
 
-/* code editor mock (fixed dark — reads in both themes) */
-.codewin { border-radius: 11px; overflow: hidden; background: #0E1217; box-shadow: var(--shadow-md); }
-.codewin .cbar { display: flex; align-items: center; gap: 7px; padding: 10px 13px; background: #161B22; }
+/* code editor mock (fixed dark — reads in both themes).
+   Its fill equals --bg in dark mode, so it gets the same inset edge as
+   the CTA bands rather than relying on a shadow that black-on-black eats. */
+.codewin {
+  border-radius: 11px; overflow: hidden; background: var(--code-bg);
+  box-shadow: var(--shadow-md), inset 0 0 0 1px var(--band-edge);
+}
+.codewin .cbar { display: flex; align-items: center; gap: 7px; padding: 10px 13px; background: var(--code-chrome); }
 .codewin .cbar .d { width: 10px; height: 10px; border-radius: 50%; flex: none; }
-.codewin .cbar .fn { margin-left: 8px; font-family: var(--font-mono); font-size: 11px; color: #6B7686; }
+/* Filename label — was #6B7686 at 3.76:1 on the title bar. */
+.codewin .cbar .fn { margin-left: 8px; font-family: var(--font-mono); font-size: 11px; color: var(--code-fn); }
 .codewin .cbody {
   padding: 14px 16px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.9;
-  overflow-x: auto; color: #d4d4d4;
+  overflow-x: auto; color: var(--code-text);
 }
 .codewin .ind { padding-left: 20px; }
 .c-kw  { color: #C586C0; }
@@ -640,9 +833,9 @@ h1, h2, h3, h4 {
 .step .num {
   display: flex; align-items: center; justify-content: center;
   width: 44px; height: 44px; border-radius: 12px;
-  background: var(--accent); color: #fff;
+  background: var(--accent-solid); color: var(--on-accent-solid);
   font-family: var(--font-mono); font-weight: var(--fw-bold); font-size: 20px;
-  box-shadow: 0 8px 20px -8px rgba(255,106,44,.6); margin-bottom: 18px;
+  box-shadow: var(--shadow-cta); margin-bottom: 18px;
 }
 .step h3 { font-family: var(--font-mono); font-weight: var(--fw-bold); font-size: 20px; color: var(--text); }
 .step p { margin: 8px 0 0; font-size: 14.5px; line-height: 1.55; color: var(--text-secondary); }
@@ -664,10 +857,12 @@ h1, h2, h3, h4 {
   position: absolute; top: 24px; right: 24px;
   font-family: var(--font-mono); font-size: 10.5px; font-weight: var(--fw-black);
   letter-spacing: .06em; text-transform: uppercase;
-  color: #fff; background: var(--accent);
+  color: var(--on-accent-solid); background: var(--accent-solid);
   border-radius: var(--radius-pill); padding: 5px 11px;
 }
-.plan .ribbon.soon { background: var(--slate); }
+/* .soon carries its own pair — it must not inherit the dark ink that the
+   vivid orange ribbon uses in dark mode. White on --neutral-solid: 6.40:1. */
+.plan .ribbon.soon { background: var(--neutral-solid); color: var(--on-neutral-solid); }
 .plan h3 { font-family: var(--font-mono); font-weight: var(--fw-bold); font-size: 22px; color: var(--text); }
 .plan .price {
   display: flex; align-items: baseline; gap: 10px; margin: 12px 0 2px;
@@ -712,7 +907,10 @@ h1, h2, h3, h4 {
 }
 .faq summary::-webkit-details-marker { display: none; }
 .faq summary::before {
-  content: ""; width: 18px; height: 18px; flex: none; background: var(--accent);
+  /* The +/× is the expand affordance, so it is a graphical object that
+     needs 3:1. Vivid --orange gave 2.86:1 on the card; --accent-solid
+     gives 5.18:1 and 6.31:1 in dark. */
+  content: ""; width: 18px; height: 18px; flex: none; background: var(--accent-solid);
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' stroke='black' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' stroke='black' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;
   transition: transform var(--dur-base);
@@ -734,10 +932,28 @@ h1, h2, h3, h4 {
 /* ============================================================
    15. FINAL CTA — dark band
    ============================================================ */
+/* Dark bands, in BOTH themes. Inside one, the page is near-black, so the
+   deep --accent-solid and the deep --focus would sink into it. Re-point
+   them at the vivid pair — 6.31:1 for --orange-ink on the fill, 7.88:1
+   for the ring on the band. .ctabox is styled in article.css; its tokens
+   live here so the three bands can never drift apart. */
+.finalcta, .ctabox, .codewin {
+  --accent-solid:       var(--orange);
+  --accent-solid-hover: var(--orange-light);
+  --accent-solid-press: var(--orange-press);
+  --on-accent-solid:    var(--orange-ink);
+  --focus:              var(--orange-light);
+  --shadow-cta:         var(--dk-shadow-cta);
+  --shadow-cta-hover:   var(--dk-shadow-cta-hover);
+}
+
 .finalcta {
   position: relative; overflow: hidden; text-align: center;
   border-radius: var(--radius-xl); background: var(--surface-dark);
   padding: 60px 40px;
+  /* In dark mode the band and the page are 1.06:1 apart — the inset edge
+     is what keeps it a band. Transparent, so light mode is untouched. */
+  box-shadow: inset 0 0 0 1px var(--band-edge);
 }
 .finalcta .halo {
   position: absolute; inset: 0; pointer-events: none;
@@ -841,7 +1057,11 @@ h1, h2, h3, h4 {
 @media (max-width: 880px) {
   .navlinks { display: none; }
   .menutoggle { display: inline-flex; }
+  /* Both CTAs do not fit at 375px, so the FREE one moves into the menu
+     rather than disappearing - a phone visitor must not be shown only
+     the paid door. */
   .nav .btn.ghost { display: none; }
+  .navlinks a.mobonly { display: block; }
   .nav.mobile-open .navlinks {
     display: flex; position: absolute; top: 68px; left: 12px; right: 12px;
     flex-direction: column; align-items: stretch; gap: 2px;

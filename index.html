@@ -23,13 +23,16 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"VideoDoc","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11; macOS (Apple Silicon)","offers":{"@type":"Offer","price":"19","priceCurrency":"USD"},"description":"Turn any video into an AI-ready document: a timestamped transcript plus the on-screen content as images, built on your own computer.","creator":{"@type":"Person","name":"Inam Ul Haq"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "The video is a person talking over slides. What do I get?", "acceptedAnswer": {"@type": "Answer", "text": "VideoDoc follows the screen share, not the face. The screenshots capture the slides, code and diagrams, paired with the timestamped transcript."}}, {"@type": "Question", "name": "Where does the processing happen?", "acceptedAnswer": {"@type": "Answer", "text": "Entirely on your own machine. The video is downloaded, transcribed and captured locally. Nothing is ever uploaded to a server."}}, {"@type": "Question", "name": "Do I need a powerful PC?", "acceptedAnswer": {"@type": "Answer", "text": "No. VideoDoc auto-detects your GPU and CPU and tunes itself; it uses your graphics card when it can, and still works fine without one."}}, {"@type": "Question", "name": "Is there a subscription?", "acceptedAnswer": {"@type": "Answer", "text": "No. Free is free forever in your browser. Pro is a single one-time payment. Buy once, keep it forever. The Android unlock, when it arrives, is one-time too."}}, {"@type": "Question", "name": "What's the difference between Free and Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Free transcribes your own local files in the browser. Pro adds links from YouTube, TikTok, Instagram, Facebook and X, plus playlists, on-screen screenshots, long videos, HD/4K download and use on two machines."}}, {"@type": "Question", "name": "Does it work with private or paywalled videos?", "acceptedAnswer": {"@type": "Answer", "text": "Links work for public videos. Anything private, behind a login or a paywall will not download, and that is by design. For those, use the file route: save or export the video yourself, then drop the file in. It never leaves your computer."}}, {"@type": "Question", "name": "Does it work on Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. VideoDoc runs on Windows 10/11 and on Apple Silicon Macs (M1 or newer; Intel Macs are not supported), with all processing on your own hardware. On a Mac the very first launch has a one-time 10 second unlock step, with a copy-button guide at videostodoc.com/mac."}}, {"@type": "Question", "name": "Is there an Android app?", "acceptedAnswer": {"@type": "Answer", "text": "It's on the way. VideoDoc for Android starts free, with 3 video downloads and 3 text extractions on the house, then one small one-time unlock opens unlimited use. It isn't on Google Play yet; this page will update the day it lands."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"VideoDoc","url":"https://videostodoc.com/"}
@@ -51,6 +54,7 @@
     <a href="#pricing">Pricing</a>
     <a href="articles/">Articles</a>
     <a href="#faq">FAQ</a>
+    <a class="mobonly" href="try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -263,6 +267,60 @@
           <h3>Open the document</h3>
           <p>One clean PDF plus Markdown: a timestamped transcript with the slides, code and screens as images.</p>
         </div>
+      </div>
+    </section>
+
+    <!-- ===== GUIDES ===== -->
+    <section id="guides" class="section">
+      <div class="sechead reveal">
+        <div class="kicker">Free guides</div>
+        <h2>The how-to, before you spend anything.</h2>
+        <p>Everything I learned turning videos into documents, written out in plain English.</p>
+      </div>
+      <div class="artgrid reveal">
+        <a class="artcard" href="articles/youtube-video-to-document/">
+          <span class="t">How to turn a YouTube video into a document</span>
+          <p>The full picture: free ways, paid ways, and how to get the slides out too, not just the words.</p>
+          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/youtube-video-to-pdf/">
+          <span class="t">Convert a YouTube video to PDF, slides included</span>
+          <p>A PDF your AI can actually read, with the on-screen slides and code saved as images.</p>
+          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/youtube-video-to-text/">
+          <span class="t">YouTube video to text: 3 ways that actually work</span>
+          <p>The built-in transcript, a free browser tool, and a desktop app. When each one wins.</p>
+          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/get-transcript-of-any-youtube-video/">
+          <span class="t">Get the transcript of any YouTube video</span>
+          <p>Captions on, captions off, it does not matter. Every word with timestamps.</p>
+          <span class="meta"><span>GUIDE · 5 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/summarize-youtube-video-with-chatgpt/">
+          <span class="t">Summarize a YouTube video with ChatGPT</span>
+          <p>Why pasting a link fails half the time, and the two step way that keeps the details.</p>
+          <span class="meta"><span>AI · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/feed-video-to-chatgpt-or-claude/">
+          <span class="t">Can ChatGPT watch a video? The honest answer</span>
+          <p>No AI chat can watch a video today. What actually happens when you paste a link, and the bridge that works.</p>
+          <span class="meta"><span>AI · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/video-lecture-to-notes/">
+          <span class="t">Turn video lectures into notes, automatically</span>
+          <p>Stop pausing and scribbling. Let the lecture write its own notes, then study on top of them.</p>
+          <span class="meta"><span>STUDENTS · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/youtube-playlist-to-one-document/">
+          <span class="t">Turn a YouTube playlist into one document</span>
+          <p>A 40 video course becomes one file you can search, quote and hand to your AI.</p>
+          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+      </div>
+      <div class="cta-row reveal" style="margin-top:30px">
+        <a class="btn ghost" href="articles/">Browse every guide</a>
       </div>
     </section>
 

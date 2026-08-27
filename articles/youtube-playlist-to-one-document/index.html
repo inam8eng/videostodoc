@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/youtube-playlist-to-one-document/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: turn a YouTube playlist into one document">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Turn a YouTube playlist into one document", "description": "Convert an entire YouTube playlist into a single searchable document, or one document per video, built privately on your own computer with a live tracker.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/youtube-playlist-to-one-document/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Turn a YouTube playlist into one document", "description": "Convert an entire YouTube playlist into a single searchable document, or one document per video, built privately on your own computer with a live tracker.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/youtube-playlist-to-one-document/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I turn a whole YouTube playlist into a single PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. VideoDoc takes the playlist link and builds either one merged document for the entire playlist or a separate document per video. Playlists are a Pro feature."}}, {"@type": "Question", "name": "How long does a big playlist take?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on your machine and the total hours of video. VideoDoc auto-detects your GPU and CPU and tunes itself, and pause, resume and the safety timer mean an overnight run is safe."}}, {"@type": "Question", "name": "Do the documents include what is shown on screen?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Each video's slides, code and diagrams are captured as images and placed beside the timestamped words, so the merged course document keeps the visual half of the teaching."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Guide</span>
         <h1>Turn a YouTube playlist into one document</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -83,14 +84,14 @@
       </div>
 
       <div class="prose">
-        <p>The best free education on earth lives in YouTube playlists. Full university courses, 60 part coding series, complete exam prep. And the format fights you the whole way, because what you learned in video 12 is impossible to find again in video 31's world. I once knew a concept was explained "somewhere in the middle" of a 40 video playlist and spent an evening clicking thumbnails like a fool.</p>
-        <p>The math is brutal too. 40 videos at 15 minutes each is 10 hours of watching. The same content as text reads in a fraction of that, because people speak at about 140 words a minute and you read comfortably at 200 to 250. A playlist as a document is the same course at more than double speed, with Ctrl+F on top.</p>
+        <p>The best free education on earth lives in YouTube playlists. Full university courses, <a href="../extract-code-from-video-tutorial/">60 part coding series where you need the code off the screen</a>, complete exam prep. And the format fights you the whole way, because what you learned in video 12 is impossible to find again in video 31's world. I once knew a concept was explained "somewhere in the middle" of a 40 video playlist and spent an evening clicking thumbnails like a fool.</p>
+        <p>The math is brutal too. 40 videos at 15 minutes each is 10 hours of watching. The same content as text reads in a fraction of that, because people speak at about 140 words a minute and you read comfortably at 200 to 250. A playlist as a document is the same course at more than double speed, with Ctrl+F on top, exactly the trade behind <a href="../video-lecture-to-notes/">turning a single lecture into notes</a>.</p>
 
         <h2 id="how">How it works in VideoDoc</h2>
         <ol>
           <li>Copy the playlist link from YouTube, the whole playlist, not one video.</li>
           <li>Paste it into VideoDoc and choose the shape: <strong>one merged document</strong> for a course you want to search as a single thing, or <strong>one document per video</strong> when the parts stand alone.</li>
-          <li>Press Start and walk away. Every step runs on your own machine: download over your home connection, transcription on your CPU or GPU, on-screen captures at up to full HD.</li>
+          <li>Press Start and walk away. Every step runs on your own machine: the <a href="../download-youtube-video-hd-4k/">download over your own home connection</a>, transcription on your CPU or GPU, on-screen captures at up to full HD.</li>
         </ol>
         <p>Long playlists are exactly what the pause, resume and cancel controls are for. Start a big course before bed, and if you need the machine in the morning, pause and pick it up later. A safety timer on every step means one stubborn video cannot hang the whole night's work.</p>
 

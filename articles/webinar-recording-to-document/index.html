@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/webinar-recording-to-document/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: turn a webinar recording into a written guide">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Turn a webinar recording into a written guide", "description": "Turn an hour long webinar recording into a written guide with the slides included: summary, decisions and action items your team reads in five minutes.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/webinar-recording-to-document/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Turn a webinar recording into a written guide", "description": "Turn an hour long webinar recording into a written guide with the slides included: summary, decisions and action items your team reads in five minutes.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/webinar-recording-to-document/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can it handle a two hour webinar recording?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. There is no length limit in Pro, and long recordings are the sweet spot. Pause, resume and a safety timer keep overnight runs safe."}}, {"@type": "Question", "name": "Do the slides come through readable?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The captures follow the screen share at up to full HD with Best quality, so the text inside the slides stays sharp enough to read and quote."}}, {"@type": "Question", "name": "Does the recording get uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. Local recording files are processed fully offline on your computer, which is exactly what work content with client names and numbers needs."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Work</span>
         <h1>Turn a webinar recording into a written guide</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -86,11 +87,11 @@
         <p>At my day job I have sat through more vendor webinars than I can count, and the pattern never changes. Sixty minutes of talk for maybe eight minutes of substance, and two weeks later somebody asks "what did they say about the pricing model" and the honest answer is that it lives somewhere inside a recording nobody will ever open again. A recording is where information goes to feel safe and be forgotten.</p>
 
         <h2 id="doc">Step 1: recording in, document out</h2>
-        <p>Drop the recording file into VideoDoc, or paste the link if it was published. Everything happens on your machine, which matters here more than anywhere, because work webinars carry client names, internal numbers and roadmap slides that have no business visiting a transcription server. If the recording sits behind a login, VideoDoc says so plainly and can use your own browser login, and local files never touch the internet at all.</p>
+        <p>Drop the recording file into VideoDoc, or paste the link if it was published, in which case you can also <a href="../download-youtube-video-hd-4k/">keep the recording as a file in HD</a>. Everything happens on your machine, which matters here more than anywhere, because work webinars carry client names, internal numbers and roadmap slides that have no business on somebody else's servers, which is the whole case for <a href="../offline-video-transcription-privacy/">transcribing offline rather than in the cloud</a>. If the recording sits behind a login, VideoDoc says so plainly and can use your own browser login, and local files never touch the internet at all.</p>
         <p>Out comes one document: every word timestamped, and every slide captured sharp, because the captures follow the screen share rather than the presenter's webcam. In a webinar the slides are the actual content, the voice is mostly delivery.</p>
 
         <h2 id="guide">Step 2: from document to guide</h2>
-        <p>Hand the PDF to ChatGPT or Claude with a shaping prompt. Mine is:</p>
+        <p>Hand the PDF to ChatGPT or Claude with a shaping prompt, the same second step as <a href="../summarize-youtube-video-with-chatgpt/">summarizing a video properly with ChatGPT</a>. Mine is:</p>
         <pre><code>Turn this webinar document into an internal guide:
 1. Five sentence summary.
 2. Every decision or commitment made, with timestamp.

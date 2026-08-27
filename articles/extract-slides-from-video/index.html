@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/extract-slides-from-video/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: how to extract slides from a video presentation">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to extract slides from a video presentation", "description": "Get the actual slides out of a recorded talk as sharp images, matched to what the speaker said, when nobody ever shares the deck.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/extract-slides-from-video/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to extract slides from a video presentation", "description": "Get the actual slides out of a recorded talk as sharp images, matched to what the speaker said, when nobody ever shares the deck.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/extract-slides-from-video/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I get the slides as separate image files?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Captures are saved as individual images alongside the document, ready to reuse, plus placed inline in the PDF beside the words spoken over them."}}, {"@type": "Question", "name": "What if the video shows the speaker and the slides together?", "acceptedAnswer": {"@type": "Answer", "text": "The capture engine prefers the screen share over the face. You get the slides, not a grid of webcam frames."}}, {"@type": "Question", "name": "What resolution are the captures?", "acceptedAnswer": {"@type": "Answer", "text": "Up to full HD 1080p with the Best quality setting, which keeps slide text and diagrams readable, assuming the source video itself is HD."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Work</span>
         <h1>How to extract slides from a video presentation</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>5 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>5 min read</span></div>
       </header>
 
       <div class="answer">
@@ -83,7 +84,7 @@
       </div>
 
       <div class="prose">
-        <p>"Slides will be shared after the talk." I have heard that sentence at conferences, in webinars and in trainings, and the slides arrive maybe one time in five. The information you need is sitting right there in the recording, technically public to you, and completely trapped, because nobody is going to scrub a 50 minute video every time they need one diagram.</p>
+        <p>"Slides will be shared after the talk." I have heard that sentence at conferences, in webinars and in <a href="../training-video-to-sop/">trainings that were supposed to become SOPs</a>, and the slides arrive maybe one time in five. The information you need is sitting right there in the recording, technically public to you, and completely trapped, because nobody is going to scrub a 50 minute video every time they need one diagram.</p>
 
         <h2 id="manual">The manual way, so you know the baseline</h2>
         <p>Open the video, watch at speed, and every time a new slide appears: pause, key back to a clean frame, screenshot, name the file. It genuinely works, and for a five slide talk it is the fastest option. For a real deck it is an hour of repetitive clicking, the screenshots inherit whatever resolution you watched at, and you still have no record of what was said over each slide, which is where the meaning lives.</p>
@@ -93,7 +94,7 @@
         <ul>
           <li><strong>Full HD captures</strong> with Best quality, so the text, the numbers in the table and the small print on the architecture diagram stay readable.</li>
           <li><strong>Every image sits beside its words.</strong> The capture of the pricing slide has the speaker's actual explanation next to it, timestamped, which is worth more than the slide alone.</li>
-          <li><strong>The images folder.</strong> Alongside the PDF, captures are saved as plain image files, so pulling three of them into your own report is a copy paste.</li>
+          <li><strong>The images folder.</strong> Alongside the PDF, captures are saved as plain image files, so pulling three of them into your own report, or into <a href="../video-to-blog-post/">a blog post written from the video</a>, is a copy paste.</li>
         </ul>
 
         <div class="callout">
@@ -102,7 +103,7 @@
         </div>
 
         <h2 id="use">What this replaces</h2>
-        <p>For me this replaced three bad habits: emailing speakers for decks that never come, keeping 40 tab-screenshots in a folder named "sort later", and worst of all, just losing the material. A talk I convert lands in my notes as one searchable file, deck and explanation together, and the AI can answer from it besides. The deck-chasing era ended quietly.</p>
+        <p>For me this replaced three bad habits: emailing speakers for decks that never come, keeping 40 tab-screenshots in a folder named "sort later", and worst of all, just losing the material. A talk I convert lands in my notes as one searchable file, deck and explanation together, and the AI can answer from it besides, because <a href="../summarize-youtube-video-with-chatgpt/">a summary built from the slides as well as the words</a> catches what was shown but never said. The deck-chasing era ended quietly.</p>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>

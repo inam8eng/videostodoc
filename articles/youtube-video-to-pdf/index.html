@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/youtube-video-to-pdf/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: convert a YouTube video to PDF, slides included">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Article","headline":"Convert a YouTube video to PDF, slides included","description":"Turn a YouTube video into a clean PDF: every word with timestamps plus the on-screen slides and code as images.","datePublished":"2026-07-18","dateModified":"2026-07-18","author":{"@type":"Person","name":"Inam Ul Haq"},"publisher":{"@type":"Organization","name":"VideoDoc","logo":{"@type":"ImageObject","url":"https://videostodoc.com/assets/og.png"}},"image":"https://videostodoc.com/assets/og.png","mainEntityOfPage":"https://videostodoc.com/articles/youtube-video-to-pdf/"}
+{"@context":"https://schema.org","@type":"Article","headline":"Convert a YouTube video to PDF, slides included","description":"Turn a YouTube video into a clean PDF: every word with timestamps plus the on-screen slides and code as images.","datePublished":"2026-07-18","dateModified":"2026-08-27","author":{"@type":"Person","name":"Inam Ul Haq"},"publisher":{"@type":"Organization","name":"VideoDoc","logo":{"@type":"ImageObject","url":"https://videostodoc.com/assets/og.png"}},"image":"https://videostodoc.com/assets/og.png","mainEntityOfPage":"https://videostodoc.com/articles/youtube-video-to-pdf/"}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -54,6 +54,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -78,7 +79,7 @@
       <header class="art-head">
         <span class="cat">Guide</span>
         <h1>Convert a YouTube video to PDF, slides included</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">·</span><span>Updated July 18, 2026</span><span class="dotsep">·</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">·</span><span>Updated August 27, 2026</span><span class="dotsep">·</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -100,7 +101,7 @@
         <p>It works, and it costs nothing. But you inherit every weakness of auto captions: missing videos, mangled technical words, no punctuation worth trusting. You get zero images, no structure, and cleaning the timestamp clutter by hand takes longer than you expect. I still use this trick for short interview clips. For anything taught on a screen, it throws away the screen.</p>
 
         <h2 id="proper">The proper way: link in, PDF out</h2>
-        <p>VideoDoc was built for exactly this output. You paste a YouTube link, a single video or a whole playlist, choose your quality, and press Start. Everything runs on your own machine: the download comes over your home connection, the transcription runs on your CPU or graphics card, and the screenshot engine watches the picture as it goes.</p>
+        <p>VideoDoc was built for exactly this output. You paste a YouTube link, a single video or <a href="../youtube-playlist-to-one-document/">a whole playlist merged into one document</a>, choose your quality, and press Start. Everything runs on your own machine: the <a href="../download-youtube-video-hd-4k/">download comes over your home connection</a>, the transcription runs on your CPU or graphics card, and the screenshot engine watches the picture as it goes.</p>
         <p>That screenshot engine is the part I am most proud of. When a video mixes a person and a screen share, it follows the screen, not the face. The slides, the code editor, the whiteboard, captured at up to full HD with Best quality so the text inside the image stays sharp enough for your AI to read. A speaker's face gets captured only when the face is genuinely all there is.</p>
 
         <h2 id="inside">What the finished PDF looks like inside</h2>
@@ -110,7 +111,7 @@
           <li>The on-screen captures placed inline, each one sitting next to the words that were spoken over it.</li>
           <li>A matching Markdown file beside the PDF, if you prefer notes apps like Obsidian or Notion.</li>
         </ul>
-        <p>Because the PDF is a normal document, ChatGPT, Claude, Gemini and NotebookLM all read it directly. Ask for a summary, ask what the third slide meant, ask it to quiz you. The AI finally has the whole video in a form it understands.</p>
+        <p>Because the PDF is a normal document, ChatGPT, Claude, Gemini and NotebookLM all read it directly. Ask for <a href="../summarize-youtube-video-with-chatgpt/">a summary that keeps the timestamps</a>, ask what the third slide meant, ask it to quiz you. The AI finally has the whole video in a form it understands.</p>
 
         <div class="callout">
           <span class="lbl">Honest limits</span>

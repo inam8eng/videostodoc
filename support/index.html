@@ -12,6 +12,7 @@
 <meta property="og:url" content="https://videostodoc.com/support/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc support: fixes for first run, licence keys, antivirus warnings and slow jobs">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#F4F5F7">
@@ -20,17 +21,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
 <link rel="stylesheet" href="../style.css">
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t){e.setAttribute('data-theme',t);var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');}}catch(x){}})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Windows SmartScreen or my antivirus warns about VideoDoc. Is it safe?","acceptedAnswer":{"@type":"Answer","text":"It is a false positive. VideoDoc is a Python app packaged into an .exe, and that packaging pattern is flagged on sight by some scanners because malware authors use it too. Nothing is checked online. Click More info then Run anyway on SmartScreen. Every release ships a SHA256 checksum so you can confirm the file you have is the file that was built."}},
-{"@type":"Question","name":"Where does VideoDoc save my documents?","acceptedAnswer":{"@type":"Answer","text":"In an output folder next to the app on Windows, and in your home folder under VideoDoc on Mac. The app shows the full path under Your documents and opens the folder in one click, so you never have to hunt for it. If the app folder is read-only, VideoDoc moves your documents somewhere writable and tells you where."}},
-{"@type":"Question","name":"My licence key will not activate.","acceptedAnswer":{"@type":"Answer","text":"Copy the key from your Gumroad receipt with no spaces at either end, then click Enter license key at the bottom of the app. A key covers 2 computers. If both slots are used, open Manage license on the machine you are retiring and click Deactivate, which frees the slot immediately."}},
-{"@type":"Question","name":"The first run is downloading something. What is it?","acceptedAnswer":{"@type":"Answer","text":"The speech engine, about 460 MB, downloaded once and kept in a models folder next to the app. After that, local files work with no internet at all. YouTube links still need a connection to fetch the video itself."}},
-{"@type":"Question","name":"A job is slow, or looks stuck.","acceptedAnswer":{"@type":"Answer","text":"Nothing in VideoDoc can hang forever. Every step runs under a safety timer, and if one stalls the app switches to your CPU or skips that video and keeps the queue moving. Cancel takes effect within a couple of seconds. For speed, set PC power to Maximum, and on an NVIDIA card accept the one-time GPU setup."}},
-{"@type":"Question","name":"Can I get a refund?","acceptedAnswer":{"@type":"Answer","text":"Yes. 30 days, no questions asked, through Gumroad. Email inam4ch@gmail.com and it gets handled."}}
-]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "The first run is downloading something. What is it?", "acceptedAnswer": {"@type": "Answer", "text": "The speech engine, about 460 MB. It downloads once and lives in a models folder next to the app, so it moves with the app if you move the folder. After that first download, local video files work with no internet at all."}}, {"@type": "Question", "name": "Windows SmartScreen or my antivirus warns about VideoDoc. Is it safe?", "acceptedAnswer": {"@type": "Answer", "text": "It is a false positive, and it is worth explaining why rather than just asking you to trust me. VideoDoc is a Python program packaged into a single .exe. That packaging pattern is also used by people writing malware, so a few scanners flag the shape of the file rather than anything it does."}}, {"@type": "Question", "name": "My licence key will not activate.", "acceptedAnswer": {"@type": "Answer", "text": "Copy the key from your Gumroad receipt email with no spaces at either end. In the app, click Enter license key at the bottom, paste, and confirm."}}, {"@type": "Question", "name": "Where does VideoDoc save my documents?", "acceptedAnswer": {"@type": "Answer", "text": "On Windows, into an output folder next to the app. On Mac, into your home folder under VideoDoc. You never have to go looking: the app prints the full path under Your documents and opens the folder for you in one click."}}, {"@type": "Question", "name": "A job is slow, or looks stuck.", "acceptedAnswer": {"@type": "Answer", "text": "It is not stuck. Every step runs under a safety timer. If one stalls, the app drops to your CPU or skips that one video and keeps the rest of the queue moving, and it says so plainly rather than sitting on a frozen progress bar. Cancel takes effect within a couple of seconds, even mid-step."}}, {"@type": "Question", "name": "Can I get a refund?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. 30 days, no questions asked, through Gumroad. Email inam4ch@gmail.com and it gets handled."}}, {"@type": "Question", "name": "A video will not download", "acceptedAnswer": {"@type": "Answer", "text": "Public videos only. If a video is private, unlisted behind a login, or age-restricted, VideoDoc tells you so and offers to use your browser's login rather than failing silently."}}]}
 </script>
 <style>
   .tp{max-width:820px;margin:0 auto;padding:0 24px}
@@ -111,14 +105,14 @@
       <p class="sec-k">Getting started</p>
 
       <div class="fix" id="firstrun">
-        <h2>The first run downloads something. What is it?</h2>
+        <h2>The first run is downloading something. What is it?</h2>
         <p>The speech engine, about 460 MB. It downloads once and lives in a <code>models</code> folder next to the app, so it moves with the app if you move the folder. After that first download, local video files work with no internet at all.</p>
         <p>YouTube and other links still need a connection, because the video itself has to be fetched. That part is your own connection to the site, not an upload of your file to me. Nothing you process ever leaves your machine.</p>
         <p>If the download is interrupted, close the app and open it again. It resumes rather than starting over.</p>
       </div>
 
       <div class="fix" id="antivirus">
-        <h2>Windows SmartScreen or my antivirus flagged it</h2>
+        <h2>Windows SmartScreen or my antivirus warns about VideoDoc. Is it safe?</h2>
         <p>It is a false positive, and it is worth explaining why rather than just asking you to trust me. VideoDoc is a Python program packaged into a single <code>.exe</code>. That packaging pattern is also used by people writing malware, so a few scanners flag the shape of the file rather than anything it does.</p>
         <p>On the SmartScreen dialog, click <strong>More info</strong>, then <strong>Run anyway</strong>. If your antivirus quarantines the file, restore it and add the VideoDoc folder to your exclusions.</p>
         <p>If you would rather verify than trust: every release ships a <code>SHA256SUMS</code> file. Compare the hash of your download against it, and you know the file you have is byte-for-byte the file that was built.</p>
@@ -127,7 +121,7 @@
       <p class="sec-k">Your licence</p>
 
       <div class="fix" id="licence">
-        <h2>The key will not activate, or I need it on another computer</h2>
+        <h2>My licence key will not activate.</h2>
         <p>Copy the key from your Gumroad receipt email with no spaces at either end. In the app, click <strong>Enter license key</strong> at the bottom, paste, and confirm.</p>
         <p>One key covers <strong>2 computers, for life</strong>. If both slots are taken and you want to move to a new machine:</p>
         <ol>
@@ -141,7 +135,7 @@
       <p class="sec-k">Your files</p>
 
       <div class="fix" id="files">
-        <h2>Where did my document go?</h2>
+        <h2>Where does VideoDoc save my documents?</h2>
         <p>On Windows, into an <code>output</code> folder next to the app. On Mac, into your home folder under <code>VideoDoc</code>. You never have to go looking: the app prints the full path under <strong>Your documents</strong> and opens the folder for you in one click.</p>
         <p>Each video gets its own folder holding <code>doc.pdf</code>, a matching <code>doc.md</code> for notes apps, a plain <code>transcript.txt</code>, and an <code>images</code> folder of the on-screen captures. Tick <strong>Also save every frame</strong> and there is a <code>frames</code> folder too, with a <code>frames_index.csv</code> listing every image and the exact moment it came from.</p>
         <p>If you installed the app somewhere Windows will not let it write, VideoDoc does not fail: it moves your documents to a writable location and tells you the new path.</p>
@@ -150,7 +144,7 @@
       <p class="sec-k">Speed and reliability</p>
 
       <div class="fix" id="slow">
-        <h2>A job is slow, or it looks stuck</h2>
+        <h2>A job is slow, or looks stuck.</h2>
         <p>It is not stuck. Every step runs under a safety timer. If one stalls, the app drops to your CPU or skips that one video and keeps the rest of the queue moving, and it says so plainly rather than sitting on a frozen progress bar. Cancel takes effect within a couple of seconds, even mid-step.</p>
         <p>To make it genuinely faster:</p>
         <ul>
@@ -159,6 +153,11 @@
           <li>For a YouTube video with captions, VideoDoc uses those instead of listening to the audio. That path is close to instant.</li>
           <li><strong>Also save every frame</strong> is the heavy option by design: an hour of video is around 14,400 images. The app warns you before it starts.</li>
         </ul>
+      </div>
+
+      <div class="fix">
+        <h2>Can I get a refund?</h2>
+        <p>Yes. 30 days, no questions asked, through Gumroad. Email <a href="mailto:inam4ch@gmail.com">inam4ch@gmail.com</a> and it gets handled.</p>
       </div>
 
       <div class="fix">

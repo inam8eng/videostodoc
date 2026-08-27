@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/video-to-blog-post/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: turn a video into a blog post in your own words">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Turn a video into a blog post in your own words", "description": "Repurpose one video into a real article without retyping: transcript and slides out, outline from timestamps, your voice on top. The honest SEO notes included.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/video-to-blog-post/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Turn a video into a blog post in your own words", "description": "Repurpose one video into a real article without retyping: transcript and slides out, outline from timestamps, your voice on top. The honest SEO notes included.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/video-to-blog-post/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I just publish the transcript of my video as a post?", "acceptedAnswer": {"@type": "Answer", "text": "You can, and it will underperform. Spoken grammar reads poorly, and captioned videos already expose that same text on YouTube. Rewriting in written English is what makes the page worth ranking."}}, {"@type": "Question", "name": "How do I get images for the post from the video?", "acceptedAnswer": {"@type": "Answer", "text": "VideoDoc captures the on-screen moments as full HD images while it builds the document. From your own videos, those frames are ready to place straight into the post."}}, {"@type": "Question", "name": "Can AI write the post for me from the video?", "acceptedAnswer": {"@type": "Answer", "text": "It can draft, but the strong result comes from AI as editor: give it your transcript and ask it to tighten your own words. Posts written from nothing lose the voice that made the video worth watching."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Creators</span>
         <h1>Turn a video into a blog post in your own words</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -86,10 +87,10 @@
         <p>I post videos and I write articles, and for a long time those were two separate jobs done twice. The video took a day, and then the article about the same idea took another day, mostly spent scrubbing my own video trying to remember what I said. The fix was embarrassingly simple: stop treating the video as a video. Treat it as a first draft that happens to be spoken.</p>
 
         <h2 id="step1">Step 1: get the draft out of the video</h2>
-        <p>Run the video through VideoDoc, your own file or the published link. You get every word timestamped, and every slide or screen you showed captured as an image. That document is your raw material: a complete, searchable record of what you actually said and showed, made on your own machine in a few minutes.</p>
+        <p>Run the video through VideoDoc, your own file or the published link, a long YouTube upload or <a href="../tiktok-video-to-text/">a sixty second TikTok</a>. You get every word timestamped, and every slide or screen you showed captured as an image. That document is your raw material: a complete, searchable record of what you actually said and showed, made on your own machine in a few minutes.</p>
 
         <h2 id="step2">Step 2: outline from the timestamps</h2>
-        <p>Read the transcript once and mark the moments where you changed topic. Those timestamps are your headings, because a good video already has the structure a post needs, you just never see it while watching. My last one broke into five sections in about four minutes of marking.</p>
+        <p>Read the transcript once, <a href="../get-transcript-of-any-youtube-video/">every word with timestamps, captions or not</a>, and mark the moments where you changed topic. Those timestamps are your headings, because a good video already has the structure a post needs, you just never see it while watching. My last one broke into five sections in about four minutes of marking.</p>
 
         <h2 id="step3">Step 3: rewrite, do not paste</h2>
         <p>Spoken English and written English are different animals. Spoken has "so, basically" and half-finished loops that your ear forgives and your reader will not. So rewrite each section in your writing voice, and keep only the spoken lines that genuinely land as quotes. If you use AI here, use it as an editor, not the author: hand it your transcript section and ask it to tighten your words, keeping your phrasing, rather than asking it to write from nothing. The post must still sound like the person in the video.</p>
@@ -99,7 +100,7 @@
 
         <div class="callout">
           <span class="lbl">The honest SEO note</span>
-          <p>A pasted transcript makes a bad page: thin structure, spoken grammar, and if captions exist the same text already sits on YouTube. The rewrite is what makes the post yours in the eyes of a search engine, and of a human. And only publish posts from your own videos, or with clear permission. Other people's content is study material, never your article.</p>
+          <p>A pasted transcript makes a bad page: thin structure, spoken grammar, and if captions exist the same text already sits on YouTube. The rewrite is what makes the post yours in the eyes of a search engine, and of a human. And only publish posts from your own videos, or with clear permission. Other people's content is <a href="../study-from-youtube-with-ai/">material to study from</a>, never your article.</p>
         </div>
 
         <div class="ctabox">

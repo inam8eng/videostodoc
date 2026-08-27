@@ -2,17 +2,42 @@
 
 > VideoDoc turns any video into one document your AI can read. ChatGPT and Claude cannot watch videos, so VideoDoc gives them a timestamped transcript plus the on-screen slides, code and diagrams captured as images, built entirely on your own computer with nothing uploaded. The free version runs in the browser. Pro is the desktop app for Windows 10/11 and Apple Silicon Macs, $19 one time, use on 2 computers, 30 day money back.
 
-## Pages
+## Product
 
-- [Home](https://videostodoc.com/): what VideoDoc is, features, pricing, FAQ
-- [Try free](https://videostodoc.com/try/): transcribe a video or audio file in your browser, nothing uploaded, no signup
-- [Articles](https://videostodoc.com/articles/): 20 guides on turning videos into documents, notes and transcripts for AI
-- [Mac first launch](https://videostodoc.com/mac/): the 10 second unlock for Apple Silicon Macs
+- [Home](https://videostodoc.com/): what VideoDoc is, what it outputs, features, pricing and the FAQ
+- [Try free](https://videostodoc.com/try/): transcribe your own video or audio file in the browser, nothing uploaded, no signup
+- [Mac first launch](https://videostodoc.com/mac/): the one-time Terminal unlock for Apple Silicon Macs, in three steps
+- [Support](https://videostodoc.com/support/): first run, licence keys, antivirus warnings, slow jobs and where files are saved
 - [Get Pro](https://designesh.gumroad.com/l/videodoc): buy VideoDoc Pro on Gumroad, $19 one time
+
+## Articles
+
+- [All articles](https://videostodoc.com/articles/): the full index of the 20 guides below
+- [How to turn a YouTube video into a document](https://videostodoc.com/articles/youtube-video-to-document/): What are the free and paid ways to turn a YouTube video into a document, and which keeps the slides?
+- [Convert a YouTube video to PDF, slides included](https://videostodoc.com/articles/youtube-video-to-pdf/): How do you convert a YouTube video into a PDF that includes the on-screen slides, not just the words?
+- [YouTube video to text: 3 ways that actually work](https://videostodoc.com/articles/youtube-video-to-text/): What are the three working ways to get the text out of a YouTube video, and when does each one win?
+- [Get the transcript of any YouTube video](https://videostodoc.com/articles/get-transcript-of-any-youtube-video/): How do you get a transcript when a video has no captions or bad auto captions?
+- [Can ChatGPT watch a video? The honest answer](https://videostodoc.com/articles/feed-video-to-chatgpt-or-claude/): Can ChatGPT or Claude actually watch a video, and what do you give them instead?
+- [Turn video lectures into notes, automatically](https://videostodoc.com/articles/video-lecture-to-notes/): How do you turn a recorded lecture into complete notes without pausing and typing?
+- [Turn any course video into study notes you can search](https://videostodoc.com/articles/course-video-to-study-notes/): How do you turn a paid course into searchable study notes, and what is fair use?
+- [How to study from YouTube with AI](https://videostodoc.com/articles/study-from-youtube-with-ai/): What does a daily study loop look like when videos become documents an AI can quiz you on?
+- [Turn a YouTube playlist into one document](https://videostodoc.com/articles/youtube-playlist-to-one-document/): How do you turn a whole YouTube playlist into one searchable document?
+- [Summarize a YouTube video with ChatGPT](https://videostodoc.com/articles/summarize-youtube-video-with-chatgpt/): Why does pasting a YouTube link into ChatGPT fail, and what two-step method works?
+- [Turn a webinar recording into a written guide](https://videostodoc.com/articles/webinar-recording-to-document/): How do you turn a webinar recording into a written internal guide people read?
+- [Turn training videos into SOPs people actually read](https://videostodoc.com/articles/training-video-to-sop/): How do you turn a screen-recorded process into a written SOP with screenshots?
+- [How to extract slides from a video presentation](https://videostodoc.com/articles/extract-slides-from-video/): How do you pull the slides out of a recorded talk as images matched to what was said?
+- [How to extract code from a video tutorial](https://videostodoc.com/articles/extract-code-from-video-tutorial/): How do you read the code from a video tutorial without squinting at paused frames?
+- [Turn a video into a blog post in your own words](https://videostodoc.com/articles/video-to-blog-post/): How do you turn one of your own videos into a blog post in your own writing voice?
+- [Download a YouTube video in HD or 4K](https://videostodoc.com/articles/download-youtube-video-hd-4k/): How do you download a YouTube video or playlist in HD or 4K, and what is allowed?
+- [TikTok video to text](https://videostodoc.com/articles/tiktok-video-to-text/): How do you get the spoken words and on-screen text out of a TikTok?
+- [Transcribe a video free, without uploading it](https://videostodoc.com/articles/transcribe-video-free-no-upload/): How can a browser transcribe a video for free without uploading it anywhere?
+- [Offline video transcription: why local beats the cloud](https://videostodoc.com/articles/offline-video-transcription-privacy/): What actually happens to a video you upload to a cloud transcriber, and when is local better?
+- [Best video to text converters in 2026](https://videostodoc.com/articles/best-video-to-text-converters/): Which video to text converter fits which job, including where VideoDoc loses?
 
 ## Facts
 
 - Link mode works with public videos from YouTube, TikTok, Instagram, Facebook and X, plus whole playlists.
 - Private or paywalled videos: save the file yourself and drop it in, everything runs locally.
-- Output is one document: a timestamped transcript plus the on-screen content captured as images.
+- Output is one document: a timestamped transcript plus the on-screen content captured as images, as PDF and Markdown.
+- The free browser version handles your own files, words only, no links and no screenshots.
 - One payment, no subscription, no metered usage, no account.

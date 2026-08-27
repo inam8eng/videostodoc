@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VideoDoc Articles: turn videos into documents, notes and guides</title>
+<title>VideoDoc Articles: videos into documents, notes and guides</title>
 <meta name="description" content="Plain guides on turning YouTube videos, lectures, courses and webinars into documents, notes, SOPs and posts. Written by the person who built VideoDoc.">
 
 <link rel="canonical" href="https://videostodoc.com/articles/">
@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc articles: guides on turning videos into documents, notes and transcripts">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"CollectionPage","name":"VideoDoc Articles","description":"Guides on turning videos into documents, notes, SOPs and posts.","url":"https://videostodoc.com/articles/","isPartOf":{"@type":"WebSite","name":"VideoDoc","url":"https://videostodoc.com/"}}
+{"@context": "https://schema.org", "@type": "CollectionPage", "name": "VideoDoc Articles", "description": "Guides on turning videos into documents, notes, SOPs and posts.", "url": "https://videostodoc.com/articles/", "isPartOf": {"@type": "WebSite", "name": "VideoDoc", "url": "https://videostodoc.com/"}, "mainEntity": {"@type": "ItemList", "name": "VideoDoc articles", "numberOfItems": 20, "itemListElement": [{"@type": "ListItem", "position": 1, "name": "How to turn a YouTube video into a document", "url": "https://videostodoc.com/articles/youtube-video-to-document/"}, {"@type": "ListItem", "position": 2, "name": "Convert a YouTube video to PDF, slides included", "url": "https://videostodoc.com/articles/youtube-video-to-pdf/"}, {"@type": "ListItem", "position": 3, "name": "YouTube video to text: 3 ways that actually work", "url": "https://videostodoc.com/articles/youtube-video-to-text/"}, {"@type": "ListItem", "position": 4, "name": "Get the transcript of any YouTube video", "url": "https://videostodoc.com/articles/get-transcript-of-any-youtube-video/"}, {"@type": "ListItem", "position": 5, "name": "Can ChatGPT watch a video? The honest answer", "url": "https://videostodoc.com/articles/feed-video-to-chatgpt-or-claude/"}, {"@type": "ListItem", "position": 6, "name": "Turn video lectures into notes, automatically", "url": "https://videostodoc.com/articles/video-lecture-to-notes/"}, {"@type": "ListItem", "position": 7, "name": "Turn any course video into study notes you can search", "url": "https://videostodoc.com/articles/course-video-to-study-notes/"}, {"@type": "ListItem", "position": 8, "name": "How to study from YouTube with AI", "url": "https://videostodoc.com/articles/study-from-youtube-with-ai/"}, {"@type": "ListItem", "position": 9, "name": "Turn a YouTube playlist into one document", "url": "https://videostodoc.com/articles/youtube-playlist-to-one-document/"}, {"@type": "ListItem", "position": 10, "name": "Summarize a YouTube video with ChatGPT", "url": "https://videostodoc.com/articles/summarize-youtube-video-with-chatgpt/"}, {"@type": "ListItem", "position": 11, "name": "Turn a webinar recording into a written guide", "url": "https://videostodoc.com/articles/webinar-recording-to-document/"}, {"@type": "ListItem", "position": 12, "name": "Turn training videos into SOPs people actually read", "url": "https://videostodoc.com/articles/training-video-to-sop/"}, {"@type": "ListItem", "position": 13, "name": "How to extract slides from a video presentation", "url": "https://videostodoc.com/articles/extract-slides-from-video/"}, {"@type": "ListItem", "position": 14, "name": "How to extract code from a video tutorial", "url": "https://videostodoc.com/articles/extract-code-from-video-tutorial/"}, {"@type": "ListItem", "position": 15, "name": "Turn a video into a blog post in your own words", "url": "https://videostodoc.com/articles/video-to-blog-post/"}, {"@type": "ListItem", "position": 16, "name": "Download a YouTube video in HD or 4K", "url": "https://videostodoc.com/articles/download-youtube-video-hd-4k/"}, {"@type": "ListItem", "position": 17, "name": "TikTok video to text", "url": "https://videostodoc.com/articles/tiktok-video-to-text/"}, {"@type": "ListItem", "position": 18, "name": "Transcribe a video free, without uploading it", "url": "https://videostodoc.com/articles/transcribe-video-free-no-upload/"}, {"@type": "ListItem", "position": 19, "name": "Offline video transcription: why local beats the cloud", "url": "https://videostodoc.com/articles/offline-video-transcription-privacy/"}, {"@type": "ListItem", "position": 20, "name": "Best video to text converters in 2026", "url": "https://videostodoc.com/articles/best-video-to-text-converters/"}]}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://videostodoc.com/"},{"@type":"ListItem","position":2,"name":"Articles"}]}
@@ -47,6 +47,7 @@
     <a href="../#features">Features</a>
     <a href="../#pricing">Pricing</a>
     <a href="../#faq">FAQ</a>
+    <a class="mobonly" href="../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">

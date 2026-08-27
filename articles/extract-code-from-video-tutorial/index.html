@@ -13,6 +13,7 @@
 <meta property="og:url" content="https://videostodoc.com/articles/extract-code-from-video-tutorial/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
+<meta property="og:image:alt" content="VideoDoc article: how to extract code from a video tutorial">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
@@ -23,11 +24,10 @@
 <link rel="stylesheet" href="../../article.css">
 
 <script>
-  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t)e.setAttribute('data-theme',t);}catch(x){}
-  var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',e.getAttribute('data-theme')==='dark'?'#0E1217':'#F4F5F7');})();
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to extract code from a video tutorial", "description": "Stop typing code from a paused video. Get sharp full HD captures of the editor at every step, beside the instructor's words, and the honest way to re-use them.", "datePublished": "2026-07-18", "dateModified": "2026-07-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/extract-code-from-video-tutorial/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to extract code from a video tutorial", "description": "Stop typing code from a paused video. Get sharp full HD captures of the editor at every step, beside the instructor's words, and the honest way to re-use them.", "datePublished": "2026-07-18", "dateModified": "2026-08-27", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/extract-code-from-video-tutorial/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can it give me the code as copyable text directly?", "acceptedAnswer": {"@type": "Answer", "text": "The document gives you the code as sharp images with the explanation. For text, retype from the readable capture or have your AI transcribe the image, then always test the result."}}, {"@type": "Question", "name": "What quality do the code captures come in?", "acceptedAnswer": {"@type": "Answer", "text": "Up to full HD 1080p with Best quality, which is the difference between reading an editor and guessing at one, provided the source video is HD."}}, {"@type": "Question", "name": "Does this work on long coding courses?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Feed a whole playlist and get one merged document or one per lesson, with the editor captured at every stage across the entire course."}}]}
@@ -50,6 +50,7 @@
     <a href="../../#features">Features</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
   <div class="navcta">
@@ -74,7 +75,7 @@
       <header class="art-head">
         <span class="cat">Guide</span>
         <h1>How to extract code from a video tutorial</h1>
-        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated July 18, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">&middot;</span><span>Updated August 27, 2026</span><span class="dotsep">&middot;</span><span>6 min read</span></div>
       </header>
 
       <div class="answer">
@@ -83,7 +84,7 @@
       </div>
 
       <div class="prose">
-        <p>Everyone who learned to code from YouTube knows the dance. Play, pause, squint at a blurry editor, type six characters, play, the instructor scrolls, pause, where did line 14 go. When I was learning Python this dance took more of my evening than the actual learning did, and one wrong squinted character meant twenty minutes of debugging an error the instructor never had.</p>
+        <p>Everyone who learned to code from YouTube knows the dance. Play, pause, squint at a blurry editor, type six characters, play, the instructor scrolls, pause, where did line 14 go. It is the same trap as <a href="../video-lecture-to-notes/">trying to take notes from a video lecture</a>: nobody can watch, understand and transcribe at the same time. When I was learning Python this dance took more of my evening than the actual learning did, and one wrong squinted character meant twenty minutes of debugging an error the instructor never had.</p>
 
         <h2 id="why-blurry">Why the paused frame betrays you</h2>
         <p>Video compression is built for motion, not for text. A paused frame of an editor is smeared exactly where the characters are, and if you watch at 720p, the small print is guesswork. Underscores vanish, colons become semicolons, zero and the letter O trade places. Code is the one content type where a single wrong character is fatal, carried by the one medium that cannot hold characters sharply.</p>
@@ -96,7 +97,7 @@
         <ol>
           <li><strong>Check the description first.</strong> Many instructors link a repo. The video teaches, the repo provides, and the document's job becomes navigation: find the concept, jump by timestamp, read the explanation.</li>
           <li><strong>Retype from the readable image.</strong> With a sharp capture on one monitor, retyping is fast, and honestly, retyping teaches. It is the squinting that was theft.</li>
-          <li><strong>Or let your AI transcribe the capture, then verify.</strong> Drop the PDF into ChatGPT or Claude and ask it to transcribe the code from the images. It does well on sharp captures, and you still run and test the result, because AI reading an image can make exactly the zero-versus-O mistakes you would. Trust, then compile.</li>
+          <li><strong>Or let your AI transcribe the capture, then verify.</strong> Drop the PDF into ChatGPT or Claude, which <a href="../feed-video-to-chatgpt-or-claude/">cannot watch the tutorial itself</a>, and ask it to transcribe the code from the images. It does well on sharp captures, and you still run and test the result, because AI reading an image can make exactly the zero-versus-O mistakes you would. Trust, then compile.</li>
         </ol>
 
         <div class="callout tested">
@@ -132,7 +133,7 @@
           </details>
         </div>
 
-        <p>Convert the tutorial you abandoned at the blurry part, and look at the capture of the exact moment that beat you. It was probably one character. It usually is.</p>
+        <p>Convert the tutorial you abandoned at the blurry part, and look at the capture of the exact moment that beat you. It was probably one character. It usually is. And if that tutorial was part of a series, <a href="../youtube-playlist-to-one-document/">turn the whole playlist into one document</a> while you are there.</p>
       </div>
 
       <section class="related">
