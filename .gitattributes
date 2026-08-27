@@ -1,0 +1,7 @@
+# The article program commits unattended every day. Without this, Windows
+# checkouts rewrite every file to CRLF and each night's diff is the whole
+# site instead of the one page that changed.
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.svg text eol=lf
