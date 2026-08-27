@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Run VideoDoc on your Mac: the one-time unlock</title>
+<meta name="description" content="VideoDoc on a Mac takes one pasted line, one time. Copy the line here, paste it in Terminal, and the app opens. After that you just double-click it.">
+<link rel="canonical" href="https://videostodoc.com/mac/">
+<meta property="og:title" content="Run VideoDoc on your Mac: the one-time unlock">
+<meta property="og:description" content="One pasted line, one time. Copy it here, paste it in Terminal, and VideoDoc opens.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://videostodoc.com/mac/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#F4F5F7">
+<link rel="stylesheet" href="../style.css">
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');try{var t=localStorage.getItem('vd-theme');if(t){e.setAttribute('data-theme',t);var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');}}catch(x){}})();
+</script>
+<style>
+  .tp{max-width:760px;margin:0 auto;padding:0 24px}
+  .mac-hero{text-align:center;padding-top:60px;position:relative}
+  .mac-hero .halo{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:min(760px,110vw);height:420px;background:var(--glow);pointer-events:none;z-index:-1}
+  .mac-hero h1{font-family:var(--font-display);font-size:clamp(32px,6vw,50px);font-weight:700;letter-spacing:-.03em;margin:18px 0 12px}
+  .mac-hero .lede{color:var(--text-2);font-size:17px;max-width:56ch;margin:0 auto}
+  .step{display:flex;gap:16px;align-items:flex-start;margin-top:26px;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow-xs)}
+  .step .n{flex:0 0 auto;width:40px;height:40px;border-radius:11px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:18px}
+  .step h2{font-family:var(--font-display);font-size:19px;margin:6px 0 6px}
+  .step p{color:var(--text-2);font-size:14.5px;line-height:1.6;margin:0}
+  .cmdbox{margin-top:12px;background:var(--ink-bg);border-radius:12px;overflow:hidden}
+  .cmdbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 12px;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.08)}
+  .cmdbar span{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8E96A0}
+  .copybtn{font-family:var(--font-mono);font-size:12.5px;font-weight:700;color:#fff;background:var(--accent);border:none;border-radius:8px;padding:10px 16px;cursor:pointer}
+  .copybtn:hover{filter:brightness(1.06)}
+  .cmdbox code{display:block;padding:14px 16px;font-family:var(--font-mono);font-size:13px;line-height:1.7;color:#E8ECF0;white-space:pre-wrap;word-break:break-all;user-select:all}
+  .why{margin:34px 0 0;background:var(--surface);border:1px solid var(--orange-line,#FFD8C4);border-radius:16px;padding:22px}
+  .why h2{font-family:var(--font-display);font-size:18px;margin:0 0 8px}
+  .why p{color:var(--text-2);font-size:14.5px;line-height:1.65;margin:0 0 10px}
+  .why p:last-child{margin-bottom:0}
+  .foot-cta{text-align:center;margin:44px 0 70px}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../">Home</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+  </div>
+</nav>
+
+<main id="main">
+  <div class="tp">
+    <section class="mac-hero">
+      <div class="halo"></div>
+      <span class="eyebrow"><span class="dot"></span> One paste, one time, then it is a normal app</span>
+      <h1>Run VideoDoc on your <span class="grad-text">Mac</span>.</h1>
+      <p class="lede">Apple blocks apps that are not registered with them, and that registration costs $99 a year. VideoDoc is a small independent tool, so instead you do a one-time 10 second unlock. Here it is, with a copy button. You need an Apple Silicon Mac (M1 or newer).</p>
+    </section>
+
+    <div class="step">
+      <span class="n">1</span>
+      <div>
+        <h2>Unzip the download</h2>
+        <p>Download the zip from your Gumroad receipt and double-click it to unzip. You get a folder with VideoDoc inside. You can leave it wherever you like, you do not need to move it.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="n">2</span>
+      <div>
+        <h2>Open Terminal</h2>
+        <p>Press <strong>Cmd+Space</strong>, type <strong>Terminal</strong>, press <strong>Return</strong>. A small text window opens. That is all you need it for.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <span class="n">3</span>
+      <div style="flex:1;min-width:0">
+        <h2>Paste one line, press Return</h2>
+        <p>If your download went to your Downloads folder (most do) and you did not rename it, copy this whole line, paste it into Terminal, and press Return. VideoDoc unblocks and opens by itself.</p>
+        <div class="cmdbox">
+          <div class="cmdbar"><span>Terminal · paste, then press Return</span><button class="copybtn" id="copy" type="button" aria-live="polite">Copy</button></div>
+          <code id="cmd">xattr -dr com.apple.quarantine ~/Downloads/VideoDoc_*_macOS/VideoDoc.app &amp;&amp; open ~/Downloads/VideoDoc_*_macOS/VideoDoc.app</code>
+        </div>
+        <p style="margin-top:10px">From now on, just double-click <strong>VideoDoc</strong>. No Terminal ever again. The first run downloads the speech engine once (up to ~500 MB); after that your own files work fully offline.</p>
+        <p style="margin-top:8px;font-size:13px;color:var(--text-3)">Got "no matches found" or "No such file"? Then VideoDoc is not in your Downloads folder. Type <strong>xattr -dr com.apple.quarantine</strong> and a space, then drag VideoDoc from Finder onto the Terminal window (drag it BEFORE you press Return), press Return, and double-click VideoDoc.</p>
+      </div>
+    </div>
+
+    <div class="why">
+      <h2>Why this step, honestly</h2>
+      <p>When you download any app, your Mac marks it as "from the internet" and only lets it run if the maker pays Apple $99 every year for a registration. VideoDoc has not paid that yet, so without this step your Mac shows a scary message that the app "is damaged." It is not damaged. That is just Apple's standard wording for unregistered apps.</p>
+      <p>The line you paste removes that internet mark from this one app only. It does not touch your Mac's protection, and please never turn that protection off for VideoDoc or any other app. If VideoDoc earns enough, I will pay Apple's registration and this page will be deleted, because the app will simply open.</p>
+      <p>Something not working? Reply to your Gumroad receipt with a screenshot and I will make it right.</p>
+    </div>
+
+    <div class="foot-cta">
+      <a class="btn solid big" href="https://designesh.gumroad.com/l/videodoc">Get VideoDoc Pro on Gumroad</a>
+    </div>
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="legal">
+      <span class="foot-brand">
+        <span class="mark" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+        <span class="wm">VideoDoc</span>
+      </span>
+      <span>© <span id="year">2026</span> Inam Ul Haq</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var doc=document.documentElement, b=document.getElementById('theme');
+    function cur(){return doc.getAttribute('data-theme')||'light';}
+    b&&b.addEventListener('click',function(){var n=cur()==='light'?'dark':'light';doc.setAttribute('data-theme',n);var m=document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',n==='dark'?'#0E1217':'#F4F5F7');try{localStorage.setItem('vd-theme',n);}catch(e){}});
+    var nav=document.getElementById('nav');
+    function s(){nav.classList.toggle('stuck',window.scrollY>8);}s();window.addEventListener('scroll',s,{passive:true});
+    var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+    var cp=document.getElementById('copy'), cmd=document.getElementById('cmd');
+    cp&&cp.addEventListener('click',function(){
+      var t=cmd.textContent.trim();
+      function ok(){cp.textContent='Copied!';setTimeout(function(){cp.textContent='Copy';},2000);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok);}
+      else{var r=document.createRange();r.selectNodeContents(cmd);var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');ok();}catch(e){}}
+    });
+  })();
+</script>
+</body>
+</html>

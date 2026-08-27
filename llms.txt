@@ -1,0 +1,18 @@
+# VideoDoc
+
+> VideoDoc turns any video into one document your AI can read. ChatGPT and Claude cannot watch videos, so VideoDoc gives them a timestamped transcript plus the on-screen slides, code and diagrams captured as images, built entirely on your own computer with nothing uploaded. The free version runs in the browser. Pro is the desktop app for Windows 10/11 and Apple Silicon Macs, $19 one time, use on 2 computers, 30 day money back.
+
+## Pages
+
+- [Home](https://videostodoc.com/): what VideoDoc is, features, pricing, FAQ
+- [Try free](https://videostodoc.com/try/): transcribe a video or audio file in your browser, nothing uploaded, no signup
+- [Articles](https://videostodoc.com/articles/): 20 guides on turning videos into documents, notes and transcripts for AI
+- [Mac first launch](https://videostodoc.com/mac/): the 10 second unlock for Apple Silicon Macs
+- [Get Pro](https://designesh.gumroad.com/l/videodoc): buy VideoDoc Pro on Gumroad, $19 one time
+
+## Facts
+
+- Link mode works with public videos from YouTube, TikTok, Instagram, Facebook and X, plus whole playlists.
+- Private or paywalled videos: save the file yourself and drop it in, everything runs locally.
+- Output is one document: a timestamped transcript plus the on-screen content captured as images.
+- One payment, no subscription, no metered usage, no account.
