@@ -267,9 +267,11 @@ def check_rendered(page: str, slug: str) -> None:
     for blob in re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', page, re.S):
         json.loads(blob)  # raises on malformed schema
 
-    if "{{" in page or "}}" in page:
-        leftover = re.findall(r"\{\{[A-Z_]+\}\}", page)
-        raise SpecError(f"template placeholders left unfilled: {leftover}")
+    # Match the placeholder token itself, not bare braces: nested JSON-LD ends
+    # in "}}" all the time, which made a naive brace check fail every run.
+    leftover = re.findall(r"\{\{[A-Z_]+\}\}", page)
+    if leftover:
+        raise SpecError(f"template placeholders left unfilled: {sorted(set(leftover))}")
 
     if page.count("<h1>") != 1:
         raise SpecError(f"page has {page.count('<h1>')} h1 tags, want exactly 1")
@@ -277,9 +279,16 @@ def check_rendered(page: str, slug: str) -> None:
     if f"/articles/{slug}/" not in page:
         raise SpecError("canonical url does not match the slug")
 
-    # Relative asset links must resolve from articles/<slug>/.
+    # Relative asset links must resolve from articles/<slug>/. Fragments and
+    # query strings are addresses within a page, not files, so they come off
+    # before the path is checked.
     for href in re.findall(r'(?:href|src)="(\.\./\.\./[^"]+)"', page):
-        target = (ARTICLES / slug / href).resolve()
+        path = href.split("#", 1)[0].split("?", 1)[0]
+        if not path or path.rstrip("/") in ("..", "../.."):
+            continue
+        target = (ARTICLES / slug / path).resolve()
+        if target.is_dir():
+            target = target / "index.html"
         if not target.exists():
             raise SpecError(f"relative link {href} resolves to a missing file: {target}")
 

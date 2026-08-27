@@ -1,0 +1,260 @@
+{
+  "_comment": [
+    "The article pipeline. One item is published per day, top of the list first.",
+    "Items are ordered by commercial intent, not by search volume: a page that",
+    "answers someone already holding a video they need converted is worth more",
+    "than a page that ranks. 'done' is stamped by the daily run so a resumed or",
+    "re-run job never publishes the same page twice.",
+    "",
+    "Fields:",
+    "  slug          the url segment, also the folder name under articles/",
+    "  keyword       the one phrase the page is built to answer",
+    "  angle         what makes this page different from the other 20",
+    "  hub_section   start | study | work | privacy",
+    "  category      Guide | Work | Study | Privacy | Compare",
+    "  done          publish date once live, null while queued"
+  ],
+
+  "queue": [
+    {
+      "slug": "extract-every-frame-from-a-video",
+      "keyword": "extract every frame from a video",
+      "angle": "The exhaustive case: 4 frames a second so nothing on screen can slip between two samples, byte-exact duplicate removal so a slide deck does not become 14,000 copies of the same slide, and a CSV index that maps every image back to its exact moment. Free browser tools cap out at low frame counts and short clips; this is the page for someone who needs all of it.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "video-to-images-only-no-transcript",
+      "keyword": "convert video to images only",
+      "angle": "For people who want the pictures and not the words at all. Covers the images-only export, the difference between keyframes and every frame, what resolution you actually get, and why a folder of JPEGs beats a video file when you are feeding an AI.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "blur-or-black-out-faces-in-video-frames",
+      "keyword": "black out faces in video screenshots",
+      "angle": "The GDPR-shaped problem: you need the screen recording but not the presenter's webcam bubble. Why solid black beats blurring (blur is reversible-ish and looks unfinished), why covering the whole cutout matters, and why doing it on your own machine is the only version that actually satisfies a privacy review.",
+      "hub_section": "privacy",
+      "category": "Privacy",
+      "done": null
+    },
+    {
+      "slug": "images-to-document-for-ai",
+      "keyword": "turn images into a document for AI",
+      "angle": "The reverse direction: you already have a folder of screenshots or photographed pages and you want one file your AI can read. Why dropping 40 images into a chat goes badly, and what a single ordered document fixes.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "screen-recording-to-documentation",
+      "keyword": "turn a screen recording into documentation",
+      "angle": "The internal-tooling case. A colleague recorded how to do the thing; you need it written down. Screen-first frame selection is the whole trick, because in a screen recording the screen carries the meaning.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "local-video-to-text-no-upload",
+      "keyword": "local video to text converter",
+      "angle": "For work you are not allowed to upload. What 'local' actually means technically, what still touches the network and what never does, and how to prove it to whoever is asking.",
+      "hub_section": "privacy",
+      "category": "Privacy",
+      "done": null
+    },
+    {
+      "slug": "video-to-pdf-with-screenshots",
+      "keyword": "video to PDF with screenshots",
+      "angle": "Distinct from the existing YouTube-to-PDF page: this one is about local files and about what makes screenshots inside a PDF actually readable by an AI, which is mostly resolution.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "extract-slides-from-a-recorded-webinar",
+      "keyword": "extract slides from a recorded webinar",
+      "angle": "Narrower and more commercial than the existing extract-slides page: the webinar case, where the deck was never shared and the recording is all you have.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "video-frames-to-csv-index",
+      "keyword": "video frame timestamps index",
+      "angle": "For people doing real analysis: what a frames index gives you that a folder of images does not, and how to jump from a row in a spreadsheet back to a moment in the video.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "mp4-to-text-offline-windows",
+      "keyword": "mp4 to text offline windows",
+      "angle": "The plainest possible query, answered plainly, for Windows specifically. Includes the honest speed numbers and what the first-run download is.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "how-many-frames-in-a-video",
+      "keyword": "how many frames are in a video",
+      "angle": "An informational page with a real calculator's worth of numbers: frame rate times duration, why 4 fps sampling is usually the right answer instead of all 30, and what the disk cost actually looks like.",
+      "hub_section": "work",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "deduplicate-video-frames",
+      "keyword": "remove duplicate frames from video",
+      "angle": "Why naive dedupe throws away real changes, why byte equality of JPEGs from one encode pass is both exact and safe, and why comparing only against the previous frame keeps an A to B to A sequence intact.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "lecture-recording-to-searchable-notes",
+      "keyword": "lecture recording to searchable notes",
+      "angle": "Sits beside the existing lecture-to-notes page but aims at searchability: the point is finding the one thing again in November, not reading it once in September.",
+      "hub_section": "study",
+      "category": "Study",
+      "done": null
+    },
+    {
+      "slug": "feed-a-long-video-to-claude",
+      "keyword": "give Claude a long video",
+      "angle": "Context-window shaped: what happens with a three hour video, how to split it, which parts to keep and what to drop first.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "video-to-sop-with-screenshots",
+      "keyword": "turn a video into an SOP with screenshots",
+      "angle": "More specific than the existing training-video-to-SOP page: this is about the screenshots being the SOP, with the words as captions.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "conference-talk-to-notes",
+      "keyword": "conference talk recording to notes",
+      "angle": "The talk you watched and half remember. Slide capture plus timestamps means you can cite the exact minute in a write-up.",
+      "hub_section": "study",
+      "category": "Study",
+      "done": null
+    },
+    {
+      "slug": "is-it-safe-to-upload-video-to-transcription-sites",
+      "keyword": "is it safe to upload video for transcription",
+      "angle": "An honest look at what a cloud transcription service can do with your file under its own terms, and where that matters: medical, legal, HR, unreleased product.",
+      "hub_section": "privacy",
+      "category": "Privacy",
+      "done": null
+    },
+    {
+      "slug": "video-to-markdown-for-obsidian",
+      "keyword": "video to markdown notes obsidian",
+      "angle": "For the notes-app crowd: markdown plus a local images folder, and why that beats a PDF if your notes live in Obsidian or Notion.",
+      "hub_section": "study",
+      "category": "Study",
+      "done": null
+    },
+    {
+      "slug": "batch-convert-videos-to-documents",
+      "keyword": "batch convert videos to documents",
+      "angle": "Point it at a folder and walk away. Queue behaviour, what happens when one video fails, and the tracker that shows a client where things stand.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "extract-text-from-video-screen-not-audio",
+      "keyword": "extract text shown on screen in a video",
+      "angle": "The distinction nobody explains: transcription hears the audio, it does not read the screen. What you actually need is the frames, then let your AI read them.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "vimeo-and-dailymotion-video-to-text",
+      "keyword": "vimeo video to text",
+      "angle": "Platform coverage beyond YouTube, honest about what needs a login and what does not.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "why-chatgpt-cannot-watch-your-video",
+      "keyword": "why can't ChatGPT watch a video",
+      "angle": "The explainer that earns the AI-search citation: what these models actually accept, why a link in the chat box is not the same as the model seeing the video, and what the working substitute is.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "video-to-document-vs-transcription-services",
+      "keyword": "video to document vs transcription service",
+      "angle": "An honest comparison page, including where the cloud services genuinely win: speaker diarisation, teams, and not owning a fast computer.",
+      "hub_section": "start",
+      "category": "Compare",
+      "done": null
+    },
+    {
+      "slug": "extract-code-snippets-from-a-coding-stream",
+      "keyword": "get code out of a coding video",
+      "angle": "Sits beside the existing extract-code page but aimed at long live streams, where the problem is finding the 4 minutes that matter in 6 hours.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "video-frames-for-ai-training-data",
+      "keyword": "extract video frames for AI dataset",
+      "angle": "The dataset-building case: sampling rate, dedupe, consistent naming, and face redaction as a compliance step rather than an aesthetic one.",
+      "hub_section": "privacy",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "how-to-cite-a-video-with-timestamps",
+      "keyword": "cite a video with timestamps",
+      "angle": "Academic and journalistic use: a timestamped transcript is a citable source, and the frame is the evidence.",
+      "hub_section": "study",
+      "category": "Study",
+      "done": null
+    },
+    {
+      "slug": "convert-video-to-word-document",
+      "keyword": "convert video to word document",
+      "angle": "High-volume plain query. Honest answer: you want markdown or PDF, and here is how to get to Word from there in one step if you truly need it.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "meeting-recording-to-minutes",
+      "keyword": "meeting recording to minutes",
+      "angle": "The screen-share half of a meeting is usually the half that matters, and pure transcription throws it away.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "transcribe-video-on-a-laptop-without-a-gpu",
+      "keyword": "transcribe video without a GPU",
+      "angle": "Realistic speed expectations on CPU only, which model to pick, and when captions make the whole question moot.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "urdu-and-hindi-video-to-text",
+      "keyword": "urdu video to text",
+      "angle": "Non-English handling, honestly: which model size you actually need, right-to-left rendering in the PDF, and where it still falls short.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    }
+  ]
+}
