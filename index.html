@@ -37,6 +37,31 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"VideoDoc","url":"https://videostodoc.com/"}
 </script>
+<style>
+  /* Section-local, so it cannot collide with the shared stylesheet. */
+  .demo-wrap{position:relative;max-width:940px;margin:0 auto;border-radius:18px;
+    overflow:hidden;border:1px solid var(--border);background:var(--surface);
+    box-shadow:var(--shadow-lg);aspect-ratio:16/10}
+  .demo-wrap video{display:block;width:100%;height:100%;object-fit:cover}
+  .demo-ph{position:absolute;inset:0;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:12px;text-align:center;
+    padding:38px 28px;background:var(--surface)}
+  .demo-mark{width:74px;height:74px;border-radius:20px;display:flex;
+    align-items:center;justify-content:center;background:var(--accent-solid,var(--accent));
+    color:#fff;box-shadow:var(--shadow-md)}
+  .demo-ph b{font-family:var(--font-display);font-size:19px;color:var(--text);letter-spacing:-.01em}
+  .demo-ph span:not(.demo-mark){color:var(--text-2);font-size:15px;line-height:1.7;max-width:56ch}
+  .demo-ph .btn{margin-top:6px}
+  .demo-hint{position:absolute;right:14px;bottom:14px;font-family:var(--font-mono);
+    font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:#fff;background:rgba(0,0,0,.62);padding:6px 11px;border-radius:99px;
+    backdrop-filter:blur(6px);pointer-events:none;transition:opacity .2s}
+  .demo-wrap:hover .demo-hint{opacity:0}
+  @media (max-width:640px){
+    .demo-wrap{aspect-ratio:4/3}
+    .demo-hint{content:none}
+  }
+</style>
 </head>
 <body>
 
@@ -120,6 +145,34 @@
         </div>
       </div>
     </header>
+
+
+    <!-- ===== SEE IT RUN ===== -->
+    <!-- The clip plays on hover and pauses when the pointer leaves, so nobody
+         has to commit to watching before they know what it is. It is muted and
+         loops, so it behaves like a moving screenshot rather than a video the
+         page decided to play at you. If demo.mp4 is not there yet, the branded
+         card below shows instead of an empty black frame. -->
+    <section id="demo" class="section">
+      <div class="sechead reveal">
+        <div class="kicker">See it run</div>
+        <h2>One video in, a folder of readable pages out.</h2>
+        <p>Recorded on my own PC, nothing sped up. Hover to play.</p>
+      </div>
+      <div class="demo-wrap reveal" id="demoWrap">
+        <video id="demoVideo" muted loop playsinline preload="metadata"
+               aria-label="VideoDoc turning a video into a document" hidden></video>
+        <div class="demo-ph" id="demoPlaceholder">
+          <span class="demo-mark" aria-hidden="true">
+            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/></svg>
+          </span>
+          <b>Paste a link, or drop a file you already have.</b>
+          <span>VideoDoc reads the words and watches the screen, then writes one document with both. Or skip the words entirely and take every frame as images.</span>
+          <a class="btn solid" href="try/">Try it free in your browser</a>
+        </div>
+        <div class="demo-hint" id="demoHint" hidden>Hover to play</div>
+      </div>
+    </section>
 
     <!-- ===== WORKS WITH ===== -->
     <section id="works" class="section">
@@ -567,6 +620,35 @@
     }, {rootMargin:'0px 0px -8% 0px', threshold:0.1});
     document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   }
+
+  /* The demo clip. Two rules. It only becomes visible once the file really
+     loads, so a missing demo.mp4 shows the brand card instead of a black box.
+     And it plays on hover rather than on load, because a video that starts
+     itself is a video people scroll past. Touch has no hover, so it gets a
+     tap toggle instead. */
+  (function(){
+    var w = document.getElementById('demoWrap'), v = document.getElementById('demoVideo'),
+        ph = document.getElementById('demoPlaceholder'), hint = document.getElementById('demoHint');
+    if(!w || !v || !ph) return;
+    [['assets/demo.mp4','video/mp4'], ['assets/demo.webm','video/webm']].forEach(function(s){
+      var e = document.createElement('source'); e.src = s[0]; e.type = s[1]; v.appendChild(e);
+    });
+    v.addEventListener('loadedmetadata', function(){
+      v.hidden = false; ph.hidden = true; if(hint) hint.hidden = false;
+    });
+    var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
+    function play(){ if(!v.hidden){ var pr = v.play(); if(pr && pr.catch) pr.catch(function(){}); } }
+    function stop(){ if(!v.hidden){ v.pause(); } }
+    if(coarse){
+      if(hint) hint.textContent = 'Tap to play';
+      w.addEventListener('click', function(){ v.paused ? play() : stop(); });
+    } else {
+      w.addEventListener('mouseenter', play);
+      w.addEventListener('mouseleave', stop);
+      w.addEventListener('focusin', play);
+      w.addEventListener('focusout', stop);
+    }
+  })();
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
