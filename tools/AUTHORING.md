@@ -37,6 +37,9 @@ target. In short:
   lecture that made no sense a month later, the friend who pressed Return
   before dragging the file. Never invent an anecdote that could be checked
   and found false; keep them about the tool and the work.
+- **Never an em dash.** Not one appears in his own writing, and it is the
+  clearest signal a line was not typed by him. Use a comma, a colon, or two
+  sentences. The same goes for the `--` and `&mdash;` forms.
 - **No hype.** Not "revolutionary", not "seamless", not "game-changing". The
   product is a small honest desktop tool and the writing should sound like it.
 - **Never promise what the app does not do.** Cross-check any capability claim

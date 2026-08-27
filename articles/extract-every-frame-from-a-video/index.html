@@ -117,9 +117,9 @@
         <p>Every image is named with the moment it came from, so the file name is the index:</p>
 
         <ul>
-          <li><code>frame_000123_00h01m45.50s.jpg</code> — the 123rd saved frame, at 1 minute 45.5 seconds.</li>
-          <li><code>frames_index.csv</code> — every saved frame with its timestamp, so you can sort, filter, and jump straight back to a moment in the video.</li>
-          <li><code>README.txt</code> — the source resolution, the sampling rate, and whether dedupe was applied, written at the time of the run.</li>
+          <li><code>frame_000123_00h01m45.50s.jpg</code>: the 123rd saved frame, at 1 minute 45.5 seconds.</li>
+          <li><code>frames_index.csv</code>: every saved frame with its timestamp, so you can sort, filter, and jump straight back to a moment in the video.</li>
+          <li><code>README.txt</code>: the source resolution, the sampling rate, and whether dedupe was applied, written at the time of the run.</li>
         </ul>
 
         <p>That last file matters more than it looks. Six months later, a folder of 3,000 JPEGs with no record of how they were made is close to useless as evidence of anything.</p>
@@ -128,11 +128,11 @@
 
         <p>Screen recordings usually carry the presenter's webcam bubble in a corner. If those frames are going into a shared drive, a dataset, or anywhere a privacy review will look at them, that face is a problem you have to solve before you send them, not after.</p>
 
-        <p>There is a second tick for it. Every human face in the saved frames is filled with solid black — not blurred, not cropped — covering the whole webcam cutout it sits in, whatever shape that is. The slides and code underneath are untouched. It runs on your own machine, and when it finishes it tells you both how many faces it covered and how many images had none, so a miss is never silent.</p>
+        <p>There is a second tick for it. Every human face in the saved frames is filled with solid black, not blurred and not cropped, covering the whole webcam cutout it sits in, whatever shape that is. The slides and code underneath are untouched. It runs on your own machine, and when it finishes it tells you both how many faces it covered and how many images had none, so a miss is never silent.</p>
 
         <div class="callout">
           <span class="lbl">Honest limits</span>
-          <p>This is the heavy option and the app warns you before it starts, because how long it takes depends entirely on your computer. Frames come out as JPEG, not PNG — for screen text at the quality level used that is a difference you will not see, but if you need lossless output this is not the tool. And extracting frames needs the actual video file, so a text-only job that would normally skip the download has to download it.</p>
+          <p>This is the heavy option and the app warns you before it starts, because how long it takes depends entirely on your computer. Frames come out as JPEG, not PNG. For screen text at the quality level used that is a difference you will not see, but if you need lossless output this is not the tool. And extracting frames needs the actual video file, so a text-only job that would normally skip the download has to download it.</p>
         </div>
 
         <h2 id="getting-only-the-images-without-the-document">Getting only the images, without the document</h2>
@@ -156,7 +156,7 @@
 
         <p>I would rather say this plainly than pretend otherwise. If you have a 30 second clip and you want a handful of stills, open a browser tool, drop the file in, and take the images. It costs nothing and it takes a minute.</p>
 
-        <p>The line is roughly here: once the video is longer than a few minutes, once the resolution has to stay high enough to read text inside the picture, once you need the timestamps to be trustworthy, or once the file is something you are not allowed to upload — that is when a tool running on your own machine stops being a preference and starts being the only option.</p>
+        <p>The line is roughly here: once the video is longer than a few minutes, once the resolution has to stay high enough to read text inside the picture, once you need the timestamps to be trustworthy, or once the file is something you are not allowed to upload. That is when a tool running on your own machine stops being a preference and starts being the only option.</p>
 
         <h2 id="faq-h">Quick questions</h2>
         <div class="faq" id="faqlist">
