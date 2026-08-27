@@ -14,7 +14,6 @@
     "  category      Guide | Work | Study | Privacy | Compare",
     "  done          publish date once live, null while queued"
   ],
-
   "queue": [
     {
       "slug": "extract-every-frame-from-a-video",
@@ -22,7 +21,7 @@
       "angle": "The exhaustive case: 4 frames a second so nothing on screen can slip between two samples, byte-exact duplicate removal so a slide deck does not become 14,000 copies of the same slide, and a CSV index that maps every image back to its exact moment. Free browser tools cap out at low frame counts and short clips; this is the page for someone who needs all of it.",
       "hub_section": "work",
       "category": "Work",
-      "done": null
+      "done": "2026-08-28"
     },
     {
       "slug": "video-to-images-only-no-transcript",
