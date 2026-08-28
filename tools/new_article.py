@@ -43,8 +43,9 @@ CATEGORIES = {"Guide", "Work", "Study", "Privacy", "Compare"}
 
 # Body block types the spec may use. Anything else aborts the run - an unknown
 # block would otherwise vanish from the page without a word.
-BLOCK_TYPES = {"h2", "p", "ul", "ol", "callout", "cta", "steps"}
+BLOCK_TYPES = {"h2", "p", "ul", "ol", "callout", "cta", "steps", "image", "stats"}
 
+ALLOW_REPLACE = False
 MAX_TITLE = 60
 MAX_DESC = 160
 
@@ -126,6 +127,30 @@ def render_body(spec: dict) -> str:
                 f'          <p>{inline(b["text"])}</p>\n'
                 "        </div>"
             )
+        elif t == "image":
+            # A real screenshot, with a caption that says what it is. Lazy and
+            # async so a page full of them still loads fast, and width/height
+            # are required so nothing jumps as they arrive.
+            cap = b.get("caption")
+            fig = ['        <figure class="shot">',
+                   f'          <img src="{esc(b["src"])}"'
+                   f' alt="{html.escape(b["alt"], quote=True)}"'
+                   f' width="{b.get("w", 945)}" height="{b.get("h", 1012)}"'
+                   ' loading="lazy" decoding="async">']
+            if cap:
+                fig.append(f"          <figcaption>{inline(cap)}</figcaption>")
+            fig.append("        </figure>")
+            parts.append("\n".join(fig))
+        elif t == "stats":
+            # The numbers, as the thing the eye lands on. Each one counts up
+            # when it scrolls into view; with no JS they are simply there.
+            cells = "\n".join(
+                f'            <div class="stat">'
+                f'<span class="n" data-to="{i["n"]}">{i["n"]}</span>'
+                f'<span class="l">{esc(i["label"])}</span></div>'
+                for i in b["items"])
+            parts.append('        <div class="statgrid" data-count>\n'
+                         + cells + "\n        </div>")
         elif t == "cta":
             parts.append(
                 '        <div class="ctabox">\n'
@@ -221,8 +246,8 @@ def validate(spec: dict, index: dict) -> None:
     slug = spec["slug"]
     if slug != slugify(slug):
         raise SpecError(f"slug {slug!r} is not url-clean (want {slugify(slug)!r})")
-    if (ARTICLES / slug).exists():
-        raise SpecError(f"articles/{slug}/ already exists - pick a new slug or delete it first")
+    if (ARTICLES / slug).exists() and not ALLOW_REPLACE:
+        raise SpecError(f"articles/{slug}/ already exists - pass --replace to rewrite it")
 
     if len(spec["title_tag"]) > MAX_TITLE:
         raise SpecError(f"title_tag is {len(spec['title_tag'])} chars, max {MAX_TITLE}")
@@ -282,6 +307,13 @@ def check_rendered(page: str, slug: str) -> None:
     # Relative asset links must resolve from articles/<slug>/. Fragments and
     # query strings are addresses within a page, not files, so they come off
     # before the path is checked.
+    for src in re.findall(r'<img src="([^"]+)"', page):
+        if src.startswith(("http://", "https://", "data:")):
+            continue
+        target = (ARTICLES / slug / src).resolve()
+        if not target.exists():
+            raise SpecError(f"image {src} does not exist at {target}")
+
     for href in re.findall(r'(?:href|src)="(\.\./\.\./[^"]+)"', page):
         path = href.split("#", 1)[0].split("?", 1)[0]
         if not path or path.rstrip("/") in ("..", "../.."):
@@ -480,6 +512,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("spec", nargs="?", help="path to the article spec JSON")
     ap.add_argument("--check", action="store_true", help="validate and render, write nothing")
+    ap.add_argument("--replace", action="store_true",
+                    help="rewrite an article that already exists (keeps its url)")
     ap.add_argument("--verify-site", action="store_true", help="audit the whole site and exit")
     ap.add_argument("--date", default=date.today().isoformat(), help="publish date (YYYY-MM-DD)")
     args = ap.parse_args()
@@ -489,6 +523,8 @@ def main() -> int:
     if not args.spec:
         ap.error("give a spec file, or use --verify-site")
 
+    global ALLOW_REPLACE
+    ALLOW_REPLACE = args.replace
     spec = json.loads(Path(args.spec).read_text(encoding="utf-8"))
     index = scan_articles()
 
@@ -497,8 +533,9 @@ def main() -> int:
         page = build_page(spec, index, args.date)
         check_rendered(page, spec["slug"])
         minutes = read_minutes(spec)
-        hub = insert_hub_card(spec, minutes)
-        sitemap = insert_sitemap(spec["slug"], args.date)
+        existed = (ARTICLES / spec["slug"]).exists()
+        hub = None if existed else insert_hub_card(spec, minutes)
+        sitemap = None if existed else insert_sitemap(spec["slug"], args.date)
         backlinks = add_backlinks(spec, index, minutes)
     except (SpecError, KeyError, json.JSONDecodeError) as e:
         print(f"ABORTED, nothing written: {e}", file=sys.stderr)
@@ -511,17 +548,22 @@ def main() -> int:
         return 0
 
     out = ARTICLES / spec["slug"]
-    out.mkdir(parents=True)
+    rewritten = out.exists()
+    out.mkdir(parents=True, exist_ok=True)
     (out / "index.html").write_text(page, encoding="utf-8", newline="\n")
-    HUB.write_text(hub, encoding="utf-8", newline="\n")
-    SITEMAP.write_text(sitemap, encoding="utf-8", newline="\n")
+    # A rewrite keeps the hub card and sitemap row it already has; adding them
+    # again would give the article two of each.
+    if not rewritten:
+        HUB.write_text(hub, encoding="utf-8", newline="\n")
+        SITEMAP.write_text(sitemap, encoding="utf-8", newline="\n")
     for path, text in backlinks.items():
         path.write_text(text, encoding="utf-8", newline="\n")
 
-    print(f"published articles/{spec['slug']}/ · {minutes} min read")
-    print(f"  hub card added to the '{spec['hub_section']}' section")
-    print(f"  sitemap entry added ({args.date})")
-    print(f"  inbound links added from: {', '.join(p.parent.name for p in backlinks)}")
+    print(f"{'rewrote' if rewritten else 'published'} articles/{spec['slug']}/ · {minutes} min read")
+    if not rewritten:
+        print(f"  hub card added to the '{spec['hub_section']}' section")
+        print(f"  sitemap entry added ({args.date})")
+    print(f"  inbound links added from: {', '.join(p.parent.name for p in backlinks) or '(already linked)'}")
     return verify_site()
 
 

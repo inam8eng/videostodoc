@@ -285,3 +285,67 @@
   .prose p { font-size: 16px; }
   .ctabox { padding: 24px 20px; }
 }
+
+/* ---- screenshots in an article -------------------------------------------
+   A real picture of the thing beats any description of it, but only if it is
+   readable. The frame keeps it off the page background so a light screenshot
+   on a light page still reads as a picture and not as part of the layout. */
+.prose .shot {
+  margin: 26px 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface-sunk);
+  padding: 10px;
+  box-shadow: var(--shadow-sm);
+}
+.prose .shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.prose .shot figcaption {
+  margin-top: 10px;
+  padding: 0 4px 2px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* ---- the numbers ---------------------------------------------------------
+   These are the whole argument, so they get to be the biggest thing on the
+   page. They count up once when scrolled into view; without JS, or with
+   reduced motion asked for, the final number is simply already there. */
+.prose .statgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 26px 0;
+}
+.prose .stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 16px;
+  box-shadow: var(--shadow-xs);
+}
+.prose .stat .n {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 4.2vw, 32px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+.prose .stat .l {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
