@@ -15,9 +15,9 @@
   height: 2.75rem;
   display: grid;
   place-items: center;
-  border: 1px solid var(--accent-line, #CFE4F6);
+  border: 1px solid var(--orange-line,#CFE4F6);
   border-radius: 0.875rem;
-  background: var(--accent-wash, #EFF8FE);
+  background: var(--orange-wash,#EFF8FE);
   flex: 0 0 auto;
 }
 

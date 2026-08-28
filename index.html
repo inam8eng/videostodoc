@@ -44,17 +44,52 @@
   .trustrow .vd-icon{width:1.125rem;height:1.125rem}
   .hero-visual{max-width:860px;margin:34px auto 0;border-radius:18px;overflow:hidden;
     border:1px solid var(--border);background:var(--surface);box-shadow:var(--shadow-lg)}
-  .hero-visual img{display:block;width:100%;height:auto}
+  .hero-visual .flow{display:block;width:100%;height:auto;background:var(--surface-sunk)}
+  .flow .tile{fill:var(--surface);stroke:var(--border)}
+  .flow .glyph{fill:var(--slate-muted);font:700 12px var(--font-mono);text-anchor:middle}
+  .flow .vidcard{fill:var(--surface);stroke:var(--text);stroke-width:2}
+  .flow .vidscreen{fill:var(--orange-wash,#E3F3FD)}
+  .flow .vidtrack{stroke:var(--line-2);stroke-width:4;stroke-linecap:round}
+  .flow .acc-line{stroke:var(--orange);stroke-width:4;stroke-linecap:round}
+  .flow .acc-fill{fill:var(--orange)}
+  .flow .nodecirc{fill:var(--surface);stroke:var(--orange);stroke-width:2.5;stroke-dasharray:10 7;stroke-linecap:round}
+  .flow .fa-line{fill:none;stroke:var(--orange);stroke-width:2.2;stroke-linecap:round}
+  .flow .outcard{fill:var(--surface);stroke:var(--border)}
+  .flow .icobox{fill:var(--orange-wash,#E3F3FD)}
+  .flow .oicon{color:var(--text)}
+  .flow .olabel{fill:var(--text);font:700 17px var(--font-mono)}
+  /* timeline (kit storyboard): video in, node, three outputs, sources, download, hold */
+  .fa-vid{opacity:0;animation:fa-slide .8s ease-out .7s both}
+  .fa-node{opacity:0;animation:fa-pop .6s ease-out 1.5s both}
+  .fa-line{stroke-dasharray:1;stroke-dashoffset:1}
+  .fa-l1{animation:fa-draw .7s ease-out 2.2s both}
+  .fa-l2{animation:fa-draw .7s ease-out 3.2s both}
+  .fa-l3{animation:fa-draw .7s ease-out 4.2s both}
+  .fa-l4{animation:fa-draw .7s ease-out 6.2s both}
+  .fa-out{opacity:0}
+  .fa-c1{animation:fa-pop .5s ease-out 2.6s both}
+  .fa-c2{animation:fa-pop .5s ease-out 3.6s both}
+  .fa-c3{animation:fa-pop .5s ease-out 4.6s both}
+  .fa-c4{animation:fa-pop .5s ease-out 6.6s both}
+  .fa-src{opacity:0;animation:fa-fade .6s ease-out 5.2s both}
+  @keyframes fa-slide{from{opacity:0;transform:translateX(-22px)}to{opacity:1;transform:none}}
+  @keyframes fa-pop{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+  @keyframes fa-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+  @keyframes fa-fade{from{opacity:0}to{opacity:1}}
+  @media (prefers-reduced-motion: reduce){
+    .fa-vid,.fa-node,.fa-out,.fa-src{animation:none;opacity:1;transform:none}
+    .fa-line{animation:none;stroke-dashoffset:0}
+  }
   .chiprow{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
   .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:99px;
-    border:1px solid var(--accent-line,#AFD9F6);background:var(--accent-wash,#E3F3FD);
+    border:1px solid var(--orange-line,#AFD9F6);background:var(--orange-wash,#E3F3FD);
     font-size:13.5px;font-weight:600;color:var(--text)}
   .chip .vd-icon{width:1.05rem;height:1.05rem}
   .step .vd-icon-tile{margin-bottom:12px}
   .uses{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:12px}
   .usecard{display:flex;align-items:center;gap:13px;padding:15px 17px;border-radius:14px;
     border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:600;font-size:15px}
-  .usecard:hover{border-color:var(--accent-line,#AFD9F6);color:var(--text)}
+  .usecard:hover{border-color:var(--orange-line,#AFD9F6);color:var(--text)}
   .usecard .go{margin-left:auto;color:var(--text-3)}
   .plan-note{max-width:640px;margin:18px auto 0;text-align:center;font-size:13.5px;color:var(--text-2)}
   .plan-note.android{margin-top:8px;color:var(--text-3)}
@@ -109,11 +144,62 @@
         <span><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#download"></use></svg>No subscription</span>
       </div>
       <div class="hero-visual">
-        <picture>
-          <source type="image/avif" srcset="assets/art/videodoc-hero-720.avif 720w, assets/art/videodoc-hero-1280.avif 1280w" sizes="(max-width: 900px) 100vw, 860px">
-          <source type="image/webp" srcset="assets/art/videodoc-hero-720.webp 720w, assets/art/videodoc-hero-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 860px">
-          <img src="assets/art/videodoc-hero-1280.webp" width="1280" height="720" alt="A video player becoming a searchable document with transcript lines and captured slides" decoding="async" fetchpriority="high">
-        </picture>
+        <svg class="flow" viewBox="0 0 960 540" role="img" aria-label="A video from YouTube, Facebook, TikTok, Instagram or X goes through VideoDoc and comes out as a transcript, every frame, a visual transcript with images, or a downloaded file">
+          <!-- platform sources -->
+          <g class="fa-src">
+            <g transform="translate(38,150)"><rect class="tile" width="34" height="34" rx="9"/><text class="glyph" x="17" y="22">YT</text></g>
+            <g transform="translate(38,205)"><rect class="tile" width="34" height="34" rx="9"/><text class="glyph" x="17" y="22">FB</text></g>
+            <g transform="translate(38,260)"><rect class="tile" width="34" height="34" rx="9"/><text class="glyph" x="17" y="22">TT</text></g>
+            <g transform="translate(38,315)"><rect class="tile" width="34" height="34" rx="9"/><text class="glyph" x="17" y="22">IG</text></g>
+            <g transform="translate(38,370)"><rect class="tile" width="34" height="34" rx="9"/><text class="glyph" x="17" y="22">X</text></g>
+          </g>
+          <!-- the video -->
+          <g class="fa-vid">
+            <rect x="102" y="196" width="208" height="148" rx="16" class="vidcard"/>
+            <rect x="118" y="212" width="176" height="92" rx="10" class="vidscreen"/>
+            <path d="M196 242l26 16-26 16z" class="acc-fill"/>
+            <line x1="122" y1="322" x2="290" y2="322" class="vidtrack"/>
+            <line x1="122" y1="322" x2="216" y2="322" class="acc-line"/>
+            <circle cx="216" cy="322" r="5" class="acc-fill"/>
+          </g>
+          <!-- processing node -->
+          <g class="fa-node">
+            <circle cx="452" cy="270" r="36" class="nodecirc"/>
+            <circle cx="438" cy="278" r="3.2" class="acc-fill"/>
+            <circle cx="452" cy="282" r="3.2" class="acc-fill"/>
+            <circle cx="466" cy="278" r="3.2" class="acc-fill"/>
+          </g>
+          <!-- connectors -->
+          <path class="fa-line fa-l1" d="M478 244 C 540 190, 560 130, 604 96" pathLength="1"/>
+          <path class="fa-line fa-l2" d="M488 262 C 545 240, 560 225, 604 216" pathLength="1"/>
+          <path class="fa-line fa-l3" d="M488 280 C 545 300, 560 315, 604 328" pathLength="1"/>
+          <path class="fa-line fa-l4" d="M478 296 C 540 350, 560 410, 604 446" pathLength="1"/>
+          <!-- outputs -->
+          <g transform="translate(610,62)"><g class="fa-out fa-c1">
+            <rect class="outcard" width="266" height="66" rx="13"/>
+            <rect class="icobox" x="14" y="14" width="38" height="38" rx="10"/>
+            <svg class="oicon" x="21" y="21" width="24" height="24"><use href="assets/icons/videodoc-icons.svg#transcript"></use></svg>
+            <text class="olabel" x="66" y="40">Transcript</text>
+          </g></g>
+          <g transform="translate(610,182)"><g class="fa-out fa-c2">
+            <rect class="outcard" width="266" height="66" rx="13"/>
+            <rect class="icobox" x="14" y="14" width="38" height="38" rx="10"/>
+            <svg class="oicon" x="21" y="21" width="24" height="24"><use href="assets/icons/videodoc-icons.svg#frames-grid"></use></svg>
+            <text class="olabel" x="66" y="40">Every frame</text>
+          </g></g>
+          <g transform="translate(610,294)"><g class="fa-out fa-c3">
+            <rect class="outcard" width="266" height="66" rx="13"/>
+            <rect class="icobox" x="14" y="14" width="38" height="38" rx="10"/>
+            <svg class="oicon" x="21" y="21" width="24" height="24"><use href="assets/icons/videodoc-icons.svg#document-images"></use></svg>
+            <text class="olabel" x="66" y="40">Visual Transcript</text>
+          </g></g>
+          <g transform="translate(610,412)"><g class="fa-out fa-c4">
+            <rect class="outcard" width="266" height="66" rx="13"/>
+            <rect class="icobox" x="14" y="14" width="38" height="38" rx="10"/>
+            <svg class="oicon" x="21" y="21" width="24" height="24"><use href="assets/icons/videodoc-icons.svg#download"></use></svg>
+            <text class="olabel" x="66" y="40">Download</text>
+          </g></g>
+        </svg>
       </div>
     </header>
 
@@ -142,7 +228,7 @@
       </div>
       <div class="chiprow">
         <span class="chip"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#transcript"></use></svg>Transcript + timestamps</span>
-        <span class="chip"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#slides"></use></svg>Slides and code</span>
+        <span class="chip"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#document-images"></use></svg>Visual Transcript: words + screen</span>
         <span class="chip"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#playlist-document"></use></svg>Whole playlists</span>
         <span class="chip"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#private-local"></use></svg>100% local</span>
       </div>
