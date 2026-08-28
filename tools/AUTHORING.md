@@ -137,3 +137,12 @@ On top of the day's article:
   changes belong in their own commit, reviewed by a human.
 - Do not let the queue run dry silently. When fewer than 7 items remain, say so
   in the commit message.
+
+## Article images
+
+Every article gets its own banner, drawn by `tools/make_article_art.py` from the
+slug in the site's flat-vector blue style. `new_article.py` runs it automatically
+at publish time, so a new article always ships with a matching image. To redraw
+them all after a style change: `py -3.12 tools/make_article_art.py`. A spec can
+point at a hand-made image instead with `"hero": "some-file.jpg"` (a filename in
+`assets/art/`).

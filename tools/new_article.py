@@ -328,29 +328,14 @@ def check_rendered(page: str, slug: str) -> None:
 # ---------------------------------------------------------------- writers
 
 
-# The three on-brand concept banners, chosen by what the article is about.
-# A spec can override with an explicit "hero" (a filename in assets/art/).
-_HERO_ALT = {
-    "frames-grid.jpg": "One video turning into many still image frames",
-    "channel-to-document.jpg": "Many videos merging into one document with images",
-    "video-to-document.jpg": "A video turning into a document with text and images",
-}
-
-
 def _hero_for(spec: dict) -> str:
-    img = spec.get("hero")
-    if not img:
-        s = spec["slug"]
-        if any(k in s for k in ("frame", "images-only", "slides", "deduplicate", "csv-index")):
-            img = "frames-grid.jpg"
-        elif any(k in s for k in ("channel", "playlist", "batch", "sop", "webinar", "course", "long-video")):
-            img = "channel-to-document.jpg"
-        else:
-            img = "video-to-document.jpg"
-    alt = _HERO_ALT.get(img, "VideoDoc")
+    # Every article gets its OWN banner, drawn by make_article_art.py from the
+    # slug. A spec may override with an explicit "hero" filename in assets/art/.
+    img = spec.get("hero") or f'{spec["slug"]}.jpg'
     return ('\n    <figure class="arthero">\n'
-            f'      <img src="../../assets/art/{img}" alt="{alt}"'
-            ' width="1280" height="714" loading="eager" decoding="async">\n'
+            f'      <img src="../../assets/art/{img}"'
+            ' alt="VideoDoc illustration for this guide"'
+            ' width="1280" height="720" loading="eager" decoding="async">\n'
             '    </figure>')
 
 
@@ -578,6 +563,18 @@ def main() -> int:
     rewritten = out.exists()
     out.mkdir(parents=True, exist_ok=True)
     (out / "index.html").write_text(page, encoding="utf-8", newline="\n")
+
+    # Draw this article's banner unless the spec pointed at an existing one.
+    if not spec.get("hero"):
+        try:
+            import make_article_art
+            art = ROOT / "assets" / "art" / f"{spec['slug']}.jpg"
+            art.parent.mkdir(parents=True, exist_ok=True)
+            make_article_art.render(spec["slug"], art)
+            print(f"  banner drawn: assets/art/{spec['slug']}.jpg")
+        except Exception as e:
+            print(f"  WARNING: could not draw the banner ({e}); "
+                  f"run tools/make_article_art.py by hand")
     # A rewrite keeps the hub card and sitemap row it already has; adding them
     # again would give the article two of each.
     if not rewritten:
