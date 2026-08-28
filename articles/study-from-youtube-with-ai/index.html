@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">study-from-youtube-with-ai</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/study-from-youtube-with-ai.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/study-from-youtube-with-ai-640.avif 640w, ../../assets/art/study-from-youtube-with-ai-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/study-from-youtube-with-ai-640.webp 640w, ../../assets/art/study-from-youtube-with-ai-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/study-from-youtube-with-ai.jpg" alt="A YouTube video turning into a timestamped study document that an AI tutor then quizzes you from" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,18 +91,62 @@
         <p>The setup: turn the video into a document with VideoDoc on your own computer, then load that document into the AI you already use, ChatGPT, Claude or NotebookLM, and study by conversation: summaries, quizzes, explain-it-again requests, all citing timestamps. Video in, understanding out, and the video never gets watched twice.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>Queue promising videos through the day instead of watching them, then convert the queue with VideoDoc while you do other work.</li>
+        <li>Skim the captures, read the transcript fast, then hand the document to ChatGPT, Claude or NotebookLM for quizzes and explanations that cite timestamps.</li>
+        <li>Keep reading sacred: converting is automatic, but a document left unread teaches nothing.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#setup">The daily loop</a>
+        <a href="#prompts">The prompts</a>
+        <a href="#costs">The honest costs</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>Almost everything new I have learned in the last few years started as a YouTube video. Excel tricks that became client work, Python, Blender, tools for my day job as a business analyst. YouTube is my university. But raw watching is a leaky bucket, and I got tired of knowledge draining out by the weekend, so I built a system around it. This is the whole thing, honestly, including the boring parts.</p>
 
-        <h2 id="setup">The daily loop, four moves</h2>
-        <ol>
-          <li><strong>Collect, do not watch.</strong> Through the day, promising videos go into a queue, not into my eyes, and a paid course goes in the same way when I want it as <a href="../course-video-to-study-notes/">study notes I can search</a>. Watching on discovery is how an afternoon disappears.</li>
-          <li><strong>Convert in the gaps.</strong> The queue goes through VideoDoc while I do other work, and <a href="../youtube-playlist-to-one-document/">a whole playlist can go in as one document</a>. Each video becomes a PDF and Markdown file on my machine: timestamped words plus the on-screen content as images. My machine does the watching.</li>
-          <li><strong>Read first, ten minutes.</strong> I skim the captures for the skeleton, then read the transcript fast. Reading is more than twice the speed of listening, and skimming text is instant in a way skimming video never is.</li>
-          <li><strong>Then talk to it.</strong> The document goes to the AI, and this is where studying actually happens.</li>
-        </ol>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#document-ai"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="setup">The daily loop, four moves</h2>
+              <p class="step-summary">The loop that replaced my watching habit, four moves long.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><strong>Collect, do not watch.</strong> Through the day, promising videos go into a queue, not into my eyes, and a paid course goes in the same way when I want it as <a href="../course-video-to-study-notes/">study notes I can search</a>. Watching on discovery is how an afternoon disappears.</li>
+            <li><strong>Convert in the gaps.</strong> The queue goes through VideoDoc while I do other work, and <a href="../youtube-playlist-to-one-document/">a whole playlist can go in as one document</a>. Each video becomes a PDF and Markdown file on my machine: timestamped words plus the on-screen content as images. My machine does the watching.</li>
+            <li><strong>Read first, ten minutes.</strong> I skim the captures for the skeleton, then read the transcript fast. Reading is more than twice the speed of listening, and skimming text is instant in a way skimming video never is.</li>
+            <li><strong>Then talk to it.</strong></li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The document goes to the AI, and this is where studying actually happens.</p>
+        </section>
 
-        <h2 id="prompts">The prompts that pull their weight</h2>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#study-notes"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="prompts">The prompts that pull their weight</h2>
+              <p class="step-summary">The timestamp citations are the trust anchor.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>When the AI says I got question 6 wrong, the timestamp takes me to the exact minute of the video to see for myself, so the AI stays a tutor and never becomes an oracle.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Every answer carries a timestamp, so you can jump back to the exact minute and verify it with your own eyes.</p>
+        </section>
         <pre><code>Explain the main idea of this video to me like I
 know the basics but missed this topic. Then list
 what the speaker assumes I already know.</code></pre>
@@ -108,10 +156,27 @@ Cite the timestamp with every correction.</code></pre>
         <pre><code>I want to apply this tomorrow. Turn the advice
 into a checklist in order, and flag any step the
 video skipped over too quickly.</code></pre>
-        <p>The timestamp citations are the trust anchor. When the AI says I got question 6 wrong, the timestamp takes me to the exact minute of the video to see for myself, so the AI stays a tutor and never becomes an oracle.</p>
 
-        <h2 id="costs">The honest costs</h2>
-        <p>Converting is not instant, minutes per video depending on your machine, which is why the queue runs while I work. The AI chat costs whatever your existing plan costs, the documents add nothing because they are built locally, which is exactly why local tools come out the way they do in <a href="../best-video-to-text-converters/">my comparison of video to text converters</a>. And the method has a failure mode: converting can become its own procrastination. A document you never read is the same as a video you never watched. The system works when reading stays sacred and everything else stays automatic.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#free-unlock"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="costs">The honest costs</h2>
+              <p class="step-summary">Converting is not instant, minutes per video depending on your machine, which is why the queue runs while I work.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>The AI chat costs whatever your existing plan costs, the documents add nothing because they are built locally, which is exactly why local tools come out the way they do in <a href="../best-video-to-text-converters/">my comparison of video to text converters</a>.</li>
+            <li>And the method has a failure mode: converting can become its own procrastination.</li>
+            <li>A document you never read is the same as a video you never watched.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The system works when reading stays sacred and everything else stays automatic.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -194,7 +259,7 @@ video skipped over too quickly.</code></pre>
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

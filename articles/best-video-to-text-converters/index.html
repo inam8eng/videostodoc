@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">best-video-to-text-converters</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/best-video-to-text-converters.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/best-video-to-text-converters-640.avif 640w, ../../assets/art/best-video-to-text-converters-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/best-video-to-text-converters-640.webp 640w, ../../assets/art/best-video-to-text-converters-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/best-video-to-text-converters.jpg" alt="A video player turning into lines of readable text, with the competing converter tools arranged around the conversion" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,31 +91,87 @@
         <p>For one captioned video, YouTube's own transcript button wins, free and instant. For live meetings, a cloud notetaker wins. For technical users, open source Whisper is free and strong. For lectures, tutorials and playlists where the screen matters, VideoDoc wins: local, one $19 payment, and the only one here that captures the slides and code as images beside the words. I build VideoDoc, judge my bias accordingly, which is why every tool's losses are listed too.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>For one captioned video use YouTube's transcript button, for live meetings a cloud notetaker, for technical users open source Whisper.</li>
+        <li>If slides, code or diagrams carry the content, VideoDoc is the only realistic option that captures the screen and puts those images next to the transcript.</li>
+        <li>A recurring habit favours one-time local pricing over subscriptions and per-minute meters: pay once, run on your own machine.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#field">The real options</a>
+        <a href="#losses">Where each one loses</a>
+        <a href="#pick">The two questions</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>I am the developer of one of the tools in this list, so let me put that on the table in the first sentence and earn your trust the only way possible: by being accurate about where my tool loses. I tried most of this market as a paying user before building anything, because VideoDoc exists exactly where the others kept failing me.</p>
 
-        <h2 id="field">The real options</h2>
-        <div class="tablewrap"><table>
-          <thead><tr><th>Option</th><th>Price shape</th><th>Where it runs</th><th>Captures the screen</th><th>Built for</th></tr></thead>
-          <tbody>
-            <tr><td>YouTube transcript button</td><td>Free</td><td>YouTube</td><td class="bad">No</td><td>One quick quote from a captioned video</td></tr>
-            <tr><td>Whisper (open source)</td><td>Free, your time</td><td class="good">Your machine</td><td class="bad">No</td><td>Technical users comfortable with setup</td></tr>
-            <tr><td>Cloud meeting notetakers (Otter and similar)</td><td>Monthly subscription</td><td>Their servers</td><td class="bad">No</td><td>Live meeting notes, team sharing</td></tr>
-            <tr><td>Cloud transcription and editing suites (Descript, Rev and similar)</td><td>Monthly or per minute</td><td>Their servers</td><td class="bad">No</td><td>Podcast and video editing workflows</td></tr>
-            <tr><td>NotebookLM</td><td>Free tier</td><td>Google's servers</td><td class="bad">No</td><td>Chatting with sources, including YouTube links</td></tr>
-            <tr><td>VideoDoc</td><td>$19 once, lifetime</td><td class="good">Your machine</td><td class="good">Yes, as images</td><td>Lectures, tutorials, playlists, private files</td></tr>
-          </tbody>
-        </table></div>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#transcript"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="field">The real options</h2>
+              <p class="step-summary">Compare the options side by side, then choose the row that matches the reader's situation.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>YouTube transcript button &mdash; Free &mdash; YouTube &mdash; No &mdash; One quick quote from a captioned video</li>
+            <li>Whisper (open source) &mdash; Free, your time &mdash; Your machine &mdash; No &mdash; Technical users comfortable with setup</li>
+            <li>Cloud meeting notetakers (Otter and similar) &mdash; Monthly subscription &mdash; Their servers &mdash; No &mdash; Live meeting notes, team sharing</li>
+            <li>Cloud transcription and editing suites (Descript, Rev and similar) &mdash; Monthly or per minute &mdash; Their servers &mdash; No &mdash; Podcast and video editing workflows</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> VideoDoc &mdash; $19 once, lifetime &mdash; Your machine &mdash; Yes, as images &mdash; Lectures, tutorials, playlists, private files</p>
+        </section>
+        <p>Each row reads as option, price shape, where it runs, whether it captures the screen, and what it is built for. NotebookLM also belongs in this field: free tier, on Google's servers, no screen capture, built for chatting with sources, including YouTube links.</p>
 
-        <h2 id="losses">Where each one loses, including mine</h2>
-        <p><strong>The transcript button</strong> loses the moment captions are missing or auto-garbled, which is the exact wall I walk through in <a href="../get-transcript-of-any-youtube-video/">getting the transcript of any YouTube video</a>, and it never saw the screen at all. <strong>Whisper</strong> is genuinely excellent and free, and it asks you to be your own IT department: install, configure, troubleshoot, then still build your own document around the raw text. <strong>Meeting notetakers</strong> are the right tool for live calls and the wrong price for archives, because the subscription outlives your busy month. <strong>Editing suites</strong> are professional tools where transcription serves editing, heavy and subscription-priced if all you wanted was the text. <strong>NotebookLM</strong> is free and clever with sources, and it works on Google's servers with Google's limits, summarizing from what it can read of a video rather than handing you <a href="../youtube-video-to-pdf/">a complete timestamped PDF with the slides included</a>.</p>
-        <p><strong>And VideoDoc loses too, in three honest places.</strong> It does not join live meetings, recordings only. It has no team accounts or shared workspace, it is a personal tool on your 2 machines. And phone-first users must wait, the Android app is coming but today it is Windows and Apple Silicon Mac. If your need lives in those gaps, one of the tools above serves you better, genuinely.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#transcript"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 2</span>
+              <h2 id="losses">Where each one loses, including mine</h2>
+              <p class="step-summary"><strong>The transcript button</strong> loses the moment captions are missing or auto-garbled, which is the exact wall I walk through in <a href="../get-transcript-of-any-youtube-video/">getting the transcript of any YouTube video</a>, and it never saw the screen at all.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><strong>Whisper</strong> is genuinely excellent and free, and it asks you to be your own IT department: install, configure, troubleshoot, then still build your own document around the raw text.</li>
+            <li><strong>Meeting notetakers</strong> are the right tool for live calls and the wrong price for archives, because the subscription outlives your busy month.</li>
+            <li><strong>Editing suites</strong> are professional tools where transcription serves editing, heavy and subscription-priced if all you wanted was the text.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> If your need lives in those gaps, one of the tools above serves you better, genuinely.</p>
+        </section>
+        <p><strong>NotebookLM</strong> is free and clever with sources, and it works on Google's servers with Google's limits, summarizing from what it can read of a video rather than handing you <a href="../youtube-video-to-pdf/">a complete timestamped PDF with the slides included</a>.</p>
+        <p><strong>And VideoDoc loses too, in three honest places.</strong> It does not join live meetings, recordings only. It has no team accounts or shared workspace, it is a personal tool on your 2 machines. And phone-first users must wait, the Android app is coming but today it is Windows and Apple Silicon Mac.</p>
 
-        <h2 id="pick">The two questions that pick your tool</h2>
-        <ol>
-          <li><strong>Does the screen carry information?</strong> Slides, code, diagrams, overlays. If yes, a words-only transcript loses half the content, and VideoDoc is the only option here that keeps that half, as images beside the words.</li>
-          <li><strong>Is this a habit or a one-off?</strong> One video, use the free button or the <a href="../../try/">free browser version</a>. A monthly habit makes subscriptions expensive and metered tools painful, which is where one-time local pricing quietly wins the year.</li>
-        </ol>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#transcript"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Decision</span>
+              <h2 id="pick">The two questions that pick your tool</h2>
+              <p class="step-summary">Two questions, and the honest answer picks your tool for you.</p>
+            </div>
+          </div>
+          <ul class="step-actions">
+            <li><strong>Does the screen carry information?</strong> Slides, code, diagrams, overlays. If yes, a words-only transcript loses half the content, and VideoDoc is the only option here that keeps that half, as images beside the words.</li>
+            <li><strong>Is this a habit or a one-off?</strong> One video, use the free button or the <a href="../../try/">free browser version</a>.</li>
+          </ul>
+          <p class="step-check"><strong>Check:</strong> A monthly habit makes subscriptions expensive and metered tools painful, which is where one-time local pricing quietly wins the year.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -194,7 +254,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

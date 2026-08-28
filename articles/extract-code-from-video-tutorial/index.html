@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">extract-code-from-video-tutorial</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/extract-code-from-video-tutorial.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/extract-code-from-video-tutorial-640.avif 640w, ../../assets/art/extract-code-from-video-tutorial-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/extract-code-from-video-tutorial-640.webp 640w, ../../assets/art/extract-code-from-video-tutorial-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/extract-code-from-video-tutorial.jpg" alt="A blurry paused video frame of a code editor becoming a sharp readable capture placed beside its explanation" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,22 +91,86 @@
         <p>VideoDoc captures the instructor's editor at every distinct moment in full HD, sharp enough to actually read, and places each capture beside the timestamped explanation. You read the code from the document instead of a paused, compressed video frame. For turning captures into runnable text, retype from the readable image or have your AI transcribe it, then test it, because no OCR of a video is guaranteed perfect.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b>
+        <ul>
+          <li>Paused video frames smear characters, so VideoDoc captures the editor sharp, in full HD, at every distinct state.</li>
+          <li>Each capture sits beside the timestamped words spoken while that code was being written.</li>
+          <li>To make it runnable: check the description for a repo, retype from the readable image, or have your AI transcribe the capture and test the result.</li>
+        </ul>
+      </div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#why-blurry">Why the paused frame betrays you</a>
+        <a href="#captures">Get readable captures</a>
+        <a href="#runnable">From captures to runnable code</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>Everyone who learned to code from YouTube knows the dance. Play, pause, squint at a blurry editor, type six characters, play, the instructor scrolls, pause, where did line 14 go. It is the same trap as <a href="../video-lecture-to-notes/">trying to take notes from a video lecture</a>: nobody can watch, understand and transcribe at the same time. When I was learning Python this dance took more of my evening than the actual learning did, and one wrong squinted character meant twenty minutes of debugging an error the instructor never had.</p>
 
-        <h2 id="why-blurry">Why the paused frame betrays you</h2>
-        <p>Video compression is built for motion, not for text. A paused frame of an editor is smeared exactly where the characters are, and if you watch at 720p, the small print is guesswork. Underscores vanish, colons become semicolons, zero and the letter O trade places. Code is the one content type where a single wrong character is fatal, carried by the one medium that cannot hold characters sharply.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#video-to-frames"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Explanation</span>
+              <h2 id="why-blurry">Why the paused frame betrays you</h2>
+              <p class="step-summary">Video compression is built for motion, not for text.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>A paused frame of an editor is smeared exactly where the characters are, and if you watch at 720p, the small print is guesswork.</li>
+            <li>Underscores vanish, colons become semicolons, zero and the letter O trade places.</li>
+            <li>Code is the one content type where a single wrong character is fatal, carried by the one medium that cannot hold characters sharply.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> If you have ever typed code from a paused frame and then hunted a one character typo for an hour, this is why.</p>
+        </section>
 
-        <h2 id="captures">Get the code as readable captures</h2>
-        <p>Run the tutorial through VideoDoc. It captures the screen at every distinct state, in full HD with Best quality, and because the capture engine follows the screen share rather than the instructor's face, what you get is effectively a flipbook of the editor: the code at each stage of the lesson, each frame beside the words being said while it was written.</p>
-        <p>That last part quietly fixes the worst problem. When the final code appears in minute 40, the document shows you every intermediate stage it passed through, with the explanation attached, so you understand the code instead of just possessing it.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#video-to-frames"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="captures">Get the code as readable captures</h2>
+              <p class="step-summary">Run the tutorial through VideoDoc.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>It captures the screen at every distinct state, in full HD with Best quality, and because the capture engine follows the screen share rather than the instructor's face, what you get is effectively a flipbook of the editor: the code at each stage of the lesson, each frame beside the words being said while it was written.</li>
+            <li>That last part quietly fixes the worst problem.</li>
+            <li>When the final code appears in minute 40, the document shows you every intermediate stage it passed through, with the explanation attached, so you understand the code instead of just possessing it.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The document reads like a flipbook of the editor, every stage of the code beside the words said while it was written.</p>
+        </section>
 
-        <h2 id="runnable">From captures to runnable code, honestly</h2>
-        <ol>
-          <li><strong>Check the description first.</strong> Many instructors link a repo. The video teaches, the repo provides, and the document's job becomes navigation: find the concept, jump by timestamp, read the explanation.</li>
-          <li><strong>Retype from the readable image.</strong> With a sharp capture on one monitor, retyping is fast, and honestly, retyping teaches. It is the squinting that was theft.</li>
-          <li><strong>Or let your AI transcribe the capture, then verify.</strong> Drop the PDF into ChatGPT or Claude, which <a href="../feed-video-to-chatgpt-or-claude/">cannot watch the tutorial itself</a>, and ask it to transcribe the code from the images. It does well on sharp captures, and you still run and test the result, because AI reading an image can make exactly the zero-versus-O mistakes you would. Trust, then compile.</li>
-        </ol>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#video-to-frames"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 2</span>
+              <h2 id="runnable">From captures to runnable code, honestly</h2>
+              <p class="step-summary">Three honest roads from captures to code that runs.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><strong>Check the description first.</strong> Many instructors link a repo. The video teaches, the repo provides, and the document's job becomes navigation: find the concept, jump by timestamp, read the explanation.</li>
+            <li><strong>Retype from the readable image.</strong> With a sharp capture on one monitor, retyping is fast, and honestly, retyping teaches. It is the squinting that was theft.</li>
+            <li><strong>Or let your AI transcribe the capture, then verify.</strong> Drop the PDF into ChatGPT or Claude, which <a href="../feed-video-to-chatgpt-or-claude/">cannot watch the tutorial itself</a>, and ask it to transcribe the code from the images. It does well on sharp captures, and you still run and test the result, because AI reading an image can make exactly the zero-versus-O mistakes you would.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Trust, then compile.</p>
+        </section>
 
         <div class="callout tested">
           <span class="lbl">Really happened</span>
@@ -190,7 +258,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

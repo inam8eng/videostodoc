@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">extract-every-frame-from-a-video</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/extract-every-frame-from-a-video.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/extract-every-frame-from-a-video-640.avif 640w, ../../assets/art/extract-every-frame-from-a-video-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/extract-every-frame-from-a-video-640.webp 640w, ../../assets/art/extract-every-frame-from-a-video-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/extract-every-frame-from-a-video.jpg" alt="A video strip being cut into a grid of still frames, each one named with the exact moment it came from" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,63 +91,152 @@
         <p>For a short clip, a browser tool will do. For a whole video, you want a fixed sampling rate rather than every single frame: VideoDoc saves four images a second, which is close enough together that nothing on screen can appear and vanish between two samples. Identical images in a row are dropped, each file is named with the exact moment it came from, and a CSV lists every one. It runs on your own computer.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b>
+        <ul>
+          <li>Four frames a second catches everything readable, and an hour of video lands at about 14,400 images instead of over 100,000.</li>
+          <li>Only byte-identical neighbours are dropped as duplicates, every file name carries its timestamp, and a CSV indexes the lot.</li>
+          <li>It all runs on your own machine, with an optional switch that blacks out faces before the frames go anywhere else.</li>
+        </ul>
+      </div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#why-four-a-second-and-not-all-of-them">Why four a second</a>
+        <a href="#dropping-duplicates-without-ever-losing-a-change">Dropping duplicates</a>
+        <a href="#what-you-actually-get-on-disk">What you get on disk</a>
+        <a href="#covering-faces-when-the-frames-are-going-somewhere-else">Covering faces</a>
+        <a href="#getting-only-the-images-without-the-document">Images only</a>
+        <a href="#when-a-free-online-tool-is-the-right-answer">When a free tool is right</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>There are two completely different reasons people ask for this, and the tools you find are almost all built for the first one. The first is: I want one nice still out of this clip, a thumbnail, a freeze frame. The second is: I need everything that appeared on this screen, because I am going to read it, search it, or hand it to an AI.</p>
 
         <p>I built for the second one. The first time I tried to pull a tutorial apart, I used a free online frame grabber, and it gave me a frame every two seconds at 480p. The code in the editor was a grey smudge. Worse, the presenter had flashed a config file for about a second and a half, and it simply was not in any of the images. The tool had not lost it. It had never sampled it.</p>
 
-        <h2 id="why-four-a-second-and-not-all-of-them">Why four a second, and not all of them</h2>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#frames-grid"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Explanation</span>
+              <h2 id="why-four-a-second-and-not-all-of-them">Why four a second, and not all of them</h2>
+              <p class="step-summary">A normal video runs at 30 frames a second.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>1 minute is about <strong>240 images</strong>.</li>
+            <li>10 minutes is about <strong>2,400</strong>.</li>
+            <li>1 hour is about <strong>14,400</strong>.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Four a second keeps every readable moment and turns fourteen thousand frames an hour into a folder you can actually open.</p>
+        </section>
 
-        <p>A normal video runs at 30 frames a second. Saving all of them sounds thorough and is mostly waste: 29 of every 30 images are a near copy of the one before. An hour would be over 100,000 files.</p>
-
-        <p>Four a second is the number that actually solves the problem. It is fast enough that nothing readable can appear and disappear between two samples, because nothing a human is meant to read stays on screen for less than a quarter of a second. And it keeps the count sane:</p>
-
-        <ul>
-          <li>1 minute is about <strong>240 images</strong>.</li>
-          <li>10 minutes is about <strong>2,400</strong>.</li>
-          <li>1 hour is about <strong>14,400</strong>.</li>
-        </ul>
+        <p>Saving all 30 sounds thorough and is mostly waste: 29 of every 30 images are a near copy of the one before, and an hour would be over 100,000 files. Four a second is the number that actually solves the problem. It is fast enough that nothing readable can appear and disappear between two samples, because nothing a human is meant to read stays on screen for less than a quarter of a second.</p>
 
         <p>Those are the numbers before duplicates are removed, and on a slide deck or a screen recording most of them are duplicates.</p>
 
-        <h2 id="dropping-duplicates-without-ever-losing-a-change">Dropping duplicates without ever losing a change</h2>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#dedupe"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="dropping-duplicates-without-ever-losing-a-change">Dropping duplicates without ever losing a change</h2>
+              <p class="step-summary">This is the part that has to be exactly right, because a dedupe step that is even slightly clever will eventually throw away the one frame you needed.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>VideoDoc compares the raw bytes of the two JPEGs.</li>
+            <li>That sounds crude, and it is precisely why it is safe here: every frame comes out of one ffmpeg run at one fixed quality, and JPEG encoding is deterministic and frame-independent.</li>
+            <li>Identical pixels in means identical bytes out.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> If you want the untouched sequence, there is a switch to keep duplicates.</p>
+        </section>
 
-        <p>This is the part that has to be exactly right, because a dedupe step that is even slightly clever will eventually throw away the one frame you needed.</p>
-
-        <p>VideoDoc compares the raw bytes of the two JPEGs. That sounds crude, and it is precisely why it is safe here: every frame comes out of one ffmpeg run at one fixed quality, and JPEG encoding is deterministic and frame-independent. Identical pixels in means identical bytes out. So different bytes genuinely mean the picture changed, and a change can never be silently discarded.</p>
+        <p>So different bytes genuinely mean the picture changed, and a change can never be silently discarded.</p>
 
         <p>It also only ever compares against the frame immediately before. A screen that goes A, then B, then back to A keeps both visits to A, because the second A is different from the B that preceded it. A tool that deduped against everything it had already seen would quietly delete your return to the earlier slide.</p>
 
-        <p>On a lecture recorded off a slide deck, this typically removes most of the pile. On handheld footage it removes almost nothing, because almost nothing is truly identical. If you want the untouched sequence, there is a switch to keep duplicates.</p>
+        <p>On a lecture recorded off a slide deck, this typically removes most of the pile. On handheld footage it removes almost nothing, because almost nothing is truly identical.</p>
 
-        <h2 id="what-you-actually-get-on-disk">What you actually get on disk</h2>
-
-        <p>Every image is named with the moment it came from, so the file name is the index:</p>
-
-        <ul>
-          <li><code>frame_000123_00h01m45.50s.jpg</code>: the 123rd saved frame, at 1 minute 45.5 seconds.</li>
-          <li><code>frames_index.csv</code>: every saved frame with its timestamp, so you can sort, filter, and jump straight back to a moment in the video.</li>
-          <li><code>README.txt</code>: the source resolution, the sampling rate, and whether dedupe was applied, written at the time of the run.</li>
-        </ul>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#frames-grid"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="what-you-actually-get-on-disk">What you actually get on disk</h2>
+              <p class="step-summary">Every image is named with the moment it came from, so the file name is the index:</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><code>frame_000123_00h01m45.50s.jpg</code>: the 123rd saved frame, at 1 minute 45.5 seconds.</li>
+            <li><code>frames_index.csv</code>: every saved frame with its timestamp, so you can sort, filter, and jump straight back to a moment in the video.</li>
+            <li><code>README.txt</code>: the source resolution, the sampling rate, and whether dedupe was applied, written at the time of the run.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Frames named by the moment they came from, an index you can sort, and a README that remembers how the run was made.</p>
+        </section>
 
         <p>That last file matters more than it looks. Six months later, a folder of 3,000 JPEGs with no record of how they were made is close to useless as evidence of anything.</p>
 
-        <h2 id="covering-faces-when-the-frames-are-going-somewhere-else">Covering faces, when the frames are going somewhere else</h2>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#hide-presenter"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="covering-faces-when-the-frames-are-going-somewhere-else">Covering faces, when the frames are going somewhere else</h2>
+              <p class="step-summary">Screen recordings usually carry the presenter's webcam bubble in a corner.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>If those frames are going into a shared drive, a dataset, or anywhere a privacy review will look at them, that face is a problem you have to solve before you send them, not after.</li>
+            <li>There is a second tick for it.</li>
+            <li>Every human face in the saved frames is filled with solid black, not blurred and not cropped, covering the whole webcam cutout it sits in, whatever shape that is.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> It runs on your own machine, and when it finishes it tells you both how many faces it covered and how many images had none, so a miss is never silent.</p>
+        </section>
 
-        <p>Screen recordings usually carry the presenter's webcam bubble in a corner. If those frames are going into a shared drive, a dataset, or anywhere a privacy review will look at them, that face is a problem you have to solve before you send them, not after.</p>
-
-        <p>There is a second tick for it. Every human face in the saved frames is filled with solid black, not blurred and not cropped, covering the whole webcam cutout it sits in, whatever shape that is. The slides and code underneath are untouched. It runs on your own machine, and when it finishes it tells you both how many faces it covered and how many images had none, so a miss is never silent.</p>
+        <p>The slides and code underneath are untouched.</p>
 
         <div class="callout">
           <span class="lbl">Honest limits</span>
           <p>This is the heavy option and the app warns you before it starts, because how long it takes depends entirely on your computer. Frames come out as JPEG, not PNG. For screen text at the quality level used that is a difference you will not see, but if you need lossless output this is not the tool. And extracting frames needs the actual video file, so a text-only job that would normally skip the download has to download it.</p>
         </div>
 
-        <h2 id="getting-only-the-images-without-the-document">Getting only the images, without the document</h2>
-
-        <p>If the pictures are the whole point, you do not need the transcript or the PDF. Pick the images-only route and VideoDoc skips transcription entirely, which is the slow part, and writes just the frames folder and its index.</p>
-
-        <p>This is the mode I use most for anything I intend to feed to an AI as pictures rather than as prose. Claude and ChatGPT both read images well. Handing them 200 deduped frames of a screen recording, in order, with timestamps in the file names, gets you further than a transcript ever will when the meaning was on the screen instead of in the audio.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#video-to-frames"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="getting-only-the-images-without-the-document">Getting only the images, without the document</h2>
+              <p class="step-summary">If the pictures are the whole point, you do not need the transcript or the PDF.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Pick the images-only route and VideoDoc skips transcription entirely, which is the slow part, and writes just the frames folder and its index.</li>
+            <li>This is the mode I use most for anything I intend to feed to an AI as pictures rather than as prose.</li>
+            <li>Claude and ChatGPT both read images well.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Handing them 200 deduped frames of a screen recording, in order, with timestamps in the file names, gets you further than a transcript ever will when the meaning was on the screen instead of in the audio.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -156,11 +249,26 @@
           </div>
         </div>
 
-        <h2 id="when-a-free-online-tool-is-the-right-answer">When a free online tool is the right answer</h2>
-
-        <p>I would rather say this plainly than pretend otherwise. If you have a 30 second clip and you want a handful of stills, open a browser tool, drop the file in, and take the images. It costs nothing and it takes a minute.</p>
-
-        <p>The line is roughly here: once the video is longer than a few minutes, once the resolution has to stay high enough to read text inside the picture, once you need the timestamps to be trustworthy, or once the file is something you are not allowed to upload. That is when a tool running on your own machine stops being a preference and starts being the only option.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#free-unlock"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="when-a-free-online-tool-is-the-right-answer">When a free online tool is the right answer</h2>
+              <p class="step-summary">I would rather say this plainly than pretend otherwise.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>If you have a 30 second clip and you want a handful of stills, open a browser tool, drop the file in, and take the images.</li>
+            <li>It costs nothing and it takes a minute.</li>
+            <li>The line is roughly here: once the video is longer than a few minutes, once the resolution has to stay high enough to read text inside the picture, once you need the timestamps to be trustworthy, or once the file is something you are not allowed to upload.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> That is when a tool running on your own machine stops being a preference and starts being the only option.</p>
+        </section>
 
         <h2 id="faq-h">Quick questions</h2>
         <div class="faq" id="faqlist">
@@ -243,7 +351,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

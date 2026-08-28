@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">download-youtube-video-hd-4k</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/download-youtube-video-hd-4k.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/download-youtube-video-hd-4k-640.avif 640w, ../../assets/art/download-youtube-video-hd-4k-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/download-youtube-video-hd-4k-640.webp 640w, ../../assets/art/download-youtube-video-hd-4k-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/download-youtube-video-hd-4k.jpg" alt="An online video being pulled down from its page and saved as a crisp HD video file on a personal computer" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,27 +91,88 @@
         <p>VideoDoc has a built-in downloader: paste the link, choose Just download the video, pick HD or 4K, and the file saves through your own home connection. It handles single videos and whole playlists, from YouTube, TikTok, Instagram, Facebook and X. Download content you have the right to save: your own uploads, permitted or licensed material, and things offline viewing is allowed for.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>Three clicks in VideoDoc: paste the link, pick the download option instead of the document, choose quality up to 4K.</li>
+        <li>Downloads run over your own residential connection, which is why they keep working while the ad-covered downloader sites get blocked.</li>
+        <li>Only save what you have the right to keep, and consider a second run that turns the same link into a searchable PDF.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#how">The download itself</a>
+        <a href="#why-local">Why your own machine</a>
+        <a href="#pair">The trick most people miss</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>My internet is not always my friend. Load-shedding, slow evenings, a train ride with one bar of signal. Half of why I download videos is simply that streaming assumes a connection I do not always have, and the other half is backup, because I have watched enough good videos vanish from platforms to stop trusting "it will be there later".</p>
 
-        <h2 id="how">The download itself, three clicks</h2>
-        <ol>
-          <li>Paste the link into VideoDoc. YouTube, TikTok, Instagram, Facebook or X, it detects the platform on its own.</li>
-          <li>Choose <strong>Just download the video</strong> instead of Make a document. Both options sit side by side, and it is genuinely fine to use VideoDoc as only a downloader.</li>
-          <li>Pick the quality, up to full HD or 4K when the source has it, and press Start. The file lands in your output folder.</li>
-        </ol>
-        <p>Playlists work the same way: paste the playlist link and the whole set queues up, with the Excel tracker showing which files are done. Pause and resume apply here too, so a big playlist over a slow connection is a background chore instead of an evening's babysitting.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#download"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="how">The download itself, three clicks</h2>
+              <p class="step-summary">Playlists work the same way: paste the playlist link and the whole set queues up, with the Excel tracker showing which files are done.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Paste the link into VideoDoc. YouTube, TikTok, Instagram, Facebook or X, it detects the platform on its own.</li>
+            <li>Choose <strong>Just download the video</strong> instead of Make a document. Both options sit side by side, and it is genuinely fine to use VideoDoc as only a downloader.</li>
+            <li>Pick the quality, up to full HD or 4K when the source has it, and press Start.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The file lands in your output folder.</p>
+        </section>
+        <p>Pause and resume apply here too, so a big playlist over a slow connection is a background chore instead of an evening's babysitting.</p>
 
-        <h2 id="why-local">Why downloading from your own machine matters</h2>
-        <p>The free downloader websites run their traffic through data center servers, and platforms block those constantly, which is why those sites work on Monday and die on Tuesday, wrapped in pop-ups the whole time. VideoDoc downloads from your own home connection, an ordinary residential line doing an ordinary amount of watching, so it just works, with no ads and nothing uploaded anywhere, the same local-first argument behind <a href="../offline-video-transcription-privacy/">offline transcription instead of the cloud</a>.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#download"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Explanation</span>
+              <h2 id="why-local">Why downloading from your own machine matters</h2>
+              <p class="step-summary">The free downloader websites run their traffic through data center servers, and platforms block those constantly, which is why those sites work on Monday and die on Tuesday, wrapped in pop-ups the whole time.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>VideoDoc downloads from your own home connection, an ordinary residential line doing an ordinary amount of watching, so it just works, with no ads and nothing uploaded anywhere, the same local-first argument behind <a href="../offline-video-transcription-privacy/">offline transcription instead of the cloud</a>.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> No ads, no server in the middle, and it works the same on Tuesday as it did on Monday.</p>
+        </section>
 
         <div class="callout">
           <span class="lbl">The copyright part, in plain words</span>
           <p>Downloading is a tool, and the rules come from the content. Saving your own uploads, material licensed or marked for reuse, and content where the owner permits offline saving is fine. Re-uploading someone else's work, or using downloads to dodge paying for content, is not, and platform terms restrict downloading much of what they host. Public videos only, and when in doubt, ask the owner. VideoDoc does not touch private videos behind logins unless you point it at your own logged-in browser.</p>
         </div>
 
-        <h2 id="pair">The trick most people miss</h2>
-        <p>You do not have to choose between the file and the knowledge. I often run the same link twice: once as a download for the archive, once as <a href="../youtube-video-to-pdf/">a PDF with the slides included</a> so the content is searchable. The video for rewatching, the PDF for finding, filed together. If you are still choosing a tool for that second job, I put mine beside the alternatives in <a href="../best-video-to-text-converters/">an honest comparison of video to text converters</a>.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#free-unlock"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 2</span>
+              <h2 id="pair">The trick most people miss</h2>
+              <p class="step-summary">You do not have to choose between the file and the knowledge.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>I often run the same link twice: once as a download for the archive, once as <a href="../youtube-video-to-pdf/">a PDF with the slides included</a> so the content is searchable.</li>
+            <li>The video for rewatching, the PDF for finding, filed together.</li>
+            <li>If you are still choosing a tool for that second job, I put mine beside the alternatives in <a href="../best-video-to-text-converters/">an honest comparison of video to text converters</a>.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The video sits in your archive for rewatching, the PDF sits beside it for finding. One link, both jobs done.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -190,7 +255,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

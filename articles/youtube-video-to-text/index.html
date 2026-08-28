@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">youtube-video-to-text</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/youtube-video-to-text.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/youtube-video-to-text-640.avif 640w, ../../assets/art/youtube-video-to-text-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/youtube-video-to-text-640.webp 640w, ../../assets/art/youtube-video-to-text-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/youtube-video-to-text.jpg" alt="A YouTube video turning into a page of clean timestamped text" width="1280" height="714" loading="eager" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,30 +91,110 @@
         <p>Fastest: click the three dots under the video, choose Show transcript, copy the text. Private and free for your own files: the VideoDoc browser version transcribes on your machine with nothing uploaded. Full job: VideoDoc Pro turns any YouTube link into clean timestamped text plus the on-screen content as images, all built on your own computer.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>Fastest: the Show transcript button under the video, free but caption quality only.</li>
+        <li>Private and free: the VideoDoc browser version transcribes files already on your disk, nothing uploaded anywhere.</li>
+        <li>Full job: VideoDoc Pro turns any link or playlist into clean timestamped text plus the on-screen content saved as images.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#way1">Way 1: the transcript button</a>
+        <a href="#way2">Way 2: free in your browser</a>
+        <a href="#way3">Way 3: text plus the screen</a>
+        <a href="#compare">The honest comparison</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>A ten minute video holds roughly 1,400 spoken words. That is a long blog post trapped inside a format you cannot search, cannot quote and cannot skim, and yes, <a href="../video-to-blog-post/">turning a video into a blog post</a> is exactly what some people do with the text. I convert videos to text almost daily now, for study and for work, and after <a href="../best-video-to-text-converters/">trying most of the video to text converters out there</a> I keep coming back to the same three ways, because each one wins in a different situation.</p>
 
-        <h2 id="way1">Way 1: the transcript YouTube already made</h2>
-        <p>Under most videos, the three dots menu has <strong>Show transcript</strong>. Click it and a panel opens with every caption line and its timestamp. Select all, copy, paste wherever you want. Thirty seconds, zero cost.</p>
-        <p>The catch is quality. Auto captions guess, and they guess worst exactly where it matters: names, technical words, numbers, accents. Some videos have no captions at all, and creators can turn them off. You also get caption fragments rather than sentences, so the text reads like a robot with hiccups. Fine for finding a quote. Painful for actual reading.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#waveform-to-text"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">How-to</span>
+              <h2 id="way1">Way 1: the transcript YouTube already made</h2>
+              <p class="step-summary">Under most videos, the three dots menu has <strong>Show transcript</strong>.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Click it and a panel opens with every caption line and its timestamp.</li>
+            <li>Select all, copy, paste wherever you want.</li>
+            <li>Thirty seconds, zero cost.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Fine for finding a quote. Painful for actual reading.</p>
+        </section>
+        <p>The catch is quality. Auto captions guess, and they guess worst exactly where it matters: names, technical words, numbers, accents. Some videos have no captions at all, and creators can turn them off. You also get caption fragments rather than sentences, so the text reads like a robot with hiccups.</p>
 
-        <h2 id="way2">Way 2: free, private, in your browser</h2>
-        <p>For a video file that is already on your disk, the <a href="../../try/">free VideoDoc browser version</a> does real AI transcription without the video leaving your machine. It uses your graphics card through the browser when it can, falls back to the CPU when it cannot, and hands you the text as .txt or .md. No account, no card, no upload.</p>
-        <p>It is honest about its limits: your own files only, no YouTube links, no screenshots, and shorter videos suit it best. I built it so you can taste proper transcription before paying anyone, including me.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#free-unlock"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">How-to</span>
+              <h2 id="way2">Way 2: free, private, in your browser</h2>
+              <p class="step-summary">For a video file that is already on your disk, the <a href="../../try/">free VideoDoc browser version</a> does real AI transcription without the video leaving your machine.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>It uses your graphics card through the browser when it can, falls back to the CPU when it cannot, and hands you the text as .txt or .md.</li>
+            <li>No account, no card, no upload.</li>
+            <li>It is honest about its limits: your own files only, no YouTube links, no screenshots, and shorter videos suit it best.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> I built it so you can taste proper transcription before paying anyone, including me.</p>
+        </section>
 
-        <h2 id="way3">Way 3: the full text, plus the screen</h2>
-        <p>VideoDoc Pro is the sledgehammer. Paste a YouTube link, or <a href="../tiktok-video-to-text/">a TikTok you want as text</a>, an Instagram, Facebook or X link, or a whole playlist, and your computer downloads it, listens to every word and writes clean timestamped text. It handles many languages including Hindi, Urdu, Arabic and Chinese, and it does not care whether the video has captions, because it works from the audio itself.</p>
-        <p>And it adds the thing plain text always misses: the on-screen content, captured as images and placed beside the words. In a tutorial the screen is half the lesson. Text-only tools quietly drop that half.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#waveform-to-text"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">How-to</span>
+              <h2 id="way3">Way 3: the full text, plus the screen</h2>
+              <p class="step-summary">VideoDoc Pro is the sledgehammer.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Paste a YouTube link, or <a href="../tiktok-video-to-text/">a TikTok you want as text</a>, an Instagram, Facebook or X link, or a whole playlist, and your computer downloads it, listens to every word and writes clean timestamped text.</li>
+            <li>It handles many languages including Hindi, Urdu, Arabic and Chinese, and it does not care whether the video has captions, because it works from the audio itself.</li>
+            <li>And it adds the thing plain text always misses: the on-screen content, captured as images and placed beside the words.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> In a tutorial the screen is half the lesson. Text-only tools quietly drop that half.</p>
+        </section>
 
-        <h2 id="compare">The honest comparison</h2>
-        <div class="tablewrap"><table>
-          <thead><tr><th>Way</th><th>Cost</th><th>Works without captions</th><th>Captures the screen</th><th>Best for</th></tr></thead>
-          <tbody>
-            <tr><td>Show transcript</td><td>Free</td><td class="bad">No</td><td class="bad">No</td><td>One quick quote</td></tr>
-            <tr><td>Browser version</td><td>Free</td><td class="good">Yes</td><td class="bad">No</td><td>Your own short files, privately</td></tr>
-            <tr><td>VideoDoc Pro</td><td>$19 once</td><td class="good">Yes</td><td class="good">Yes</td><td>Lectures, tutorials, playlists</td></tr>
-          </tbody>
-        </table></div>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#warning-document"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Decision</span>
+              <h2 id="compare">The honest comparison</h2>
+              <p class="step-summary">Compare the options side by side, then choose the row that matches your situation.</p>
+            </div>
+          </div>
+          <div class="tablewrap"><table>
+            <thead><tr><th>Way</th><th>Cost</th><th>Works without captions</th><th>Captures the screen</th><th>Best for</th></tr></thead>
+            <tbody>
+              <tr><td>Show transcript</td><td>Free</td><td class="bad">No</td><td class="bad">No</td><td>One quick quote</td></tr>
+              <tr><td>Browser version</td><td>Free</td><td class="good">Yes</td><td class="bad">No</td><td>Your own short files, privately</td></tr>
+              <tr><td>VideoDoc Pro</td><td>$19 once</td><td class="good">Yes</td><td class="good">Yes</td><td>Lectures, tutorials, playlists</td></tr>
+            </tbody>
+          </table></div>
+          <p class="step-check"><strong>Check:</strong> You can point to the row that fits your video before moving on.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -193,7 +277,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

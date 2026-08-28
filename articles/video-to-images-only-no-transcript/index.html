@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">video-to-images-only-no-transcript</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/video-to-images-only-no-transcript.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/video-to-images-only-no-transcript-640.avif 640w, ../../assets/art/video-to-images-only-no-transcript-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/video-to-images-only-no-transcript-640.webp 640w, ../../assets/art/video-to-images-only-no-transcript-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/video-to-images-only-no-transcript.jpg" alt="A video timeline being cut into an ordered folder of timestamped image frames, with no transcript produced" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -92,56 +96,137 @@
 
         <p>I learned this by wasting an afternoon. I had a 50 minute screen recording of an internal tool and I ran it through the normal document job. Transcription took most of that time. Then I opened the PDF, read four lines of somebody saying "and then you click here", and knew I would never read another word of it. The only useful thing in the output was the frames folder sitting beside it.</p>
 
-        <h2 id="the-free-way-with-ffmpeg-and-where-it-stops">The free way with ffmpeg, and where it stops</h2>
+        <div class="art-summary"><b>In 30 seconds</b><ul>
+          <li>Pick the images-only mode: the whole video becomes numbered, timestamped JPEGs at 4, 2 or 1 a second, duplicates dropped, with a CSV index.</li>
+          <li>ffmpeg does it free on a file you already have, but leaves you plain sequence numbers, every duplicate, and no index.</li>
+          <li>Images come out at the source resolution, so choose Best on links, and a deduped folder is the most useful shape to hand an AI.</li>
+        </ul></div>
 
-        <p>If the video is already a file on your disk and you are comfortable in a terminal, <code>ffmpeg</code> will do this today for nothing. Install it, then:</p>
+        <nav class="jumplinks" aria-label="Jump to section">
+          <a href="#the-free-way-with-ffmpeg-and-where-it-stops">The free way with ffmpeg</a>
+          <a href="#keyframes-every-frame-and-the-fixed-sample">Keyframes vs fixed sample</a>
+          <a href="#images-only-as-its-own-mode">Images only mode</a>
+          <a href="#what-resolution-you-actually-get">Resolution</a>
+          <a href="#why-a-folder-of-jpegs-beats-the-video-file-for-an-ai">JPEGs for AI</a>
+          <a href="#faq-h">Quick questions</a>
+        </nav>
 
-        <ol>
-          <li>Put the video and your terminal in the same folder.</li>
-          <li>Run <code>ffmpeg -i input.mp4 -vf fps=4 -q:v 2 frame_%06d.jpg</code>.</li>
-          <li>Wait. You get four images for every second of video.</li>
-        </ol>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#free-unlock"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Decision</span>
+              <h2 id="the-free-way-with-ffmpeg-and-where-it-stops">The free way with ffmpeg, and where it stops</h2>
+              <p class="step-summary">If the video is already a file on your disk and you are comfortable in a terminal, <code>ffmpeg</code> will do this today for nothing.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Install ffmpeg, then put the video and your terminal in the same folder.</li>
+            <li>Run <code>ffmpeg -i input.mp4 -vf fps=4 -q:v 2 frame_%06d.jpg</code>.</li>
+            <li>Wait.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> You get four images for every second of video.</p>
+        </section>
 
         <p>That is a real answer and I use it for one-off jobs. Here is where it stops. The names are sequence numbers, so <code>frame_000842.jpg</code> tells you nothing until you divide by four in your head. Every duplicate is kept, so an hour of one static slide becomes 14,400 copies of it. No index, no record of the settings that produced the folder, no way to cover a face. And it needs a file you already have, so a link means downloading it yourself first.</p>
 
-        <h2 id="keyframes-every-frame-and-the-fixed-sample">Keyframes, every frame, and the fixed sample</h2>
-
-        <p>Three different things get called the same thing here, and picking the wrong one is why people end up with the wrong folder.</p>
-
-        <ul>
-          <li><strong>Keyframes in the encoder's sense</strong> are the frames a compressor stores in full rather than as a difference from the one before. Some tools hand you these because they are cheap to pull out. They are placed to suit compression, not to suit you, and on a still slide there may be one every ten seconds.</li>
-          <li><strong>Every single frame</strong> means all 30 a second, or 60 on some recordings. It sounds thorough and is mostly waste: an hour is over 100,000 files, and 29 of every 30 are near copies.</li>
-          <li><strong>A fixed sample</strong> is the useful middle. Four a second is close enough together that nothing meant for a human to read can appear and vanish between two pictures, and an hour lands at about 14,400 before duplicates are removed.</li>
-        </ul>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#video-to-frames"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="keyframes-every-frame-and-the-fixed-sample">Keyframes, every frame, and the fixed sample</h2>
+              <p class="step-summary">Three different things get called the same thing here, and picking the wrong one is why people end up with the wrong folder.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><strong>Keyframes in the encoder's sense</strong> are the frames a compressor stores in full rather than as a difference from the one before. Some tools hand you these because they are cheap to pull out. They are placed to suit compression, not to suit you, and on a still slide there may be one every ten seconds.</li>
+            <li><strong>Every single frame</strong> means all 30 a second, or 60 on some recordings. It sounds thorough and is mostly waste: an hour is over 100,000 files, and 29 of every 30 are near copies.</li>
+            <li><strong>A fixed sample</strong> is the useful middle.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Four a second is close enough together that nothing meant for a human to read can appear and vanish between two pictures, and an hour lands at about 14,400 before duplicates are removed.</p>
+        </section>
 
         <p>There is a fourth thing, and it is the one you do not want here: the screenshots inside a VideoDoc PDF. Those are chosen. The app scores each picture for content, prefers the slide over the face, collapses repeated slides, and puts what survives next to the words spoken over it. Right output for a document. Wrong output for a raw sequence, because most of the video never makes the cut.</p>
 
-        <h2 id="images-only-as-its-own-mode">Images only, as its own mode</h2>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#video-to-frames"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="images-only-as-its-own-mode">Images only, as its own mode</h2>
+              <p class="step-summary">In VideoDoc this is not a tick box hidden in a panel. It is one of the three things the app can make, chosen at the top: a document for AI, just the video file, or every frame as images.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>You choose 4, 2 or 1 a second, and the app tells you how many images that means per minute and per hour before you start.</li>
+            <li>Frames identical to the one before are skipped, which on a slide deck or a screen recording throws away most of the pile.</li>
+            <li>Files are named <code>frame_000123_00h01m45.50s.jpg</code>, so the name is the timestamp.</li>
+            <li>A <code>frames_index.csv</code> lists every image with its moment, so you can sort and filter and jump back into the video.</li>
+            <li>It works on a link and on a file already on your computer, which is where a screen recording usually lives.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> If those pictures are going anywhere near other people, faces can be filled with solid black on the way out.</p>
+        </section>
 
-        <p>In VideoDoc this is not a tick box hidden in a panel. It is one of the three things the app can make, chosen at the top: a document for AI, just the video file, or every frame as images. Pick the third and it downloads or opens the video, writes the pictures, and stops.</p>
+        <p>Pick the third and it downloads or opens the video, writes the pictures, and stops. Nothing is listened to, so the slow half of the job never runs.</p>
 
-        <ul>
-          <li>You choose 4, 2 or 1 a second, and the app tells you how many images that means per minute and per hour before you start.</li>
-          <li>Frames identical to the one before are skipped, which on a slide deck or a screen recording throws away most of the pile.</li>
-          <li>Files are named <code>frame_000123_00h01m45.50s.jpg</code>, so the name is the timestamp.</li>
-          <li>A <code>frames_index.csv</code> lists every image with its moment, so you can sort and filter and jump back into the video.</li>
-          <li>It works on a link and on a file already on your computer, which is where a screen recording usually lives.</li>
-          <li>If those pictures are going anywhere near other people, faces can be filled with solid black on the way out.</li>
-        </ul>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#frames-grid"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Decision</span>
+              <h2 id="what-resolution-you-actually-get">What resolution you actually get</h2>
+              <p class="step-summary">The pictures are as big as the video is.</p>
+            </div>
+          </div>
+          <ul class="step-actions">
+            <li>Nothing is upscaled, so a 480p file gives 480p images and the small text in them stays unreadable.</li>
+            <li>If you are pasting a link, the quality you pick decides this, and Best fetches the video in full HD.</li>
+            <li>That matters more than it sounds, because the point of these images is usually that something in them can be read, by you or by a model.</li>
+          </ul>
+          <p class="step-check"><strong>Check:</strong> If you need lossless frames, this is not your tool, and I would rather say so here than in a refund email.</p>
+        </section>
 
-        <p>Nothing is listened to, so the slow half of the job never runs.</p>
+        <p>They come out as JPEG, not PNG. At the quality level used, screen text looks the same to a human and to an AI, and across 14,400 files the disk cost is not a small difference.</p>
 
-        <h2 id="what-resolution-you-actually-get">What resolution you actually get</h2>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#playlist-document"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Explanation</span>
+              <h2 id="why-a-folder-of-jpegs-beats-the-video-file-for-an-ai">Why a folder of JPEGs beats the video file for an AI</h2>
+              <p class="step-summary">Dropping an MP4 into a chat window mostly does not work, and where it appears to work the model is usually reading a transcript of the audio rather than watching anything.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Images are different.</li>
+            <li>ChatGPT, Claude and Gemini all read images well, and they read a batch of them in order without complaint.</li>
+            <li>So the folder is the useful shape.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> More on that in <a href="../feed-video-to-chatgpt-or-claude/">feeding a video to ChatGPT or Claude</a>.</p>
+        </section>
 
-        <p>The pictures are as big as the video is. Nothing is upscaled, so a 480p file gives 480p images and the small text in them stays unreadable. If you are pasting a link, the quality you pick decides this, and Best fetches the video in full HD. That matters more than it sounds, because the point of these images is usually that something in them can be read, by you or by a model.</p>
-
-        <p>They come out as JPEG, not PNG. At the quality level used, screen text looks the same to a human and to an AI, and across 14,400 files the disk cost is not a small difference. If you need lossless frames, this is not your tool, and I would rather say so here than in a refund email.</p>
-
-        <h2 id="why-a-folder-of-jpegs-beats-the-video-file-for-an-ai">Why a folder of JPEGs beats the video file for an AI</h2>
-
-        <p>Dropping an MP4 into a chat window mostly does not work, and where it appears to work the model is usually reading a transcript of the audio rather than watching anything. Images are different. ChatGPT, Claude and Gemini all read images well, and they read a batch of them in order without complaint.</p>
-
-        <p>So the folder is the useful shape. Two hundred deduped frames of a screen recording, in order, with the moment in every file name, gets you further than any transcript when the meaning was on screen instead of in the audio. Ask which screen the error appeared on, or ask it to write the steps out from the pictures alone. More on that in <a href="../feed-video-to-chatgpt-or-claude/">feeding a video to ChatGPT or Claude</a>.</p>
+        <p>Two hundred deduped frames of a screen recording, in order, with the moment in every file name, gets you further than any transcript when the meaning was on screen instead of in the audio. Ask which screen the error appeared on, or ask it to write the steps out from the pictures alone.</p>
 
         <div class="callout">
           <span class="lbl">Honest limits</span>
@@ -236,7 +321,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">video-lecture-to-notes</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/video-lecture-to-notes.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/video-lecture-to-notes-640.avif 640w, ../../assets/art/video-lecture-to-notes-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/video-lecture-to-notes-640.webp 640w, ../../assets/art/video-lecture-to-notes-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/video-lecture-to-notes.jpg" alt="A recorded video lecture turning into a page of timestamped notes with the slides captured as images" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -90,18 +94,86 @@
       <div class="prose">
         <p>My handwritten lecture notes had a pattern. Clean and confident for the first twenty minutes, then wobbly, then a sentence that ends mid-word where I gave up and just watched. Nobody can listen, understand, and transcribe at the same time, because writing one point means missing the next one. The night before my telecom finals I had notes that covered maybe a third of what was taught, and no memory of which third.</p>
 
-        <h2 id="job">Let the lecture write its own notes</h2>
-        <p>The mechanical part of note-taking, getting the words down, is exactly what a machine should do. Point VideoDoc at the lecture, a YouTube link, a whole playlist, or a recording on your disk, and it produces the complete notes: <a href="../get-transcript-of-any-youtube-video/">a timestamped transcript, even when the lecture has no captions</a>, plus every slide and worked example captured as a full HD image, placed where it appeared. It runs on your own computer, so a 3 hour lecture costs nothing and private recordings stay private.</p>
+        <div class="art-summary"><b>In 30 seconds</b><ul>
+          <li>Give VideoDoc the lecture link, playlist or file and it writes the notes on your own computer: timestamped words plus every slide as a sharp image.</li>
+          <li>Study the document in three passes: skim the captures, read with a highlighter, then let an AI quiz you from the PDF.</li>
+          <li>A semester of lectures as documents makes exam prep a Ctrl+F instead of a scrubbing session.</li>
+        </ul></div>
 
-        <h2 id="method">The three pass method I use on the document</h2>
-        <ol>
-          <li><strong>Skim the captures first.</strong> Scrolling just the images gives you the lecture's skeleton in two minutes, because teachers put the structure on the slides, and <a href="../extract-slides-from-video/">those slides come out of the video as images</a>.</li>
-          <li><strong>Read with a highlighter, not a pen.</strong> The words are already written, so your whole attention goes to marking what matters and writing tiny margin thoughts. This is the difference between recording and understanding.</li>
-          <li><strong>Let an AI quiz you.</strong> Drop the PDF into ChatGPT or Claude, where <a href="../summarize-youtube-video-with-chatgpt/">the prompts that get an honest summary</a> work just as well: "Make 10 exam questions from this lecture, then grade my answers hard." The timestamps mean every question links back to the exact minute to review.</li>
-        </ol>
+        <nav class="jumplinks" aria-label="Jump to section">
+          <a href="#job">Let the lecture write its own notes</a>
+          <a href="#method">The three pass method</a>
+          <a href="#search">Search is the superpower</a>
+          <a href="#faq-h">Quick questions</a>
+        </nav>
 
-        <h2 id="search">Search is the superpower nobody mentions</h2>
-        <p>One semester of lectures as documents means exam prep starts with Ctrl+F. The professor mentioned the marking scheme once, in passing, in week 4? Found in three seconds. Compare that to scrubbing through hours of video on 2x speed with your finger hovering over the pause key. That is the real trade: watching is linear, notes are random access.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#study-notes"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="job">Let the lecture write its own notes</h2>
+              <p class="step-summary">The mechanical part of note-taking, getting the words down, is exactly what a machine should do.</p>
+            </div>
+          </div>
+          <picture class="step-spot">
+            <source type="image/avif" srcset="../../assets/art/spot-transcript-screen-640.avif">
+            <source type="image/webp" srcset="../../assets/art/spot-transcript-screen-640.webp">
+            <img src="../../assets/art/spot-transcript-screen-640.webp"
+                 width="640" height="480" loading="lazy" decoding="async"
+                 alt="A video becoming a transcript with useful screen images inside one document">
+          </picture>
+          <ol class="step-actions">
+            <li>Point VideoDoc at the lecture: a YouTube link, a whole playlist, or a recording on your disk.</li>
+            <li>It produces the complete notes: <a href="../get-transcript-of-any-youtube-video/">a timestamped transcript, even when the lecture has no captions</a>, plus every slide and worked example captured as a full HD image, placed where it appeared.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> It runs on your own computer, so a 3 hour lecture costs nothing and private recordings stay private.</p>
+        </section>
+
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#document-images"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 2</span>
+              <h2 id="method">The three pass method I use on the document</h2>
+              <p class="step-summary">Three passes over the finished document, from skeleton to self-testing.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><strong>Skim the captures first.</strong> Scrolling just the images gives you the lecture's skeleton in two minutes, because teachers put the structure on the slides, and <a href="../extract-slides-from-video/">those slides come out of the video as images</a>.</li>
+            <li><strong>Read with a highlighter, not a pen.</strong> The words are already written, so your whole attention goes to marking what matters and writing tiny margin thoughts. This is the difference between recording and understanding.</li>
+            <li><strong>Let an AI quiz you.</strong> Drop the PDF into ChatGPT or Claude, where <a href="../summarize-youtube-video-with-chatgpt/">the prompts that get an honest summary</a> work just as well: "Make 10 exam questions from this lecture, then grade my answers hard."</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The timestamps mean every question links back to the exact minute to review.</p>
+        </section>
+
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#spreadsheet-search"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 3</span>
+              <h2 id="search">Search is the superpower nobody mentions</h2>
+              <p class="step-summary">One semester of lectures as documents means exam prep starts with Ctrl+F.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>The professor mentioned the marking scheme once, in passing, in week 4? Found in three seconds.</li>
+            <li>Compare that to scrubbing through hours of video on 2x speed with your finger hovering over the pause key.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> That is the real trade: watching is linear, notes are random access.</p>
+        </section>
 
         <div class="callout tested">
           <span class="lbl">Really happened</span>
@@ -189,7 +261,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

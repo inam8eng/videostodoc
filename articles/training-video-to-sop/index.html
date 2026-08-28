@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">training-video-to-sop</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/training-video-to-sop.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/training-video-to-sop-640.avif 640w, ../../assets/art/training-video-to-sop-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/training-video-to-sop-640.webp 640w, ../../assets/art/training-video-to-sop-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/training-video-to-sop.jpg" alt="A screen recording of a work process turning into a numbered SOP document with real screenshots beside the steps" width="1280" height="714" loading="eager" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -91,16 +95,62 @@
         <p>Every team has that one process living in one person's head, and the standard fix is "record a training video". So someone records twenty minutes of clicking and talking, it goes into a shared drive, and six months later a new person watches it at 1.5x taking their own incomplete notes. The video was supposed to be the documentation. It became homework instead.</p>
         <p>Written SOPs beat training videos for one plain reason: nobody can follow a video while doing the task. You cannot pause with your elbow while both hands type. A written step list sits beside the work and moves at the reader's speed. The problem was always that writing SOPs is miserable. Screenshot, crop, paste, describe, repeat, forty times.</p>
 
-        <h2 id="flow">The workflow: record once, write never</h2>
-        <ol>
-          <li><strong>Record the process naturally.</strong> OBS, Teams, Loom, anything that produces a file. Talk while you click, saying the why as well as the what: "I export as CSV here because the old format breaks the tool downstream." To hear how the transcript reads before you commit, <a href="../transcribe-video-free-no-upload/">the free browser version takes a local file with nothing uploaded</a>.</li>
-          <li><strong>Feed the file to VideoDoc.</strong> It runs fully offline on your machine, which your IT department will appreciate and which is where local tools beat every cloud option in <a href="../best-video-to-text-converters/">my comparison of video to text converters</a>, and produces the timestamped narration with a sharp capture of every distinct screen you passed through. The screenshots you dreaded taking are simply already taken.</li>
-          <li><strong>Shape it with one prompt.</strong> Give the PDF to your AI, the same second move as <a href="../summarize-youtube-video-with-chatgpt/">summarizing a video properly with ChatGPT</a>: "Turn this into a numbered SOP. One action per step, imperative voice, keep my reasons as notes under the step they belong to, and reference the captures by timestamp." Out comes the skeleton of a real SOP.</li>
-          <li><strong>Verify against reality, once.</strong> Walk the steps yourself or hand them to the newest person on the team. Where they stumble is where the recording skipped something. Fix those lines. This step is not optional, an unverified SOP is a rumor with numbering.</li>
-        </ol>
+        <div class="art-summary"><b>In 30 seconds</b><ul>
+          <li>Record the process once as a screen recording, saying the why as well as the what while you click.</li>
+          <li>VideoDoc, fully offline, produces the timestamped narration plus a sharp capture of every distinct screen.</li>
+          <li>One AI prompt shapes it into a numbered SOP, and one walk-through against reality makes it trustworthy.</li>
+        </ul></div>
+        <nav class="jumplinks" aria-label="Jump to section"><a href="#flow">The workflow</a><a href="#update">Keeping it updated</a><a href="#faq-h">Quick questions</a></nav>
 
-        <h2 id="update">The part that makes this sustainable</h2>
-        <p>SOPs die of staleness. The tool updates its interface and your beautiful document is now wrong in four places. In this workflow the update cost is one re-recording: run through the changed process for five minutes, convert, re-shape, done. When updating costs five minutes, documentation actually stays updated. When it costs an afternoon, it never happens, and everyone quietly goes back to asking the one person who knows.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#steps"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="flow">The workflow: record once, write never</h2>
+              <p class="step-summary">Record the walkthrough once, and let the document write itself.</p>
+            </div>
+          </div>
+          <picture class="step-spot">
+            <source type="image/avif" srcset="../../assets/art/spot-transcript-screen-640.avif">
+            <source type="image/webp" srcset="../../assets/art/spot-transcript-screen-640.webp">
+            <img src="../../assets/art/spot-transcript-screen-640.webp"
+                 width="640" height="480" loading="lazy" decoding="async"
+                 alt="A video becoming a transcript with useful screen images inside one document">
+          </picture>
+          <ol class="step-actions">
+            <li><strong>Record the process naturally.</strong> OBS, Teams, Loom, anything that produces a file. Talk while you click, saying the why as well as the what: "I export as CSV here because the old format breaks the tool downstream." To hear how the transcript reads before you commit, <a href="../transcribe-video-free-no-upload/">the free browser version takes a local file with nothing uploaded</a>.</li>
+            <li><strong>Feed the file to VideoDoc.</strong> It runs fully offline on your machine, which your IT department will appreciate and which is where local tools beat every cloud option in <a href="../best-video-to-text-converters/">my comparison of video to text converters</a>, and produces the timestamped narration with a sharp capture of every distinct screen you passed through. The screenshots you dreaded taking are simply already taken.</li>
+            <li><strong>Shape it with one prompt.</strong> Give the PDF to your AI, the same second move as <a href="../summarize-youtube-video-with-chatgpt/">summarizing a video properly with ChatGPT</a>: "Turn this into a numbered SOP. One action per step, imperative voice, keep my reasons as notes under the step they belong to, and reference the captures by timestamp." Out comes the skeleton of a real SOP.</li>
+            <li><strong>Verify against reality, once.</strong> Walk the steps yourself or hand them to the newest person on the team. Where they stumble is where the recording skipped something. Fix those lines.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> This step is not optional, an unverified SOP is a rumor with numbering.</p>
+        </section>
+
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#document-ai"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="update">The part that makes this sustainable</h2>
+              <p class="step-summary">SOPs die of staleness.</p>
+            </div>
+          </div>
+          <ul class="step-actions">
+            <li>The tool updates its interface and your beautiful document is now wrong in four places.</li>
+            <li>In this workflow the update cost is one re-recording: run through the changed process for five minutes, convert, re-shape, done.</li>
+            <li>When updating costs five minutes, documentation actually stays updated.</li>
+          </ul>
+          <p class="step-check"><strong>Check:</strong> When it costs an afternoon, it never happens, and everyone quietly goes back to asking the one person who knows.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -183,7 +233,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

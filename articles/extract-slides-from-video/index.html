@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">extract-slides-from-video</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/extract-slides-from-video.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/extract-slides-from-video-640.avif 640w, ../../assets/art/extract-slides-from-video-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/extract-slides-from-video-640.webp 640w, ../../assets/art/extract-slides-from-video-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/extract-slides-from-video.jpg" alt="A recorded presentation becoming a set of sharp slide images placed beside the speaker's words" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,27 +91,98 @@
         <p>VideoDoc watches the video on your own computer and captures each distinct on-screen moment as a full HD image, preferring the slides over the speaker's face, then places every capture beside the words spoken over it. You get the deck as images inside one document, with the talk attached. The manual alternative is pausing and screenshotting forty times, which works and eats an hour.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b>
+        <ul>
+          <li>VideoDoc captures each distinct slide as a full HD image, following the screen share rather than the speaker's face.</li>
+          <li>Every capture is placed beside the timestamped words spoken over it, and saved again as a plain image file you can reuse.</li>
+          <li>Pause-and-screenshot still wins for a five slide talk; for a real deck it costs an hour and loses what was said.</li>
+        </ul>
+      </div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#manual">The manual way</a>
+        <a href="#auto">The automatic way</a>
+        <a href="#use">What this replaces</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>"Slides will be shared after the talk." I have heard that sentence at conferences, in webinars and in <a href="../training-video-to-sop/">trainings that were supposed to become SOPs</a>, and the slides arrive maybe one time in five. The information you need is sitting right there in the recording, technically public to you, and completely trapped, because nobody is going to scrub a 50 minute video every time they need one diagram.</p>
 
-        <h2 id="manual">The manual way, so you know the baseline</h2>
-        <p>Open the video, watch at speed, and every time a new slide appears: pause, key back to a clean frame, screenshot, name the file. It genuinely works, and for a five slide talk it is the fastest option. For a real deck it is an hour of repetitive clicking, the screenshots inherit whatever resolution you watched at, and you still have no record of what was said over each slide, which is where the meaning lives.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#frames-grid"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="manual">The manual way, so you know the baseline</h2>
+              <p class="step-summary">Open the video, watch at speed, and every time a new slide appears: pause, key back to a clean frame, screenshot, name the file.</p>
+            </div>
+          </div>
+          <picture class="step-spot">
+            <source type="image/avif" srcset="../../assets/art/spot-transcript-screen-640.avif">
+            <source type="image/webp" srcset="../../assets/art/spot-transcript-screen-640.webp">
+            <img src="../../assets/art/spot-transcript-screen-640.webp"
+                 width="640" height="480" loading="lazy" decoding="async"
+                 alt="A video becoming a transcript with useful screen images inside one document">
+          </picture>
+          <ol class="step-actions">
+            <li>It genuinely works, and for a five slide talk it is the fastest option.</li>
+            <li>For a real deck it is an hour of repetitive clicking, the screenshots inherit whatever resolution you watched at, and you still have no record of what was said over each slide, which is where the meaning lives.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Fine for a five slide talk. For a real deck, keep reading.</p>
+        </section>
 
-        <h2 id="auto">The automatic way</h2>
-        <p>Give VideoDoc the link or the file. As it processes on your machine, it watches the picture and captures each distinct screen state, and the part that makes it work for presentations: when the video mixes a webcam and a screen share, it follows the screen, not the face. Speaker view thumbnails do not pollute your deck.</p>
-        <ul>
-          <li><strong>Full HD captures</strong> with Best quality, so the text, the numbers in the table and the small print on the architecture diagram stay readable.</li>
-          <li><strong>Every image sits beside its words.</strong> The capture of the pricing slide has the speaker's actual explanation next to it, timestamped, which is worth more than the slide alone.</li>
-          <li><strong>The images folder.</strong> Alongside the PDF, captures are saved as plain image files, so pulling three of them into your own report, or into <a href="../video-to-blog-post/">a blog post written from the video</a>, is a copy paste.</li>
-        </ul>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#frames-grid"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="auto">The automatic way</h2>
+              <p class="step-summary">Give VideoDoc the link or the file.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><strong>Full HD captures</strong> with Best quality, so the text, the numbers in the table and the small print on the architecture diagram stay readable.</li>
+            <li><strong>Every image sits beside its words.</strong> The capture of the pricing slide has the speaker's actual explanation next to it, timestamped, which is worth more than the slide alone.</li>
+            <li><strong>The images folder.</strong> Alongside the PDF, captures are saved as plain image files, so pulling three of them into your own report, or into <a href="../video-to-blog-post/">a blog post written from the video</a>, is a copy paste.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The output folder holds the finished PDF plus every capture as its own image file, ready to reuse.</p>
+        </section>
+
+        <p>As it processes on your machine, it watches the picture and captures each distinct screen state, and the part that makes it work for presentations: when the video mixes a webcam and a screen share, it follows the screen, not the face. Speaker view thumbnails do not pollute your deck.</p>
 
         <div class="callout">
           <span class="lbl">Honest limits</span>
           <p>These are captures of what was shown, so builds and animations arrive as the moments they appeared, and anything the presenter never put on screen cannot be extracted. If the video is only a talking head, there are no slides to find, and you will get the person instead.</p>
         </div>
 
-        <h2 id="use">What this replaces</h2>
-        <p>For me this replaced three bad habits: emailing speakers for decks that never come, keeping 40 tab-screenshots in a folder named "sort later", and worst of all, just losing the material. A talk I convert lands in my notes as one searchable file, deck and explanation together, and the AI can answer from it besides, because <a href="../summarize-youtube-video-with-chatgpt/">a summary built from the slides as well as the words</a> catches what was shown but never said. The deck-chasing era ended quietly.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#frames-grid"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="use">What this replaces</h2>
+              <p class="step-summary">For me this replaced three bad habits: emailing speakers for decks that never come, keeping 40 tab-screenshots in a folder named "sort later", and worst of all, just losing the material.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>A talk I convert lands in my notes as one searchable file, deck and explanation together, and the AI can answer from it besides, because <a href="../summarize-youtube-video-with-chatgpt/">a summary built from the slides as well as the words</a> catches what was shown but never said.</li>
+            <li>The deck-chasing era ended quietly.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> One searchable file in your notes, and no more emailing speakers for decks that never arrive.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -190,7 +265,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">youtube-playlist-to-one-document</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/youtube-playlist-to-one-document.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/youtube-playlist-to-one-document-640.avif 640w, ../../assets/art/youtube-playlist-to-one-document-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/youtube-playlist-to-one-document-640.webp 640w, ../../assets/art/youtube-playlist-to-one-document-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/youtube-playlist-to-one-document.jpg" alt="A whole YouTube playlist of videos merging into one searchable document" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,27 +91,92 @@
         <p>Paste the playlist link into VideoDoc, choose one merged document or one document per video, and press Start. Your computer works through every video, transcribing and capturing the on-screen content, and a live Excel tracker shows exactly where it stands. A 40 video course becomes one file you can search end to end.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>Paste the playlist link into VideoDoc and choose one merged document for the course or one document per video.</li>
+        <li>Every step runs privately on your own computer, with a live Excel tracker showing done, processing and failed.</li>
+        <li>The finished file is searchable end to end and ready for ChatGPT, Claude, NotebookLM or your notes app.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#how">How it works</a>
+        <a href="#tracker">The tracker</a>
+        <a href="#after">Using the file</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>The best free education on earth lives in YouTube playlists. Full university courses, <a href="../extract-code-from-video-tutorial/">60 part coding series where you need the code off the screen</a>, complete exam prep. And the format fights you the whole way, because what you learned in video 12 is impossible to find again in video 31's world. I once knew a concept was explained "somewhere in the middle" of a 40 video playlist and spent an evening clicking thumbnails like a fool.</p>
         <p>The math is brutal too. 40 videos at 15 minutes each is 10 hours of watching. The same content as text reads in a fraction of that, because people speak at about 140 words a minute and you read comfortably at 200 to 250. A playlist as a document is the same course at more than double speed, with Ctrl+F on top, exactly the trade behind <a href="../video-lecture-to-notes/">turning a single lecture into notes</a>.</p>
 
-        <h2 id="how">How it works in VideoDoc</h2>
-        <ol>
-          <li>Copy the playlist link from YouTube, the whole playlist, not one video.</li>
-          <li>Paste it into VideoDoc and choose the shape: <strong>one merged document</strong> for a course you want to search as a single thing, or <strong>one document per video</strong> when the parts stand alone.</li>
-          <li>Press Start and walk away. Every step runs on your own machine: the <a href="../download-youtube-video-hd-4k/">download over your own home connection</a>, transcription on your CPU or GPU, on-screen captures at up to full HD.</li>
-        </ol>
-        <p>Long playlists are exactly what the pause, resume and cancel controls are for. Start a big course before bed, and if you need the machine in the morning, pause and pick it up later. A safety timer on every step means one stubborn video cannot hang the whole night's work.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#steps"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="how">How it works in VideoDoc</h2>
+              <p class="step-summary">Long playlists are exactly what the pause, resume and cancel controls are for.</p>
+            </div>
+          </div>
+          <picture class="step-spot">
+            <source type="image/avif" srcset="../../assets/art/spot-playlist-document-640.avif">
+            <source type="image/webp" srcset="../../assets/art/spot-playlist-document-640.webp">
+            <img src="../../assets/art/spot-playlist-document-640.webp"
+                 width="640" height="480" loading="lazy" decoding="async"
+                 alt="A stack of videos becoming one organized searchable document">
+          </picture>
+          <ol class="step-actions">
+            <li>Copy the playlist link from YouTube, the whole playlist, not one video.</li>
+            <li>Paste it into VideoDoc and choose the shape: <strong>one merged document</strong> for a course you want to search as a single thing, or <strong>one document per video</strong> when the parts stand alone.</li>
+            <li>Press Start and walk away.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Every step runs on your own machine: the <a href="../download-youtube-video-hd-4k/">download over your own home connection</a>, transcription on your CPU or GPU, on-screen captures at up to full HD.</p>
+        </section>
+        <p>Start a big course before bed, and if you need the machine in the morning, pause and pick it up later. A safety timer on every step means one stubborn video cannot hang the whole night's work.</p>
 
-        <h2 id="tracker">The tracker that keeps it honest</h2>
-        <p>VideoDoc writes a live Excel tracker for the whole queue and one per playlist: which video is done, which is processing, which failed and why. I added this after a night where I assumed everything had finished and it politely had not. Now the sheet tells the truth at a glance, and if you do client work, the same sheet shows a client exactly where things stand.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#warning-document"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 2</span>
+              <h2 id="tracker">The tracker that keeps it honest</h2>
+              <p class="step-summary">VideoDoc writes a live Excel tracker for the whole queue and one per playlist: which video is done, which is processing, which failed and why.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>I added this after a night where I assumed everything had finished and it politely had not.</li>
+            <li>Now the sheet tells the truth at a glance, and if you do client work, the same sheet shows a client exactly where things stand.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> You never have to guess whether the overnight queue actually finished.</p>
+        </section>
 
-        <h2 id="after">What you do with a whole course in one file</h2>
-        <ul>
-          <li>Search once across 40 videos. The evening I lost to thumbnails is now a five second Ctrl+F.</li>
-          <li>Hand the merged PDF to ChatGPT, Claude or NotebookLM and ask questions across the entire course, because the AI finally sees it whole.</li>
-          <li>Keep the Markdown copy in Obsidian or Notion as the course's permanent home.</li>
-        </ul>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#playlist-document"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 3</span>
+              <h2 id="after">What you do with a whole course in one file</h2>
+              <p class="step-summary">Three ways to put a whole course in one file to work.</p>
+            </div>
+          </div>
+          <ul class="step-actions">
+            <li>Search once across 40 videos. The evening I lost to thumbnails is now a five second Ctrl+F.</li>
+            <li>Hand the merged PDF to ChatGPT, Claude or NotebookLM and ask questions across the entire course, because the AI finally sees it whole.</li>
+            <li>Keep the Markdown copy in Obsidian or Notion as the course's permanent home.</li>
+          </ul>
+          <p class="step-check"><strong>Check:</strong> Finding anything in the course now takes seconds, not another evening.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -190,7 +259,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">summarize-youtube-video-with-chatgpt</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/summarize-youtube-video-with-chatgpt.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/summarize-youtube-video-with-chatgpt-640.avif 640w, ../../assets/art/summarize-youtube-video-with-chatgpt-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/summarize-youtube-video-with-chatgpt-640.webp 640w, ../../assets/art/summarize-youtube-video-with-chatgpt-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/summarize-youtube-video-with-chatgpt.jpg" alt="A YouTube video becoming a timestamped PDF document that ChatGPT reads to write a checkable summary" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,15 +91,65 @@
         <p>Do not paste the link and hope. ChatGPT cannot watch video, so link summaries lean on whatever captions it can reach, and often on guesswork. The reliable way has two steps: first turn the video into a document with the transcript and the on-screen content, then give ChatGPT that document and ask for the summary with timestamped quotes you can verify.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>Pasting a link fails whenever captions are missing or garbled, and ChatGPT can invent plausible-sounding points.</li>
+        <li>Convert the video into one PDF with VideoDoc first: the full transcript with timestamps plus the slides captured as images.</li>
+        <li>Then ask for a summary that cites a timestamp for every point, so each claim can be checked against the video.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#why">Why links fail</a>
+        <a href="#method">The two step method</a>
+        <a href="#slides">The slides</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>The first time I asked ChatGPT to summarize a YouTube link, it produced a confident, tidy summary of a video it had clearly never seen. Some points were close, some were invented, and the scary part was how plausible the invented ones sounded. That experience is why this article exists.</p>
 
-        <h2 id="why">Why the link method keeps failing</h2>
-        <p>ChatGPT cannot watch video. At best, with browsing, it fetches the page and reads the captions if they exist and are reachable. No captions, no luck. Bad auto captions, bad summary. And when it cannot get the content at all, it sometimes summarizes from the title and comments, which is how you get fiction with bullet points. Claude and Gemini hit versions of the same wall, because today's chat AIs read text and images, not moving pictures.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#document-ai"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Explanation</span>
+              <h2 id="why">Why the link method keeps failing</h2>
+              <p class="step-summary">ChatGPT cannot watch video.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>At best, with browsing, it fetches the page and reads the captions if they exist and are reachable.</li>
+            <li>No captions, no luck.</li>
+            <li>Bad auto captions, bad summary.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Claude and Gemini hit versions of the same wall, because today's chat AIs read text and images, not moving pictures.</p>
+        </section>
+        <p>And when it cannot get the content at all, it sometimes summarizes from the title and comments, which is how you get fiction with bullet points.</p>
 
-        <h2 id="method">The two step method that works every time</h2>
-        <p><strong>Step 1: make the video a document.</strong> VideoDoc <a href="../youtube-video-to-pdf/">turns the link into one PDF</a> on your own computer: every word with timestamps, plus the slides and code captured as images. No captions needed, because it transcribes the audio itself.</p>
-        <p><strong>Step 2: give ChatGPT the document, with a job description.</strong> Upload the PDF and be specific about what you want back. These are the prompts I use, copy them as they are:</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#steps"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="method">The two step method that works every time</h2>
+              <p class="step-summary">Step 1: make the video a document.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>VideoDoc <a href="../youtube-video-to-pdf/">turns the link into one PDF</a> on your own computer: every word with timestamps, plus the slides and code captured as images.</li>
+            <li>No captions needed, because it transcribes the audio itself.</li>
+            <li>Step 2: give ChatGPT the document, with a job description.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> A summary you cannot check is just a rumor with formatting, and timestamps make every claim checkable in one click.</p>
+        </section>
+        <p>Upload the PDF and be specific about what you want back. These are the prompts I use, copy them as they are:</p>
         <pre><code>Summarize this video document in 10 bullet points.
 For every point, include the timestamp it came from
 so I can verify it against the video.</code></pre>
@@ -106,10 +160,28 @@ that the speaker did not say out loud.</code></pre>
         <pre><code>I have 5 minutes. Write the summary as: what is the
 one core claim, what evidence is given, what should
 I actually do, and what would you challenge.</code></pre>
-        <p>That last line matters. A summary you cannot check is just a rumor with formatting, and timestamps make every claim checkable in one click.</p>
+        <p>That last line matters.</p>
 
-        <h2 id="slides">The part most people never get: the slides</h2>
-        <p>A transcript-only summary misses whatever lived on screen: the table of numbers, the architecture diagram, the pricing slide the speaker just waved at. Those are exactly the frames you get when you <a href="../extract-slides-from-video/">extract the slides from a video presentation</a>. Because VideoDoc places those captures inside the document, ChatGPT reads them too, and suddenly the summary includes the half of the talk that was never spoken. For lecture and conference content, and above all for <a href="../webinar-recording-to-document/">a vendor webinar recording</a>, that half is usually the valuable one.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#video-to-frames"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="slides">The part most people never get: the slides</h2>
+              <p class="step-summary">A transcript-only summary misses whatever lived on screen: the table of numbers, the architecture diagram, the pricing slide the speaker just waved at.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Those are exactly the frames you get when you <a href="../extract-slides-from-video/">extract the slides from a video presentation</a>.</li>
+            <li>Because VideoDoc places those captures inside the document, ChatGPT reads them too, and suddenly the summary includes the half of the talk that was never spoken.</li>
+            <li>For lecture and conference content, and above all for <a href="../webinar-recording-to-document/">a vendor webinar recording</a>, that half is usually the valuable one.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The summary now covers what was shown on screen, not just what was said out loud.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -192,7 +264,7 @@ I actually do, and what would you challenge.</code></pre>
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

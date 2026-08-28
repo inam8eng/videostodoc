@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">get-transcript-of-any-youtube-video</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/get-transcript-of-any-youtube-video.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/get-transcript-of-any-youtube-video-640.avif 640w, ../../assets/art/get-transcript-of-any-youtube-video-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/get-transcript-of-any-youtube-video-640.webp 640w, ../../assets/art/get-transcript-of-any-youtube-video-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/get-transcript-of-any-youtube-video.jpg" alt="An audio waveform with an arrow turning it into a list of timestamped transcript lines" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,25 +91,65 @@
         <p>If the video has captions: three dots under the video, Show transcript, copy. If it does not, or the captions are garbage, transcribe the audio itself: VideoDoc downloads the video on your own computer and writes every word with timestamps, in many languages, no captions required.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>Captions exist: click the three dots under the video, choose Show transcript, and copy the whole panel.</li>
+        <li>No captions, or garbled ones: VideoDoc transcribes the audio itself on your own machine, with a timestamp on every block.</li>
+        <li>It handles many languages, Hindi, Urdu and Arabic among them, and the video never leaves your machine.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#button">Method 1: the transcript button</a>
+        <a href="#audio">Method 2: transcribe the audio</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>The video that finally broke me was an Urdu lecture with auto captions that read like a prank. Half the words were wrong and the other half were in the wrong script. YouTube's transcript button is a gift when it works, and a wall when it does not, so you need both methods in your pocket.</p>
 
-        <h2 id="button">Method 1: the transcript is already there</h2>
-        <ol>
-          <li>Open the video on YouTube in a browser.</li>
-          <li>Under the title, click the three dots, then <strong>Show transcript</strong>.</li>
-          <li>The panel lists every line with its timestamp. Toggle timestamps off from the small menu if you want prose only.</li>
-          <li>Select everything, copy, and paste into your notes.</li>
-        </ol>
-        <p>When the creator uploaded proper subtitles this text is genuinely good. When it says auto-generated, treat every technical word with suspicion, because the caption engine guesses from sound alone.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#waveform-to-text"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">How-to</span>
+              <h2 id="button">Method 1: the transcript is already there</h2>
+              <p class="step-summary">When the creator uploaded proper subtitles this text is genuinely good.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Open the video on YouTube in a browser.</li>
+            <li>Under the title, click the three dots, then <strong>Show transcript</strong>.</li>
+            <li>The panel lists every line with its timestamp. Toggle timestamps off from the small menu if you want prose only.</li>
+            <li>Select everything, copy, and paste into your notes.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The full transcript, timestamps included, is sitting in your notes.</p>
+        </section>
+        <p>When it says auto-generated, treat every technical word with suspicion, because the caption engine guesses from sound alone.</p>
 
-        <h2 id="audio">Method 2: transcribe the audio, skip captions entirely</h2>
-        <p>This is what I do for anything that matters now. VideoDoc takes the link, downloads the video over your own home connection, the same path it uses to <a href="../download-youtube-video-hd-4k/">save a YouTube video in HD or 4K</a>, and runs AI transcription on your own machine. The result is every word with timestamps, whether the video has captions or not, because it never looks at captions in the first place.</p>
-        <ul>
-          <li>Pick the spoken language before you start. It handles many, including Hindi, Urdu, Arabic, Russian, Chinese and Japanese, with English the strongest today.</li>
-          <li>Choose the Best engine setting when accuracy matters more than speed.</li>
-          <li>Long videos are fine. 3 hour lectures are the sweet spot, and a safety timer on every step means it never hangs overnight, which is most of the way to <a href="../video-lecture-to-notes/">notes the lecture writes for itself</a>.</li>
-        </ul>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#waveform-to-text"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">How-to</span>
+              <h2 id="audio">Method 2: transcribe the audio, skip captions entirely</h2>
+              <p class="step-summary">This is what I do for anything that matters now.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Pick the spoken language before you start. It handles many, including Hindi, Urdu, Arabic, Russian, Chinese and Japanese, with English the strongest today.</li>
+            <li>Choose the Best engine setting when accuracy matters more than speed.</li>
+            <li>Long videos are fine.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> 3 hour lectures are the sweet spot, and a safety timer on every step means it never hangs overnight, which is most of the way to <a href="../video-lecture-to-notes/">notes the lecture writes for itself</a>.</p>
+        </section>
+        <p>VideoDoc takes the link, downloads the video over your own home connection, the same path it uses to <a href="../download-youtube-video-hd-4k/">save a YouTube video in HD or 4K</a>, and runs AI transcription on your own machine. The result is every word with timestamps, whether the video has captions or not, because it never looks at captions in the first place.</p>
         <p>You get the transcript inside <a href="../youtube-video-to-pdf/">a clean PDF with the slides included</a> and a Markdown copy, and if the video shows slides or code, those come along as images too. Nothing uploads anywhere at any point.</p>
 
         <div class="callout">
@@ -194,7 +238,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

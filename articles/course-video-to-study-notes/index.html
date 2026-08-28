@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">course-video-to-study-notes</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/course-video-to-study-notes.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/course-video-to-study-notes-640.avif 640w, ../../assets/art/course-video-to-study-notes-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/course-video-to-study-notes-640.webp 640w, ../../assets/art/course-video-to-study-notes-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/course-video-to-study-notes.jpg" alt="A stack of course videos turning into one searchable page of study notes with the slides captured beside the words" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,26 +91,96 @@
         <p>Run each course video, or the whole playlist, through VideoDoc on your own computer. You get one document per lesson or one merged file for the course: timestamped words plus the slides and demos as images. Keep the Markdown in your notes app, keep the PDF for your AI, and revise by search instead of rewatch.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>Paste the course playlist into VideoDoc, or drop in downloaded lesson files, and the notes build privately on your own machine.</li>
+        <li>Markdown goes to your notes app for search, the PDF goes to your AI for quizzes and revision plans, and the timestamps carry you back into the video.</li>
+        <li>Lower friction is what gets courses finished: rereading two pages fits into a normal day in a way a login-and-scrub rewatch never does.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#convert">The conversion</a>
+        <a href="#system">The simple system</a>
+        <a href="#why-finish">Why courses get finished</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>Be honest, how many courses have you bought and never finished? I own several. The ones I actually completed had one thing in common: I stopped trying to absorb them by watching, and started turning them into something I could hold. A course you can search is a course you will actually use, because the barrier to "let me check that lesson again" drops from twenty minutes to twenty seconds.</p>
 
-        <h2 id="convert">The conversion, once per course</h2>
-        <p>If the course lives on YouTube, paste the playlist link into VideoDoc and choose one merged document or one per lesson. If it is <a href="../download-youtube-video-hd-4k/">video files you downloaded in HD or 4K</a>, drop those in instead, and they process fully offline. Either way the work happens on your machine: transcription with timestamps, and <a href="../extract-slides-from-video/">every slide, diagram and demo extracted from the video</a> as a sharp image beside the words. Queue it in the evening, and the tracker sheet shows you the finished list with your morning tea.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#playlist-document"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="convert">The conversion, once per course</h2>
+              <p class="step-summary">If the course lives on YouTube, paste the playlist link into VideoDoc and choose one merged document or one per lesson.</p>
+            </div>
+          </div>
+          <picture class="step-spot">
+            <source type="image/avif" srcset="../../assets/art/spot-playlist-document-640.avif">
+            <source type="image/webp" srcset="../../assets/art/spot-playlist-document-640.webp">
+            <img src="../../assets/art/spot-playlist-document-640.webp"
+                 width="640" height="480" loading="lazy" decoding="async"
+                 alt="A stack of videos becoming one organized searchable document">
+          </picture>
+          <ol class="step-actions">
+            <li>If it is <a href="../download-youtube-video-hd-4k/">video files you downloaded in HD or 4K</a>, drop those in instead, and they process fully offline.</li>
+            <li>Either way the work happens on your machine: transcription with timestamps, and <a href="../extract-slides-from-video/">every slide, diagram and demo extracted from the video</a> as a sharp image beside the words.</li>
+            <li>Queue it in the evening, and the tracker sheet shows you the finished list with your morning tea.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The whole course is one queued job tonight and one set of finished notes in the morning.</p>
+        </section>
 
-        <h2 id="system">The simple system that survives</h2>
-        <ul>
-          <li><strong>Markdown into your notes app.</strong> Obsidian or Notion becomes the course's permanent home, one note per lesson, linkable to your own notes. The course stops being "that thing in my downloads" and joins your actual knowledge base.</li>
-          <li><strong>PDF into your AI.</strong> ChatGPT, Claude or NotebookLM with the whole course can explain lesson 9 using lesson 3's vocabulary, build you a revision plan, or make quizzes per module, which is the same reading-and-quizzing loop as <a href="../study-from-youtube-with-ai/">studying from YouTube with AI</a>. Ask it "what does this course never explain properly" some time. Eye-opening.</li>
-          <li><strong>Timestamps as your way back.</strong> Notes are for finding, video is for re-feeling. When a captured slide is not enough, the timestamp beside it takes you to the exact minute to rewatch the demo.</li>
-        </ul>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#study-notes"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 2</span>
+              <h2 id="system">The simple system that survives</h2>
+              <p class="step-summary">Three homes for the notes, and each one earns its keep.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><strong>Markdown into your notes app.</strong> Obsidian or Notion becomes the course's permanent home, one note per lesson, linkable to your own notes. The course stops being "that thing in my downloads" and joins your actual knowledge base.</li>
+            <li><strong>PDF into your AI.</strong> ChatGPT, Claude or NotebookLM with the whole course can explain lesson 9 using lesson 3's vocabulary, build you a revision plan, or make quizzes per module, which is the same reading-and-quizzing loop as <a href="../study-from-youtube-with-ai/">studying from YouTube with AI</a>. Ask it "what does this course never explain properly" some time. Eye-opening.</li>
+            <li><strong>Timestamps as your way back.</strong> Notes are for finding, video is for re-feeling.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> When a captured slide is not enough, the timestamp beside it takes you to the exact minute to rewatch the demo.</p>
+        </section>
 
         <div class="callout">
           <span class="lbl">The fair use line, plainly</span>
           <p>Notes from a paid course are for you. Making personal study notes from content you bought is normal studying. Sharing those documents, selling them, or posting them publicly is sharing the course itself, so keep them private, the same as your handwritten notes.</p>
         </div>
 
-        <h2 id="why-finish">Why this actually gets courses finished</h2>
-        <p>The reason courses die at lesson 7 is friction: each return visit costs a login, a scrub, a "where was I". Notes remove the friction. You revisit in the gaps of a normal day, on the bus, between tasks, because reading two pages needs no ceremony. The course finishes almost by accident, which is the only way anything finishes when you have a day job. I say that from experience.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#playlist-document"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Explanation</span>
+              <h2 id="why-finish">Why this actually gets courses finished</h2>
+              <p class="step-summary">The reason courses die at lesson 7 is friction: each return visit costs a login, a scrub, a "where was I".</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Notes remove the friction.</li>
+            <li>You revisit in the gaps of a normal day, on the bus, between tasks, because reading two pages needs no ceremony.</li>
+            <li>The course finishes almost by accident, which is the only way anything finishes when you have a day job.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> I say that from experience.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -189,7 +263,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

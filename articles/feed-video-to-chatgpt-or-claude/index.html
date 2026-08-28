@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">feed-video-to-chatgpt-or-claude</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/feed-video-to-chatgpt-or-claude.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/feed-video-to-chatgpt-or-claude-640.avif 640w, ../../assets/art/feed-video-to-chatgpt-or-claude-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/feed-video-to-chatgpt-or-claude-640.webp 640w, ../../assets/art/feed-video-to-chatgpt-or-claude-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/feed-video-to-chatgpt-or-claude.jpg" alt="A document holding transcript text and captured screen images, with an arrow carrying it into an AI chat bubble" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,23 +91,63 @@
         <p>No. As of July 2026, ChatGPT and Claude cannot watch a video. Paste a YouTube link and, at best, the AI reads the page and any captions it can reach. It never sees the picture. The working bridge is a document: turn the video into a PDF holding the timestamped transcript plus the on-screen content as images, and any AI can work with the whole thing.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>No chat AI can truly watch a video today: a pasted link gives it the page text and reachable captions at best, never the frames.</li>
+        <li>The bridge is a document, a timestamped transcript plus the on-screen content as sharp images, which ChatGPT, Claude and Gemini all read well.</li>
+        <li>Prove it yourself: ask for the five main points from the bare link, then from the PDF of the same video, and compare the answers.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#happens">What happens when you paste a link</a>
+        <a href="#bridge">The bridge</a>
+        <a href="#test">A two minute test</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>People paste YouTube links into ChatGPT thousands of times a day and trust whatever comes back. I did it too, until an answer quoted a "part of the video" that did not exist. Understanding what actually happens under that link paste changed how I use AI with video completely, so let me give you the honest mechanics.</p>
 
-        <h2 id="happens">What really happens when you paste a link</h2>
-        <ul>
-          <li><strong>ChatGPT</strong> with browsing fetches the page like a text reader. If captions are available and reachable, it can lean on those. It never decodes a single frame of the video itself.</li>
-          <li><strong>Claude</strong> is direct about it: give it a link and it works from whatever text context it can get, and tells you it cannot watch the video.</li>
-          <li><strong>Gemini</strong> is the furthest along, with real video understanding on uploads in some products, within length and size limits. Handing it an arbitrary YouTube link on a normal chat plan is still not a full watch.</li>
-        </ul>
-        <p>So the failure is quiet. The AI answers confidently either way, and you cannot tell from the tone whether it read a proper transcript or improvised from the title, the description and the comments.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#ai-sparkle"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="happens">What really happens when you paste a link</h2>
+              <p class="step-summary">So the failure is quiet.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><strong>ChatGPT</strong> with browsing fetches the page like a text reader. If captions are available and reachable, it can lean on those. It never decodes a single frame of the video itself.</li>
+            <li><strong>Claude</strong> is direct about it: give it a link and it works from whatever text context it can get, and tells you it cannot watch the video.</li>
+            <li><strong>Gemini</strong> is the furthest along, with real video understanding on uploads in some products, within length and size limits.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Handing it an arbitrary YouTube link on a normal chat plan is still not a full watch.</p>
+        </section>
+        <p>The AI answers confidently either way, and you cannot tell from the tone whether it read a proper transcript or improvised from the title, the description and the comments.</p>
 
-        <h2 id="bridge">The bridge: give the AI what it can actually read</h2>
-        <p>Chat AIs are excellent with two things: text and still images. A video is just those two things plus time. Flatten it honestly and nothing important is lost:</p>
-        <ol>
-          <li><strong>The words</strong> become <a href="../get-transcript-of-any-youtube-video/">a timestamped transcript, captions or no captions</a>, so every claim keeps its address in the video.</li>
-          <li><strong>The picture</strong> becomes captures of the on-screen content, the slides, the code, the diagrams, taken sharp enough to read.</li>
-        </ol>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#document-ai"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 2</span>
+              <h2 id="bridge">The bridge: give the AI what it can actually read</h2>
+              <p class="step-summary">Chat AIs are excellent with two things: text and still images. A video is just those two things plus time. Flatten it honestly and nothing important is lost.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><strong>The words</strong> become <a href="../get-transcript-of-any-youtube-video/">a timestamped transcript, captions or no captions</a>, so every claim keeps its address in the video.</li>
+            <li><strong>The picture</strong> becomes captures of the on-screen content, the slides, the code, the diagrams, taken sharp enough to read.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Both halves of the video, the words and the picture, now exist in a form your AI can genuinely read.</p>
+        </section>
         <p>That is exactly the file VideoDoc builds, on your own computer, from any YouTube, TikTok, Instagram, Facebook or X link or a local file, so even <a href="../tiktok-video-to-text/">a sixty second TikTok becomes text your AI can read</a>. One PDF in, and suddenly ChatGPT quotes the lecture accurately, Claude explains the diagram from slide 14, NotebookLM builds a study guide from the whole playlist, which is the backbone of <a href="../study-from-youtube-with-ai/">my daily setup for studying from YouTube with AI</a>.</p>
 
         <div class="callout">
@@ -111,8 +155,26 @@
           <p>The cloud tools that promise this same bridge upload your video to their servers and meter you monthly. VideoDoc does the whole job on your machine, so a 3 hour lecture costs you nothing extra and private files stay private.</p>
         </div>
 
-        <h2 id="test">A test you can run in two minutes</h2>
-        <p>Take a video you know well. Paste its link into ChatGPT and ask for the five main points. Then feed it the VideoDoc PDF of the same video and ask again. The first answer is a horoscope. The second one has timestamps. Once you see that difference on a video you actually know, you will never trust the link paste again.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#ai-sparkle"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 3</span>
+              <h2 id="test">A test you can run in two minutes</h2>
+              <p class="step-summary">Take a video you know well.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Paste its link into ChatGPT and ask for the five main points.</li>
+            <li>Then feed it the VideoDoc PDF of the same video and ask again.</li>
+            <li>The first answer is a horoscope. The second one has timestamps.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Once you see that difference on a video you actually know, you will never trust the link paste again.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -195,7 +257,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

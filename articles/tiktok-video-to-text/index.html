@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">tiktok-video-to-text</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/tiktok-video-to-text.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/tiktok-video-to-text-640.avif 640w, ../../assets/art/tiktok-video-to-text-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/tiktok-video-to-text-640.webp 640w, ../../assets/art/tiktok-video-to-text-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/tiktok-video-to-text.jpg" alt="A short TikTok video turning into a page of timestamped text with the on-screen moments kept as images" width="1280" height="714" loading="eager" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -90,21 +94,56 @@
       <div class="prose">
         <p>TikTok is where knowledge goes to be sixty seconds long. Recipes, Excel tricks, workout plans, business tips, all compressed into clips that vanish back into the feed the moment your thumb moves. I run social accounts myself, and my camera roll used to be a graveyard of screen recordings saved "to write down later". Later never came, because rewatching sixty second videos to type out a recipe is nobody's idea of an evening.</p>
 
-        <h2 id="how">Link to text, the short version</h2>
-        <ol>
-          <li>Tap Share on the TikTok and copy the link.</li>
-          <li>Paste it into VideoDoc and pick <strong>Make a document</strong>. It detects the platform by itself.</li>
-          <li>Seconds later, short videos are quick work, you have the full spoken words with timestamps, plus captures of what the video showed on screen.</li>
-        </ol>
-        <p>That second part matters more on TikTok than anywhere, because half of TikTok's information is never spoken. It is text overlays, ingredient lists shown for two seconds, settings screens flashed past, the same trapped-on-screen problem as <a href="../extract-slides-from-video/">slides inside a conference talk</a>. The captures hold those still so you can finally read them at human speed, and for clips already sitting on your disk you can <a href="../transcribe-video-free-no-upload/">transcribe them free without uploading anything</a>.</p>
+        <div class="art-summary"><b>In 30 seconds</b><ul>
+          <li>Tap Share on the TikTok, copy the link, paste it into VideoDoc and pick Make a document.</li>
+          <li>The audio is transcribed on your own computer into timestamped text, no captions needed.</li>
+          <li>On-screen overlays are captured as images, so the half that is never spoken survives too.</li>
+        </ul></div>
+        <nav class="jumplinks" aria-label="Jump to section"><a href="#how">Link to text</a><a href="#uses">What people do with it</a><a href="#faq-h">Quick questions</a></nav>
 
-        <h2 id="uses">What people actually do with TikTok text</h2>
-        <ul>
-          <li><strong>Recipes and routines</strong> stop being screen recordings and become notes you can search while shopping.</li>
-          <li><strong>Creators study hooks.</strong> Transcribe the top clips in your niche and read twenty opening lines side by side. Patterns appear in text that you feel but cannot see in video.</li>
-          <li><strong>Your own clips become drafts.</strong> Your TikTok scripts, transcribed, are raw material for threads, posts and articles, one recording feeding four formats.</li>
-          <li><strong>Claims become checkable.</strong> Hand the text of a confident finance TikTok to your AI, which <a href="../feed-video-to-chatgpt-or-claude/">cannot watch the clip itself</a>, and ask what is missing. Sixty seconds of confidence often reads differently as four sentences on paper.</li>
-        </ul>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#waveform-to-text"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="how">Link to text, the short version</h2>
+              <p class="step-summary">That second part matters more on TikTok than anywhere, because half of TikTok's information is never spoken.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Tap Share on the TikTok and copy the link.</li>
+            <li>Paste it into VideoDoc and pick <strong>Make a document</strong>. It detects the platform by itself.</li>
+            <li>Seconds later, short videos are quick work, you have the full spoken words with timestamps, plus captures of what the video showed on screen.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The captures hold the on-screen moments still so you can finally read them at human speed.</p>
+        </section>
+        <p>It is text overlays, ingredient lists shown for two seconds, settings screens flashed past, the same trapped-on-screen problem as <a href="../extract-slides-from-video/">slides inside a conference talk</a>. For clips already sitting on your disk, you can <a href="../transcribe-video-free-no-upload/">transcribe them free without uploading anything</a>.</p>
+
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#waveform-to-text"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="uses">What people actually do with TikTok text</h2>
+              <p class="step-summary">Four things people actually do once the clips become text.</p>
+            </div>
+          </div>
+          <ul class="step-actions">
+            <li><strong>Recipes and routines</strong> stop being screen recordings and become notes you can search while shopping.</li>
+            <li><strong>Creators study hooks.</strong> Transcribe the top clips in your niche and read twenty opening lines side by side. Patterns appear in text that you feel but cannot see in video.</li>
+            <li><strong>Your own clips become drafts.</strong> Your TikTok scripts, transcribed, are raw material for threads, posts and articles, one recording feeding four formats.</li>
+            <li><strong>Claims become checkable.</strong> Hand the text of a confident finance TikTok to your AI, which <a href="../feed-video-to-chatgpt-or-claude/">cannot watch the clip itself</a>, and ask what is missing.</li>
+          </ul>
+          <p class="step-check"><strong>Check:</strong> Sixty seconds of confidence often reads differently as four sentences on paper.</p>
+        </section>
 
         <div class="callout">
           <span class="lbl">Honest notes</span>
@@ -192,7 +231,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

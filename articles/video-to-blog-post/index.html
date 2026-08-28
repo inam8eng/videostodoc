@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">video-to-blog-post</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/video-to-blog-post.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/video-to-blog-post-640.avif 640w, ../../assets/art/video-to-blog-post-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/video-to-blog-post-640.webp 640w, ../../assets/art/video-to-blog-post-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/video-to-blog-post.jpg" alt="A spoken video turning into a written blog post, with its captured frames becoming the article images" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -90,17 +94,100 @@
       <div class="prose">
         <p>I post videos and I write articles, and for a long time those were two separate jobs done twice. The video took a day, and then the article about the same idea took another day, mostly spent scrubbing my own video trying to remember what I said. The fix was embarrassingly simple: stop treating the video as a video. Treat it as a first draft that happens to be spoken.</p>
 
-        <h2 id="step1">Step 1: get the draft out of the video</h2>
-        <p>Run the video through VideoDoc, your own file or the published link, a long YouTube upload or <a href="../tiktok-video-to-text/">a sixty second TikTok</a>. You get every word timestamped, and every slide or screen you showed captured as an image. That document is your raw material: a complete, searchable record of what you actually said and showed, made on your own machine in a few minutes.</p>
+        <div class="art-summary"><b>In 30 seconds</b><ul>
+          <li>Run the video through VideoDoc first: a timestamped transcript plus every on-screen moment captured as an image, made on your own machine.</li>
+          <li>Outline from the timestamps, then rewrite each section in written English, keeping only the spoken lines that earn a place as quotes.</li>
+          <li>The captured frames become your post images; the raw transcript is never the post.</li>
+        </ul></div>
 
-        <h2 id="step2">Step 2: outline from the timestamps</h2>
-        <p>Read the transcript once, <a href="../get-transcript-of-any-youtube-video/">every word with timestamps, captions or not</a>, and mark the moments where you changed topic. Those timestamps are your headings, because a good video already has the structure a post needs, you just never see it while watching. My last one broke into five sections in about four minutes of marking.</p>
+        <nav class="jumplinks" aria-label="Jump to section">
+          <a href="#step1">Get the draft out</a>
+          <a href="#step2">Outline from timestamps</a>
+          <a href="#step3">Rewrite, do not paste</a>
+          <a href="#step4">The images are made</a>
+          <a href="#faq-h">Quick questions</a>
+        </nav>
 
-        <h2 id="step3">Step 3: rewrite, do not paste</h2>
-        <p>Spoken English and written English are different animals. Spoken has "so, basically" and half-finished loops that your ear forgives and your reader will not. So rewrite each section in your writing voice, and keep only the spoken lines that genuinely land as quotes. If you use AI here, use it as an editor, not the author: hand it your transcript section and ask it to tighten your words, keeping your phrasing, rather than asking it to write from nothing. The post must still sound like the person in the video.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#steps"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="step1">Step 1: get the draft out of the video</h2>
+              <p class="step-summary">Run the video through VideoDoc, your own file or the published link, a long YouTube upload or <a href="../tiktok-video-to-text/">a sixty second TikTok</a>.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>You get every word timestamped.</li>
+            <li>Every slide or screen you showed is captured as an image.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> That document is your raw material: a complete, searchable record of what you actually said and showed, made on your own machine in a few minutes.</p>
+        </section>
 
-        <h2 id="step4">Step 4: the images are already made</h2>
-        <p>The captured frames from your own video are your post images: the slide with the numbers, the before and after, the finished result. They are yours, they match the content exactly, and they cost zero extra work. Full HD captures are sharp enough to publish as they are.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#steps"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 2</span>
+              <h2 id="step2">Step 2: outline from the timestamps</h2>
+              <p class="step-summary">Read the transcript once, <a href="../get-transcript-of-any-youtube-video/">every word with timestamps, captions or not</a>, and mark the moments where you changed topic.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Those timestamps are your headings.</li>
+            <li>A good video already has the structure a post needs, you just never see it while watching.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> My last one broke into five sections in about four minutes of marking.</p>
+        </section>
+
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#steps"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 3</span>
+              <h2 id="step3">Step 3: rewrite, do not paste</h2>
+              <p class="step-summary">Spoken English and written English are different animals.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Spoken has "so, basically" and half-finished loops that your ear forgives and your reader will not.</li>
+            <li>So rewrite each section in your writing voice, and keep only the spoken lines that genuinely land as quotes.</li>
+            <li>If you use AI here, use it as an editor, not the author: hand it your transcript section and ask it to tighten your words, keeping your phrasing, rather than asking it to write from nothing.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The post must still sound like the person in the video.</p>
+        </section>
+
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#video-to-frames"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 4</span>
+              <h2 id="step4">Step 4: the images are already made</h2>
+              <p class="step-summary">The captured frames from your own video are your post images: the slide with the numbers, the before and after, the finished result.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>They are yours, and they match the content exactly.</li>
+            <li>They cost zero extra work.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Full HD captures are sharp enough to publish as they are.</p>
+        </section>
 
         <div class="callout">
           <span class="lbl">The honest SEO note</span>
@@ -188,7 +275,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

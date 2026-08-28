@@ -51,7 +51,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -76,7 +76,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">youtube-video-to-pdf</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/youtube-video-to-pdf.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/youtube-video-to-pdf-640.avif 640w, ../../assets/art/youtube-video-to-pdf-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/youtube-video-to-pdf-640.webp 640w, ../../assets/art/youtube-video-to-pdf-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/youtube-video-to-pdf.jpg" alt="A YouTube video turning into a PDF document with the on-screen slides captured as images beside the timestamped words" width="1280" height="714" loading="eager" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -91,31 +95,89 @@
         <p>The free way: copy the video's transcript into a Google Doc and download it as a PDF. That gets you words only. The full way: paste the link into VideoDoc, and it builds one PDF on your own computer with every word timestamped plus the on-screen slides, code and diagrams saved as full HD images, placed where they happened in the talk.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>Free trick: copy the YouTube transcript into a Google Doc and download it as a PDF, words only.</li>
+        <li>Full way: VideoDoc builds one PDF on your own machine, every word timestamped plus the slides and code as full HD images.</li>
+        <li>The finished PDF opens anywhere and reads cleanly in ChatGPT, Claude, Gemini and NotebookLM, with a Markdown copy beside it.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#free">The free trick</a>
+        <a href="#proper">The proper way</a>
+        <a href="#inside">Inside the PDF</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>PDF is the one format everything accepts. Your AI reads it, your phone opens it, your printer prints it, your teammate cannot mess up the formatting. So when I want a video to become something permanent, PDF is what I aim for, and I learned the hard way that the words alone are not enough. The first time I turned a lecture into a plain transcript PDF, I opened it a month later and half of it made no sense, because the teacher kept saying "as you can see here" about slides I could no longer see.</p>
         <p>A good video PDF needs both layers. The words, timestamped so you can jump back to the exact moment. And the screen, captured as images, because in a tutorial the screen carries the half of the meaning that never gets spoken.</p>
 
-        <h2 id="free">The free trick, and where it stops</h2>
-        <p>If you just need words on paper today, do this:</p>
-        <ol>
-          <li>Open the video on YouTube and click the three dots under it, then <strong>Show transcript</strong>.</li>
-          <li>Copy the whole panel and paste it into a Google Doc.</li>
-          <li>File, Download, PDF. Done.</li>
-        </ol>
-        <p>It works, and it costs nothing. But you inherit every weakness of auto captions: missing videos, mangled technical words, no punctuation worth trusting. You get zero images, no structure, and cleaning the timestamp clutter by hand takes longer than you expect. I still use this trick for short interview clips. For anything taught on a screen, it throws away the screen.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#free-unlock"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Decision</span>
+              <h2 id="free">The free trick, and where it stops</h2>
+              <p class="step-summary">If you just need words on paper today, do this:</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Open the video on YouTube and click the three dots under it, then <strong>Show transcript</strong>.</li>
+            <li>Copy the whole panel and paste it into a Google Doc.</li>
+            <li>File, Download, PDF.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Done. It works, and it costs nothing.</p>
+        </section>
+        <p>But you inherit every weakness of auto captions: missing videos, mangled technical words, no punctuation worth trusting. You get zero images, no structure, and cleaning the timestamp clutter by hand takes longer than you expect. I still use this trick for short interview clips. For anything taught on a screen, it throws away the screen.</p>
 
-        <h2 id="proper">The proper way: link in, PDF out</h2>
-        <p>VideoDoc was built for exactly this output. You paste a YouTube link, a single video or <a href="../youtube-playlist-to-one-document/">a whole playlist merged into one document</a>, choose your quality, and press Start. Everything runs on your own machine: the <a href="../download-youtube-video-hd-4k/">download comes over your home connection</a>, the transcription runs on your CPU or graphics card, and the screenshot engine watches the picture as it goes.</p>
-        <p>That screenshot engine is the part I am most proud of. When a video mixes a person and a screen share, it follows the screen, not the face. The slides, the code editor, the whiteboard, captured at up to full HD with Best quality so the text inside the image stays sharp enough for your AI to read. A speaker's face gets captured only when the face is genuinely all there is.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#document-images"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="proper">The proper way: link in, PDF out</h2>
+              <p class="step-summary">VideoDoc was built for exactly this output.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>You paste a YouTube link, a single video or <a href="../youtube-playlist-to-one-document/">a whole playlist merged into one document</a>, choose your quality, and press Start.</li>
+            <li>Everything runs on your own machine: the <a href="../download-youtube-video-hd-4k/">download comes over your home connection</a>, the transcription runs on your CPU or graphics card, and the screenshot engine watches the picture as it goes.</li>
+            <li>That screenshot engine is the part I am most proud of.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> A speaker's face gets captured only when the face is genuinely all there is.</p>
+        </section>
+        <p>When a video mixes a person and a screen share, it follows the screen, not the face. The slides, the code editor, the whiteboard, captured at up to full HD with Best quality so the text inside the image stays sharp enough for your AI to read.</p>
 
-        <h2 id="inside">What the finished PDF looks like inside</h2>
-        <ul>
-          <li>The video title, channel, link and length at the top, so the source is never lost.</li>
-          <li>The timestamped transcript, broken into readable blocks rather than caption fragments.</li>
-          <li>The on-screen captures placed inline, each one sitting next to the words that were spoken over it.</li>
-          <li>A matching Markdown file beside the PDF, if you prefer notes apps like Obsidian or Notion.</li>
-        </ul>
-        <p>Because the PDF is a normal document, ChatGPT, Claude, Gemini and NotebookLM all read it directly. Ask for <a href="../summarize-youtube-video-with-chatgpt/">a summary that keeps the timestamps</a>, ask what the third slide meant, ask it to quiz you. The AI finally has the whole video in a form it understands.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#document-images"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="inside">What the finished PDF looks like inside</h2>
+              <p class="step-summary">Because the PDF is a normal document, ChatGPT, Claude, Gemini and NotebookLM all read it directly.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>The video title, channel, link and length at the top, so the source is never lost.</li>
+            <li>The timestamped transcript, broken into readable blocks rather than caption fragments.</li>
+            <li>The on-screen captures placed inline, each one sitting next to the words that were spoken over it.</li>
+            <li>A matching Markdown file beside the PDF, if you prefer notes apps like Obsidian or Notion.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The AI finally has the whole video in a form it understands.</p>
+        </section>
+        <p>Ask for <a href="../summarize-youtube-video-with-chatgpt/">a summary that keeps the timestamps</a>, ask what the third slide meant, ask it to quiz you.</p>
 
         <div class="callout">
           <span class="lbl">Honest limits</span>
@@ -202,7 +264,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

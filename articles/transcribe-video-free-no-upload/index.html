@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">transcribe-video-free-no-upload</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/transcribe-video-free-no-upload.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/transcribe-video-free-no-upload-640.avif 640w, ../../assets/art/transcribe-video-free-no-upload-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/transcribe-video-free-no-upload-640.webp 640w, ../../assets/art/transcribe-video-free-no-upload-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/transcribe-video-free-no-upload.jpg" alt="A video file being transcribed into text entirely inside the browser on one laptop, with nothing uploaded to any server" width="1280" height="714" loading="eager" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -90,20 +94,82 @@
       <div class="prose">
         <p>"Free transcription" online usually means one of three catches: free for ten minutes then pay, free if you make an account and eat the emails, or free because your file becomes their data. I put the real options side by side in <a href="../best-video-to-text-converters/">a comparison of video to text converters</a>. I wanted one page with none of the catches, mostly because the videos I test with are my own recordings, in my own voice, and shipping those to a stranger's server to save typing never sat right with me.</p>
 
-        <h2 id="how">How a browser transcribes with no server</h2>
-        <p>Modern browsers can run real AI models on your own hardware, using the graphics card through WebGPU when it is available and falling back to the CPU when it is not. So the <a href="../../try/">free VideoDoc page</a> works like this: the first visit downloads the speech model once into your browser's storage, then your file is read locally, listened to locally, and written out locally. The transcript appears on your screen without one byte of your video crossing the internet. Close the tab and nothing of yours is anywhere but your machine.</p>
-        <ol>
-          <li>Open <a href="../../try/">videostodoc.com/try</a> in Chrome or Edge for the GPU path.</li>
-          <li>Drop in a video or audio file from your disk.</li>
-          <li>Wait while your machine works, the first run includes the one-time model download.</li>
-          <li>Read the transcript and save it as .txt or .md.</li>
-        </ol>
+        <div class="art-summary"><b>In 30 seconds</b><ul>
+          <li>Open the free VideoDoc browser page and drop in a video or audio file from your disk.</li>
+          <li>Your own hardware runs the AI model, through the graphics card when possible, and nothing uploads.</li>
+          <li>Save the transcript as .txt or .md, with no account, no card and no watermark.</li>
+        </ul></div>
+        <nav class="jumplinks" aria-label="Jump to section"><a href="#how">How it works</a><a href="#limits">The limits</a><a href="#when">When you outgrow it</a><a href="#faq-h">Quick questions</a></nav>
 
-        <h2 id="limits">The limits, stated plainly</h2>
-        <p>This page is deliberately the small tool. Your own files only, no YouTube links. Words only, no on-screen captures. And shorter videos suit it best, because a browser tab is a polite guest on your computer and does not get the machine's full strength. There is no watermark and no trial clock, it is simply free, because it costs me nothing to run: your hardware does the work.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#steps"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="how">How a browser transcribes with no server</h2>
+              <p class="step-summary">Modern browsers can run real AI models on your own hardware, using the graphics card through WebGPU when it is available and falling back to the CPU when it is not.</p>
+            </div>
+          </div>
+          <picture class="step-spot">
+            <source type="image/avif" srcset="../../assets/art/spot-private-local-640.avif">
+            <source type="image/webp" srcset="../../assets/art/spot-private-local-640.webp">
+            <img src="../../assets/art/spot-private-local-640.webp"
+                 width="640" height="480" loading="lazy" decoding="async"
+                 alt="A laptop processing video inside a privacy shield without cloud upload">
+          </picture>
+          <ol class="step-actions">
+            <li>Open <a href="../../try/">videostodoc.com/try</a> in Chrome or Edge for the GPU path.</li>
+            <li>Drop in a video or audio file from your disk.</li>
+            <li>Wait while your machine works, the first run includes the one-time model download.</li>
+            <li>Read the transcript and save it as .txt or .md.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The transcript appears on your screen without one byte of your video crossing the internet.</p>
+        </section>
+        <p>So the <a href="../../try/">free VideoDoc page</a> works like this: your file is read locally, listened to locally, and written out locally. Close the tab and nothing of yours is anywhere but your machine.</p>
 
-        <h2 id="when">When you have outgrown it</h2>
-        <p>The desktop app exists for everything the tab cannot do: links and whole playlists, 3 hour lectures, <a href="../youtube-video-to-pdf/">the slides and code captured into a PDF</a>, <a href="../download-youtube-video-hd-4k/">HD and 4K downloads</a>, all still on your own machine with nothing uploaded, $19 once. The browser page is the honest sample of the same local-first idea, and if words-only on your own files covers your needs, keep using it forever with my blessing.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#document-ai"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Decision</span>
+              <h2 id="limits">The limits, stated plainly</h2>
+              <p class="step-summary">This page is deliberately the small tool.</p>
+            </div>
+          </div>
+          <ul class="step-actions">
+            <li>Your own files only, no YouTube links.</li>
+            <li>Words only, no on-screen captures.</li>
+            <li>And shorter videos suit it best, because a browser tab is a polite guest on your computer and does not get the machine's full strength.</li>
+          </ul>
+          <p class="step-check"><strong>Check:</strong> There is no watermark and no trial clock, it is simply free, because it costs me nothing to run: your hardware does the work.</p>
+        </section>
+
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#transcript"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="when">When you have outgrown it</h2>
+              <p class="step-summary">The desktop app exists for everything the tab cannot do: links and whole playlists, 3 hour lectures, <a href="../youtube-video-to-pdf/">the slides and code captured into a PDF</a>, <a href="../download-youtube-video-hd-4k/">HD and 4K downloads</a>, all still on your own machine with nothing uploaded, $19 once.</p>
+            </div>
+          </div>
+          <ul class="step-actions">
+            <li>The browser page is the honest sample of the same local-first idea.</li>
+          </ul>
+          <p class="step-check"><strong>Check:</strong> If words-only on your own files covers your needs, keep using it forever with my blessing.</p>
+        </section>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
@@ -186,7 +252,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

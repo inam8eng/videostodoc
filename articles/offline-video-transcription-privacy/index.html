@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">offline-video-transcription-privacy</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/offline-video-transcription-privacy.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/offline-video-transcription-privacy-640.avif 640w, ../../assets/art/offline-video-transcription-privacy-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/offline-video-transcription-privacy-640.webp 640w, ../../assets/art/offline-video-transcription-privacy-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/offline-video-transcription-privacy.jpg" alt="A video file staying on one laptop while it is transcribed into a document, with no copy going up to a cloud server" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -87,22 +91,92 @@
         <p>Cloud transcription means your video is copied to someone's server, processed under their retention policy, and billed per minute or per month forever. Local transcription runs the same class of AI on your own computer: nothing leaves, nothing meters, and confidential material stays confidential by architecture instead of by promise. Cloud still wins for live meetings and team collaboration, and it is fair to say so.</p>
       </div>
 
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>Uploading a video means a copy lives on servers you do not control, under a retention policy you accepted by clicking.</li>
+        <li>Local transcription keeps the file on your own computer, so after a one-time $19 a 3 hour lecture costs nothing extra.</li>
+        <li>Cloud still earns its keep for live meeting notes, shared team libraries and phone-first work.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#upload">What upload really means</a>
+        <a href="#meter">The meter</a>
+        <a href="#honest">Where cloud wins</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
+
       <div class="prose">
         <p>The moment that converted me was a client NDA. I had a recording I needed transcribed, freelance work with a company's internal numbers in it, and my finger was hovering over an upload button when the obvious question landed: I signed a paper promising to protect this file, and I am about to hand it to a third party whose privacy policy I have never read. That afternoon I went local, and every tool I have built since carries that decision inside it.</p>
 
-        <h2 id="upload">What "upload to transcribe" actually means</h2>
-        <p>When a cloud tool takes your video, several things become true at once. A copy of your file exists on infrastructure you do not control. It sits there under a retention policy written by their lawyers, which you accepted by clicking. Their staff and systems can technically touch it, their breach is now your breach, and some services reserve rights to use uploads to improve their models. None of this makes cloud companies evil, most are decent, but for an NDA file, a family video or an unreleased recording, "trust us" is a weaker guarantee than "it never left".</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#private-local"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="upload">What "upload to transcribe" actually means</h2>
+              <p class="step-summary">When a cloud tool takes your video, several things become true at once.</p>
+            </div>
+          </div>
+          <picture class="step-spot">
+            <source type="image/avif" srcset="../../assets/art/spot-private-local-640.avif">
+            <source type="image/webp" srcset="../../assets/art/spot-private-local-640.webp">
+            <img src="../../assets/art/spot-private-local-640.webp"
+                 width="640" height="480" loading="lazy" decoding="async"
+                 alt="A laptop processing video inside a privacy shield without cloud upload">
+          </picture>
+          <ol class="step-actions">
+            <li>A copy of your file exists on infrastructure you do not control.</li>
+            <li>It sits there under a retention policy written by their lawyers, which you accepted by clicking.</li>
+            <li>Their staff and systems can technically touch it, their breach is now your breach, and some services reserve rights to use uploads to improve their models.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> None of this makes cloud companies evil, most are decent, but for an NDA file, a family video or an unreleased recording, "trust us" is a weaker guarantee than "it never left".</p>
+        </section>
 
-        <h2 id="meter">The meter never stops being a meter</h2>
-        <p>Cloud pricing is metered because their compute costs real money per minute, so heavy use gets expensive by design. Per minute credits, monthly tiers, annual plans. A student documenting a semester of lectures or an analyst <a href="../webinar-recording-to-document/">turning hours of webinar recordings into documents</a> burns through tiers quickly, and the bill repeats every month you keep the habit. Local flips that: your computer already exists, so after a one-time $19, a 3 hour lecture costs the same as a 3 minute clip, which is nothing. The math is boring and decisive.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#shield-play"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="meter">The meter never stops being a meter</h2>
+              <p class="step-summary">Cloud pricing is metered because their compute costs real money per minute, so heavy use gets expensive by design.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Per minute credits, monthly tiers, annual plans.</li>
+            <li>A student documenting a semester of lectures or an analyst <a href="../webinar-recording-to-document/">turning hours of webinar recordings into documents</a> burns through tiers quickly, and the bill repeats every month you keep the habit.</li>
+            <li>Local flips that: your computer already exists, so after a one-time $19, a 3 hour lecture costs the same as a 3 minute clip, which is nothing.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The math is boring and decisive.</p>
+        </section>
 
-        <h2 id="honest">Where the cloud honestly wins</h2>
-        <ul>
-          <li><strong>Live meeting notes.</strong> Tools that join your calls and take notes in real time are doing a genuinely different job. VideoDoc works on recordings, not live calls.</li>
-          <li><strong>Team libraries.</strong> If ten people need to search the same transcript archive with shared accounts, a hosted service earns its subscription.</li>
-          <li><strong>Phone-first work.</strong> Browsers and desktops carry local AI well, phones are still catching up. The VideoDoc Android app is on the way, and today the desktop is where local shines.</li>
-        </ul>
-        <p>If your work is one of those three, use the cloud with open eyes. Everything else, the lectures, <a href="../course-video-to-study-notes/">the paid courses you turn into study notes</a>, the client files, the personal archive, belongs on your own machine.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#warning-document"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Guided step</span>
+              <h2 id="honest">Where the cloud honestly wins</h2>
+              <p class="step-summary">If your work is one of those three, use the cloud with open eyes.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li><strong>Live meeting notes.</strong> Tools that join your calls and take notes in real time are doing a genuinely different job. VideoDoc works on recordings, not live calls.</li>
+            <li><strong>Team libraries.</strong> If ten people need to search the same transcript archive with shared accounts, a hosted service earns its subscription.</li>
+            <li><strong>Phone-first work.</strong> Browsers and desktops carry local AI well, phones are still catching up.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> The VideoDoc Android app is on the way, and today the desktop is where local shines.</p>
+        </section>
+        <p>Everything else, the lectures, <a href="../course-video-to-study-notes/">the paid courses you turn into study notes</a>, the client files, the personal archive, belongs on your own machine.</p>
 
         <div class="callout tested">
           <span class="lbl">By architecture, not by promise</span>
@@ -190,7 +264,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>

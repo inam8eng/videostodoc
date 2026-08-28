@@ -47,7 +47,7 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="../">Articles</a>
-    <a href="../../#features">Features</a>
+    <a href="../../#how">How it works</a>
     <a href="../../#pricing">Pricing</a>
     <a href="../../#faq">FAQ</a>
     <a class="mobonly" href="../../try/">Try free in your browser</a>
@@ -72,7 +72,11 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">gta-6-extended-look-frame-by-frame</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/gta-6-extended-look-frame-by-frame.jpg" alt="VideoDoc illustration for this guide" width="1280" height="714" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/gta-6-extended-look-frame-by-frame-640.avif 640w, ../../assets/art/gta-6-extended-look-frame-by-frame-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/gta-6-extended-look-frame-by-frame-640.webp 640w, ../../assets/art/gta-6-extended-look-frame-by-frame-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/gta-6-extended-look-frame-by-frame.jpg" alt="A video player with an arrow turning it into a grid of individual image frames" width="1280" height="714" decoding="async" fetchpriority="high">
+      </picture>
     </figure>
 
     <article class="art">
@@ -86,6 +90,22 @@
         <span class="lbl">The short answer</span>
         <p>I took the 27 minute GTA 6 Extended Look and ran it through VideoDoc twice. Once for pictures: 6,418 frames, four every second, all in full 4K. Once for the words: 205 lines of speech and the 291 screens worth keeping, in one PDF. Both ran on my own PC, offline. The whole thing took about 11 minutes.</p>
       </div>
+
+      <div class="art-summary"><b>In 30 seconds</b><ul>
+        <li>Run one, pictures only: 6,418 frames at four a second, every one in full 4K, in about seven minutes.</li>
+        <li>Run two, the document: 205 lines of speech and 291 screens in one 18 MB PDF, in eleven and a half minutes.</li>
+        <li>Both runs happened on one ordinary PC, offline, with no graphics card help.</li>
+      </ul></div>
+
+      <nav class="jumplinks" aria-label="Jump to section">
+        <a href="#run-one-every-frame-as-pictures">Run one: pictures</a>
+        <a href="#run-two-the-words-and-the-screens-worth-keeping">Run two: the document</a>
+        <a href="#the-bit-i-was-actually-worried-about">The hard part</a>
+        <a href="#why-i-keep-both-runs">Why keep both</a>
+        <a href="#do-it-yourself-on-something-you-are-allowed-to-use">Do it yourself</a>
+        <a href="#one-honest-number-about-your-computer">One honest number</a>
+        <a href="#faq-h">Quick questions</a>
+      </nav>
 
       <div class="prose">
         <p>A friend asked me a simple question. Can your tool handle something big? Not a lecture, not a Zoom call. Something long, in 4K, with fast cuts and music over the talking.</p>
@@ -101,59 +121,119 @@
             <div class="stat"><span class="n" data-to="11 min">11 min</span><span class="l">start to finish</span></div>
         </div>
 
-        <h2 id="run-one-every-frame-as-pictures">Run one: every frame as pictures</h2>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#video-to-frames"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 1</span>
+              <h2 id="run-one-every-frame-as-pictures">Run one: every frame as pictures</h2>
+              <p class="step-summary">The first run was pictures only.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>No words, no PDF.</li>
+            <li>Just the video, cut into images, four every second.</li>
+            <li>Four a second sounds like a lot.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Seven minutes. 1.9 GB on disk.</p>
+        </section>
 
-        <p>The first run was pictures only. No words, no PDF. Just the video, cut into images, four every second.</p>
-
-        <p>Four a second sounds like a lot. It is the number that stops you missing things. Nothing you are meant to read stays on screen for less than a quarter of a second, so if you sample four times a second, you cannot miss it. A wanted poster, a street name, a number plate. It is in there.</p>
+        <p>It is the number that stops you missing things. Nothing you are meant to read stays on screen for less than a quarter of a second, so if you sample four times a second, you cannot miss it. A wanted poster, a street name, a number plate. It is in there.</p>
 
         <p>It grabbed <strong>6,439</strong> images and kept <strong>6,418</strong>. The 21 it dropped were exact copies of the picture before them, so nothing was lost. On a slide deck it would have thrown away thousands, because a slide sits still. A film like this barely repeats a single frame, and the number tells you that honestly.</p>
 
         <p>Every image is full 4K, 3840 by 2160. Not a shrunk preview. You can zoom right into a sign at the back of a shot and still read it.</p>
-
-        <p>Seven minutes. 1.9 GB on disk.</p>
 
         <figure class="shot">
           <img src="../../assets/shots/app-01-modes.png" alt="VideoDoc showing three choices: a document for AI, every frame as images, or just the video file" width="945" height="1012" loading="lazy" decoding="async">
           <figcaption>Three buttons, that is the whole decision. I picked the middle one for the pictures run.</figcaption>
         </figure>
 
-        <h2 id="run-two-the-words-and-the-screens-worth-keeping">Run two: the words, and the screens worth keeping</h2>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#waveform-to-text"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 2</span>
+              <h2 id="run-two-the-words-and-the-screens-worth-keeping">Run two: the words, and the screens worth keeping</h2>
+              <p class="step-summary">The second run was the proper document.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>This one listens to the video and writes down what is said, then picks out the screens worth keeping and puts them next to the right words.</li>
+            <li>It wrote down <strong>205 lines</strong> of speech, about 2,300 words.</li>
+            <li>There are no captions on this file, so it listened to the audio on my own PC.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Eleven and a half minutes.</p>
+        </section>
 
-        <p>The second run was the proper document. This one listens to the video and writes down what is said, then picks out the screens worth keeping and puts them next to the right words.</p>
-
-        <p>It wrote down <strong>205 lines</strong> of speech, about 2,300 words. There are no captions on this file, so it listened to the audio on my own PC. Nothing went to a server. My internet could have been off.</p>
+        <p>Nothing went to a server. My internet could have been off.</p>
 
         <p>It also picked <strong>291 screens</strong> out of the 27 minutes. Not every frame this time, only the ones where the picture actually changes to something new. That is what makes a document you can read instead of a pile you have to dig through.</p>
 
-        <p>Out came one PDF, 18 MB, plus the same thing as a Markdown file and a plain text transcript. Eleven and a half minutes.</p>
+        <p>Out came one PDF, 18 MB, plus the same thing as a Markdown file and a plain text transcript.</p>
 
         <figure class="shot">
           <img src="../../assets/shots/app-02-working.png" alt="VideoDoc working through the GTA 6 file, showing progress, time elapsed and time left" width="945" height="1012" loading="lazy" decoding="async">
           <figcaption>Mid job. It tells you what it is doing, how long it has taken and how long is left. No spinner that could mean anything.</figcaption>
         </figure>
 
-        <h2 id="the-bit-i-was-actually-worried-about">The bit I was actually worried about</h2>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#frames-grid"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 3</span>
+              <h2 id="the-bit-i-was-actually-worried-about">The bit I was actually worried about</h2>
+              <p class="step-summary">Loud music over quiet talking.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>That is where these things usually fall apart, and this file has plenty of it.</li>
+            <li>It got the talking.</li>
+            <li>Short lines, people cutting across each other, street slang.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> For finding the moment someone said a thing, so you can jump straight to it, it is more than good enough.</p>
+        </section>
 
-        <p>Loud music over quiet talking. That is where these things usually fall apart, and this file has plenty of it.</p>
+        <p>The first line it wrote down was a lookout saying they think someone knows they are coming. That is a hard line to catch, and it caught it.</p>
 
-        <p>It got the talking. Short lines, people cutting across each other, street slang. The first line it wrote down was a lookout saying they think someone knows they are coming. That is a hard line to catch, and it caught it.</p>
-
-        <p>It is not perfect. Where two people talk at once it picks one. Where music swells it sometimes shortens a line. I would not hand this to a court. For finding the moment someone said a thing, so you can jump straight to it, it is more than good enough.</p>
+        <p>It is not perfect. Where two people talk at once it picks one. Where music swells it sometimes shortens a line. I would not hand this to a court.</p>
 
         <div class="callout">
           <span class="lbl">Being straight with you</span>
           <p>I am not publishing the frames or the transcript from this video, and neither should you. It is Rockstar's film on Netflix, and nobody said you may hand out copies of it. What I am showing you is the numbers my own machine produced and the tool that produced them. Run it on your own copy, or on a trailer Rockstar has put on YouTube for everyone, and the output is yours to look at.</p>
         </div>
 
-        <h2 id="why-i-keep-both-runs">Why I keep both runs</h2>
-
-        <p>People ask which mode is the right one. They do different jobs.</p>
-
-        <ul>
-          <li><strong>Pictures only</strong> when you want to look. Every frame, in order, named by the exact second it came from. Good for spotting a detail, building a breakdown, or feeding pictures to an AI.</li>
-          <li><strong>The document</strong> when you want to read and search. Words plus the screens that matter, in one file you can drop into ChatGPT or Claude and ask questions about.</li>
-        </ul>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#frames-grid"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Explanation</span>
+              <h2 id="why-i-keep-both-runs">Why I keep both runs</h2>
+              <p class="step-summary">People ask which mode is the right one. They do different jobs.</p>
+            </div>
+          </div>
+          <ul class="step-actions">
+            <li><strong>Pictures only</strong> when you want to look. Every frame, in order, named by the exact second it came from. Good for spotting a detail, building a breakdown, or feeding pictures to an AI.</li>
+            <li><strong>The document</strong> when you want to read and search.</li>
+          </ul>
+          <p class="step-check"><strong>Check:</strong> Words plus the screens that matter, in one file you can drop into ChatGPT or Claude and ask questions about.</p>
+        </section>
 
         <p>For this file I wanted both. The pictures to look through, the document to search. Two runs, about 18 minutes of my evening, and I never opened a video editor.</p>
 
@@ -173,22 +253,52 @@
           </div>
         </div>
 
-        <h2 id="do-it-yourself-on-something-you-are-allowed-to-use">Do it yourself, on something you are allowed to use</h2>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#frames-grid"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 4</span>
+              <h2 id="do-it-yourself-on-something-you-are-allowed-to-use">Do it yourself, on something you are allowed to use</h2>
+              <p class="step-summary">If you have never done this before, try a two minute clip first.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Get the video. A file you already own, or a trailer from an official channel. VideoDoc takes a link or a file off your drive.</li>
+            <li>Open VideoDoc and pick your mode. <strong>Every frame as images</strong> for pictures, <strong>A document for AI</strong> for words plus screens.</li>
+            <li>Press the button and leave it. It shows the time left and it will not get stuck.</li>
+            <li>Open the folder when it finishes.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> Pictures come with a spreadsheet listing every one and its exact moment, so you can jump straight back to it.</p>
+        </section>
 
-        <ol>
-          <li>Get the video. A file you already own, or a trailer from an official channel. VideoDoc takes a link or a file off your drive.</li>
-          <li>Open VideoDoc and pick your mode. <strong>Every frame as images</strong> for pictures, <strong>A document for AI</strong> for words plus screens.</li>
-          <li>Press the button and leave it. It shows the time left and it will not get stuck.</li>
-          <li>Open the folder when it finishes. Pictures come with a spreadsheet listing every one and its exact moment, so you can jump straight back to it.</li>
-        </ol>
+        <p>You will see the shape of what comes out in under a minute, and then you will know whether the big one is worth your evening.</p>
 
-        <p>If you have never done this before, try a two minute clip first. You will see the shape of what comes out in under a minute, and then you will know whether the big one is worth your evening.</p>
+        <section class="guided-step">
+          <div class="step-heading">
+            <span class="vd-icon-tile" aria-hidden="true">
+              <svg class="vd-icon vd-icon--lg">
+                <use href="../../assets/icons/videodoc-icons.svg#warning-document"></use>
+              </svg>
+            </span>
+            <div>
+              <span class="step-kicker">Step 5</span>
+              <h2 id="one-honest-number-about-your-computer">One honest number about your computer</h2>
+              <p class="step-summary">Eleven minutes was on my machine, listening to the audio, no graphics card help.</p>
+            </div>
+          </div>
+          <ol class="step-actions">
+            <li>Yours will differ.</li>
+            <li>A video that already has captions, like most of YouTube, skips the listening entirely and finishes in seconds instead of minutes.</li>
+            <li>That is the single biggest thing that changes the time.</li>
+          </ol>
+          <p class="step-check"><strong>Check:</strong> I fixed that one the hard way.</p>
+        </section>
 
-        <h2 id="one-honest-number-about-your-computer">One honest number about your computer</h2>
-
-        <p>Eleven minutes was on my machine, listening to the audio, no graphics card help. Yours will differ. A video that already has captions, like most of YouTube, skips the listening entirely and finishes in seconds instead of minutes. That is the single biggest thing that changes the time.</p>
-
-        <p>And if your graphics card cannot help for any reason, it quietly moves to your processor and keeps going. It does not stop and show you an error you cannot do anything about. I fixed that one the hard way.</p>
+        <p>And if your graphics card cannot help for any reason, it quietly moves to your processor and keeps going. It does not stop and show you an error you cannot do anything about.</p>
 
         <h2 id="faq-h">Quick questions</h2>
         <div class="faq" id="faqlist">
@@ -271,7 +381,7 @@
           <li><a href="../../try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
           <li><a href="../../#pricing">VideoDoc for Android</a></li>
-          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#how">How it works</a></li>
           <li><a href="../../#pricing">Pricing</a></li>
         </ul>
       </div>
