@@ -328,6 +328,32 @@ def check_rendered(page: str, slug: str) -> None:
 # ---------------------------------------------------------------- writers
 
 
+# The three on-brand concept banners, chosen by what the article is about.
+# A spec can override with an explicit "hero" (a filename in assets/art/).
+_HERO_ALT = {
+    "frames-grid.jpg": "One video turning into many still image frames",
+    "channel-to-document.jpg": "Many videos merging into one document with images",
+    "video-to-document.jpg": "A video turning into a document with text and images",
+}
+
+
+def _hero_for(spec: dict) -> str:
+    img = spec.get("hero")
+    if not img:
+        s = spec["slug"]
+        if any(k in s for k in ("frame", "images-only", "slides", "deduplicate", "csv-index")):
+            img = "frames-grid.jpg"
+        elif any(k in s for k in ("channel", "playlist", "batch", "sop", "webinar", "course", "long-video")):
+            img = "channel-to-document.jpg"
+        else:
+            img = "video-to-document.jpg"
+    alt = _HERO_ALT.get(img, "VideoDoc")
+    return ('\n    <figure class="arthero">\n'
+            f'      <img src="../../assets/art/{img}" alt="{alt}"'
+            ' width="1280" height="714" loading="eager" decoding="async">\n'
+            '    </figure>')
+
+
 def build_page(spec: dict, index: dict, today: str) -> str:
     minutes = read_minutes(spec)
     tpl = TEMPLATE.read_text(encoding="utf-8")
@@ -363,6 +389,7 @@ def build_page(spec: dict, index: dict, today: str) -> str:
         "OG_TITLE": html.escape(spec.get("og_title", spec["headline"]), quote=True),
         "OG_DESC": html.escape(spec.get("og_desc", spec["meta_desc"]), quote=True),
         "SLUG": spec["slug"],
+        "HERO": _hero_for(spec),
         "CATEGORY": esc(spec["category"]),
         "HEADLINE": esc(spec["headline"]),
         "DATE_HUMAN": human_date(today),

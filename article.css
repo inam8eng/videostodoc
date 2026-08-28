@@ -349,3 +349,22 @@
   line-height: 1.5;
   color: var(--text-muted);
 }
+
+/* ---- article hero banner -------------------------------------------------
+   A clean concept image at the top of each article, so the page is not a wall
+   of text. Eager + async because it is above the fold; the fixed width/height
+   keep the layout from jumping while it loads. */
+.arthero{
+  margin: 4px 0 22px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface-sunk);
+  box-shadow: var(--shadow-sm);
+  line-height: 0;
+}
+.arthero img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
