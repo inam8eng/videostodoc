@@ -58,6 +58,8 @@
   .flow .icobox{fill:var(--orange-wash,#E3F3FD)}
   .flow .oicon{color:var(--text)}
   .flow .olabel{fill:var(--text);font:700 17px var(--font-mono)}
+  .flow .otag{fill:var(--slate-faint);font:700 11.5px var(--font-mono);letter-spacing:.06em}
+  .flow .inlabel{fill:var(--slate-faint);font:700 11.5px var(--font-mono);letter-spacing:.14em;text-anchor:middle}
   /* timeline (kit storyboard): video in, node, three outputs, sources, download, hold */
   .fa-vid{opacity:0;animation:fa-slide .8s ease-out .7s both}
   .fa-node{opacity:0;animation:fa-pop .6s ease-out 1.5s both}
@@ -93,7 +95,6 @@
   .usecard .go{margin-left:auto;color:var(--text-3)}
   .plan-note{max-width:640px;margin:18px auto 0;text-align:center;font-size:13.5px;color:var(--text-2)}
   .plan-note.android{margin-top:8px;color:var(--text-3)}
-  .finalcta{text-align:center;padding-bottom:26px}
   @media (max-width:560px){ .trustrow{gap:8px 16px} }
 </style>
 </head>
@@ -147,6 +148,8 @@
         <svg class="flow" viewBox="0 0 960 540" role="img" aria-label="A video from YouTube, Facebook, TikTok, Instagram or X goes through VideoDoc and comes out as a transcript, every frame, a visual transcript with images, or a downloaded file">
           <!-- platform sources -->
           <g class="fa-src">
+            <text class="inlabel" x="55" y="134">LINK</text>
+            <text class="inlabel" x="122" y="160">or</text>
             <g transform="translate(38,150)"><rect class="tile" width="34" height="34" rx="9"/><text class="glyph" x="17" y="22">YT</text></g>
             <g transform="translate(38,205)"><rect class="tile" width="34" height="34" rx="9"/><text class="glyph" x="17" y="22">FB</text></g>
             <g transform="translate(38,260)"><rect class="tile" width="34" height="34" rx="9"/><text class="glyph" x="17" y="22">TT</text></g>
@@ -155,6 +158,7 @@
           </g>
           <!-- the video -->
           <g class="fa-vid">
+            <text class="inlabel" x="206" y="182">LOCAL</text>
             <rect x="102" y="196" width="208" height="148" rx="16" class="vidcard"/>
             <rect x="118" y="212" width="176" height="92" rx="10" class="vidscreen"/>
             <path d="M196 242l26 16-26 16z" class="acc-fill"/>
@@ -179,25 +183,25 @@
             <rect class="outcard" width="266" height="66" rx="13"/>
             <rect class="icobox" x="14" y="14" width="38" height="38" rx="10"/>
             <svg class="oicon" x="21" y="21" width="24" height="24"><use href="assets/icons/videodoc-icons.svg#transcript"></use></svg>
-            <text class="olabel" x="66" y="40">Transcript</text>
+            <text class="olabel" x="66" y="33">Transcript</text><text class="otag" x="66" y="52">.txt</text>
           </g></g>
           <g transform="translate(610,182)"><g class="fa-out fa-c2">
             <rect class="outcard" width="266" height="66" rx="13"/>
             <rect class="icobox" x="14" y="14" width="38" height="38" rx="10"/>
             <svg class="oicon" x="21" y="21" width="24" height="24"><use href="assets/icons/videodoc-icons.svg#frames-grid"></use></svg>
-            <text class="olabel" x="66" y="40">Every frame</text>
+            <text class="olabel" x="66" y="33">Every frame</text><text class="otag" x="66" y="52">.png</text>
           </g></g>
           <g transform="translate(610,294)"><g class="fa-out fa-c3">
             <rect class="outcard" width="266" height="66" rx="13"/>
             <rect class="icobox" x="14" y="14" width="38" height="38" rx="10"/>
             <svg class="oicon" x="21" y="21" width="24" height="24"><use href="assets/icons/videodoc-icons.svg#document-images"></use></svg>
-            <text class="olabel" x="66" y="40">Visual Transcript</text>
+            <text class="olabel" x="66" y="33">Visual Transcript</text><text class="otag" x="66" y="52">.pdf / .md</text>
           </g></g>
           <g transform="translate(610,412)"><g class="fa-out fa-c4">
             <rect class="outcard" width="266" height="66" rx="13"/>
             <rect class="icobox" x="14" y="14" width="38" height="38" rx="10"/>
             <svg class="oicon" x="21" y="21" width="24" height="24"><use href="assets/icons/videodoc-icons.svg#download"></use></svg>
-            <text class="olabel" x="66" y="40">Download</text>
+            <text class="olabel" x="66" y="33">Download</text><text class="otag" x="66" y="52">HD / 4K</text>
           </g></g>
         </svg>
       </div>
@@ -271,9 +275,22 @@
           <a class="btn solid big full" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
         </div>
 
+        <div class="plan">
+          <span class="ribbon soon">Coming soon</span>
+          <h3>Android</h3>
+          <div class="price">$0</div>
+          <div class="terms">Free · Coming soon to Google Play</div>
+          <ul>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>VideoDoc on your Android phone</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>3 video downloads free</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>3 text extractions free</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>No subscription, ever</li>
+          </ul>
+          <span class="btn ghost big full disabled">Coming soon to Google Play</span>
+        </div>
+
       </div>
       <p class="plan-note">30-day money-back guarantee. Public links only; use a local file for private or paywalled videos.</p>
-      <p class="plan-note android">Android app coming soon.</p>
     </section>
 
     <!-- ===== GUIDES / USE CASES ===== -->
@@ -323,10 +340,10 @@
 
     <!-- ===== FINAL CTA ===== -->
     <section class="section finalcta">
-      <div class="sechead">
-        <h2>Turn your first video into a document.</h2>
-      </div>
-      <div class="cta-row">
+      <div class="halo" aria-hidden="true"></div>
+      <h2>Turn your first video into a document.</h2>
+      <p class="lede">Free, in your browser, nothing uploaded. The first one takes about two minutes.</p>
+      <div class="cta-row" style="justify-content:center">
         <a class="btn solid big" href="try/">Try it free</a>
       </div>
     </section>
