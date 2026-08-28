@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>VideoDoc: video to AI-ready document for ChatGPT and Claude</title>
-<meta name="description" content="Paste a YouTube link or drop a file. VideoDoc builds one AI-ready document: transcript plus on-screen slides, all on your own PC. Free in your browser.">
+<title>Turn Any Video into an AI-Ready Document | VideoDoc</title>
+<meta name="description" content="Convert a YouTube link, playlist, or local file into one searchable document: exact transcript plus on-screen slides as images. 100% private on your PC. Free to try.">
 
 <link rel="canonical" href="https://videostodoc.com/">
 <meta property="og:title" content="VideoDoc: give your AI eyes for any video">
@@ -32,7 +32,7 @@
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"VideoDoc","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11; macOS (Apple Silicon)","offers":{"@type":"Offer","price":"19","priceCurrency":"USD"},"description":"Turn any video into an AI-ready document: a timestamped transcript plus the on-screen content as images, built on your own computer.","creator":{"@type":"Person","name":"Inam Ul Haq"}}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "The video is a person talking over slides. What do I get?", "acceptedAnswer": {"@type": "Answer", "text": "VideoDoc follows the screen share, not the face. The screenshots capture the slides, code and diagrams, paired with the timestamped transcript."}}, {"@type": "Question", "name": "Where does the processing happen?", "acceptedAnswer": {"@type": "Answer", "text": "Entirely on your own machine. The video is downloaded, transcribed and captured locally. Nothing is ever uploaded to a server."}}, {"@type": "Question", "name": "Do I need a powerful PC?", "acceptedAnswer": {"@type": "Answer", "text": "No. VideoDoc auto-detects your GPU and CPU and tunes itself; it uses your graphics card when it can, and still works fine without one."}}, {"@type": "Question", "name": "Is there a subscription?", "acceptedAnswer": {"@type": "Answer", "text": "No. Free is free forever in your browser. Pro is a single one-time payment. Buy once, keep it forever. The Android unlock, when it arrives, is one-time too."}}, {"@type": "Question", "name": "What's the difference between Free and Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Free transcribes your own local files in the browser. Pro adds links from YouTube, TikTok, Instagram, Facebook and X, plus playlists, on-screen screenshots, long videos, HD/4K download and use on two machines."}}, {"@type": "Question", "name": "Does it work with private or paywalled videos?", "acceptedAnswer": {"@type": "Answer", "text": "Links work for public videos. Anything private, behind a login or a paywall will not download, and that is by design. For those, use the file route: save or export the video yourself, then drop the file in. It never leaves your computer."}}, {"@type": "Question", "name": "Does it work on Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. VideoDoc runs on Windows 10/11 and on Apple Silicon Macs (M1 or newer; Intel Macs are not supported), with all processing on your own hardware. On a Mac the very first launch has a one-time 10 second unlock step, with a copy-button guide at videostodoc.com/mac."}}, {"@type": "Question", "name": "Is there an Android app?", "acceptedAnswer": {"@type": "Answer", "text": "It's on the way. VideoDoc for Android starts free, with 3 video downloads and 3 text extractions on the house, then one small one-time unlock opens unlimited use. It isn't on Google Play yet; this page will update the day it lands."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "The video is a person talking over slides. What do I get?", "acceptedAnswer": {"@type": "Answer", "text": "VideoDoc follows the screen share, not the face. The screenshots capture the slides, code and diagrams, paired with the timestamped transcript."}}, {"@type": "Question", "name": "Where does the processing happen?", "acceptedAnswer": {"@type": "Answer", "text": "Entirely on your own machine. The video is downloaded, transcribed and captured locally. Nothing is ever uploaded to a server."}}, {"@type": "Question", "name": "Do I need a powerful PC?", "acceptedAnswer": {"@type": "Answer", "text": "No. VideoDoc auto-detects your GPU and CPU and tunes itself; it uses your graphics card when it can, and still works fine without one."}}, {"@type": "Question", "name": "Is there a subscription?", "acceptedAnswer": {"@type": "Answer", "text": "No. Free is free forever in your browser, and Pro is one payment you keep for life."}}, {"@type": "Question", "name": "What's the difference between Free and Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Free transcribes your own local files in the browser. Pro adds links and playlists from YouTube, TikTok, Instagram, Facebook and X, the on-screen screenshots, long videos, the HD/4K downloader, and use on two machines."}}, {"@type": "Question", "name": "Does it work with private or paywalled videos?", "acceptedAnswer": {"@type": "Answer", "text": "Links work for public videos only. For anything private or behind a login, save the file yourself and drop it in; it never leaves your computer."}}, {"@type": "Question", "name": "Does it work on Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It runs on Windows 10/11 and Apple Silicon Macs (M1 or newer), all processing local, with a one-time 10-second unlock on the Mac's first launch."}}, {"@type": "Question", "name": "Is there an Android app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. VideoDoc for Android starts free with 3 downloads and 3 text extractions, then one small one-time unlock; this page updates the day it lands on Google Play."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"VideoDoc","url":"https://videostodoc.com/"}
@@ -72,6 +72,13 @@
   .bf-text{font-family:var(--font-body);font-size:15.5px;line-height:1.55;color:var(--text)}
   .bf-text b{color:var(--accent-text, var(--accent-ink));font-weight:700}
   @media (max-width:560px){ .bigfeat{flex-direction:column;text-align:center;gap:10px} }
+  /* compatibility bar: a tight logo strip, not a full section */
+  .compatbar{padding-top:34px;padding-bottom:10px}
+  .compat-lbl{text-align:center;font-family:var(--font-mono);font-size:12.5px;font-weight:700;
+    letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);margin:0 0 18px}
+  .compatbar .grid4{gap:10px}
+  .compatbar .aitile{padding:14px 8px;gap:6px}
+  .compatbar .aitile .name{font-size:13px}
 </style>
 </head>
 <body>
@@ -84,7 +91,7 @@
     <span class="wm">VideoDoc</span>
   </a>
   <div class="navlinks" id="navlinks">
-    <a href="#works">Why you need it</a>
+    <a href="#how">How it works</a>
     <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
     <a href="articles/">Articles</a>
@@ -112,21 +119,13 @@
     <header class="hero">
       <div class="halo" aria-hidden="true"></div>
       <span class="eyebrow reveal"><span class="dot"></span> Runs 100% on your own computer</span>
-      <h1 class="reveal d1">Give your AI <span class="grad-text">eyes</span> for any video.</h1>
-      <p class="lede reveal d2">ChatGPT and Claude can't watch a video. VideoDoc turns any video, a whole playlist, even a person's entire channel, into one clean document: every word they said and every screen they showed, ready to hand to your AI. It all runs on your own computer.</p>
+      <h1 class="reveal d1">Turn any video into an <span class="grad-text">AI-ready document</span>.</h1>
+      <p class="lede reveal d2">Convert a YouTube link, a whole playlist, or a local file into one searchable document: the exact words spoken, plus the on-screen slides and code saved as images. 100% private, on your own PC.</p>
       <div class="cta-row reveal d2">
-        <a class="btn solid big" href="try/">Try free in your browser</a>
+        <a class="btn solid big" href="try/">Try free in browser</a>
         <a class="btn ghost big" href="#pricing">Get Pro · $19 one time</a>
       </div>
-      <p class="microcopy reveal d3">Free version runs on your machine. No upload, no signup, no card.</p>
-
-      <!-- the one line that matters most -->
-      <div class="bigfeat reveal d3">
-        <span class="bf-ico" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7l2 2h7v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4z"/><path d="M9 13h6M9 16h4"/></svg>
-        </span>
-        <span class="bf-text">Copy an entire YouTube <b>channel</b>, <b>playlist</b> or single video into one searchable document, images and all.</span>
-      </div>
+      <p class="microcopy reveal d3">Runs 100% on your machine. No uploads, no subscriptions, no signup.</p>
 
       <!-- product demo: plays on hover, pauses on leave, muted + looping so it
            behaves like a moving screenshot. A missing demo.mp4 shows the
@@ -146,157 +145,77 @@
       </div>
     </header>
 
-    <!-- ===== WORKS WITH ===== -->
-    <section id="works" class="section">
-      <div class="sechead reveal">
-        <div class="kicker">Why you need it</div>
-        <h2>AI can't watch a video.<br>It can read a document with pictures.</h2>
-        <p>So imagine a person's whole channel, or a 50-hour course, turned into one document: everything they said, with every slide and screen as an image. Drop that into any AI below and ask it anything.</p>
-      </div>
+    <!-- ===== COMPATIBILITY BAR ===== -->
+    <section id="works" class="section compatbar">
+      <p class="compat-lbl reveal">Drop your VideoDoc into the AI you already use</p>
       <div class="grid4">
-        <div class="aitile reveal"><span class="glyph" aria-hidden="true">GPT</span><span class="name">ChatGPT</span><span class="kind">chat AI</span></div>
-        <div class="aitile reveal d1"><span class="glyph" aria-hidden="true">Cl</span><span class="name">Claude</span><span class="kind">chat AI</span></div>
-        <div class="aitile reveal d2"><span class="glyph" aria-hidden="true">Ge</span><span class="name">Gemini</span><span class="kind">chat AI</span></div>
-        <div class="aitile reveal d3"><span class="glyph" aria-hidden="true">NLM</span><span class="name">NotebookLM</span><span class="kind">notebook</span></div>
-        <div class="aitile reveal"><span class="glyph" aria-hidden="true">Px</span><span class="name">Perplexity</span><span class="kind">answer AI</span></div>
-        <div class="aitile reveal d1"><span class="glyph" aria-hidden="true">Ob</span><span class="name">Obsidian</span><span class="kind">notes (.md)</span></div>
-        <div class="aitile reveal d2"><span class="glyph" aria-hidden="true">No</span><span class="name">Notion</span><span class="kind">notes (.md)</span></div>
-        <div class="aitile reveal d3"><span class="glyph" aria-hidden="true">md</span><span class="name">Your notes</span><span class="kind">PDF + .md</span></div>
+        <div class="aitile reveal"><span class="glyph" aria-hidden="true">GPT</span><span class="name">ChatGPT</span></div>
+        <div class="aitile reveal d1"><span class="glyph" aria-hidden="true">Cl</span><span class="name">Claude</span></div>
+        <div class="aitile reveal d2"><span class="glyph" aria-hidden="true">Ge</span><span class="name">Gemini</span></div>
+        <div class="aitile reveal d3"><span class="glyph" aria-hidden="true">NLM</span><span class="name">NotebookLM</span></div>
+        <div class="aitile reveal"><span class="glyph" aria-hidden="true">Px</span><span class="name">Perplexity</span></div>
+        <div class="aitile reveal d1"><span class="glyph" aria-hidden="true">Ob</span><span class="name">Obsidian</span></div>
+        <div class="aitile reveal d2"><span class="glyph" aria-hidden="true">No</span><span class="name">Notion</span></div>
+        <div class="aitile reveal d3"><span class="glyph" aria-hidden="true">md</span><span class="name">Your notes</span></div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section id="how" class="section">
+      <div class="sechead reveal">
+        <div class="kicker">How it works</div>
+        <h2>Three steps to an AI-ready file.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="num" aria-hidden="true">1</span>
+          <h3>Paste a link</h3>
+          <p>A YouTube, TikTok or X link, a whole playlist, or a file already on your computer.</p>
+        </div>
+        <div class="step reveal d1">
+          <span class="num" aria-hidden="true">2</span>
+          <h3>It watches and listens</h3>
+          <p>Your PC transcribes the words and screenshots the slides and code, ignoring the presenter's face.</p>
+        </div>
+        <div class="step reveal d2">
+          <span class="num" aria-hidden="true">3</span>
+          <h3>Feed your AI</h3>
+          <p>Out comes a clean PDF, Markdown, or image set, ready for ChatGPT or Claude.</p>
+        </div>
       </div>
     </section>
 
     <!-- ===== FEATURES ===== -->
     <section id="features" class="section">
       <div class="sechead reveal">
-        <div class="kicker">Everything in the box</div>
-        <h2>Built to make one document you can trust.</h2>
-      </div>
-
-      <div class="featgrid-hero">
-        <div class="fcard showcase reveal">
-          <span class="newpill">New</span>
-          <h3>Shows the screen, not the face</h3>
-          <p>When a video mixes a person and a screen share, the screenshots follow the slides and code, not the presenter.</p>
-          <div class="codewin" aria-hidden="true">
-            <div class="cbar">
-              <span class="d" style="background:#FF5F57"></span><span class="d" style="background:#FEBC2E"></span><span class="d" style="background:#28C840"></span>
-              <span class="fn">server.py</span>
-            </div>
-            <div class="cbody">
-              <div><span class="c-kw">from</span> <span class="c-var">fastapi</span> <span class="c-kw">import</span> <span class="c-cls">FastAPI</span></div>
-              <div><span class="c-var">app</span> = <span class="c-cls">FastAPI</span>()</div>
-              <div class="c-cmt"># transcribe on the user's own machine</div>
-              <div><span class="c-kw">def</span> <span class="c-fn">build_document</span>(video):</div>
-              <div class="ind"><span class="c-var">audio</span> = <span class="c-fn">extract_audio</span>(video)</div>
-            </div>
-          </div>
-        </div>
-        <div class="fcard stat reveal d1">
-          <div class="fk">Quality</div>
-          <div class="big">1080p</div>
-          <p>Best quality saves full-HD screenshots, so your AI can actually read the text inside.</p>
-        </div>
+        <div class="kicker">Features</div>
+        <h2>Everything you need, nothing you don't.</h2>
       </div>
 
       <div class="featgrid-2">
         <div class="fcard reveal">
-          <span class="newpill">New</span>
-          <div class="fk">Images only</div>
-          <h3>Every frame, without the document</h3>
-          <p>Sometimes you want the pictures, not the words. Pick <strong>Every frame as images</strong> and VideoDoc saves the whole video as numbered, timestamped photos and stops there. No transcript and no PDF, which is why it is much quicker: nothing has to be listened to. Choose 4 pictures a second, 2, or 1, and it tells you how many images that will be before it starts.</p>
+          <div class="fk">Smart screen capture</div>
+          <h3>Slides and code, not the face</h3>
+          <p>Captures the slides, code and diagrams on screen and ignores the presenter. Identical frames are dropped, so a one-hour static talk doesn't become 10,000 copies of the same picture.</p>
         </div>
         <div class="fcard reveal d1">
-          <div class="fk">No duplicates</div>
-          <h3>A slide deck stays a slide deck</h3>
-          <p>An image identical to the one before it is dropped, so an hour of static slides does not become 14,400 copies of the same picture. Every file is named by the exact moment it came from, and a <code>frames_index.csv</code> lists them all so you can jump straight back to a moment.</p>
+          <div class="fk">100% local and private</div>
+          <h3>Nothing is ever uploaded</h3>
+          <p>No cloud, no accounts, no metered usage. VideoDoc uses your own CPU or GPU and processes everything offline, on your machine.</p>
         </div>
-      </div>
-
-      <div class="featgrid-3">
         <div class="fcard reveal">
-          <div class="fk">Speed</div>
-          <h3>Auto power</h3>
-          <p>Detects your graphics card and CPU and tunes itself for the fastest safe result.</p>
+          <div class="fk">Unlimited links and playlists</div>
+          <h3>One video, or a whole channel</h3>
+          <p>A single link, a massive playlist, or a person's entire channel, merged into one searchable document, in many languages.</p>
         </div>
         <div class="fcard reveal d1">
-          <div class="fk">Languages</div>
-          <h3>Many languages</h3>
-          <p>Hindi, Urdu, Arabic, Russian, Chinese, Japanese and more render correctly.</p>
-        </div>
-        <div class="fcard reveal d2">
-          <div class="fk">Download</div>
-          <h3>HD / 4K downloader</h3>
-          <p>Want the file, not the text? Save the actual video up to 4K.</p>
-        </div>
-      </div>
-
-      <div class="featgrid-2">
-        <div class="fcard reveal">
-          <div class="fk">Links and channels</div>
-          <h3>One video, a playlist, or a whole channel</h3>
-          <p>Paste a link from YouTube, TikTok, Instagram, Facebook or X. One document per video, or merge a whole playlist, even someone's entire channel, into a single searchable file.</p>
-        </div>
-        <div class="fcard reveal d1">
-          <div class="fk">Private</div>
-          <h3>100% on your computer</h3>
-          <p>No accounts, no uploads, no metered usage. Your own files work fully offline, and it never hangs: pause, resume or cancel any time.</p>
+          <div class="fk">Flexible exports</div>
+          <h3>Document, images, or the raw file</h3>
+          <p>Get a PDF and Markdown, or export every frame as images, or grab the actual video with the built-in HD / 4K downloader.</p>
         </div>
       </div>
     </section>
 
-    <!-- ===== GUIDES ===== -->
-    <section id="guides" class="section">
-      <div class="sechead reveal">
-        <div class="kicker">Free guides</div>
-        <h2>The how-to, before you spend anything.</h2>
-        <p>Everything I learned turning videos into documents, written out in plain English.</p>
-      </div>
-      <div class="artgrid reveal">
-        <a class="artcard" href="articles/youtube-video-to-document/">
-          <span class="t">How to turn a YouTube video into a document</span>
-          <p>The full picture: free ways, paid ways, and how to get the slides out too, not just the words.</p>
-          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/youtube-video-to-pdf/">
-          <span class="t">Convert a YouTube video to PDF, slides included</span>
-          <p>A PDF your AI can actually read, with the on-screen slides and code saved as images.</p>
-          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/youtube-video-to-text/">
-          <span class="t">YouTube video to text: 3 ways that actually work</span>
-          <p>The built-in transcript, a free browser tool, and a desktop app. When each one wins.</p>
-          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/get-transcript-of-any-youtube-video/">
-          <span class="t">Get the transcript of any YouTube video</span>
-          <p>Captions on, captions off, it does not matter. Every word with timestamps.</p>
-          <span class="meta"><span>GUIDE · 5 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/summarize-youtube-video-with-chatgpt/">
-          <span class="t">Summarize a YouTube video with ChatGPT</span>
-          <p>Why pasting a link fails half the time, and the two step way that keeps the details.</p>
-          <span class="meta"><span>AI · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/feed-video-to-chatgpt-or-claude/">
-          <span class="t">Can ChatGPT watch a video? The honest answer</span>
-          <p>No AI chat can watch a video today. What actually happens when you paste a link, and the bridge that works.</p>
-          <span class="meta"><span>AI · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/video-lecture-to-notes/">
-          <span class="t">Turn video lectures into notes, automatically</span>
-          <p>Stop pausing and scribbling. Let the lecture write its own notes, then study on top of them.</p>
-          <span class="meta"><span>STUDENTS · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/youtube-playlist-to-one-document/">
-          <span class="t">Turn a YouTube playlist into one document</span>
-          <p>A 40 video course becomes one file you can search, quote and hand to your AI.</p>
-          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-      </div>
-      <div class="cta-row reveal" style="margin-top:30px">
-        <a class="btn ghost" href="articles/">Browse every guide</a>
-      </div>
-    </section>
 
     <!-- ===== PRICING ===== -->
     <section id="pricing" class="section">
@@ -355,6 +274,59 @@
       </div>
     </section>
 
+    <!-- ===== GUIDES ===== -->
+    <section id="guides" class="section">
+      <div class="sechead reveal">
+        <div class="kicker">Free guides</div>
+        <h2>The how-to, before you spend anything.</h2>
+        <p>Everything I learned turning videos into documents, written out in plain English.</p>
+      </div>
+      <div class="artgrid reveal">
+        <a class="artcard" href="articles/youtube-video-to-document/">
+          <span class="t">How to turn a YouTube video into a document</span>
+          <p>The full picture: free ways, paid ways, and how to get the slides out too, not just the words.</p>
+          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/youtube-video-to-pdf/">
+          <span class="t">Convert a YouTube video to PDF, slides included</span>
+          <p>A PDF your AI can actually read, with the on-screen slides and code saved as images.</p>
+          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/youtube-video-to-text/">
+          <span class="t">YouTube video to text: 3 ways that actually work</span>
+          <p>The built-in transcript, a free browser tool, and a desktop app. When each one wins.</p>
+          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/get-transcript-of-any-youtube-video/">
+          <span class="t">Get the transcript of any YouTube video</span>
+          <p>Captions on, captions off, it does not matter. Every word with timestamps.</p>
+          <span class="meta"><span>GUIDE · 5 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/summarize-youtube-video-with-chatgpt/">
+          <span class="t">Summarize a YouTube video with ChatGPT</span>
+          <p>Why pasting a link fails half the time, and the two step way that keeps the details.</p>
+          <span class="meta"><span>AI · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/feed-video-to-chatgpt-or-claude/">
+          <span class="t">Can ChatGPT watch a video? The honest answer</span>
+          <p>No AI chat can watch a video today. What actually happens when you paste a link, and the bridge that works.</p>
+          <span class="meta"><span>AI · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/video-lecture-to-notes/">
+          <span class="t">Turn video lectures into notes, automatically</span>
+          <p>Stop pausing and scribbling. Let the lecture write its own notes, then study on top of them.</p>
+          <span class="meta"><span>STUDENTS · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+        <a class="artcard" href="articles/youtube-playlist-to-one-document/">
+          <span class="t">Turn a YouTube playlist into one document</span>
+          <p>A 40 video course becomes one file you can search, quote and hand to your AI.</p>
+          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
+        </a>
+      </div>
+      <div class="cta-row reveal" style="margin-top:30px">
+        <a class="btn ghost" href="articles/">Browse every guide</a>
+      </div>
+    </section>
     <!-- ===== FAQ ===== -->
     <section id="faq" class="section">
       <div class="sechead reveal">
@@ -376,23 +348,23 @@
         </details>
         <details>
           <summary>Is there a subscription?</summary>
-          <p>No. Free is free forever in your browser. Pro is a single one-time payment. Buy once, keep it forever. The Android unlock, when it arrives, is one-time too.</p>
+          <p>No. Free is free forever in your browser, and Pro is one payment you keep for life.</p>
         </details>
         <details>
           <summary>What's the difference between Free and Pro?</summary>
-          <p>Free transcribes your own local files in the browser. Pro adds links from YouTube, TikTok, Instagram, Facebook and X, plus playlists, on-screen screenshots, long videos, HD/4K download and use on two machines.</p>
+          <p>Free transcribes your own local files in the browser. Pro adds links and playlists from YouTube, TikTok, Instagram, Facebook and X, the on-screen screenshots, long videos, the HD/4K downloader, and use on two machines.</p>
         </details>
         <details>
           <summary>Does it work with private or paywalled videos?</summary>
-          <p>Links work for public videos. Anything private, behind a login or a paywall will not download, and that is by design. For those, use the file route: save or export the video yourself, then drop the file in. It never leaves your computer.</p>
+          <p>Links work for public videos only. For anything private or behind a login, save the file yourself and drop it in; it never leaves your computer.</p>
         </details>
         <details>
           <summary>Does it work on Mac?</summary>
-          <p>Yes. VideoDoc runs on Windows 10/11 and on Apple Silicon Macs (M1 or newer; Intel Macs are not supported), with all processing on your own hardware. On a Mac the very first launch has a one-time 10 second unlock step, with a copy-button guide at <a href="mac/">videostodoc.com/mac</a>.</p>
+          <p>Yes. It runs on Windows 10/11 and Apple Silicon Macs (M1 or newer), all processing local, with a one-time 10-second unlock on the Mac's first launch (<a href="mac/">guide here</a>).</p>
         </details>
         <details>
           <summary>Is there an Android app?</summary>
-          <p>It's on the way. VideoDoc for Android starts free, with 3 video downloads and 3 text extractions on the house, then one small one-time unlock opens unlimited use. It isn't on Google Play yet; this page will update the day it lands.</p>
+          <p>Not yet. VideoDoc for Android starts free with 3 downloads and 3 text extractions, then one small one-time unlock; this page updates the day it lands on Google Play.</p>
         </details>
       </div>
     </section>
