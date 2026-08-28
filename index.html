@@ -61,6 +61,17 @@
     .demo-wrap{aspect-ratio:4/3}
     .demo-hint{content:none}
   }
+  /* the one headline feature, right under the hero CTAs */
+  .bigfeat{display:flex;align-items:center;gap:13px;max-width:720px;
+    margin:22px auto 34px;padding:14px 20px;border-radius:14px;
+    background:var(--accent-wash, #E3F3FD);border:1px solid var(--accent-line, #AFD9F6);
+    text-align:left}
+  .bf-ico{flex:0 0 auto;width:38px;height:38px;border-radius:10px;display:flex;
+    align-items:center;justify-content:center;
+    background:var(--accent-solid, var(--accent));color:#fff}
+  .bf-text{font-family:var(--font-body);font-size:15.5px;line-height:1.55;color:var(--text)}
+  .bf-text b{color:var(--accent-text, var(--accent-ink));font-weight:700}
+  @media (max-width:560px){ .bigfeat{flex-direction:column;text-align:center;gap:10px} }
 </style>
 </head>
 <body>
@@ -73,9 +84,8 @@
     <span class="wm">VideoDoc</span>
   </a>
   <div class="navlinks" id="navlinks">
-    <a href="#works">Works with</a>
+    <a href="#works">Why you need it</a>
     <a href="#features">Features</a>
-    <a href="#how">How it works</a>
     <a href="#pricing">Pricing</a>
     <a href="articles/">Articles</a>
     <a href="#faq">FAQ</a>
@@ -103,63 +113,25 @@
       <div class="halo" aria-hidden="true"></div>
       <span class="eyebrow reveal"><span class="dot"></span> Runs 100% on your own computer</span>
       <h1 class="reveal d1">Give your AI <span class="grad-text">eyes</span> for any video.</h1>
-      <p class="lede reveal d2">ChatGPT and Claude can't watch a video. VideoDoc turns any video into one clean document. You get a timestamped transcript with the on-screen content as images, so you can hand the whole thing to your AI. It all runs on your own computer.</p>
+      <p class="lede reveal d2">ChatGPT and Claude can't watch a video. VideoDoc turns any video, a whole playlist, even a person's entire channel, into one clean document: every word they said and every screen they showed, ready to hand to your AI. It all runs on your own computer.</p>
       <div class="cta-row reveal d2">
         <a class="btn solid big" href="try/">Try free in your browser</a>
-        <a class="btn ghost big" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 one time</a>
+        <a class="btn ghost big" href="#pricing">Get Pro · $19 one time</a>
       </div>
       <p class="microcopy reveal d3">Free version runs on your machine. No upload, no signup, no card.</p>
 
-      <!-- product window: transcript + the captured document -->
-      <div class="appwin reveal d3" aria-hidden="true">
-        <div class="bar">
-          <span class="d" style="background:#FF5F57"></span>
-          <span class="d" style="background:#FEBC2E"></span>
-          <span class="d" style="background:#28C840"></span>
-          <span class="urlwrap"><span class="url">youtube.com/watch <span class="arw">→</span> <b>lecture · ai-ready document.pdf</b></span></span>
-        </div>
-        <div class="appbody">
-          <div class="transcript">
-            <div class="trow"><span class="ts">00:00</span><span class="tline">Today we deploy a full-stack app, completely free, start to finish.</span></div>
-            <div class="trow"><span class="ts">02:14</span><span class="tline">First we scaffold the project with Next.js and wire up Supabase for auth.</span></div>
-            <div class="trow"><span class="ts">05:41</span><span class="tline">Push the repo to GitHub, that's what Vercel will build from.</span></div>
-            <div class="trow"><span class="ts">09:08</span><span class="tline">On the slide: Code, then Build, then Live. Three steps, one click each.</span></div>
-            <div class="trow"><span class="ts">12:33</span><span class="tline">Watch the deploy logs stream here so you can see it go green.</span></div>
-          </div>
-          <div class="side">
-            <span class="lbl">Captured from the video</span>
-            <div class="doccard">
-              <div class="k">Lecture · 12</div>
-              <div class="t">Deploy a full-stack app, free</div>
-              <div class="pts">
-                <div><span class="b">1</span>Build with Next.js and Supabase</div>
-                <div><span class="b">2</span>Push the repo to GitHub</div>
-                <div><span class="b">3</span>Deploy on Vercel in one click</div>
-              </div>
-              <div class="flow">
-                <span class="fl">Code</span><span class="arw">→</span><span class="fl">Build</span><span class="arw">→</span><span class="fl">Live</span>
-              </div>
-            </div>
-            <span class="chip"><span class="dot"></span>made on your PC, nothing uploaded</span>
-          </div>
-        </div>
+      <!-- the one line that matters most -->
+      <div class="bigfeat reveal d3">
+        <span class="bf-ico" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7l2 2h7v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4z"/><path d="M9 13h6M9 16h4"/></svg>
+        </span>
+        <span class="bf-text">Copy an entire YouTube <b>channel</b>, <b>playlist</b> or single video into one searchable document, images and all.</span>
       </div>
-    </header>
 
-
-    <!-- ===== SEE IT RUN ===== -->
-    <!-- The clip plays on hover and pauses when the pointer leaves, so nobody
-         has to commit to watching before they know what it is. It is muted and
-         loops, so it behaves like a moving screenshot rather than a video the
-         page decided to play at you. If demo.mp4 is not there yet, the branded
-         card below shows instead of an empty black frame. -->
-    <section id="demo" class="section">
-      <div class="sechead reveal">
-        <div class="kicker">See it run</div>
-        <h2>One video in, a folder of readable pages out.</h2>
-        <p>Recorded on my own PC, nothing sped up. Hover to play.</p>
-      </div>
-      <div class="demo-wrap reveal" id="demoWrap">
+      <!-- product demo: plays on hover, pauses on leave, muted + looping so it
+           behaves like a moving screenshot. A missing demo.mp4 shows the
+           branded card instead of an empty frame. -->
+      <div class="demo-wrap reveal d3" id="demoWrap">
         <video id="demoVideo" muted loop playsinline preload="metadata"
                aria-label="VideoDoc turning a video into a document" hidden></video>
         <div class="demo-ph" id="demoPlaceholder">
@@ -172,14 +144,14 @@
         </div>
         <div class="demo-hint" id="demoHint" hidden>Hover to play</div>
       </div>
-    </section>
+    </header>
 
     <!-- ===== WORKS WITH ===== -->
     <section id="works" class="section">
       <div class="sechead reveal">
-        <div class="kicker">Made for your AI</div>
-        <h2>Your AI reads documents, not videos.</h2>
-        <p>So VideoDoc hands it the whole thing, words and screens, as one file you just drop in.</p>
+        <div class="kicker">Why you need it</div>
+        <h2>AI can't watch a video.<br>It can read a document with pictures.</h2>
+        <p>So imagine a person's whole channel, or a 50-hour course, turned into one document: everything they said, with every slide and screen as an image. Drop that into any AI below and ask it anything.</p>
       </div>
       <div class="grid4">
         <div class="aitile reveal"><span class="glyph" aria-hidden="true">GPT</span><span class="name">ChatGPT</span><span class="kind">chat AI</span></div>
@@ -190,36 +162,6 @@
         <div class="aitile reveal d1"><span class="glyph" aria-hidden="true">Ob</span><span class="name">Obsidian</span><span class="kind">notes (.md)</span></div>
         <div class="aitile reveal d2"><span class="glyph" aria-hidden="true">No</span><span class="name">Notion</span><span class="kind">notes (.md)</span></div>
         <div class="aitile reveal d3"><span class="glyph" aria-hidden="true">md</span><span class="name">Your notes</span><span class="kind">PDF + .md</span></div>
-      </div>
-    </section>
-
-    <!-- ===== WHY LOCAL ===== -->
-    <section class="section">
-      <div class="sechead reveal">
-        <div class="kicker">Why on your own PC wins</div>
-        <h2>The cloud tools meter you.<br>VideoDoc doesn't.</h2>
-      </div>
-      <div class="compare">
-        <div class="col reveal">
-          <div class="who">Cloud video tools</div>
-          <h3>Metered, uploaded, blocked</h3>
-          <ul class="rowlist">
-            <li><span class="x">·</span>Charge you per minute, every month</li>
-            <li><span class="x">·</span>Upload your video to someone's server</li>
-            <li><span class="x">·</span>Choke on long videos and playlists</li>
-            <li><span class="x">·</span>Get blocked by YouTube from data-center IPs</li>
-          </ul>
-        </div>
-        <div class="col win reveal d1">
-          <div class="who">VideoDoc</div>
-          <h3>On your machine, unlimited</h3>
-          <ul class="rowlist">
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Runs on hardware you already own, so Pro is unlimited</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Your videos never leave your computer</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>3-hour lectures and whole playlists, no sweat</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Downloads from your home connection, so YouTube just works</li>
-          </ul>
-        </div>
       </div>
     </section>
 
@@ -290,49 +232,14 @@
 
       <div class="featgrid-2">
         <div class="fcard reveal">
-          <div class="fk">Links</div>
-          <h3>Links and whole playlists</h3>
-          <p>Paste a link from YouTube, TikTok, Instagram, Facebook or X. One document per video, or merge a whole playlist into a single file.</p>
+          <div class="fk">Links and channels</div>
+          <h3>One video, a playlist, or a whole channel</h3>
+          <p>Paste a link from YouTube, TikTok, Instagram, Facebook or X. One document per video, or merge a whole playlist, even someone's entire channel, into a single searchable file.</p>
         </div>
         <div class="fcard reveal d1">
-          <div class="fk">Reliable</div>
-          <h3>Never gets stuck</h3>
-          <p>Pause, resume, cancel. A safety timer on every step means it never hangs overnight.</p>
-        </div>
-        <div class="fcard reveal">
           <div class="fk">Private</div>
           <h3>100% on your computer</h3>
-          <p>No accounts, no uploads, no metered usage. Your own files work fully offline.</p>
-        </div>
-        <div class="fcard reveal d1">
-          <div class="fk">Trackers</div>
-          <h3>Live Excel trackers</h3>
-          <p>A tracker for the whole queue and one per playlist. Show a client exactly where things stand.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== HOW ===== -->
-    <section id="how" class="section">
-      <div class="sechead reveal">
-        <div class="kicker">Three steps</div>
-        <h2>Paste it. Wait. It's a document.</h2>
-      </div>
-      <div class="steps">
-        <div class="step reveal">
-          <span class="num" aria-hidden="true">1</span>
-          <h3>Paste or drop</h3>
-          <p>A YouTube link (single video or a whole playlist), or a video already on your computer.</p>
-        </div>
-        <div class="step reveal d1">
-          <span class="num" aria-hidden="true">2</span>
-          <h3>Your computer does the work</h3>
-          <p>It downloads, transcribes with on-device AI, and captures the on-screen content, using your GPU when it can.</p>
-        </div>
-        <div class="step reveal d2">
-          <span class="num" aria-hidden="true">3</span>
-          <h3>Open the document</h3>
-          <p>One clean PDF plus Markdown: a timestamped transcript with the slides, code and screens as images.</p>
+          <p>No accounts, no uploads, no metered usage. Your own files work fully offline, and it never hangs: pause, resume or cancel any time.</p>
         </div>
       </div>
     </section>
@@ -490,34 +397,6 @@
       </div>
     </section>
 
-    <!-- ===== ASK AN AI ===== -->
-    <section class="section">
-      <div class="sechead reveal">
-        <div class="kicker">Still not sure?</div>
-        <h2>Ask the AI you trust.</h2>
-        <p>It opens with the question filled in.</p>
-      </div>
-      <div class="askai reveal">
-        <a class="btn ghost" target="_blank" rel="noopener" href="https://chatgpt.com/?q=Is%20VideoDoc%2C%20a%20local%20video-to-document%20tool%2C%20worth%20it%20for%20turning%20YouTube%20lectures%20into%20notes%20I%20can%20feed%20to%20an%20AI%3F">Ask ChatGPT</a>
-        <a class="btn ghost" target="_blank" rel="noopener" href="https://claude.ai/new?q=Is%20VideoDoc%2C%20a%20local%20video-to-document%20tool%2C%20worth%20it%20for%20turning%20YouTube%20lectures%20into%20notes%20I%20can%20feed%20to%20an%20AI%3F">Ask Claude</a>
-        <a class="btn ghost" target="_blank" rel="noopener" href="https://www.perplexity.ai/search?q=Is%20VideoDoc%2C%20a%20local%20video-to-document%20tool%2C%20worth%20it%20for%20turning%20YouTube%20lectures%20into%20notes%20I%20can%20feed%20to%20an%20AI%3F">Ask Perplexity</a>
-      </div>
-    </section>
-
-    <!-- ===== FINAL CTA ===== -->
-    <section class="section">
-      <div class="finalcta reveal">
-        <div class="halo" aria-hidden="true"></div>
-        <span class="eyebrow onink"><span class="dot"></span> Two minutes to your first document</span>
-        <h2>Give your AI eyes today.</h2>
-        <p class="lede">Try it free on a file you already have. When you need YouTube, playlists and the screenshots, Pro is one payment.</p>
-        <div class="cta-row">
-          <a class="btn solid big" href="try/">Try free</a>
-          <a class="btn onink big" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 one time</a>
-        </div>
-      </div>
-    </section>
-
   </div>
 </main>
 
@@ -547,7 +426,7 @@
         <ul>
           <li><a href="articles/">All articles</a></li>
           <li><a href="#works">Works with your AI</a></li>
-          <li><a href="#how">How it works</a></li>
+          
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
