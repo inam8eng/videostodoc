@@ -103,15 +103,51 @@ function escapeHtml(s) {
   return (s || "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" }[c]));
 }
 
+// The free in-browser model is small (whisper-base). On music, silence, or a
+// clip with no clear speech it does what every Whisper model does: it loops on
+// one token, so the box fills with ">> >> >>" or a repeated word. That is not
+// a real transcript and showing it as one makes the tool look broken. So we
+// notice it and say plainly what happened, instead of printing the garbage.
+function looksDegenerate(text) {
+  const words = (text || "").trim().split(/\s+/).filter(Boolean);
+  if (words.length < 12) return false;
+  const counts = Object.create(null);
+  let top = 0;
+  for (const w of words) { counts[w] = (counts[w] || 0) + 1; if (counts[w] > top) top = counts[w]; }
+  const unique = Object.keys(counts).length;
+  // one token is most of the output, or almost nothing is unique
+  return top / words.length > 0.4 || unique / words.length < 0.18;
+}
+
 function renderResult(text, chunks) {
   lastText = text || "";
   lastChunks = (chunks || []).filter((c) => c && c.text && c.text.trim());
   barWrap.hidden = true;
+
+  const proNext = $("proNext");
+
+  if (!lastText.trim() || looksDegenerate(lastText)) {
+    setStatus("");
+    outEl.innerHTML =
+      '<div class="emptyout">' +
+      '<b>That clip did not have clear speech to transcribe.</b>' +
+      '<span>The free in-browser model needs someone actually talking. If the clip was mostly music, silence, or background noise, it has nothing to write down. Try a clip with a clear voice, or use the desktop app, which handles tougher audio.</span>' +
+      '</div>';
+    lastChunks = []; lastText = "";
+    outWrap.hidden = false;
+    // No real transcript, so hide the download buttons and the Pro nudges.
+    $("dlTxt").hidden = true; $("dlMd").hidden = true;
+    if (proNext) proNext.hidden = true;
+    return;
+  }
+
   setStatus("Done. Your transcript was made entirely on your own machine.");
+  $("dlTxt").hidden = false; $("dlMd").hidden = false;
   outEl.innerHTML = lastChunks.length
     ? lastChunks.map((c) => `<p><span class="ts">[${fmt(c.timestamp[0])}]</span> ${escapeHtml(c.text.trim())}</p>`).join("")
     : `<p>${escapeHtml(lastText)}</p>`;
   outWrap.hidden = false;
+  if (proNext) proNext.hidden = false;
 }
 
 function plainText() {

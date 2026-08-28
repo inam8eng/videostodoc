@@ -26,7 +26,7 @@
 <style>
   .tp{max-width:820px;margin:0 auto;padding:0 24px}
   .try-hero{text-align:center;padding-top:60px;position:relative}
-  .try-hero .halo{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:min(760px,110vw);height:420px;background:var(--glow);pointer-events:none;z-index:-1}
+  .try-hero .halo{position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:min(760px,100%);height:420px;background:var(--glow);pointer-events:none;z-index:-1}
   .try-hero h1{font-family:var(--font-display);font-size:clamp(34px,6vw,52px);font-weight:700;letter-spacing:-.03em;margin:18px 0 12px}
   .try-hero .lede{color:var(--text-2);font-size:17px;max-width:52ch;margin:0 auto}
   .drop .big{font-family:var(--font-display);font-size:18px;font-weight:600;color:var(--text)}
@@ -36,10 +36,23 @@
   .outwrap{margin-top:26px;background:var(--surface);border:1px solid var(--border-2);border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden}
   .outbar{display:flex;gap:10px;justify-content:flex-end;padding:12px 14px;border-bottom:1px solid var(--border)}
   .out{max-height:440px;overflow:auto;padding:16px 18px}
-  .out p{margin:0 0 10px;font-size:15px;line-height:1.7;color:var(--text)}
+  .out p{margin:0 0 10px;font-size:15px;line-height:1.7;color:var(--text);overflow-wrap:anywhere;word-break:break-word}
   .out .ts{color:var(--accent-text);font-family:var(--font-display);font-variant-numeric:tabular-nums;font-size:12.5px;margin-right:6px}
+  .emptyout{display:flex;flex-direction:column;gap:8px;padding:6px 2px}
+  .emptyout b{font-family:var(--font-display);font-size:16px;color:var(--text)}
+  .emptyout span{color:var(--text-2);font-size:14.5px;line-height:1.65}
+  /* the two Pro nudges under a finished transcript */
+  .pronext{max-width:680px;margin:18px auto 0;text-align:center}
+  .pn-lbl{display:block;font-family:var(--font-mono);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin-bottom:10px}
+  .pn-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
   .upsell{position:relative;overflow:hidden;margin:40px auto 70px;max-width:680px;background:var(--surface);
-    border:1px solid var(--orange-line, #FFD8C4);border-radius:20px;padding:30px;text-align:center;box-shadow:var(--shadow-lg)}
+    border:1px solid var(--accent-line, #AFD9F6);border-radius:20px;padding:30px;text-align:center;box-shadow:var(--shadow-lg)}
+  @media (max-width:560px){
+    .tp{padding:0 16px}
+    .outbar{flex-wrap:wrap;justify-content:stretch}
+    .outbar .btn{flex:1}
+    .pn-row .btn{width:100%}
+  }
   .upsell .halo{position:absolute;inset:0;background:var(--glow-tight);opacity:.5;pointer-events:none}
   .upsell h2{position:relative;font-family:var(--font-display);font-size:20px}
   .upsell p{position:relative;color:var(--text-2);margin:10px 0 18px;font-size:15px}
@@ -62,7 +75,7 @@
       <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
     </button>
     <a class="btn ghost" href="../">Home</a>
-    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <a class="btn solid" href="../#pricing">Get Pro</a>
   </div>
 </nav>
 
@@ -92,6 +105,17 @@
       <div id="out" class="out"></div>
     </div>
 
+    <!-- Shown once a transcript is on screen: the two things the browser demo
+         can't do, which is exactly what Pro is for. These go to the pricing
+         section, not straight to checkout, so people see the plans first. -->
+    <div id="proNext" class="pronext" hidden>
+      <span class="pn-lbl">Want more than the words?</span>
+      <div class="pn-row">
+        <a class="btn ghost" href="../#pricing">Get every frame as images</a>
+        <a class="btn ghost" href="../#pricing">Get the transcript with the screens shown</a>
+      </div>
+    </div>
+
     <p class="note">
       Heads up so there are no surprises: the first run downloads a small AI model, about 80 MB (one time, then it's cached).
       It's fastest on Chrome or Edge, and works best on shorter clips. This free browser version handles files you already have.
@@ -102,7 +126,7 @@
       <div class="halo"></div>
       <h2>Like it? Own the whole thing forever.</h2>
       <p>The desktop app adds YouTube and playlists, no length limit, the on-screen content as images, and it's yours for life on up to 2 computers. One payment, no ads, no subscription.</p>
-      <a class="btn solid big" href="https://designesh.gumroad.com/l/videodoc">Get VideoDoc Pro on Gumroad</a>
+      <a class="btn solid big" href="../#pricing">See Pro plans</a>
     </div>
   </div>
 </main>
