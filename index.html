@@ -27,10 +27,10 @@
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"VideoDoc","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11; macOS (Apple Silicon)","offers":{"@type":"Offer","price":"19","priceCurrency":"USD"},"description":"Turn a video, playlist, or local file into a searchable document with transcript and useful screenshots, built privately on your own computer.","creator":{"@type":"Person","name":"Inam Ul Haq"},"url":"https://videostodoc.com/","image":"https://videostodoc.com/assets/og.png"}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"VideoDoc","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11; macOS (Apple Silicon)","offers":{"@type":"Offer","price":"10","priceCurrency":"USD"},"description":"Turn a video, playlist, or local file into a searchable document with transcript and useful screenshots, built privately on your own computer.","creator":{"@type":"Person","name":"Inam Ul Haq"},"url":"https://videostodoc.com/","image":"https://videostodoc.com/assets/og.png"}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where does processing happen?","acceptedAnswer":{"@type":"Answer","text":"On your computer. VideoDoc does not upload your video to a processing server."}},{"@type":"Question","name":"What is the difference between Free and Pro?","acceptedAnswer":{"@type":"Answer","text":"Free transcribes local files in your browser. Pro adds links, playlists, screenshots, long videos, more exports, and downloading."}},{"@type":"Question","name":"Can it capture slides instead of the presenter?","acceptedAnswer":{"@type":"Answer","text":"Yes. It keeps useful screen changes such as slides, code, and diagrams, while dropping duplicates."}},{"@type":"Question","name":"Does it work on Mac?","acceptedAnswer":{"@type":"Answer","text":"Yes. Windows 10/11 and Apple Silicon Macs are supported."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where does processing happen?","acceptedAnswer":{"@type":"Answer","text":"On your computer. VideoDoc does not upload your video to a processing server."}},{"@type":"Question","name":"What is the difference between Free and Pro?","acceptedAnswer":{"@type":"Answer","text":"Free transcribes local files in your browser. Pro adds links, playlists, screenshots, long videos, more exports, and downloading."}},{"@type":"Question","name":"Can it capture slides instead of the presenter?","acceptedAnswer":{"@type":"Answer","text":"Yes. It keeps useful screen changes such as slides, code, and diagrams, while dropping duplicates."}},{"@type":"Question","name":"How many languages does it support?","acceptedAnswer":{"@type":"Answer","text":"About 99. The engine transcribes Hindi, Urdu, Arabic, Russian, Chinese, Japanese and most others, with English the most accurate today. Documents render non-English text properly, right-to-left scripts included."}},{"@type":"Question","name":"Does it work on Mac?","acceptedAnswer":{"@type":"Answer","text":"Yes. Windows 10/11 and Apple Silicon Macs are supported."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"VideoDoc","url":"https://videostodoc.com/"}
@@ -109,8 +109,8 @@
   <div class="navlinks" id="navlinks">
     <a href="#how">How it works</a>
     <a href="#pricing">Pricing</a>
-    <a href="articles/">Guides</a>
-    <a class="mobonly" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 once</a>
+    <a href="articles/">Use cases</a>
+    <a class="mobonly" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $10 once</a>
     <a class="mobonly" href="try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
@@ -136,7 +136,7 @@
       <p class="lede">Paste a link or choose a file. Get the transcript, key slides, and screenshots in one searchable PDF or Markdown document — processed privately on your computer.</p>
       <div class="cta-row">
         <a class="btn solid big" href="try/">Try it free</a>
-        <a class="btn ghost big" href="#pricing">Get Pro once · $19</a>
+        <a class="btn ghost big" href="#pricing">Get Pro once · $10</a>
       </div>
       <div class="trustrow">
         <span><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#private-local"></use></svg>Private on your PC</span>
@@ -259,9 +259,9 @@
         </div>
 
         <div class="plan featured">
-          <span class="ribbon">Best value</span>
+          <span class="ribbon">50% off</span>
           <h3>Pro</h3>
-          <div class="price">$19 <span class="was">$38</span></div>
+          <div class="price">$10 <span class="was">$20</span></div>
           <div class="terms">One payment · lifetime</div>
           <ul>
             <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Links and playlists</li>
@@ -295,7 +295,7 @@
     <!-- ===== GUIDES / USE CASES ===== -->
     <section id="guides" class="section">
       <div class="sechead">
-        <div class="kicker">Guides</div>
+        <div class="kicker">Use cases</div>
         <h2>Use VideoDoc for the work you already do.</h2>
       </div>
       <div class="uses">
@@ -307,7 +307,7 @@
         <a class="usecard" href="articles/extract-slides-from-video/"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#frames-grid"></use></svg>Extract slides or every frame<span class="go">&rarr;</span></a>
       </div>
       <div class="cta-row" style="margin-top:26px">
-        <a class="btn ghost" href="articles/">Browse all 23 guides</a>
+        <a class="btn ghost" href="articles/">Browse all 23 use cases</a>
       </div>
     </section>
 
@@ -329,6 +329,10 @@
         <details>
           <summary>Can it capture slides instead of the presenter?</summary>
           <p>Yes. It keeps useful screen changes such as slides, code, and diagrams, while dropping duplicates.</p>
+        </details>
+        <details>
+          <summary>How many languages does it support?</summary>
+          <p>About 99. The engine transcribes Hindi, Urdu, Arabic, Russian, Chinese, Japanese and most others, with English the most accurate today. Documents render non-English text properly, right-to-left scripts included.</p>
         </details>
         <details>
           <summary>Does it work on Mac?</summary>
@@ -373,7 +377,7 @@
       <div>
         <h3>Learn</h3>
         <ul>
-          <li><a href="articles/">All guides</a></li>
+          <li><a href="articles/">All use cases</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
