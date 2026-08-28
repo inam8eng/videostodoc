@@ -3,82 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Turn Any Video into an AI-Ready Document | VideoDoc</title>
-<meta name="description" content="Convert a YouTube link, playlist, or local file into one searchable document: exact transcript plus on-screen slides as images. 100% private on your PC. Free to try.">
+<title>Video to Document Converter: Transcript + Slides | VideoDoc</title>
+<meta name="description" content="Turn a video, playlist, or local file into a searchable document with transcript and useful screenshots. Private on your computer. Try VideoDoc free.">
 
 <link rel="canonical" href="https://videostodoc.com/">
-<meta property="og:title" content="VideoDoc: give your AI eyes for any video">
-<meta property="og:description" content="Turn any video into one AI-ready document: transcript plus the on-screen content as images, private on your own PC. Free to try in your browser.">
+<meta property="og:title" content="Video to Document Converter: Transcript + Slides | VideoDoc">
+<meta property="og:description" content="Turn a video, playlist, or local file into a searchable document with transcript and useful screenshots. Private on your computer.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://videostodoc.com/">
 <meta property="og:image" content="https://videostodoc.com/assets/og.png">
 <meta property="og:site_name" content="VideoDoc">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="VideoDoc: give your AI eyes for any video">
+<meta property="og:image:alt" content="VideoDoc: turn video into a document your AI can use">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F4F5F7">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="article.css">
+<link rel="stylesheet" href="assets/icons/icons.css">
 
 <script>
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"VideoDoc","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11; macOS (Apple Silicon)","offers":{"@type":"Offer","price":"19","priceCurrency":"USD"},"description":"Turn any video into an AI-ready document: a timestamped transcript plus the on-screen content as images, built on your own computer.","creator":{"@type":"Person","name":"Inam Ul Haq"}}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"VideoDoc","applicationCategory":"UtilitiesApplication","operatingSystem":"Windows 10, Windows 11; macOS (Apple Silicon)","offers":{"@type":"Offer","price":"19","priceCurrency":"USD"},"description":"Turn a video, playlist, or local file into a searchable document with transcript and useful screenshots, built privately on your own computer.","creator":{"@type":"Person","name":"Inam Ul Haq"},"url":"https://videostodoc.com/","image":"https://videostodoc.com/assets/og.png"}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "The video is a person talking over slides. What do I get?", "acceptedAnswer": {"@type": "Answer", "text": "VideoDoc follows the screen share, not the face. The screenshots capture the slides, code and diagrams, paired with the timestamped transcript."}}, {"@type": "Question", "name": "Where does the processing happen?", "acceptedAnswer": {"@type": "Answer", "text": "Entirely on your own machine. The video is downloaded, transcribed and captured locally. Nothing is ever uploaded to a server."}}, {"@type": "Question", "name": "Do I need a powerful PC?", "acceptedAnswer": {"@type": "Answer", "text": "No. VideoDoc auto-detects your GPU and CPU and tunes itself; it uses your graphics card when it can, and still works fine without one."}}, {"@type": "Question", "name": "Is there a subscription?", "acceptedAnswer": {"@type": "Answer", "text": "No. Free is free forever in your browser, and Pro is one payment you keep for life."}}, {"@type": "Question", "name": "What's the difference between Free and Pro?", "acceptedAnswer": {"@type": "Answer", "text": "Free transcribes your own local files in the browser. Pro adds links and playlists from YouTube, TikTok, Instagram, Facebook and X, the on-screen screenshots, long videos, the HD/4K downloader, and use on two machines."}}, {"@type": "Question", "name": "Does it work with private or paywalled videos?", "acceptedAnswer": {"@type": "Answer", "text": "Links work for public videos only. For anything private or behind a login, save the file yourself and drop it in; it never leaves your computer."}}, {"@type": "Question", "name": "Does it work on Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It runs on Windows 10/11 and Apple Silicon Macs (M1 or newer), all processing local, with a one-time 10-second unlock on the Mac's first launch."}}, {"@type": "Question", "name": "Is there an Android app?", "acceptedAnswer": {"@type": "Answer", "text": "Not yet. VideoDoc for Android starts free with 3 downloads and 3 text extractions, then one small one-time unlock; this page updates the day it lands on Google Play."}}]}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Where does processing happen?","acceptedAnswer":{"@type":"Answer","text":"On your computer. VideoDoc does not upload your video to a processing server."}},{"@type":"Question","name":"What is the difference between Free and Pro?","acceptedAnswer":{"@type":"Answer","text":"Free transcribes local files in your browser. Pro adds links, playlists, screenshots, long videos, more exports, and downloading."}},{"@type":"Question","name":"Can it capture slides instead of the presenter?","acceptedAnswer":{"@type":"Answer","text":"Yes. It keeps useful screen changes such as slides, code, and diagrams, while dropping duplicates."}},{"@type":"Question","name":"Does it work on Mac?","acceptedAnswer":{"@type":"Answer","text":"Yes. Windows 10/11 and Apple Silicon Macs are supported."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"VideoDoc","url":"https://videostodoc.com/"}
 </script>
 <style>
-  /* Section-local, so it cannot collide with the shared stylesheet. */
-  .demo-wrap{position:relative;max-width:940px;margin:0 auto;border-radius:18px;
-    overflow:hidden;border:1px solid var(--border);background:var(--surface);
-    box-shadow:var(--shadow-lg);aspect-ratio:16/10}
-  .demo-wrap video{display:block;width:100%;height:100%;object-fit:cover}
-  .demo-ph{position:absolute;inset:0;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;gap:12px;text-align:center;
-    padding:38px 28px;background:var(--surface)}
-  .demo-mark{width:74px;height:74px;border-radius:20px;display:flex;
-    align-items:center;justify-content:center;background:var(--accent-solid,var(--accent));
-    color:#fff;box-shadow:var(--shadow-md)}
-  .demo-ph b{font-family:var(--font-display);font-size:19px;color:var(--text);letter-spacing:-.01em}
-  .demo-ph span:not(.demo-mark){color:var(--text-2);font-size:15px;line-height:1.7;max-width:56ch}
-  .demo-ph .btn{margin-top:6px}
-  .demo-hint{position:absolute;right:14px;bottom:14px;font-family:var(--font-mono);
-    font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-    color:#fff;background:rgba(0,0,0,.62);padding:6px 11px;border-radius:99px;
-    backdrop-filter:blur(6px);pointer-events:none;transition:opacity .2s}
-  .demo-wrap:hover .demo-hint{opacity:0}
-  @media (max-width:640px){
-    .demo-wrap{aspect-ratio:4/3}
-    .demo-hint{content:none}
-  }
-  /* the one headline feature, right under the hero CTAs */
-  .bigfeat{display:flex;align-items:center;gap:13px;max-width:720px;
-    margin:22px auto 34px;padding:14px 20px;border-radius:14px;
-    background:var(--accent-wash, #E3F3FD);border:1px solid var(--accent-line, #AFD9F6);
-    text-align:left}
-  .bf-ico{flex:0 0 auto;width:38px;height:38px;border-radius:10px;display:flex;
-    align-items:center;justify-content:center;
-    background:var(--accent-solid, var(--accent));color:#fff}
-  .bf-text{font-family:var(--font-body);font-size:15.5px;line-height:1.55;color:var(--text)}
-  .bf-text b{color:var(--accent-text, var(--accent-ink));font-weight:700}
-  @media (max-width:560px){ .bigfeat{flex-direction:column;text-align:center;gap:10px} }
-  /* compatibility bar: a tight logo strip, not a full section */
-  .compatbar{padding-top:34px;padding-bottom:10px}
-  .compat-lbl{text-align:center;font-family:var(--font-mono);font-size:12.5px;font-weight:700;
-    letter-spacing:.06em;text-transform:uppercase;color:var(--text-3);margin:0 0 18px}
-  .compatbar .grid4{gap:10px}
-  .compatbar .aitile{padding:14px 8px;gap:6px}
-  .compatbar .aitile .name{font-size:13px}
+  /* Homepage-local. Everything else comes from the shared stylesheet. */
+  .hero{padding-top:56px}
+  .hero .lede{max-width:62ch}
+  .trustrow{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 26px;margin:20px auto 0}
+  .trustrow span{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--text-2)}
+  .trustrow .vd-icon{width:1.125rem;height:1.125rem}
+  .hero-visual{max-width:860px;margin:34px auto 0;border-radius:18px;overflow:hidden;
+    border:1px solid var(--border);background:var(--surface);box-shadow:var(--shadow-lg)}
+  .hero-visual img{display:block;width:100%;height:auto}
+  .chiprow{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:99px;
+    border:1px solid var(--accent-line,#AFD9F6);background:var(--accent-wash,#E3F3FD);
+    font-size:13.5px;font-weight:600;color:var(--text)}
+  .chip .vd-icon{width:1.05rem;height:1.05rem}
+  .step .vd-icon-tile{margin-bottom:12px}
+  .uses{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:12px}
+  .usecard{display:flex;align-items:center;gap:13px;padding:15px 17px;border-radius:14px;
+    border:1px solid var(--border);background:var(--surface);color:var(--text);font-weight:600;font-size:15px}
+  .usecard:hover{border-color:var(--accent-line,#AFD9F6);color:var(--text)}
+  .usecard .go{margin-left:auto;color:var(--text-3)}
+  .plan-note{max-width:640px;margin:18px auto 0;text-align:center;font-size:13.5px;color:var(--text-2)}
+  .plan-note.android{margin-top:8px;color:var(--text-3)}
+  .finalcta{text-align:center;padding-bottom:26px}
+  @media (max-width:560px){ .trustrow{gap:8px 16px} }
 </style>
 </head>
 <body>
@@ -92,10 +73,9 @@
   </a>
   <div class="navlinks" id="navlinks">
     <a href="#how">How it works</a>
-    <a href="#features">Features</a>
     <a href="#pricing">Pricing</a>
-    <a href="articles/">Articles</a>
-    <a href="#faq">FAQ</a>
+    <a href="articles/">Guides</a>
+    <a class="mobonly" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 once</a>
     <a class="mobonly" href="try/">Try free in your browser</a>
   </div>
   <span class="navspacer"></span>
@@ -104,8 +84,7 @@
       <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
       <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
     </button>
-    <a class="btn ghost" href="try/">Try free</a>
-    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <a class="btn solid" href="try/">Try free</a>
     <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
     </button>
@@ -118,254 +97,151 @@
     <!-- ===== HERO ===== -->
     <header class="hero">
       <div class="halo" aria-hidden="true"></div>
-      <span class="eyebrow reveal"><span class="dot"></span> Runs 100% on your own computer</span>
-      <h1 class="reveal d1">Turn any video into an <span class="grad-text">AI-ready document</span>.</h1>
-      <p class="lede reveal d2">Convert a YouTube link, a whole playlist, or a local file into one searchable document: the exact words spoken, plus the on-screen slides and code saved as images. 100% private, on your own PC.</p>
-      <div class="cta-row reveal d2">
-        <a class="btn solid big" href="try/">Try free in browser</a>
-        <a class="btn ghost big" href="#pricing">Get Pro · $19 one time</a>
+      <h1>Turn video into a document <span class="grad-text">your AI can use</span>.</h1>
+      <p class="lede">Paste a link or choose a file. Get the transcript, key slides, and screenshots in one searchable PDF or Markdown document — processed privately on your computer.</p>
+      <div class="cta-row">
+        <a class="btn solid big" href="try/">Try it free</a>
+        <a class="btn ghost big" href="#pricing">Get Pro once · $19</a>
       </div>
-      <p class="microcopy reveal d3">Runs 100% on your machine. No uploads, no subscriptions, no signup.</p>
-
-      <!-- product demo: plays on hover, pauses on leave, muted + looping so it
-           behaves like a moving screenshot. A missing demo.mp4 shows the
-           branded card instead of an empty frame. -->
-      <div class="demo-wrap reveal d3" id="demoWrap">
-        <video id="demoVideo" muted loop playsinline preload="metadata"
-               aria-label="VideoDoc turning a video into a document" hidden></video>
-        <div class="demo-ph" id="demoPlaceholder">
-          <span class="demo-mark" aria-hidden="true">
-            <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="currentColor" stroke="none"/></svg>
-          </span>
-          <b>Paste a link, or drop a file you already have.</b>
-          <span>VideoDoc reads the words and watches the screen, then writes one document with both. Or skip the words entirely and take every frame as images.</span>
-          <a class="btn solid" href="try/">Try it free in your browser</a>
-        </div>
-        <div class="demo-hint" id="demoHint" hidden>Hover to play</div>
+      <div class="trustrow">
+        <span><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#private-local"></use></svg>Private on your PC</span>
+        <span><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#free-unlock"></use></svg>No account</span>
+        <span><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#download"></use></svg>No subscription</span>
+      </div>
+      <div class="hero-visual">
+        <picture>
+          <source type="image/avif" srcset="assets/art/videodoc-hero-720.avif 720w, assets/art/videodoc-hero-1280.avif 1280w" sizes="(max-width: 900px) 100vw, 860px">
+          <source type="image/webp" srcset="assets/art/videodoc-hero-720.webp 720w, assets/art/videodoc-hero-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 860px">
+          <img src="assets/art/videodoc-hero-1280.webp" width="1280" height="720" alt="A video player becoming a searchable document with transcript lines and captured slides" decoding="async" fetchpriority="high">
+        </picture>
       </div>
     </header>
 
-    <!-- ===== COMPATIBILITY BAR ===== -->
-    <section id="works" class="section compatbar">
-      <p class="compat-lbl reveal">Drop your VideoDoc into the AI you already use</p>
-      <div class="grid4">
-        <div class="aitile reveal"><span class="glyph" aria-hidden="true">GPT</span><span class="name">ChatGPT</span></div>
-        <div class="aitile reveal d1"><span class="glyph" aria-hidden="true">Cl</span><span class="name">Claude</span></div>
-        <div class="aitile reveal d2"><span class="glyph" aria-hidden="true">Ge</span><span class="name">Gemini</span></div>
-        <div class="aitile reveal d3"><span class="glyph" aria-hidden="true">NLM</span><span class="name">NotebookLM</span></div>
-        <div class="aitile reveal"><span class="glyph" aria-hidden="true">Px</span><span class="name">Perplexity</span></div>
-        <div class="aitile reveal d1"><span class="glyph" aria-hidden="true">Ob</span><span class="name">Obsidian</span></div>
-        <div class="aitile reveal d2"><span class="glyph" aria-hidden="true">No</span><span class="name">Notion</span></div>
-        <div class="aitile reveal d3"><span class="glyph" aria-hidden="true">md</span><span class="name">Your notes</span></div>
-      </div>
-    </section>
-
-    <!-- ===== HOW IT WORKS ===== -->
+    <!-- ===== HOW IT WORKS + PROOF ===== -->
     <section id="how" class="section">
-      <div class="sechead reveal">
+      <div class="sechead">
         <div class="kicker">How it works</div>
-        <h2>Three steps to an AI-ready file.</h2>
+        <h2>From video to useful document in three steps.</h2>
       </div>
       <div class="steps">
-        <div class="step reveal">
-          <span class="num" aria-hidden="true">1</span>
-          <h3>Paste a link</h3>
-          <p>A YouTube, TikTok or X link, a whole playlist, or a file already on your computer.</p>
+        <div class="step">
+          <span class="vd-icon-tile" aria-hidden="true"><svg class="vd-icon vd-icon--lg"><use href="assets/icons/videodoc-icons.svg#link"></use></svg></span>
+          <h3>Add a video</h3>
+          <p>Paste a public link, playlist, or choose a local file.</p>
         </div>
-        <div class="step reveal d1">
-          <span class="num" aria-hidden="true">2</span>
-          <h3>It watches and listens</h3>
-          <p>Your PC transcribes the words and screenshots the slides and code, ignoring the presenter's face.</p>
+        <div class="step">
+          <span class="vd-icon-tile" aria-hidden="true"><svg class="vd-icon vd-icon--lg"><use href="assets/icons/videodoc-icons.svg#hide-presenter"></use></svg></span>
+          <h3>VideoDoc captures it</h3>
+          <p>Speech becomes timestamped text; useful screen changes become images.</p>
         </div>
-        <div class="step reveal d2">
-          <span class="num" aria-hidden="true">3</span>
-          <h3>Feed your AI</h3>
-          <p>Out comes a clean PDF, Markdown, or image set, ready for ChatGPT or Claude.</p>
+        <div class="step">
+          <span class="vd-icon-tile" aria-hidden="true"><svg class="vd-icon vd-icon--lg"><use href="assets/icons/videodoc-icons.svg#document-ai"></use></svg></span>
+          <h3>Use the result anywhere</h3>
+          <p>Export PDF, Markdown, or images for your AI, notes, or team.</p>
         </div>
       </div>
+      <div class="chiprow">
+        <span class="chip"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#transcript"></use></svg>Transcript + timestamps</span>
+        <span class="chip"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#slides"></use></svg>Slides and code</span>
+        <span class="chip"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#playlist-document"></use></svg>Whole playlists</span>
+        <span class="chip"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#private-local"></use></svg>100% local</span>
+      </div>
+      <p class="plan-note">Works with ChatGPT, Claude, Gemini, NotebookLM, Perplexity, Notion and your notes.</p>
     </section>
-
-    <!-- ===== FEATURES ===== -->
-    <section id="features" class="section">
-      <div class="sechead reveal">
-        <div class="kicker">Features</div>
-        <h2>Everything you need, nothing you don't.</h2>
-      </div>
-
-      <div class="featgrid-2">
-        <div class="fcard reveal">
-          <div class="fk">Smart screen capture</div>
-          <h3>Slides and code, not the face</h3>
-          <p>Captures the slides, code and diagrams on screen and ignores the presenter. Identical frames are dropped, so a one-hour static talk doesn't become 10,000 copies of the same picture.</p>
-        </div>
-        <div class="fcard reveal d1">
-          <div class="fk">100% local and private</div>
-          <h3>Nothing is ever uploaded</h3>
-          <p>No cloud, no accounts, no metered usage. VideoDoc uses your own CPU or GPU and processes everything offline, on your machine.</p>
-        </div>
-        <div class="fcard reveal">
-          <div class="fk">Unlimited links and playlists</div>
-          <h3>One video, or a whole channel</h3>
-          <p>A single link, a massive playlist, or a person's entire channel, merged into one searchable document, in many languages.</p>
-        </div>
-        <div class="fcard reveal d1">
-          <div class="fk">Flexible exports</div>
-          <h3>Document, images, or the raw file</h3>
-          <p>Get a PDF and Markdown, or export every frame as images, or grab the actual video with the built-in HD / 4K downloader.</p>
-        </div>
-      </div>
-    </section>
-
 
     <!-- ===== PRICING ===== -->
     <section id="pricing" class="section">
-      <div class="sechead reveal">
-        <div class="kicker">Simple pricing</div>
-        <h2>Start free. Buy once. Keep it forever.</h2>
+      <div class="sechead">
+        <div class="kicker">Pricing</div>
+        <h2>Start free. Upgrade once.</h2>
       </div>
       <div class="plans">
 
-        <div class="plan reveal">
+        <div class="plan">
           <h3>Free</h3>
           <div class="price">$0</div>
           <div class="terms">In your browser</div>
           <ul>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Transcribe your own files in the browser</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Runs on your machine, nothing uploaded</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Download the transcript (.txt / .md)</li>
-            <li class="off"><span class="n"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></span>No YouTube links or playlists</li>
-            <li class="off"><span class="n"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg></span>No screenshot images or long videos</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Local files</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Private browser transcription</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>TXT and Markdown export</li>
           </ul>
-          <a class="btn ghost big full" href="try/">Try free in your browser</a>
+          <a class="btn ghost big full" href="try/">Try free</a>
         </div>
 
-        <div class="plan featured reveal d1">
+        <div class="plan featured">
           <span class="ribbon">Best value</span>
           <h3>Pro</h3>
           <div class="price">$19 <span class="was">$38</span></div>
           <div class="terms">One payment · lifetime</div>
           <ul>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Everything in Free</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>YouTube, TikTok, Instagram, Facebook and X links, plus whole playlists</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>No length limit, no watermark</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>The on-screen content saved as images</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>HD / 4K downloader</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Use on up to 2 machines, forever</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Links and playlists</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>On-screen images</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Long videos</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>PDF / Markdown / images</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>HD/4K downloader</li>
+            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>Two machines</li>
           </ul>
-          <a class="btn solid big full" href="https://designesh.gumroad.com/l/videodoc">Get Pro on Gumroad</a>
-          <p class="expl">30 day money back. Link mode works with public videos. Nothing leaves your computer.</p>
-        </div>
-
-        <div class="plan reveal d2">
-          <span class="ribbon soon">Coming soon</span>
-          <h3>Android</h3>
-          <div class="price">$0</div>
-          <div class="terms">Free · Coming soon to Google Play</div>
-          <ul>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>VideoDoc on your Android phone</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>3 video downloads free</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>3 text extractions free</li>
-            <li><span class="y"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg></span>No subscription, ever</li>
-          </ul>
-          <p class="expl">Try the first 3 of each on the house. Like it? One small one-time unlock opens unlimited use.</p>
-          <span class="btn ghost big full disabled">Coming soon to Google Play</span>
+          <a class="btn solid big full" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
         </div>
 
       </div>
+      <p class="plan-note">30-day money-back guarantee. Public links only; use a local file for private or paywalled videos.</p>
+      <p class="plan-note android">Android app coming soon.</p>
     </section>
 
-    <!-- ===== GUIDES ===== -->
+    <!-- ===== GUIDES / USE CASES ===== -->
     <section id="guides" class="section">
-      <div class="sechead reveal">
-        <div class="kicker">Free guides</div>
-        <h2>The how-to, before you spend anything.</h2>
-        <p>Everything I learned turning videos into documents, written out in plain English.</p>
+      <div class="sechead">
+        <div class="kicker">Guides</div>
+        <h2>Use VideoDoc for the work you already do.</h2>
       </div>
-      <div class="artgrid reveal">
-        <a class="artcard" href="articles/youtube-video-to-document/">
-          <span class="t">How to turn a YouTube video into a document</span>
-          <p>The full picture: free ways, paid ways, and how to get the slides out too, not just the words.</p>
-          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/youtube-video-to-pdf/">
-          <span class="t">Convert a YouTube video to PDF, slides included</span>
-          <p>A PDF your AI can actually read, with the on-screen slides and code saved as images.</p>
-          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/youtube-video-to-text/">
-          <span class="t">YouTube video to text: 3 ways that actually work</span>
-          <p>The built-in transcript, a free browser tool, and a desktop app. When each one wins.</p>
-          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/get-transcript-of-any-youtube-video/">
-          <span class="t">Get the transcript of any YouTube video</span>
-          <p>Captions on, captions off, it does not matter. Every word with timestamps.</p>
-          <span class="meta"><span>GUIDE · 5 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/summarize-youtube-video-with-chatgpt/">
-          <span class="t">Summarize a YouTube video with ChatGPT</span>
-          <p>Why pasting a link fails half the time, and the two step way that keeps the details.</p>
-          <span class="meta"><span>AI · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/feed-video-to-chatgpt-or-claude/">
-          <span class="t">Can ChatGPT watch a video? The honest answer</span>
-          <p>No AI chat can watch a video today. What actually happens when you paste a link, and the bridge that works.</p>
-          <span class="meta"><span>AI · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/video-lecture-to-notes/">
-          <span class="t">Turn video lectures into notes, automatically</span>
-          <p>Stop pausing and scribbling. Let the lecture write its own notes, then study on top of them.</p>
-          <span class="meta"><span>STUDENTS · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
-        <a class="artcard" href="articles/youtube-playlist-to-one-document/">
-          <span class="t">Turn a YouTube playlist into one document</span>
-          <p>A 40 video course becomes one file you can search, quote and hand to your AI.</p>
-          <span class="meta"><span>GUIDE · 6 min</span><span class="go">&rarr;</span></span>
-        </a>
+      <div class="uses">
+        <a class="usecard" href="articles/video-lecture-to-notes/"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#study-notes"></use></svg>Study lecture videos<span class="go">&rarr;</span></a>
+        <a class="usecard" href="articles/training-video-to-sop/"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#steps"></use></svg>Turn training into SOPs<span class="go">&rarr;</span></a>
+        <a class="usecard" href="articles/extract-code-from-video-tutorial/"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#code"></use></svg>Save code from tutorials<span class="go">&rarr;</span></a>
+        <a class="usecard" href="articles/youtube-video-to-pdf/"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#pdf-document"></use></svg>Convert YouTube to PDF<span class="go">&rarr;</span></a>
+        <a class="usecard" href="articles/get-transcript-of-any-youtube-video/"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#transcript"></use></svg>Transcripts with timestamps<span class="go">&rarr;</span></a>
+        <a class="usecard" href="articles/extract-slides-from-video/"><svg class="vd-icon" aria-hidden="true"><use href="assets/icons/videodoc-icons.svg#frames-grid"></use></svg>Extract slides or every frame<span class="go">&rarr;</span></a>
       </div>
-      <div class="cta-row reveal" style="margin-top:30px">
-        <a class="btn ghost" href="articles/">Browse every guide</a>
+      <div class="cta-row" style="margin-top:26px">
+        <a class="btn ghost" href="articles/">Browse all 23 guides</a>
       </div>
     </section>
+
     <!-- ===== FAQ ===== -->
     <section id="faq" class="section">
-      <div class="sechead reveal">
+      <div class="sechead">
         <div class="kicker">Questions</div>
         <h2>The honest answers.</h2>
       </div>
-      <div class="faq reveal" id="faqlist">
+      <div class="faq" id="faqlist">
         <details open>
-          <summary>The video is a person talking over slides. What do I get?</summary>
-          <p>VideoDoc follows the screen share, not the face. The screenshots capture the slides, code and diagrams, paired with the timestamped transcript.</p>
+          <summary>Where does processing happen?</summary>
+          <p>On your computer. VideoDoc does not upload your video to a processing server.</p>
         </details>
         <details>
-          <summary>Where does the processing happen?</summary>
-          <p>Entirely on your own machine. The video is downloaded, transcribed and captured locally. Nothing is ever uploaded to a server.</p>
+          <summary>What is the difference between Free and Pro?</summary>
+          <p>Free transcribes local files in your browser. Pro adds links, playlists, screenshots, long videos, more exports, and downloading.</p>
         </details>
         <details>
-          <summary>Do I need a powerful PC?</summary>
-          <p>No. VideoDoc auto-detects your GPU and CPU and tunes itself; it uses your graphics card when it can, and still works fine without one.</p>
-        </details>
-        <details>
-          <summary>Is there a subscription?</summary>
-          <p>No. Free is free forever in your browser, and Pro is one payment you keep for life.</p>
-        </details>
-        <details>
-          <summary>What's the difference between Free and Pro?</summary>
-          <p>Free transcribes your own local files in the browser. Pro adds links and playlists from YouTube, TikTok, Instagram, Facebook and X, the on-screen screenshots, long videos, the HD/4K downloader, and use on two machines.</p>
-        </details>
-        <details>
-          <summary>Does it work with private or paywalled videos?</summary>
-          <p>Links work for public videos only. For anything private or behind a login, save the file yourself and drop it in; it never leaves your computer.</p>
+          <summary>Can it capture slides instead of the presenter?</summary>
+          <p>Yes. It keeps useful screen changes such as slides, code, and diagrams, while dropping duplicates.</p>
         </details>
         <details>
           <summary>Does it work on Mac?</summary>
-          <p>Yes. It runs on Windows 10/11 and Apple Silicon Macs (M1 or newer), all processing local, with a one-time 10-second unlock on the Mac's first launch (<a href="mac/">guide here</a>).</p>
+          <p>Yes — Windows 10/11 and Apple Silicon Macs are supported (<a href="mac/">Mac guide</a>). More answers on the <a href="support/">support page</a>.</p>
         </details>
-        <details>
-          <summary>Is there an Android app?</summary>
-          <p>Not yet. VideoDoc for Android starts free with 3 downloads and 3 text extractions, then one small one-time unlock; this page updates the day it lands on Google Play.</p>
-        </details>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section finalcta">
+      <div class="sechead">
+        <h2>Turn your first video into a document.</h2>
+      </div>
+      <div class="cta-row">
+        <a class="btn solid big" href="try/">Try it free</a>
       </div>
     </section>
 
@@ -388,17 +264,14 @@
         <ul>
           <li><a href="try/">Try free</a></li>
           <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
-          <li><a href="#pricing">VideoDoc for Android</a></li>
-          <li><a href="#features">Features</a></li>
           <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#how">How it works</a></li>
         </ul>
       </div>
       <div>
         <h3>Learn</h3>
         <ul>
-          <li><a href="articles/">All articles</a></li>
-          <li><a href="#works">Works with your AI</a></li>
-          
+          <li><a href="articles/">All guides</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
@@ -420,7 +293,6 @@
 
 <script>
 (function(){
-  var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var doc = document.documentElement;
 
   /* theme toggle */
@@ -461,45 +333,6 @@
       if(d.open){ faqs.forEach(function(o){ if(o !== d) o.open = false; }); }
     });
   });
-
-  /* reveal on scroll */
-  if(rm || !('IntersectionObserver' in window)){
-    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {rootMargin:'0px 0px -8% 0px', threshold:0.1});
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-  }
-
-  /* The demo clip. Two rules. It only becomes visible once the file really
-     loads, so a missing demo.mp4 shows the brand card instead of a black box.
-     And it plays on hover rather than on load, because a video that starts
-     itself is a video people scroll past. Touch has no hover, so it gets a
-     tap toggle instead. */
-  (function(){
-    var w = document.getElementById('demoWrap'), v = document.getElementById('demoVideo'),
-        ph = document.getElementById('demoPlaceholder'), hint = document.getElementById('demoHint');
-    if(!w || !v || !ph) return;
-    [['assets/demo.mp4','video/mp4'], ['assets/demo.webm','video/webm']].forEach(function(s){
-      var e = document.createElement('source'); e.src = s[0]; e.type = s[1]; v.appendChild(e);
-    });
-    v.addEventListener('loadedmetadata', function(){
-      v.hidden = false; ph.hidden = true; if(hint) hint.hidden = false;
-    });
-    var coarse = window.matchMedia && window.matchMedia('(pointer: coarse)').matches;
-    function play(){ if(!v.hidden){ var pr = v.play(); if(pr && pr.catch) pr.catch(function(){}); } }
-    function stop(){ if(!v.hidden){ v.pause(); } }
-    if(coarse){
-      if(hint) hint.textContent = 'Tap to play';
-      w.addEventListener('click', function(){ v.paused ? play() : stop(); });
-    } else {
-      w.addEventListener('mouseenter', play);
-      w.addEventListener('mouseleave', stop);
-      w.addEventListener('focusin', play);
-      w.addEventListener('focusout', stop);
-    }
-  })();
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();

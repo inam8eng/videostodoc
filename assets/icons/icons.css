@@ -1,0 +1,28 @@
+.vd-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: inline-block;
+  flex: 0 0 auto;
+  vertical-align: -0.25em;
+  color: var(--text, #0F1B2D);
+}
+
+.vd-icon--sm { width: 1.125rem; height: 1.125rem; }
+.vd-icon--lg { width: 2rem; height: 2rem; }
+
+.vd-icon-tile {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--accent-line, #CFE4F6);
+  border-radius: 0.875rem;
+  background: var(--accent-wash, #EFF8FE);
+  flex: 0 0 auto;
+}
+
+/* Example:
+<svg class="vd-icon" aria-hidden="true">
+  <use href="/assets/icons/videodoc-icons.svg#video-to-document"></use>
+</svg>
+*/
