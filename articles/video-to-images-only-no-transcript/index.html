@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Convert Video to Images Only, No Transcript (2026)</title>
+<meta name="description" content="Save a video as a folder of pictures with no transcript and no PDF. Four a second, duplicates dropped, every file named by its exact moment.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/video-to-images-only-no-transcript/">
+<meta property="og:title" content="Convert a video to images only, no transcript">
+<meta property="og:description" content="The pictures without the words. Four a second, duplicates dropped, named by the moment they came from.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/video-to-images-only-no-transcript/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to convert a video into images only", "description": "Save a video as a folder of pictures with no transcript and no PDF. Four a second, duplicates dropped, every file named by its exact moment.", "datePublished": "2026-08-28", "dateModified": "2026-08-28", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/video-to-images-only-no-transcript/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I convert a video to images without a transcript?", "acceptedAnswer": {"@type": "Answer", "text": "Pick the images-only mode. In VideoDoc it is one of the three outputs on the main screen, beside a document for AI and just the video file. It saves the whole video as timestamped pictures and never runs transcription, which is why it is quicker."}}, {"@type": "Question", "name": "Should I save 4, 2 or 1 image a second?", "acceptedAnswer": {"@type": "Answer", "text": "Four is the default and the safe choice, because nothing readable can appear and vanish between two pictures. An hour is about 14,400 images at four a second, 7,200 at two, 3,600 at one, before duplicates are dropped. Go lower when the screen barely changes."}}, {"@type": "Question", "name": "What resolution are the extracted images?", "acceptedAnswer": {"@type": "Answer", "text": "The same as the video. Nothing is upscaled, so a 480p source gives 480p images. If you are pasting a link, choose Best to fetch the video in full HD before the frames are cut."}}, {"@type": "Question", "name": "Can I extract frames from a video for free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with ffmpeg on a file you already have: `ffmpeg -i input.mp4 -vf fps=4 -q:v 2 frame_%06d.jpg`. You get plain sequence numbers, every duplicate kept, no index and no way to cover faces, but it costs nothing."}}, {"@type": "Question", "name": "Are the images good enough to hand to ChatGPT or Claude?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and this is usually better than handing over the video. Both read images well, in order, and a deduped folder with the moment in each file name gives the model the screen content a transcript throws away."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to convert a video into images only"}]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">video-to-images-only-no-transcript</span></div>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Work</span>
+        <h1>How to convert a video into images only</h1>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">·</span><span>Updated August 28, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>Skip the transcript entirely and export the video straight to pictures. VideoDoc has an images-only mode: it saves the whole video as numbered, timestamped JPEGs at 4, 2 or 1 a second, drops frames identical to the one before, writes a CSV index, and stops there. No PDF, no Markdown, and much quicker, because listening to the audio was always the slow half.</p>
+      </div>
+
+      <div class="prose">
+        <p>Sometimes the words are not the point. A screen recording of a settings panel, a webinar where the deck did the talking, a walkthrough with no narration worth keeping: what you want is the pictures, in order, and nothing else.</p>
+
+        <p>I learned this by wasting an afternoon. I had a 50 minute screen recording of an internal tool and I ran it through the normal document job. Transcription took most of that time. Then I opened the PDF, read four lines of somebody saying "and then you click here", and knew I would never read another word of it. The only useful thing in the output was the frames folder sitting beside it.</p>
+
+        <h2 id="the-free-way-with-ffmpeg-and-where-it-stops">The free way with ffmpeg, and where it stops</h2>
+
+        <p>If the video is already a file on your disk and you are comfortable in a terminal, <code>ffmpeg</code> will do this today for nothing. Install it, then:</p>
+
+        <ol>
+          <li>Put the video and your terminal in the same folder.</li>
+          <li>Run <code>ffmpeg -i input.mp4 -vf fps=4 -q:v 2 frame_%06d.jpg</code>.</li>
+          <li>Wait. You get four images for every second of video.</li>
+        </ol>
+
+        <p>That is a real answer and I use it for one-off jobs. Here is where it stops. The names are sequence numbers, so <code>frame_000842.jpg</code> tells you nothing until you divide by four in your head. Every duplicate is kept, so an hour of one static slide becomes 14,400 copies of it. No index, no record of the settings that produced the folder, no way to cover a face. And it needs a file you already have, so a link means downloading it yourself first.</p>
+
+        <h2 id="keyframes-every-frame-and-the-fixed-sample">Keyframes, every frame, and the fixed sample</h2>
+
+        <p>Three different things get called the same thing here, and picking the wrong one is why people end up with the wrong folder.</p>
+
+        <ul>
+          <li><strong>Keyframes in the encoder's sense</strong> are the frames a compressor stores in full rather than as a difference from the one before. Some tools hand you these because they are cheap to pull out. They are placed to suit compression, not to suit you, and on a still slide there may be one every ten seconds.</li>
+          <li><strong>Every single frame</strong> means all 30 a second, or 60 on some recordings. It sounds thorough and is mostly waste: an hour is over 100,000 files, and 29 of every 30 are near copies.</li>
+          <li><strong>A fixed sample</strong> is the useful middle. Four a second is close enough together that nothing meant for a human to read can appear and vanish between two pictures, and an hour lands at about 14,400 before duplicates are removed.</li>
+        </ul>
+
+        <p>There is a fourth thing, and it is the one you do not want here: the screenshots inside a VideoDoc PDF. Those are chosen. The app scores each picture for content, prefers the slide over the face, collapses repeated slides, and puts what survives next to the words spoken over it. Right output for a document. Wrong output for a raw sequence, because most of the video never makes the cut.</p>
+
+        <h2 id="images-only-as-its-own-mode">Images only, as its own mode</h2>
+
+        <p>In VideoDoc this is not a tick box hidden in a panel. It is one of the three things the app can make, chosen at the top: a document for AI, just the video file, or every frame as images. Pick the third and it downloads or opens the video, writes the pictures, and stops.</p>
+
+        <ul>
+          <li>You choose 4, 2 or 1 a second, and the app tells you how many images that means per minute and per hour before you start.</li>
+          <li>Frames identical to the one before are skipped, which on a slide deck or a screen recording throws away most of the pile.</li>
+          <li>Files are named <code>frame_000123_00h01m45.50s.jpg</code>, so the name is the timestamp.</li>
+          <li>A <code>frames_index.csv</code> lists every image with its moment, so you can sort and filter and jump back into the video.</li>
+          <li>It works on a link and on a file already on your computer, which is where a screen recording usually lives.</li>
+          <li>If those pictures are going anywhere near other people, faces can be filled with solid black on the way out.</li>
+        </ul>
+
+        <p>Nothing is listened to, so the slow half of the job never runs.</p>
+
+        <h2 id="what-resolution-you-actually-get">What resolution you actually get</h2>
+
+        <p>The pictures are as big as the video is. Nothing is upscaled, so a 480p file gives 480p images and the small text in them stays unreadable. If you are pasting a link, the quality you pick decides this, and Best fetches the video in full HD. That matters more than it sounds, because the point of these images is usually that something in them can be read, by you or by a model.</p>
+
+        <p>They come out as JPEG, not PNG. At the quality level used, screen text looks the same to a human and to an AI, and across 14,400 files the disk cost is not a small difference. If you need lossless frames, this is not your tool, and I would rather say so here than in a refund email.</p>
+
+        <h2 id="why-a-folder-of-jpegs-beats-the-video-file-for-an-ai">Why a folder of JPEGs beats the video file for an AI</h2>
+
+        <p>Dropping an MP4 into a chat window mostly does not work, and where it appears to work the model is usually reading a transcript of the audio rather than watching anything. Images are different. ChatGPT, Claude and Gemini all read images well, and they read a batch of them in order without complaint.</p>
+
+        <p>So the folder is the useful shape. Two hundred deduped frames of a screen recording, in order, with the moment in every file name, gets you further than any transcript when the meaning was on screen instead of in the audio. Ask which screen the error appeared on, or ask it to write the steps out from the pictures alone. More on that in <a href="../feed-video-to-chatgpt-or-claude/">feeding a video to ChatGPT or Claude</a>.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>No transcript means no transcript. There is no searchable text and no timestamps to quote, so if you might want the words later, run the document job and keep the frames folder beside it. Extracting frames needs the real video file, so a link still has to be downloaded first. Output is JPEG only. And this is the heavy option: how long it takes depends entirely on your computer, and the app warns you before it starts.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">The pictures, none of the words</span>
+          <h3>Turn one recording into a folder of images tonight.</h3>
+          <p>Try the free browser version on a file you already have. When you want the images-only export, the duplicate removal and the face cover, Pro is $19 once, lifetime, 2 machines, 30 day money back guarantee.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 lifetime</a>
+          </div>
+        </div>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>How do I convert a video to images without a transcript?</summary>
+            <p>Pick the images-only mode. In VideoDoc it is one of the three outputs on the main screen, beside a document for AI and just the video file. It saves the whole video as timestamped pictures and never runs transcription, which is why it is quicker.</p>
+          </details>
+          <details>
+            <summary>Should I save 4, 2 or 1 image a second?</summary>
+            <p>Four is the default and the safe choice, because nothing readable can appear and vanish between two pictures. An hour is about 14,400 images at four a second, 7,200 at two, 3,600 at one, before duplicates are dropped. Go lower when the screen barely changes.</p>
+          </details>
+          <details>
+            <summary>What resolution are the extracted images?</summary>
+            <p>The same as the video. Nothing is upscaled, so a 480p source gives 480p images. If you are pasting a link, choose Best to fetch the video in full HD before the frames are cut.</p>
+          </details>
+          <details>
+            <summary>Can I extract frames from a video for free?</summary>
+            <p>Yes, with ffmpeg on a file you already have: <code>ffmpeg -i input.mp4 -vf fps=4 -q:v 2 frame_%06d.jpg</code>. You get plain sequence numbers, every duplicate kept, no index and no way to cover faces, but it costs nothing.</p>
+          </details>
+          <details>
+            <summary>Are the images good enough to hand to ChatGPT or Claude?</summary>
+            <p>Yes, and this is usually better than handing over the video. Both read images well, in order, and a deduped folder with the moment in each file name gives the model the screen content a transcript throws away.</p>
+          </details>
+        </div>
+
+        <p>Find the screen recording you never rewatched because scrubbing it was too slow, and turn it into a folder of pictures instead.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../extract-every-frame-from-a-video/">
+            <span class="t">How to extract every frame from a video</span>
+            <p>Save a whole video as images, four every second, with identical frames dropped and each file named by the exac</p>
+            <span class="meta"><span>WORK · 7 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../extract-slides-from-video/">
+            <span class="t">How to extract slides from a video presentation</span>
+            <p>Get the actual slides out of a recorded talk as sharp images, matched to what the speaker said, when nobody ev</p>
+            <span class="meta"><span>WORK · 5 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../feed-video-to-chatgpt-or-claude/">
+            <span class="t">Can ChatGPT watch a video? The honest answer</span>
+            <p>No chat AI can truly watch a video today. What really happens when you paste a YouTube link into ChatGPT or Cl</p>
+            <span class="meta"><span>AI · 6 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
