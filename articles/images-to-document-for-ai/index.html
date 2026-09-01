@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turn Images Into a Document for AI: 2026 Guide</title>
+<meta name="description" content="Combine screenshots or photographed pages into one ordered document ChatGPT and Claude can really read. Free on Windows and Mac, and why filenames are hidden.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/images-to-document-for-ai/">
+<meta property="og:title" content="Turn images into a document your AI can read">
+<meta property="og:description" content="One ordered file beats forty loose screenshots. The free way, and the part everyone gets wrong.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/images-to-document-for-ai/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn images into a document your AI can read", "description": "Combine screenshots or photographed pages into one ordered document ChatGPT and Claude can really read. Free on Windows and Mac, and why filenames are hidden.", "datePublished": "2026-09-02", "dateModified": "2026-09-02", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/images-to-document-for-ai/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many images can I upload to ChatGPT or Claude at once?", "acceptedAnswer": {"@type": "Answer", "text": "Anthropic's documentation gives a limit of 20 images per message on claude.ai, at up to 10 MB and 8000 by 8000 pixels each. OpenAI allows many more per API request but caps the whole request at 512 MB. In practice, one ordered PDF avoids the question entirely."}}, {"@type": "Question", "name": "Does the AI read my image filenames?", "acceptedAnswer": {"@type": "Answer", "text": "No. Anthropic states that Claude receives no metadata from the images you send, so filenames, EXIF dates and folder names are all invisible. Anything you need the model to know has to be written into the document as text."}}, {"@type": "Question", "name": "Is a PDF better than sending images one by one?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, for anything with an order to it. A PDF fixes the sequence, arrives as a single file, and lets you put a caption above each page. Loose images arrive as a set with no reliable order."}}, {"@type": "Question", "name": "Can VideoDoc turn my folder of screenshots into a document?", "acceptedAnswer": {"@type": "Answer", "text": "No. VideoDoc converts video, from a link or a file on your computer, and cannot take existing images as its input. For a folder of screenshots, use the free Print to PDF method on this page."}}, {"@type": "Question", "name": "What resolution should my screenshots be?", "acceptedAnswer": {"@type": "Answer", "text": "Crop tightly rather than going bigger. Images are downscaled before the model sees them, to a 1568 pixel long edge on standard models, so a cropped panel keeps small text readable where a full desktop screenshot loses it."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to turn images into a document your AI can read"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">images-to-document-for-ai</span></div>
+
+    <figure class="arthero">
+      <img src="../../assets/art/images-to-document-for-ai.jpg" alt="VideoDoc illustration for this guide" width="1280" height="720" loading="eager" decoding="async">
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Guide</span>
+        <h1>How to turn images into a document your AI can read</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 2, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>Put the images in one PDF, in order, with a line of text above each one saying what it is. Windows and macOS both do this free from the file manager. The order and the captions matter more than the format, because an AI model looks at the pictures but never reads your filenames.</p>
+      </div>
+
+      <div class="prose">
+        <p>A friend photographed 38 pages of a printed manual and asked me to pull one answer out of it. I dropped the whole lot into a chat. The model read about half of them, then started quoting page 30 as though it came before page 4, and I spent longer untangling that than reading the manual would have taken.</p>
+
+        <p>Nothing was wrong with the photos. The problem is that a pile of images is not a document, and these models treat it as exactly what it is: a pile.</p>
+
+        <h2 id="why-does-dropping-a-folder-of-images-into-a-chat-go-badly">Why does dropping a folder of images into a chat go badly?</h2>
+
+        <p>Three things break at once, and only the first one is obvious.</p>
+
+        <p>The obvious one is the cap. Anthropic's <a href="https://platform.claude.com/docs/en/build-with-claude/vision">vision documentation</a> puts the limit at 20 images per message on claude.ai, each up to 10 MB and 8000 by 8000 pixels. OpenAI's <a href="https://developers.openai.com/api/docs/guides/images-vision">image input guide</a> allows far more per API request but caps the total payload at 512 MB. Forty photos is already two messages, and a second batch reads as new information rather than as pages 21 to 40.</p>
+
+        <p>The second is order. You know the pictures are pages. The model only knows the sequence you happened to hand it in, which on an upload box is often alphabetical, and alphabetical is not the same as numerical.</p>
+
+        <p>The third is the one nobody mentions. Anthropic's own documentation says Claude does not receive any metadata from the images you pass it. So a file carefully named <code>page_04_chapter_2.jpg</code> tells the model nothing whatsoever. Every clue you put in the filename exists only in your file manager.</p>
+
+        <h2 id="what-are-the-three-ways-to-get-pictures-into-an-ai-and-which-one-wins">What are the three ways to get pictures into an AI, and which one wins?</h2>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>Way</th><th>Order survives</th><th>Captions</th><th>Where it breaks</th></tr></thead>
+            <tbody>
+              <tr><td>Loose images in the chat box</td><td class="bad">No</td><td class="bad">No</td><td>Hits the per-message cap, and the model guesses the sequence</td></tr>
+              <tr><td>One PDF you assemble yourself</td><td class="good">Yes</td><td class="bad">Only if you add them</td><td>Still pictures only, so nothing says what page 12 is</td></tr>
+              <tr><td>A document built from the source</td><td class="good">Yes</td><td class="good">Yes</td><td>Needs the original video or file, not the screenshots</td></tr>
+            </tbody>
+        </table></div>
+
+        <p>The middle row is the honest answer for most people, and it is free. The bottom row is better, but only if you still have whatever the images came from.</p>
+
+        <h2 id="how-do-i-combine-images-into-one-pdf-for-free">How do I combine images into one PDF for free?</h2>
+
+        <p>On Windows, nothing needs installing. The printer that makes PDFs has shipped with the operating system for years.</p>
+
+        <ol>
+          <li>Put every image in one folder and pad the numbers: <code>01</code>, <code>02</code>, <code>03</code>, not <code>1</code>, <code>2</code>, <code>3</code>.</li>
+          <li>Select them all, with the folder sorted by Name.</li>
+          <li>Right-click the selection and choose Print.</li>
+          <li>Pick <strong>Microsoft Print to PDF</strong> as the printer, set the layout to Full page photo, and print.</li>
+          <li>It writes one PDF, one image per page, in the order shown.</li>
+        </ol>
+
+        <p>On a Mac it is shorter. Select the images in Finder, right-click, choose Quick Actions and then Create PDF. Preview opens the result, and you can drag pages in the sidebar to fix anything that landed wrong.</p>
+
+        <p>About that padding. Windows Explorer is clever and does sort 2 before 10, so the numbering looks harmless on your own screen. Almost nothing downstream is that clever: the moment the files go through a script, a zip, or an upload form, they sort as plain text and 10 lands before 2. Padding costs nothing and the problem never comes up.</p>
+
+        <p>Where this stops: you now have one file in the right order, and that is genuinely most of the battle. But it is still pictures only. There is no text layer, so the model reads every word off the pixels, and nothing on page 12 says that it is page 12.</p>
+
+        <h2 id="why-does-a-screenshot-that-looks-sharp-to-me-read-blurry-to-the-model">Why does a screenshot that looks sharp to me read blurry to the model?</h2>
+
+        <p>Because it is resized before anything looks at it. Anthropic publishes the exact rule: on the standard tier an image's long edge is capped at 1568 pixels, so a 1920 by 1080 screenshot is quietly downscaled to 1456 by 819. Newer models allow 2576 pixels on the long edge.</p>
+
+        <p>That is fine for a slide with six words on it. It is not fine for a terminal window, a spreadsheet, or code at 11 point, which is precisely the sort of thing people screenshot in the first place.</p>
+
+        <p>The fix is not a bigger file. It is fewer wasted pixels: crop to the panel that matters and take one picture per thing, so the small text is a larger share of what survives the shrink. A cropped 900 pixel wide screenshot of a code block beats a full 4K desktop every time.</p>
+
+        <h2 id="what-should-i-write-beside-each-image">What should I write beside each image?</h2>
+
+        <p>One line above each picture, saying two things: what it is, and where it came from. That is the cheapest accuracy you will ever buy.</p>
+
+        <ul>
+          <li>A short label, in your words, such as Invoice screen, error state.</li>
+          <li>A page number, a timestamp, or a section name.</li>
+          <li>Anything the picture cannot say about itself, such as which of two similar screens this is.</li>
+        </ul>
+
+        <p>Because the metadata is invisible, that caption is the only place the model can learn that image 12 is page 12. It is also what makes the answers quotable back to you, since it can cite your label instead of saying the third picture.</p>
+
+        <h2 id="what-if-the-images-came-from-a-video-in-the-first-place">What if the images came from a video in the first place?</h2>
+
+        <p>Then do not go image-first at all. Pulling screenshots out of a recording and reassembling them by hand throws away the one thing you already had, which is the words that went with each picture.</p>
+
+        <p>To be plain about it: VideoDoc starts from a video, not from a folder of images. It will not take screenshots you already have and assemble them into a document. If that is your situation, the free PDF route above is the right answer and I would rather say so.</p>
+
+        <p>If you do still have the recording, point VideoDoc at the link or at the file on your computer and it builds one document with the transcript timestamped and the on-screen frames placed where they happened, as a PDF and a Markdown copy. The caption problem solves itself, because every picture already sits beside the sentence that was being spoken over it.</p>
+
+        <p>If you want the pictures alone, it will save every frame as timestamped images at 1, 2 or 4 a second, drop the byte-identical duplicates, and write a CSV listing every image against the exact moment it came from. No transcript, no document, which is also much quicker. All of it runs on your own machine.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>VideoDoc does not accept a folder of images as input. It converts video, from a link or a local file, and public videos only. Pro is $19 once, lifetime, for two machines, on Windows and Apple Silicon Macs. If all you have is loose screenshots, use the free Print to PDF route on this page and keep your money.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">Still have the recording?</span>
+          <h3>Let the words stay attached to the pictures.</h3>
+          <p>Free in your browser on a file you already have, nothing uploaded. Pro adds links, playlists and the full frame export. One payment, lifetime.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 lifetime</a>
+          </div>
+        </div>
+
+        <p>The whole trick is boring and it is the same every time. One file, in the right order, with a line of text explaining each picture. Do that and a model reads 38 photographed pages as a manual instead of as 38 unrelated pictures of paper.</p>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>How many images can I upload to ChatGPT or Claude at once?</summary>
+            <p>Anthropic's documentation gives a limit of 20 images per message on claude.ai, at up to 10 MB and 8000 by 8000 pixels each. OpenAI allows many more per API request but caps the whole request at 512 MB. In practice, one ordered PDF avoids the question entirely.</p>
+          </details>
+          <details>
+            <summary>Does the AI read my image filenames?</summary>
+            <p>No. Anthropic states that Claude receives no metadata from the images you send, so filenames, EXIF dates and folder names are all invisible. Anything you need the model to know has to be written into the document as text.</p>
+          </details>
+          <details>
+            <summary>Is a PDF better than sending images one by one?</summary>
+            <p>Yes, for anything with an order to it. A PDF fixes the sequence, arrives as a single file, and lets you put a caption above each page. Loose images arrive as a set with no reliable order.</p>
+          </details>
+          <details>
+            <summary>Can VideoDoc turn my folder of screenshots into a document?</summary>
+            <p>No. VideoDoc converts video, from a link or a file on your computer, and cannot take existing images as its input. For a folder of screenshots, use the free Print to PDF method on this page.</p>
+          </details>
+          <details>
+            <summary>What resolution should my screenshots be?</summary>
+            <p>Crop tightly rather than going bigger. Images are downscaled before the model sees them, to a 1568 pixel long edge on standard models, so a cropped panel keeps small text readable where a full desktop screenshot loses it.</p>
+          </details>
+        </div>
+
+        <p>Take the pile of screenshots sitting in your Downloads folder, pad the numbers, print them to one PDF, and write a line above each page before you send it anywhere.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../feed-video-to-chatgpt-or-claude/">
+            <span class="t">Can ChatGPT watch a video? The honest answer</span>
+            <p>No chat AI can truly watch a video today. What really happens when you paste a YouTube link into ChatGPT or Cl</p>
+            <span class="meta"><span>AI · 6 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../youtube-video-to-pdf/">
+            <span class="t">Convert a YouTube video to PDF, slides included</span>
+            <p>Turn a YouTube video into a clean PDF: every word with timestamps plus the on-screen slides and code as images</p>
+            <span class="meta"><span>GUIDE · 6 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../video-to-images-only-no-transcript/">
+            <span class="t">How to convert a video into images only</span>
+            <p>Save a video as a folder of pictures with no transcript and no PDF. Four a second, duplicates dropped, every f</p>
+            <span class="meta"><span>WORK · 7 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

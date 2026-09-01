@@ -43,7 +43,7 @@ CATEGORIES = {"Guide", "Work", "Study", "Privacy", "Compare"}
 
 # Body block types the spec may use. Anything else aborts the run - an unknown
 # block would otherwise vanish from the page without a word.
-BLOCK_TYPES = {"h2", "p", "ul", "ol", "callout", "cta", "steps", "image", "stats"}
+BLOCK_TYPES = {"h2", "p", "ul", "ol", "callout", "cta", "steps", "image", "stats", "table"}
 
 ALLOW_REPLACE = False
 MAX_TITLE = 60
@@ -107,6 +107,9 @@ def read_minutes(spec: dict) -> int:
 # ---------------------------------------------------------------- rendering
 
 
+NL = chr(10)
+
+
 def render_body(spec: dict) -> str:
     parts: list[str] = []
     for b in spec["body"]:
@@ -151,6 +154,29 @@ def render_body(spec: dict) -> str:
                 for i in b["items"])
             parts.append('        <div class="statgrid" data-count>\n'
                          + cells + "\n        </div>")
+        elif t == "table":
+            # A comparison the eye can take in at once. AI search engines lift
+            # a table straight into their own answer cards, so anything this
+            # page compares belongs in one rather than in three paragraphs.
+            head = "".join(f"<th>{esc(h)}</th>" for h in b["head"])
+            body_rows = []
+            for r in b["rows"]:
+                tds = []
+                for c in r:
+                    if isinstance(c, str):
+                        tds.append(f"<td>{inline(c)}</td>")
+                    else:
+                        cls = c.get("cls")
+                        at = f' class="{cls}"' if cls in ("good", "bad") else ""
+                        tds.append(f"<td{at}>{inline(c['text'])}</td>")
+                body_rows.append("              <tr>" + "".join(tds) + "</tr>")
+            parts.append(
+                '        <div class="tablewrap"><table>' + NL
+                + f"            <thead><tr>{head}</tr></thead>" + NL
+                + "            <tbody>" + NL
+                + NL.join(body_rows) + NL
+                + "            </tbody>" + NL
+                + "        </table></div>")
         elif t == "cta":
             parts.append(
                 '        <div class="ctabox">\n'
@@ -287,7 +313,7 @@ def validate(spec: dict, index: dict) -> None:
             raise SpecError(f"headline duplicates existing article {other!r}")
 
 
-def check_rendered(page: str, slug: str) -> None:
+def check_rendered(page: str, slug: str, pending: set[str] | None = None) -> None:
     """Post-render checks: the things that silently break a page."""
     for blob in re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', page, re.S):
         json.loads(blob)  # raises on malformed schema
@@ -307,14 +333,20 @@ def check_rendered(page: str, slug: str) -> None:
     # Relative asset links must resolve from articles/<slug>/. Fragments and
     # query strings are addresses within a page, not files, so they come off
     # before the path is checked.
+    # This article's own banner is drawn a moment after this check runs, so it
+    # is legitimately absent here. Everything else must already be on disk.
+    pending = pending or set()
+
     for src in re.findall(r'<img src="([^"]+)"', page):
-        if src.startswith(("http://", "https://", "data:")):
+        if src.startswith(("http://", "https://", "data:")) or src in pending:
             continue
         target = (ARTICLES / slug / src).resolve()
         if not target.exists():
             raise SpecError(f"image {src} does not exist at {target}")
 
     for href in re.findall(r'(?:href|src)="(\.\./\.\./[^"]+)"', page):
+        if href in pending:
+            continue
         path = href.split("#", 1)[0].split("?", 1)[0]
         if not path or path.rstrip("/") in ("..", "../.."):
             continue
@@ -359,6 +391,18 @@ def build_page(spec: dict, index: dict, today: str) -> str:
                         "acceptedAnswer": {"@type": "Answer", "text": q["a"]}}
                        for q in spec["faq"]],
     }
+    org_ld = {
+        "@context": "https://schema.org", "@type": "Organization",
+        "name": "VideoDoc", "url": f"{SITE}/",
+        "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/og.png"},
+        "founder": {"@type": "Person", "name": "Inam Ul Haq",
+                    "url": "https://designesh.com/about"},
+        "sameAs": ["https://designesh.com/",
+                   "https://designesh.gumroad.com",
+                   "https://www.youtube.com/@DesigneshYT",
+                   "https://x.com/designeshYT",
+                   "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"],
+    }
     crumb_ld = {
         "@context": "https://schema.org", "@type": "BreadcrumbList",
         "itemListElement": [
@@ -387,6 +431,7 @@ def build_page(spec: dict, index: dict, today: str) -> str:
         "SCHEMA_ARTICLE": json.dumps(article_ld, ensure_ascii=False),
         "SCHEMA_FAQ": json.dumps(faq_ld, ensure_ascii=False),
         "SCHEMA_BREADCRUMB": json.dumps(crumb_ld, ensure_ascii=False),
+        "SCHEMA_ORG": json.dumps(org_ld, ensure_ascii=False),
     }
     page = tpl
     for k, v in fills.items():
@@ -543,7 +588,9 @@ def main() -> int:
     try:
         validate(spec, index)
         page = build_page(spec, index, args.date)
-        check_rendered(page, spec["slug"])
+        banner = f"../../assets/art/{spec['slug']}.jpg"
+        pending = set() if spec.get("hero") else {banner}
+        check_rendered(page, spec["slug"], pending)
         minutes = read_minutes(spec)
         existed = (ARTICLES / spec["slug"]).exists()
         hub = None if existed else insert_hub_card(spec, minutes)
