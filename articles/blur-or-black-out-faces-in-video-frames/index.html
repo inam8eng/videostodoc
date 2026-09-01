@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Black Out Faces in Video Screenshots (2026)</title>
+<meta name="description" content="Cover the presenter&#x27;s webcam bubble in every extracted frame and in the document itself. Solid black, done on your own machine, with the misses counted.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/blur-or-black-out-faces-in-video-frames/">
+<meta property="og:title" content="Black out faces in video screenshots">
+<meta property="og:description" content="Cover the webcam bubble in every frame and in the document, on your own machine, with the misses counted.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/blur-or-black-out-faces-in-video-frames/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to black out faces in video screenshots", "description": "Cover the presenter's webcam bubble in every extracted frame and in the document itself. Solid black, done on your own machine, with the misses counted.", "datePublished": "2026-09-01", "dateModified": "2026-09-01", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/blur-or-black-out-faces-in-video-frames/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I black out a face instead of blurring it?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, and I would. VideoDoc fills each detected face with solid black rather than blurring it. A blur keeps the original pixels in a rearranged form; solid black keeps nothing. You pick how much to cover, just the face, the whole head, or head and shoulders, and the shape: box, rounded box or oval."}}, {"@type": "Question", "name": "Will the faces be covered in the PDF as well as the images?", "acceptedAnswer": {"@type": "Answer", "text": "As of v0.3.0, yes, in the frames folder and in the keyframes inside the document. Before that version it applied only to the frames, so the PDF you handed to an AI still had the webcam bubble in every screenshot. On an older build, check the document first."}}, {"@type": "Question", "name": "Is blurring faces enough for GDPR?", "acceptedAnswer": {"@type": "Answer", "text": "I am not a lawyer and this is not legal advice. A reviewer tends to ask whether the person can still be identified, and whether you can show what you did. Solid black over the whole head answers the first more cleanly than a blur, and processing on your own machine answers the second."}}, {"@type": "Question", "name": "Does the face detection upload my video anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. The face finder runs on your own computer, like the rest of VideoDoc, so nothing about the frames or the document is sent anywhere. A recording you are not allowed to upload is exactly the one that needs its faces covered."}}, {"@type": "Question", "name": "How long does covering faces add to the job?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on how often a face is on screen. Where the bubble is visible the whole time every image needs the pass, so it is often the slowest stage. It became about eight times faster in v0.2.1 by using all your processor cores."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to black out faces in video screenshots"}]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">blur-or-black-out-faces-in-video-frames</span></div>
+
+    <figure class="arthero">
+      <img src="../../assets/art/blur-or-black-out-faces-in-video-frames.jpg" alt="VideoDoc illustration for this guide" width="1280" height="720" loading="eager" decoding="async">
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Privacy</span>
+        <h1>How to black out faces in video screenshots</h1>
+        <div class="art-meta"><span class="who">Inam Ul Haq</span><span class="dotsep">·</span><span>Updated September 1, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>Do not blur the video. Cover the face in the stills you actually keep. Point VideoDoc at the recording, turn on face covering, and it fills every detected face with solid black in both the frames folder and the keyframes inside the document. It runs on your own computer and tells you how many images it found no face in.</p>
+      </div>
+
+      <div class="prose">
+        <p>A colleague sends you a screen recording of the new billing system. You need the screens. You do not need his face, which sits in a small round bubble in the corner for all forty minutes. Save that video as still images and you now hold thousands of photographs of a person who never agreed to it, and if you upload the folder to an AI, his face goes with it.</p>
+
+        <h2 id="what-you-are-actually-asking-for">What you are actually asking for</h2>
+
+        <p>Search this and you get face blur tools. Every one of them does the same thing: you give it a video, it gives you back a video with the faces smeared. That is a good answer to a different question. If what you hand over at the end is a video, go and use one of them and stop reading.</p>
+
+        <p>Mine is never a video. What I hand over is a folder of numbered stills, or a PDF with the screenshots beside the words. A blurred MP4 does not get me there, because I would still have to extract the frames afterwards from a smear somebody else applied at a resolution somebody else chose.</p>
+
+        <p>So the job has two halves, and most people think about one. A face appears in the <strong>frames folder</strong>, where every sampled image carries the bubble. A face also appears in the <strong>document</strong>, because its keyframes came from the same video. Cover one and not the other and you have made things worse, because the clean folder makes it look handled.</p>
+
+        <h2 id="the-free-way-and-exactly-where-it-stops">The free way, and exactly where it stops</h2>
+
+        <p>If the webcam bubble never moves, and in a screen recording it usually never does, you can do this for nothing with ffmpeg. Paint a black rectangle over that fixed spot, then pull your frames from the painted file.</p>
+
+        <ol>
+          <li>Pause the video on any frame that shows the bubble and note where it sits in pixels: distance from the left, distance from the top, width, height.</li>
+          <li>Run <code>ffmpeg -i talk.mp4 -vf "drawbox=x=1540:y=790:w=360:h=270:color=black@1:t=fill" -c:a copy covered.mp4</code> with your own four numbers.</li>
+          <li>Extract your images from <code>covered.mp4</code> instead of the original, and delete the original if you are not allowed to keep it.</li>
+        </ol>
+
+        <p>This is genuinely good: free, offline, exact, and the black it paints is real black. I use it when a client sends one recording with one fixed bubble.</p>
+
+        <p>It stops the moment anything moves. If the presenter drags the bubble, or the layout changes when someone else shares, your rectangle now covers a chart and exposes a face. It has no idea there are two people on the call, and it will not touch a face inside the shared screen itself, a photo on a slide or a grid of Teams tiles. You are also guessing coordinates by eye, so you learn you were forty pixels short after writing out fourteen thousand images.</p>
+
+        <h2 id="why-solid-black-and-not-blur">Why solid black and not blur</h2>
+
+        <p>A blur is a degree, not a removal. The original pixels are still in there, redistributed. Undoing pixelation is a well documented exercise, and I would not want to be the person defending a blurred face in a privacy review by arguing about how strong the blur was. Solid black is not a degree. There is nothing underneath it.</p>
+
+        <p>Black also reads as deliberate. A reviewer sees at a glance which region was removed on purpose, where a blur can be mistaken for a bad camera or an oversight, and then they have to ask.</p>
+
+        <p>The shape matters more than people expect. A tight box on the face alone leaves the hairline, the ears and most of the jaw, and people are recognisable from those. VideoDoc lets you choose how much to cover, just the face, the whole head, or head and shoulders, and what shape to use, a box, a rounded box or an oval. On a round webcam bubble I use head and shoulders as an oval, so the cover sits neatly inside the bubble. Nothing is cropped, so the code and the screens underneath are exactly as they were.</p>
+
+        <h2 id="the-mistake-i-shipped-and-what-it-taught-me">The mistake I shipped, and what it taught me</h2>
+
+        <p>For two versions VideoDoc got this half right. Face covering applied to the frames folder and only to the frames folder. The document kept its own keyframes, taken from the same video, and the presenter's bubble was in every one of them. So you would tick the box, get a clean folder, feel fine, then upload a PDF with his face on twelve pages of it.</p>
+
+        <p>That is worse than doing nothing, because doing nothing does not look handled. It is fixed as of v0.3.0: the cover now goes on the document's keyframes as well as the frames. The option also came out of the yellow warning box it was buried in, since a privacy control nobody can find is not a privacy control. On anything older than v0.3.0, check your PDF before you send it.</p>
+
+        <h2 id="count-the-misses-or-you-have-not-finished">Count the misses, or you have not finished</h2>
+
+        <p>A face finder that finds nothing will cheerfully report success. That silence is the failure that gets people into trouble, so VideoDoc gives you two numbers when it stops: how many faces it covered, and how many images it found <strong>no</strong> face in at all.</p>
+
+        <p>Read the second number. On a lecture where the bubble is on screen the whole way through, it should be close to zero, because nearly every image has a face in it. If it comes back at two thousand, something is wrong with the detection or with your assumptions, and you know that before you send the folder rather than after.</p>
+
+        <p>Budget real time for this. When the bubble is present the entire video, every image needs work, so covering faces is often the slowest part of the job. It got roughly eight times quicker in v0.2.1 when that pass was spread across all your processor cores, and it is still the step I plan around on a long recording.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>This covers human faces, and it is good at a normal webcam bubble. It is not a general anonymiser. It will not cover a name badge, an email address in a browser tab, a signature, or a head turned far enough that no detector calls it a face. It covers pictures, not words, so if the presenter says his own name the transcript still has it. Check the no-face-found count and skim a sample of the images yourself before you trust a folder. Everything here runs on your own computer, and links work for public videos only.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">Faces covered, screens kept</span>
+          <h3>Cover the faces before the folder leaves your machine.</h3>
+          <p>Try the free browser version on a file you already have. The frames, the document and the face covering all live in the desktop app. Pro is $19 once, lifetime, 2 machines, 30 day money back guarantee.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 lifetime</a>
+          </div>
+        </div>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>Can I black out a face instead of blurring it?</summary>
+            <p>Yes, and I would. VideoDoc fills each detected face with solid black rather than blurring it. A blur keeps the original pixels in a rearranged form; solid black keeps nothing. You pick how much to cover, just the face, the whole head, or head and shoulders, and the shape: box, rounded box or oval.</p>
+          </details>
+          <details>
+            <summary>Will the faces be covered in the PDF as well as the images?</summary>
+            <p>As of v0.3.0, yes, in the frames folder and in the keyframes inside the document. Before that version it applied only to the frames, so the PDF you handed to an AI still had the webcam bubble in every screenshot. On an older build, check the document first.</p>
+          </details>
+          <details>
+            <summary>Is blurring faces enough for GDPR?</summary>
+            <p>I am not a lawyer and this is not legal advice. A reviewer tends to ask whether the person can still be identified, and whether you can show what you did. Solid black over the whole head answers the first more cleanly than a blur, and processing on your own machine answers the second.</p>
+          </details>
+          <details>
+            <summary>Does the face detection upload my video anywhere?</summary>
+            <p>No. The face finder runs on your own computer, like the rest of VideoDoc, so nothing about the frames or the document is sent anywhere. A recording you are not allowed to upload is exactly the one that needs its faces covered.</p>
+          </details>
+          <details>
+            <summary>How long does covering faces add to the job?</summary>
+            <p>It depends on how often a face is on screen. Where the bubble is visible the whole time every image needs the pass, so it is often the slowest stage. It became about eight times faster in v0.2.1 by using all your processor cores.</p>
+          </details>
+        </div>
+
+        <p>Take the recording sitting in your downloads folder, run it with the cover turned on, then read the no-face-found count before you send anything to anyone.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../offline-video-transcription-privacy/">
+            <span class="t">Offline video transcription: why local beats the cloud</span>
+            <p>What actually happens to your video when you upload it to a cloud transcription tool, the honest math of meter</p>
+            <span class="meta"><span>PRIVACY · 6 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../transcribe-video-free-no-upload/">
+            <span class="t">Transcribe a video free, without uploading it anywhere</span>
+            <p>A free transcript where the file never leaves your machine: real AI transcription in your browser, no account,</p>
+            <span class="meta"><span>PRIVACY · 5 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../extract-every-frame-from-a-video/">
+            <span class="t">How to extract every frame from a video</span>
+            <p>Save a whole video as images, four every second, with identical frames dropped and each file named by the exac</p>
+            <span class="meta"><span>WORK · 7 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
