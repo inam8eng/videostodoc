@@ -309,6 +309,10 @@ def validate(spec: dict, index: dict) -> None:
     # A duplicate title is the clearest signal of keyword cannibalisation, and
     # it is cheap to catch here rather than in Search Console three months on.
     for other, meta in index.items():
+        # An article rewritten with --replace always matches its own headline;
+        # comparing it to itself made a rewrite impossible.
+        if other == slug:
+            continue
         if meta["title"].strip().lower() == spec["headline"].strip().lower():
             raise SpecError(f"headline duplicates existing article {other!r}")
 
