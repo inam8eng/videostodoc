@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extract Slides From a Recorded Webinar (2026 Guide)</title>
+<meta name="description" content="Get the slides out of a webinar recording as sharp timestamped images, on your own computer, when the deck was never shared and you cannot upload the file.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/extract-slides-from-a-recorded-webinar/">
+<meta property="og:title" content="Extract slides from a recorded webinar">
+<meta property="og:description" content="The deck was never sent round. Pull the slides out of the recording as timestamped images, on your own machine.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/extract-slides-from-a-recorded-webinar/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to extract slides from a recorded webinar", "description": "Get the slides out of a webinar recording as sharp timestamped images, on your own computer, when the deck was never shared and you cannot upload the file.", "datePublished": "2026-09-09", "dateModified": "2026-09-09", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/extract-slides-from-a-recorded-webinar/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I get the actual PowerPoint file from a webinar recording?", "acceptedAnswer": {"@type": "Answer", "text": "Not from the recording itself, because the platform saved a video of a screen and not the deck. An online converter can rebuild editable slides by reading the text off each frame, and a local tool like VideoDoc gives you the slides as sharp images instead. Asking the host for the real file is still the fastest route."}}, {"@type": "Question", "name": "How many images does an hour long webinar produce?", "acceptedAnswer": {"@type": "Answer", "text": "About 3,600 at one sample a second, or about 14,400 at four a second, before duplicates are dropped. On a webinar with a live webcam tile very few frames are pixel identical, so plan for close to the full count and sample at one a second."}}, {"@type": "Question", "name": "How do I remove the presenter's webcam from the extracted slides?", "acceptedAnswer": {"@type": "Answer", "text": "You cannot remove it, because the platform pasted it into the picture and there is nothing behind it. You can fill the face with solid black, which VideoDoc does in the images and in the document. The cleaner answer is Zoom's separate shared screen recording, which never had the webcam in it."}}, {"@type": "Question", "name": "Is it safe to upload a client webinar to an online slide extractor?", "acceptedAnswer": {"@type": "Answer", "text": "That depends on your contract rather than on the tool, and for an internal or client webinar the answer is usually no. Extracting the slides on your own computer avoids the question, because the file never leaves the machine."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to extract slides from a recorded webinar"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">extract-slides-from-a-recorded-webinar</span></div>
+
+    <figure class="arthero">
+      <img src="../../assets/art/extract-slides-from-a-recorded-webinar.jpg" alt="VideoDoc illustration for this guide" width="1280" height="720" loading="eager" decoding="async">
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Work</span>
+        <h1>How to extract slides from a recorded webinar</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 9, 2026</span><span class="dotsep">·</span><span>8 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>A recorded webinar gives up its slides if you sample the video as images and keep the frames where the screen changes. VideoDoc does this on your own computer: point it at the recording, it saves the screen as timestamped JPEGs with pixel identical repeats dropped, and it writes a CSV that maps each image back to the exact moment it was on screen. You get pictures of the slides, not an editable PowerPoint.</p>
+      </div>
+
+      <div class="prose">
+        <p>You sat through the webinar, the slides had the one number you actually needed, and nobody ever sent the deck round. All you have is the recording. <strong>You can get those slides out as images without uploading the recording anywhere.</strong> The confusion is that almost every tool sold for this job is an online converter that wants your file first, and a client webinar is often the exact file you are not allowed to hand over.</p>
+
+        <p>It helps to know what a webinar recording actually is. The platform did not save the deck. It saved a video of a screen, and it has usually pasted the presenter's webcam tile, and sometimes the chat panel, into that same picture. So the slides are in there as pixels, mixed in with everything else that was on screen at the time.</p>
+
+        <h2 id="do-you-already-have-a-clean-slides-only-recording">Do you already have a clean slides only recording?</h2>
+
+        <p>Ask this before you extract anything, because it can save you the whole job. Zoom can record the shared screen as its own separate file, on top of the normal speaker view recording, so when the host had that setting on there is a second video that shows nothing but the slides. That file has no webcam tile, no chat panel and no sidebar in it. <strong>If the host has it, ask for the shared screen file and use that one.</strong></p>
+
+        <p>The setting lives in <a href="https://support.zoom.com/hc/en/article?id=zm_kb&amp;sysparm_article=KB0064676">Zoom's cloud recording settings</a> and it has to be switched on before the webinar starts, so most of the time it will not exist and the host will not know what you are asking about. That is fine, because the composited recording works too and just gives you a bit more to throw away.</p>
+
+        <h2 id="why-is-a-webinar-recording-harder-than-a-normal-video">Why is a webinar recording harder than a normal video?</h2>
+
+        <p>The first problem is the burned in layout. The webcam tile, the chat panel and the platform's toolbar are part of the picture now, so every slide image you pull out carries them on top. You can cover a face with solid black. You cannot remove a chat panel, because there is nothing behind it to recover.</p>
+
+        <p>The second problem is animated slides. A presenter who reveals one bullet at a time is showing six genuinely different screens for what he calls one slide, so you get the partial versions as well as the finished one. The build order is often worth keeping, but the folder does end up bigger than the deck was.</p>
+
+        <p>The third problem is duplicate removal, and it is the one that costs people a wasted run. Duplicate removal drops an image that is a pixel for pixel copy of the one before it, which on a still slide deck throws away most of the pile. But a composited webcam tile means the presenter is moving, so almost no two frames are identical and almost nothing gets dropped. <strong>On a webinar recording with a live webcam tile, sample at 1 a second, not 4.</strong></p>
+
+        <h2 id="is-there-a-free-way-to-get-the-slides-out">Is there a free way to get the slides out?</h2>
+
+        <p>Yes, and it costs nothing but your evening. VLC will save whatever frame is on screen as an image file, and you drive it yourself.</p>
+
+        <ol>
+          <li>Open the recording in VLC. In Tools, Preferences, Video you can set the snapshot format to PNG, which keeps slide text sharper than JPEG.</li>
+          <li>Play it and press Shift and S every time the slide changes. On a Mac it is Command, Alt and S.</li>
+          <li>The images land in your Pictures folder, which is where <a href="https://wiki.videolan.org/Documentation:Snapshots/">VLC saves snapshots</a> unless you change it.</li>
+          <li>Rename them afterwards, because the filename carries the clock time you pressed the key, not the moment in the video.</li>
+        </ol>
+
+        <p>For a 15 minute product demo I would still do it this way. On a 70 minute webinar it falls apart. I tried it once and missed a slide that was up for about eight seconds while I was writing something down, and because the filenames were my laptop's clock I could not tell afterwards which slide belonged to which minute. VLC can also run its scene video filter and save frames on its own, but the filter does not know what a slide is, so an hour of webinar leaves you thousands of near identical images to sort by hand.</p>
+
+        <h2 id="how-do-you-pull-the-slides-out-on-your-own-computer">How do you pull the slides out on your own computer?</h2>
+
+        <p>This is what I built VideoDoc for, so read the next part knowing that. It opens the recording on your own machine, saves the screen as timestamped images, and never sends the file anywhere. A webinar recording is usually a file already sitting in Downloads, which is the case it handles best.</p>
+
+        <ol>
+          <li><strong>Every frame as images</strong> is the one you want when the slides are the point. Choose 1, 2 or 4 samples a second, point it at the recording, and it writes numbered JPEGs named by the exact moment each one came from, with pixel identical repeats dropped.</li>
+          <li><strong>A document for AI</strong> is the one you want when you need the slides and the words together. It picks the screen frames rather than the face frames and places each one beside what was said over it, as a PDF and a Markdown file.</li>
+          <li>Either way, turn on the option that fills every face with solid black if the webcam tile is in shot and these images are going near a client.</li>
+        </ol>
+
+        <p>The app tells you how many images your sampling rate means per minute and per hour before it starts. An hour at 4 a second is about 14,400 images. At 1 a second it is about 3,600, and for slides that is plenty, because a slide sits on screen for half a minute.</p>
+
+        <p>The part I use most is the CSV index that lands beside the images. Every row is one image and the exact moment it was on screen, so you can say the revenue chart was the slide at 47 minutes and anyone can go and check it. It is also how you send a question back to the presenter without making him watch his own webinar again.</p>
+
+        <h2 id="what-do-the-online-video-to-slides-converters-do-that-this-does-not">What do the online video to slides converters do that this does not?</h2>
+
+        <p>They give you an editable PowerPoint, and that is a real thing to want. Tools like CopySlides and VideoToSlides read the text off each captured frame and rebuild it as slides you can type into. VideoDoc does not do that. It gives you pictures of the slides plus a PDF and a Markdown file, and the text comes either from your AI reading the image or from the transcript.</p>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>What you want</th><th>Online video to slides converters</th><th>VideoDoc</th></tr></thead>
+            <tbody>
+              <tr><td>An editable PowerPoint file</td><td class="good">Yes, that is the whole point of them</td><td class="bad">No. Images plus a PDF and Markdown</td></tr>
+              <tr><td>The recording stays on your machine</td><td class="bad">No, you upload it first</td><td class="good">Yes, nothing is uploaded</td></tr>
+              <tr><td>Length of recording accepted</td><td>CopySlides <a href="https://copyslides.com/video-to-slides">publishes a two hour cap</a> and asks you to split anything longer</td><td>No length limit on the desktop app</td></tr>
+              <tr><td>The presenter's face in the slide images</td><td>Whatever the recording showed</td><td>Can be filled with solid black, in the images and in the document</td></tr>
+              <tr><td>The spoken words lined up with the slides</td><td>Varies by tool</td><td>A timestamped transcript beside each screen in the document</td></tr>
+              <tr><td>Which minute each slide came from</td><td>Varies by tool</td><td>A CSV row per image with the exact moment</td></tr>
+              <tr><td>Works with no internet</td><td class="bad">No</td><td class="good">Yes, it runs on your own machine</td></tr>
+            </tbody>
+        </table></div>
+
+        <p>So the honest split is simple. <strong>If you need to edit the slides, use a cloud converter and accept the upload. If you need the slides but cannot upload the recording, do it locally.</strong></p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>VideoDoc gives you images of the slides, not an editable deck, and it does not turn slide text into text boxes you can type into. It cannot recover a slide the recording never showed, so if the platform saved speaker view only and cut to the presenter's camera during a slide, that slide is gone. The chat panel and the attendee sidebar cannot be removed, only the faces. And the free browser version on this site does the transcript and not the frames, so the slides come from the desktop app.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">One webinar, all its slides</span>
+          <h3>Try it on a recording you already have.</h3>
+          <p>The free browser version gives you the transcript. For the slides as images, the CSV index and the face blackout, Pro is $19 once, lifetime, 2 machines.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 lifetime</a>
+          </div>
+        </div>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>Can I get the actual PowerPoint file from a webinar recording?</summary>
+            <p>Not from the recording itself, because the platform saved a video of a screen and not the deck. An online converter can rebuild editable slides by reading the text off each frame, and a local tool like VideoDoc gives you the slides as sharp images instead. Asking the host for the real file is still the fastest route.</p>
+          </details>
+          <details>
+            <summary>How many images does an hour long webinar produce?</summary>
+            <p>About 3,600 at one sample a second, or about 14,400 at four a second, before duplicates are dropped. On a webinar with a live webcam tile very few frames are pixel identical, so plan for close to the full count and sample at one a second.</p>
+          </details>
+          <details>
+            <summary>How do I remove the presenter's webcam from the extracted slides?</summary>
+            <p>You cannot remove it, because the platform pasted it into the picture and there is nothing behind it. You can fill the face with solid black, which VideoDoc does in the images and in the document. The cleaner answer is Zoom's separate shared screen recording, which never had the webcam in it.</p>
+          </details>
+          <details>
+            <summary>Is it safe to upload a client webinar to an online slide extractor?</summary>
+            <p>That depends on your contract rather than on the tool, and for an internal or client webinar the answer is usually no. Extracting the slides on your own computer avoids the question, because the file never leaves the machine.</p>
+          </details>
+        </div>
+
+        <p>Find the webinar recording still sitting in your Downloads folder and pull its slides out tonight, before the host's cloud recording expires.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../extract-slides-from-video/">
+            <span class="t">How to extract slides from a video presentation</span>
+            <p>Get the actual slides out of a recorded talk as sharp images, matched to what the speaker said, when nobody ev</p>
+            <span class="meta"><span>WORK · 5 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../webinar-recording-to-document/">
+            <span class="t">Turn a webinar recording into a written guide</span>
+            <p>Turn an hour long webinar recording into a written guide with the slides included: summary, decisions and acti</p>
+            <span class="meta"><span>WORK · 6 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../blur-or-black-out-faces-in-video-frames/">
+            <span class="t">How to black out faces in video screenshots</span>
+            <p>Cover the presenter's webcam bubble in every extracted frame and in the document itself. Solid black, done on </p>
+            <span class="meta"><span>PRIVACY · 7 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
