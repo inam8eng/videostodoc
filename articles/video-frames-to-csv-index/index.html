@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Frame Timestamps Index: Read It as a Change Log</title>
+<meta name="description" content="The CSV beside your video frames has four columns and one trick: the gap between two rows is how long that picture stayed on screen. Here is how to read it.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/video-frames-to-csv-index/">
+<meta property="og:title" content="Video frame timestamps index">
+<meta property="og:description" content="One row per image. The gap between two rows is how long that picture stayed on screen.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/video-frames-to-csv-index/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to read a video frames index, and what it tells you", "description": "The CSV beside your video frames has four columns and one trick: the gap between two rows is how long that picture stayed on screen. Here is how to read it.", "datePublished": "2026-09-10", "dateModified": "2026-09-10", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/video-frames-to-csv-index/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is frames_index.csv?", "acceptedAnswer": {"@type": "Answer", "text": "It is a plain CSV saved next to your extracted frames, one row per image, with the columns frame, time_seconds, timecode and file. It opens in any spreadsheet, and it is what lets you get from a picture back to the exact moment it came from."}}, {"@type": "Question", "name": "Does the frame column match the video's frame number?", "acceptedAnswer": {"@type": "Answer", "text": "No. It counts the images that were kept, starting at 1, after sampling and duplicate removal have both happened. Use time_seconds multiplied by the video's real frame rate if you need the video's own frame number."}}, {"@type": "Question", "name": "How do I find how long a slide was on screen?", "acceptedAnswer": {"@type": "Answer", "text": "Subtract one row's time_seconds from the next row's in a spare column, then sort by that column. With duplicate removal on, every row is a moment the screen changed, so that gap is how long the previous picture held."}}, {"@type": "Question", "name": "How many rows will an hour of video give me?", "acceptedAnswer": {"@type": "Answer", "text": "At 4 frames a second an hour captures about 14,400 images, but duplicate removal usually cuts that hard on slides and screen recordings. A static webinar can come out under a thousand rows, while a video where the picture moves constantly stays near the full count."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to read a video frames index, and what it tells you"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">video-frames-to-csv-index</span></div>
+
+    <figure class="arthero">
+      <img src="../../assets/art/video-frames-to-csv-index.jpg" alt="VideoDoc illustration for this guide" width="1280" height="720" loading="eager" decoding="async">
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Work</span>
+        <h1>How to read a video frames index, and what it tells you</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 10, 2026</span><span class="dotsep">·</span><span>8 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>A video frames index is a CSV file saved next to your extracted frames. It has one row per image and four columns: frame, time_seconds, timecode and file. VideoDoc writes it as frames_index.csv. Sort by time_seconds and every row is a moment from the video, so you can jump from a spreadsheet cell straight back to the second it came from.</p>
+      </div>
+
+      <div class="prose">
+        <p>If you have just saved a video as images, you are looking at a folder with a few thousand JPEGs in it and one small file sitting beside them called <code>frames_index.csv</code>. Most people scroll the pictures and never open that file. The pictures on their own cannot tell you when anything happened, though, and the index can, because it holds the exact moment every single image was taken.</p>
+
+        <p>There is one thing in it that almost nobody notices. If duplicate frames were removed when the images were saved, then the gap between one row's time and the next row's time is <strong>how long that picture stayed on the screen</strong>. Two rows 4.75 seconds apart means that slide, or that bit of code, was up for 4.75 seconds and nothing changed. So the index is not really a list of files. It is a record of what changed on screen, and when.</p>
+
+        <h2 id="what-is-actually-inside-frames-index-csv">What is actually inside frames_index.csv?</h2>
+
+        <p>It is a plain comma separated file, which means Excel, Numbers, Google Sheets and any script can open it with nothing special installed. There is one row per saved image, four columns, and a header row on top so nothing has to be guessed. A <code>README.txt</code> lands in the same folder saying how many images there are, what rate they were captured at, and how many duplicates were skipped.</p>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>Column</th><th>What it holds</th><th>Example</th></tr></thead>
+            <tbody>
+              <tr><td><code>frame</code></td><td>A count of the images that were kept, starting at 1</td><td>123</td></tr>
+              <tr><td><code>time_seconds</code></td><td>The moment in the video, in seconds, to two decimal places</td><td>105.5</td></tr>
+              <tr><td><code>timecode</code></td><td>The same moment, written for a person to read</td><td>00h01m45.50s</td></tr>
+              <tr><td><code>file</code></td><td>The image file name, which carries that moment too</td><td>frame_000123_00h01m45.50s.jpg</td></tr>
+            </tbody>
+        </table></div>
+
+        <p>The file name is the index in miniature. <code>frame_000123_00h01m45.50s.jpg</code> is image number 123, taken at 1 minute 45.50 seconds, so if someone sends you one picture out of the folder with no spreadsheet attached, the moment travels with it. That is worth knowing when you are pasting a single frame into a chat or a support ticket.</p>
+
+        <h2 id="why-does-the-frame-column-not-match-the-video-s-own-frame-numbers">Why does the frame column not match the video's own frame numbers?</h2>
+
+        <p>This is the part that catches people out, and it is worth being plain about. The <code>frame</code> column is a count of the images that ended up in the folder, not the frame number the video itself uses. It starts at 1 and goes up by one for every image saved, and nothing about it refers back to the original file.</p>
+
+        <p>Two things pull it away from the video's own numbering. The images are sampled, usually 4 a second, so on a 30 frames a second video you are keeping roughly one frame in every seven and skipping the rest. And if duplicate removal was on, the identical ones were thrown away before the numbering happened, so a slide that sat still for a minute contributes one row rather than 240.</p>
+
+        <p>If you genuinely need the video's own frame number, use <code>time_seconds</code> instead, because that column never moves. Multiply it by the video's real frame rate and you have it: a row at 105.5 seconds in a 30 fps video is the video's frame 3165. You can read the frame rate of any file with <a href="https://ffmpeg.org/ffprobe.html">ffprobe</a>, which comes with FFmpeg and prints it as <code>r_frame_rate</code>.</p>
+
+        <h2 id="how-do-you-turn-the-index-into-a-list-of-what-changed-on-screen">How do you turn the index into a list of what changed on screen?</h2>
+
+        <p>This is the trick that makes the file worth more than the folder, and it is one column of arithmetic. With duplicate removal on, every row in the index is a moment the picture actually changed. So the distance between two rows tells you how long the previous picture held.</p>
+
+        <ol>
+          <li>Open <code>frames_index.csv</code> in Excel, Numbers or Google Sheets. It opens straight into columns, there is nothing to import.</li>
+          <li>Put a heading in the first empty column, something like <code>held_for</code>.</li>
+          <li>In that column, on the first data row, subtract this row's time from the next row's: <code>=B3-B2</code>. Fill it all the way down.</li>
+          <li>Sort by that column, largest first.</li>
+        </ol>
+
+        <p>What comes back is the video ranked by how long each thing stayed on screen. The slide the presenter talked over for four minutes is now at the top, the frames that flashed past during a scroll are at the bottom, and every row still carries the file name of its own picture. On a two hour recording that is usually a twenty row list of the moments that mattered, built out of one spreadsheet formula.</p>
+
+        <p>It works the other way round as well. Sort <code>held_for</code> smallest first and you get the busy parts of the video, which on a screen recording is where somebody was typing, dragging or clicking quickly.</p>
+
+        <h2 id="how-do-you-jump-from-a-row-back-to-the-moment-in-the-video">How do you jump from a row back to the moment in the video?</h2>
+
+        <p>Read the <code>timecode</code> column and type it into your player. <code>00h01m45.50s</code> is 1 minute 45.50 seconds, so in VLC, in QuickTime or on a YouTube page that is 1:45. The seconds column is there for the same job when you would rather work in plain seconds, which is what most command line tools and most video APIs want anyway.</p>
+
+        <p>I ended up doing this because of a two hour screen recording of an internal tool that I had already watched twice and still could not find the one screen I needed. The frames folder had about 900 images in it after duplicates were dropped, which is not a number anybody scrolls through. Sorting the index by how long each frame held put that screen in the top ten, because of course the person had sat on it while explaining what it did.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>The index says when a picture was taken and nothing at all about what is in it. There is no text recognition, no labels and no search, so finding the frame with the error message on it still means looking. The <code>frame</code> column is a count of kept images, not the video's frame number. The <code>timecode</code> column is text, so a spreadsheet will not treat it as a duration and your arithmetic has to be done on <code>time_seconds</code>. And duplicate removal only ever compares an image with the one directly before it, which keeps an A to B back to A sequence intact on purpose, so the same picture can honestly appear twice in the list.</p>
+        </div>
+
+        <h2 id="can-you-build-the-same-index-for-free">Can you build the same index for free?</h2>
+
+        <p>Yes, and it is worth knowing how, because the pieces are all in FFmpeg, which is free and runs on everything. One command gets you most of the way, and then you finish the index yourself in a spreadsheet.</p>
+
+        <ol>
+          <li>Install FFmpeg, then run <code>ffmpeg -i lecture.mp4 -vf fps=4 -q:v 2 frame_%06d.jpg</code> in the folder you want the images in.</li>
+          <li>You get numbered images, four a second, named frame_000001.jpg upward, with no timestamps anywhere in the names.</li>
+          <li>In a spreadsheet, put those numbers in column A and the timestamp in column B as <code>=(A2-1)/4</code>. You asked for exactly four a second, so image number N sits at N minus 1, divided by 4, seconds.</li>
+          <li>If you would rather have the real source timestamps than the arithmetic, add the <code>showinfo</code> filter as <code>-vf "fps=4,showinfo"</code> and FFmpeg prints a line per output frame including its <code>pts_time</code>. Save that output to a file and read the timestamps out of it.</li>
+        </ol>
+
+        <p>Where the free route stops is duplicates. FFmpeg will happily write 14,400 images for an hour of video whether or not anything on screen ever changed, so a webinar of static slides becomes thousands of copies of the same slide and your index fills up with rows that say nothing. There is an <code>mpdecimate</code> filter that drops frames it judges too similar, but it works on a similarity threshold you have to tune, and it renumbers what it writes, which quietly breaks the arithmetic in step 3.</p>
+
+        <p>The other thing the free route does not give you is the face blackout, and on a screen recording with the presenter's webcam bubble in the corner that is often the whole reason the folder is not allowed to leave your computer.</p>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">Frames, timestamps and the index</span>
+          <h3>Save a video as images and get the CSV with it.</h3>
+          <p>VideoDoc runs on your own computer, does the duplicate pass for you and writes frames_index.csv next to the pictures. $19 once, two machines, Windows and Apple Silicon Mac.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 lifetime</a>
+          </div>
+        </div>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>What is frames_index.csv?</summary>
+            <p>It is a plain CSV saved next to your extracted frames, one row per image, with the columns frame, time_seconds, timecode and file. It opens in any spreadsheet, and it is what lets you get from a picture back to the exact moment it came from.</p>
+          </details>
+          <details>
+            <summary>Does the frame column match the video's frame number?</summary>
+            <p>No. It counts the images that were kept, starting at 1, after sampling and duplicate removal have both happened. Use time_seconds multiplied by the video's real frame rate if you need the video's own frame number.</p>
+          </details>
+          <details>
+            <summary>How do I find how long a slide was on screen?</summary>
+            <p>Subtract one row's time_seconds from the next row's in a spare column, then sort by that column. With duplicate removal on, every row is a moment the screen changed, so that gap is how long the previous picture held.</p>
+          </details>
+          <details>
+            <summary>How many rows will an hour of video give me?</summary>
+            <p>At 4 frames a second an hour captures about 14,400 images, but duplicate removal usually cuts that hard on slides and screen recordings. A static webinar can come out under a thousand rows, while a video where the picture moves constantly stays near the full count.</p>
+          </details>
+        </div>
+
+        <p>Open the frames_index.csv you already have, add one column that subtracts each row's time from the next, and sort it. The five longest rows are usually the whole video.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../extract-every-frame-from-a-video/">
+            <span class="t">How to extract every frame from a video</span>
+            <p>Save a whole video as images, four every second, with identical frames dropped and each file named by the exac</p>
+            <span class="meta"><span>WORK · 7 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../video-to-images-only-no-transcript/">
+            <span class="t">How to convert a video into images only</span>
+            <p>Save a video as a folder of pictures with no transcript and no PDF. Four a second, duplicates dropped, every f</p>
+            <span class="meta"><span>WORK · 7 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../blur-or-black-out-faces-in-video-frames/">
+            <span class="t">How to black out faces in video screenshots</span>
+            <p>Cover the presenter's webcam bubble in every extracted frame and in the document itself. Solid black, done on </p>
+            <span class="meta"><span>PRIVACY · 7 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
