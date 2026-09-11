@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MP4 to Text Offline on Windows (No Upload, 2026)</title>
+<meta name="description" content="Get the words out of an MP4 on your own Windows PC with the internet off. The real download size, honest speed numbers, and where the free way stops.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/mp4-to-text-offline-windows/">
+<meta property="og:title" content="MP4 to text, offline, on Windows">
+<meta property="og:description" content="One download, then nothing. The real megabytes, the real minutes, and what a transcript still misses.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/mp4-to-text-offline-windows/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn an MP4 into text on Windows, with the internet off", "description": "Get the words out of an MP4 on your own Windows PC with the internet off. The real download size, honest speed numbers, and where the free way stops.", "datePublished": "2026-09-12", "dateModified": "2026-09-12", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/mp4-to-text-offline-windows/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I convert an MP4 to text on Windows with no internet at all?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, once the speech model has been downloaded and cached on the first run. After that, a file on your own disk transcribes with the network switched off. A PC that has never been online cannot do that first run."}}, {"@type": "Question", "name": "How big is the download the first time?", "acceptedAnswer": {"@type": "Answer", "text": "About 484 MB for the Whisper small model, which is the default. On my own Windows machine the cache folder it lives in came to 973 MB, because it kept a second copy of the file."}}, {"@type": "Question", "name": "How long does an hour of MP4 take to transcribe offline?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly eight minutes with the small model on a fast desktop processor, going by the faster-whisper project's own published benchmark. A thin laptop can take two or three times longer, and an NVIDIA graphics card is about 5 to 10 times faster than the processor."}}, {"@type": "Question", "name": "Does offline transcription pick up text shown on the screen?", "acceptedAnswer": {"@type": "Answer", "text": "No. Transcription only hears the audio, so anything written on a slide or in a code editor never reaches the transcript. For that you need the video frames saved alongside the words."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to turn an MP4 into text on Windows, with the internet off"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">mp4-to-text-offline-windows</span></div>
+
+    <figure class="arthero">
+      <img src="../../assets/art/mp4-to-text-offline-windows.jpg" alt="VideoDoc illustration for this guide" width="1280" height="720" loading="eager" decoding="async">
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Guide</span>
+        <h1>How to turn an MP4 into text on Windows, with the internet off</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 12, 2026</span><span class="dotsep">·</span><span>8 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>You can turn an MP4 into text on Windows with no internet, but not on the very first run. A local transcriber downloads a speech model once, about 484 MB for Whisper small, and caches it on your disk. After that, transcription happens on your own processor with the network switched off. On a fast desktop CPU an hour of audio takes roughly eight minutes.</p>
+      </div>
+
+      <div class="prose">
+        <p>You have an MP4 sitting on your Windows PC and you want the words out of it. Maybe it is a recorded meeting, maybe it is a lecture, maybe it is a client file you are not allowed to put on anybody else's server. So you search for an offline converter, and most of what comes back is a website that wants you to upload the file first, which is the exact thing you were trying to avoid.</p>
+
+        <p>Here is the answer before the explanation. Windows can do this entirely on your own machine and the file never leaves it. But almost no offline transcriber is actually offline on the very first run, because it has to fetch its speech model once. <strong>Run one short video with the internet on. After that you can pull the cable out and it still works.</strong></p>
+
+        <p>That first download catches people out, and it caught me out on my own tool. I emptied the model folder to see what a brand new install feels like, turned the wifi off and started a job, and the app just sat there waiting, because there was nothing on disk to listen with. It is not a bug and it is not a lie in somebody's marketing. It is simply how these models get onto your computer in the first place.</p>
+
+        <h2 id="why-does-an-offline-transcriber-still-need-the-internet-once">Why does an offline transcriber still need the internet once?</h2>
+
+        <p>The program that reads speech is small. The model it reads with is not. A speech model is a big file of learned weights, which you can think of as the part that actually knows what English sounds like, and no installer wants to carry half a gigabyte of that inside the setup file for every user who might never transcribe anything.</p>
+
+        <p>So the normal design is to download the model the first time you need it and then keep it in a cache folder forever. VideoDoc uses <a href="https://github.com/SYSTRAN/faster-whisper">faster-whisper</a>, which pulls the model from the Hugging Face Hub on first use and loads it from your own disk on every run after that. Once that file is cached, transcribing a video already on your drive needs nothing from the network at all.</p>
+
+        <p>That is the honest shape of the word offline on Windows. <strong>One download, then nothing.</strong> If your rule is that the machine must never make an outbound connection, including the first run, then somebody has to carry the model onto that machine another way, and no tool clears that bar on its own.</p>
+
+        <h2 id="what-does-the-first-download-actually-cost-in-megabytes">What does the first download actually cost in megabytes?</h2>
+
+        <p>This is the part almost nobody publishes, so here are the real figures from the model cache on my own Windows machine. VideoDoc offers five sizes and defaults to small, which is the only one most people will ever download.</p>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>Model</th><th>Model file</th><th>Cache folder on my PC</th><th>What it is for</th></tr></thead>
+            <tbody>
+              <tr><td>tiny</td><td>76 MB</td><td>79 MB</td><td>a fast check on clear English</td></tr>
+              <tr><td>base</td><td>145 MB</td><td>297 MB</td><td>short clips, still rough</td></tr>
+              <tr><td>small, the default</td><td>484 MB</td><td>973 MB</td><td>most work, clear speech</td></tr>
+              <tr><td>medium</td><td>1.53 GB</td><td>1.53 GB</td><td>accents, background noise, other languages</td></tr>
+              <tr><td>large-v3</td><td>not on my disk</td><td>not measured</td><td>the hardest audio, and the slowest</td></tr>
+            </tbody>
+        </table></div>
+
+        <p>Read the small row twice, because that gap is real and it surprised me. The <a href="https://huggingface.co/Systran/faster-whisper-small">model file</a> is 484 MB and the folder it lives in came to 973 MB, because the cache kept a second copy of the same file. Two of the four sizes I have on disk did that and two did not, so on a small SSD the safe plan is to budget double the download and be pleasantly surprised.</p>
+
+        <h2 id="how-long-does-an-hour-of-video-take-on-a-windows-pc">How long does an hour of video take on a Windows PC?</h2>
+
+        <p>Nobody can give you one number for this, and any page that gives you one is guessing about your computer. What I can give you is a published measurement and the two things that move it.</p>
+
+        <p>The faster-whisper project benchmarks 13 minutes of audio with the small model on an Intel Core i7-12700K, using 8 threads and int8, and it finishes in 1 minute 42 seconds. That is roughly seven and a half times quicker than the audio is long, so <strong>an hour of video lands at about eight minutes on a desktop processor like that.</strong> A thin laptop with four cores will take two or three times longer, and that is normal rather than broken.</p>
+
+        <p>Two levers change it. The first is the model size, because medium is far slower than small and you only need it when the audio is genuinely hard. The second is your graphics card: VideoDoc runs the transcription on an NVIDIA GPU when the CUDA runtime is installed, and that path is roughly 5 to 10 times faster than the processor, which is the difference between an evening job and a coffee break.</p>
+
+        <p>One thing that gets quoted at you and does not apply here. On a YouTube link VideoDoc takes the caption track that already exists and is finished in seconds, with no transcription at all. An MP4 sitting on your disk has no caption track, so a local file always takes the slow honest path. If you have been told this kind of tool is instant, that is why, and it is not the same job.</p>
+
+        <h2 id="is-there-a-free-way-to-do-it-and-where-does-free-stop">Is there a free way to do it, and where does free stop?</h2>
+
+        <p>There are two, and both are real answers rather than trial buttons that expire.</p>
+
+        <ol>
+          <li>Whisper on the command line, or faster-whisper directly. Free, open source, runs entirely on your own hardware, and the transcript is the same quality. It stops at the setup: you need Python, a working ffmpeg on your PATH, and a working CUDA install if you want the GPU speed. The first time, that is an afternoon.</li>
+          <li>A browser tab that runs the model on your device. Nothing is posted anywhere and there is nothing to install. It stops at long files, because the tab has to stay open and your machine has to hold the whole model in memory for the length of the job.</li>
+        </ol>
+
+        <p>Both of those give you the words. Neither gives you the screen, and on a screen recording the screen is usually the half that carries the meaning.</p>
+
+        <h2 id="what-does-a-transcript-miss-when-the-mp4-is-a-screen-recording">What does a transcript miss when the MP4 is a screen recording?</h2>
+
+        <p>Transcription listens, and it never looks. If your MP4 is somebody demonstrating software, the sentence in the audio is "and then you click here", and here is a button that only exists in the picture. The transcript comes out correct and useless at the same time, which is a frustrating thing to discover after waiting eight minutes for it.</p>
+
+        <p>That gap is the reason I built VideoDoc to save timestamped pictures of the screen next to the transcript and put both into one PDF or Markdown file. The words carry the explanation, the frames carry the screen, and an AI reading that document can use both. It runs on your own machine on Windows and on Apple Silicon Macs, and it is $19 once for two computers.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>The first transcription needs the internet to fetch the speech model, so a PC that has never been online cannot start. VideoDoc also asks GitHub once per launch whether a newer version exists, and activating Pro sends your licence key to Gumroad. Neither of those carries your video or your text. Accuracy is still decided by your audio: a quiet speaker, people talking over each other, or a strong accent on the small model will give you a transcript you have to fix by hand, and moving up to medium buys accuracy with time. The speed figures here come from a published benchmark on a fast desktop chip, not from your laptop.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">One MP4, nothing uploaded</span>
+          <h3>Try it on a file that is already on your PC.</h3>
+          <p>Free in your browser. The desktop app is $19 once, on two machines, Windows and Apple Silicon Mac.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 lifetime</a>
+          </div>
+        </div>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>Can I convert an MP4 to text on Windows with no internet at all?</summary>
+            <p>Yes, once the speech model has been downloaded and cached on the first run. After that, a file on your own disk transcribes with the network switched off. A PC that has never been online cannot do that first run.</p>
+          </details>
+          <details>
+            <summary>How big is the download the first time?</summary>
+            <p>About 484 MB for the Whisper small model, which is the default. On my own Windows machine the cache folder it lives in came to 973 MB, because it kept a second copy of the file.</p>
+          </details>
+          <details>
+            <summary>How long does an hour of MP4 take to transcribe offline?</summary>
+            <p>Roughly eight minutes with the small model on a fast desktop processor, going by the faster-whisper project's own published benchmark. A thin laptop can take two or three times longer, and an NVIDIA graphics card is about 5 to 10 times faster than the processor.</p>
+          </details>
+          <details>
+            <summary>Does offline transcription pick up text shown on the screen?</summary>
+            <p>No. Transcription only hears the audio, so anything written on a slide or in a code editor never reaches the transcript. For that you need the video frames saved alongside the words.</p>
+          </details>
+        </div>
+
+        <p>Pick the shortest recording you have and run it once tonight with the internet on, so the model lands. From tomorrow that PC can do this with the cable out.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../transcribe-video-free-no-upload/">
+            <span class="t">Transcribe a video free, without uploading it anywhere</span>
+            <p>A free transcript where the file never leaves your machine: real AI transcription in your browser, no account,</p>
+            <span class="meta"><span>PRIVACY · 5 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../local-video-to-text-no-upload/">
+            <span class="t">What local really means in a video to text converter</span>
+            <p>Local means your video never leaves your machine, not that the app never touches the network. Exactly what min</p>
+            <span class="meta"><span>PRIVACY · 7 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../best-video-to-text-converters/">
+            <span class="t">Best video to text converters in 2026, honestly compared</span>
+            <p>An honest comparison of the real ways to turn video into text: free buttons, open source, cloud services, Note</p>
+            <span class="meta"><span>COMPARE · 7 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
