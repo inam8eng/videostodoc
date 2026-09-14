@@ -375,14 +375,14 @@ def _hero_for(spec: dict) -> str:
             '    </figure>')
 
 
-def build_page(spec: dict, index: dict, today: str) -> str:
+def build_page(spec: dict, index: dict, today: str, published: str | None = None) -> str:
     minutes = read_minutes(spec)
     tpl = TEMPLATE.read_text(encoding="utf-8")
 
     article_ld = {
         "@context": "https://schema.org", "@type": "Article",
         "headline": spec["headline"], "description": spec["meta_desc"],
-        "datePublished": today, "dateModified": today,
+        "datePublished": published or today, "dateModified": today,
         "author": {"@type": "Person", "name": "Inam Ul Haq"},
         "publisher": {"@type": "Organization", "name": "VideoDoc",
                       "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/og.png"}},
@@ -591,7 +591,15 @@ def main() -> int:
 
     try:
         validate(spec, index)
-        page = build_page(spec, index, args.date)
+        # A rewrite keeps the date the page first went live. Only dateModified
+        # and the visible Updated line move to today.
+        prior = ARTICLES / spec["slug"] / "index.html"
+        published = None
+        if prior.exists():
+            m = re.search(r'"datePublished": "(\d{4}-\d{2}-\d{2})"',
+                          prior.read_text(encoding="utf-8"))
+            published = m.group(1) if m else None
+        page = build_page(spec, index, args.date, published)
         banner = f"../../assets/art/{spec['slug']}.jpg"
         pending = set() if spec.get("hero") else {banner}
         check_rendered(page, spec["slug"], pending)
