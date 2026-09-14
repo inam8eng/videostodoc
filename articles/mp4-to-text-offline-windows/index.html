@@ -27,10 +27,10 @@
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn an MP4 into text on Windows, with the internet off", "description": "Get the words out of an MP4 on your own Windows PC with the internet off. The real download size, honest speed numbers, and where the free way stops.", "datePublished": "2026-09-12", "dateModified": "2026-09-12", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/mp4-to-text-offline-windows/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn an MP4 into text on Windows, with the internet off", "description": "Get the words out of an MP4 on your own Windows PC with the internet off. The real download size, honest speed numbers, and where the free way stops.", "datePublished": "2026-09-12", "dateModified": "2026-09-15", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/mp4-to-text-offline-windows/"}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I convert an MP4 to text on Windows with no internet at all?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, once the speech model has been downloaded and cached on the first run. After that, a file on your own disk transcribes with the network switched off. A PC that has never been online cannot do that first run."}}, {"@type": "Question", "name": "How big is the download the first time?", "acceptedAnswer": {"@type": "Answer", "text": "About 484 MB for the Whisper small model, which is the default. On my own Windows machine the cache folder it lives in came to 973 MB, because it kept a second copy of the file."}}, {"@type": "Question", "name": "How long does an hour of MP4 take to transcribe offline?", "acceptedAnswer": {"@type": "Answer", "text": "Roughly eight minutes with the small model on a fast desktop processor, going by the faster-whisper project's own published benchmark. A thin laptop can take two or three times longer, and an NVIDIA graphics card is about 5 to 10 times faster than the processor."}}, {"@type": "Question", "name": "Does offline transcription pick up text shown on the screen?", "acceptedAnswer": {"@type": "Answer", "text": "No. Transcription only hears the audio, so anything written on a slide or in a code editor never reaches the transcript. For that you need the video frames saved alongside the words."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I convert an MP4 to text on Windows with no internet at all?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can do this once the software downloads and stores the speech model during its first run. After that initial setup is complete, any video stored on your local disk can be transcribed with your network completely switched off. A computer that has never had an internet connection cannot complete that first download on its own."}}, {"@type": "Question", "name": "How big is the download the first time?", "acceptedAnswer": {"@type": "Answer", "text": "About 484 MB for the Whisper small model, which is the default. On my Windows PC the cache folder came to 973 MB, because the cache kept a second copy of the model file."}}, {"@type": "Question", "name": "How long does an hour of MP4 take to transcribe offline?", "acceptedAnswer": {"@type": "Answer", "text": "An hour of audio takes roughly eight minutes with the small model on a fast desktop processor, going by the faster-whisper project's own published benchmark. A thin laptop with fewer cores can take two or three times longer, and an NVIDIA graphics card is about 5 to 10 times faster than the processor."}}, {"@type": "Question", "name": "Does offline transcription pick up text shown on the screen?", "acceptedAnswer": {"@type": "Answer", "text": "No. Transcription tools only listen to the sound track, so text shown on slides or inside application windows never reaches the transcript. To keep that on-screen information, you need the video frames saved alongside the words."}}]}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to turn an MP4 into text on Windows, with the internet off"}]}
@@ -82,32 +82,32 @@
       <header class="art-head">
         <span class="cat">Guide</span>
         <h1>How to turn an MP4 into text on Windows, with the internet off</h1>
-        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 12, 2026</span><span class="dotsep">·</span><span>8 min read</span></div>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 15, 2026</span><span class="dotsep">·</span><span>8 min read</span></div>
       </header>
 
       <div class="answer">
         <span class="lbl">The short answer</span>
-        <p>You can turn an MP4 into text on Windows with no internet, but not on the very first run. A local transcriber downloads a speech model once, about 484 MB for Whisper small, and caches it on your disk. After that, transcription happens on your own processor with the network switched off. On a fast desktop CPU an hour of audio takes roughly eight minutes.</p>
+        <p>You can turn an MP4 into text on Windows without an internet connection, but not on the very first run. A local transcriber downloads a speech model once, which is about 484 MB for Whisper small, and keeps it in a cache folder on your disk. After that download, your own processor does all the transcription with the network switched off. On a fast desktop CPU, an hour of audio takes roughly eight minutes.</p>
       </div>
 
       <div class="prose">
-        <p>You have an MP4 sitting on your Windows PC and you want the words out of it. Maybe it is a recorded meeting, maybe it is a lecture, maybe it is a client file you are not allowed to put on anybody else's server. So you search for an offline converter, and most of what comes back is a website that wants you to upload the file first, which is the exact thing you were trying to avoid.</p>
+        <p>You have an MP4 file on your Windows computer and you need the spoken words out of it as plain text. It might be a recorded team meeting, a lecture, or a client recording you are not allowed to upload to anybody else's server. When you search for an offline converter, most of the results are websites asking you to upload the video first, and that defeats the whole reason you searched.</p>
 
-        <p>Here is the answer before the explanation. Windows can do this entirely on your own machine and the file never leaves it. But almost no offline transcriber is actually offline on the very first run, because it has to fetch its speech model once. <strong>Run one short video with the internet on. After that you can pull the cable out and it still works.</strong></p>
+        <p>Windows can do this entirely on your own machine, and the file never leaves your computer. But nearly every offline transcription tool still needs the internet on its first run, because it has to fetch its speech model from the web. <strong>Run one short video with the internet on. After that you can pull the cable out and it still works.</strong></p>
 
-        <p>That first download catches people out, and it caught me out on my own tool. I emptied the model folder to see what a brand new install feels like, turned the wifi off and started a job, and the app just sat there waiting, because there was nothing on disk to listen with. It is not a bug and it is not a lie in somebody's marketing. It is simply how these models get onto your computer in the first place.</p>
+        <p>That first download catches a lot of people out, and it caught me out while testing my own software. I cleared the model folder to see what a fresh install feels like, turned off my Wi-Fi and started a job, and the app just sat there waiting, because there was no model on disk to listen with. The installer does not carry the model files, so the app has to fetch them once before it can work on its own.</p>
 
         <h2 id="why-does-an-offline-transcriber-still-need-the-internet-once">Why does an offline transcriber still need the internet once?</h2>
 
-        <p>The program that reads speech is small. The model it reads with is not. A speech model is a big file of learned weights, which you can think of as the part that actually knows what English sounds like, and no installer wants to carry half a gigabyte of that inside the setup file for every user who might never transcribe anything.</p>
+        <p>The program that does the transcription is small, but the speech model it depends on is big. A speech model is a large file of learned weights, which is the data that lets the software recognise English speech, and nobody wants to pack half a gigabyte of that into a setup file for users who may never transcribe anything.</p>
 
-        <p>So the normal design is to download the model the first time you need it and then keep it in a cache folder forever. VideoDoc uses <a href="https://github.com/SYSTRAN/faster-whisper">faster-whisper</a>, which pulls the model from the Hugging Face Hub on first use and loads it from your own disk on every run after that. Once that file is cached, transcribing a video already on your drive needs nothing from the network at all.</p>
+        <p>The standard solution is to download the model the first time you transcribe something and keep it in a cache folder on your drive. VideoDoc uses <a href="https://github.com/SYSTRAN/faster-whisper">faster-whisper</a>, which downloads the model from the Hugging Face Hub on your first run and loads it from your own disk on every job after that. Once that file is in your cache, transcribing a video stored on your drive needs no internet at all.</p>
 
-        <p>That is the honest shape of the word offline on Windows. <strong>One download, then nothing.</strong> If your rule is that the machine must never make an outbound connection, including the first run, then somebody has to carry the model onto that machine another way, and no tool clears that bar on its own.</p>
+        <p>That is what offline transcription really looks like on a Windows PC. <strong>One download, then nothing.</strong> If your workplace rule is that the computer must never make an outside connection, even during setup, then somebody has to copy the model files onto that machine by hand, because no tool can get around that first download on its own.</p>
 
         <h2 id="what-does-the-first-download-actually-cost-in-megabytes">What does the first download actually cost in megabytes?</h2>
 
-        <p>This is the part almost nobody publishes, so here are the real figures from the model cache on my own Windows machine. VideoDoc offers five sizes and defaults to small, which is the only one most people will ever download.</p>
+        <p>Most documentation glosses over these file size details, so I checked the numbers inside the model cache folder on my Windows PC. VideoDoc offers five sizes and defaults to small, which is the only one most people will ever download.</p>
 
         <div class="tablewrap"><table>
             <thead><tr><th>Model</th><th>Model file</th><th>Cache folder on my PC</th><th>What it is for</th></tr></thead>
@@ -120,38 +120,38 @@
             </tbody>
         </table></div>
 
-        <p>Read the small row twice, because that gap is real and it surprised me. The <a href="https://huggingface.co/Systran/faster-whisper-small">model file</a> is 484 MB and the folder it lives in came to 973 MB, because the cache kept a second copy of the same file. Two of the four sizes I have on disk did that and two did not, so on a small SSD the safe plan is to budget double the download and be pleasantly surprised.</p>
+        <p>Take a close look at the small model numbers, because the disk usage difference surprised me when I measured it. The <a href="https://huggingface.co/Systran/faster-whisper-small">model file</a> is 484 MB and the folder it lives in came to 973 MB, because the cache kept a second copy of the same file. Two of the four sizes I have on disk did that and two did not, so on a small SSD the safe plan is to budget double the download and be pleasantly surprised.</p>
 
         <h2 id="how-long-does-an-hour-of-video-take-on-a-windows-pc">How long does an hour of video take on a Windows PC?</h2>
 
-        <p>Nobody can give you one number for this, and any page that gives you one is guessing about your computer. What I can give you is a published measurement and the two things that move it.</p>
+        <p>No single number can predict your transcription time, and any website that gives you one is guessing about your hardware. What I can give you is the faster-whisper project's own published benchmark, and the two things that change it.</p>
 
-        <p>The faster-whisper project benchmarks 13 minutes of audio with the small model on an Intel Core i7-12700K, using 8 threads and int8, and it finishes in 1 minute 42 seconds. That is roughly seven and a half times quicker than the audio is long, so <strong>an hour of video lands at about eight minutes on a desktop processor like that.</strong> A thin laptop with four cores will take two or three times longer, and that is normal rather than broken.</p>
+        <p>The faster-whisper project benchmarks 13 minutes of audio with the small model on an Intel Core i7-12700K, using 8 threads and int8, and it finishes in 1 minute 42 seconds. That is roughly seven and a half times faster than the audio plays, so <strong>an hour of video lands at about eight minutes on a desktop processor like that.</strong> A thin laptop with four cores will take two or three times longer, and that is normal rather than broken.</p>
 
-        <p>Two levers change it. The first is the model size, because medium is far slower than small and you only need it when the audio is genuinely hard. The second is your graphics card: VideoDoc runs the transcription on an NVIDIA GPU when the CUDA runtime is installed, and that path is roughly 5 to 10 times faster than the processor, which is the difference between an evening job and a coffee break.</p>
+        <p>Two things change that number. The first is the model you pick, because medium is much slower than small, so only use it when your audio has heavy background noise or difficult speech. The second is your graphics card: VideoDoc runs the transcription on an NVIDIA GPU when the CUDA runtime is installed, and that path is roughly 5 to 10 times faster than the processor, which is the difference between an evening job and a coffee break.</p>
 
-        <p>One thing that gets quoted at you and does not apply here. On a YouTube link VideoDoc takes the caption track that already exists and is finished in seconds, with no transcription at all. An MP4 sitting on your disk has no caption track, so a local file always takes the slow honest path. If you have been told this kind of tool is instant, that is why, and it is not the same job.</p>
+        <p>One speed claim you may have seen does not apply to a file on your disk. When you paste a YouTube link, VideoDoc takes the caption track the video already has and is done in seconds, without transcribing the audio at all. An MP4 sitting on your drive has no caption track, so your machine has to transcribe the whole recording from start to finish. So if you have been told this kind of tool is instant, that is the reason, and it is not the same job.</p>
 
         <h2 id="is-there-a-free-way-to-do-it-and-where-does-free-stop">Is there a free way to do it, and where does free stop?</h2>
 
-        <p>There are two, and both are real answers rather than trial buttons that expire.</p>
+        <p>There are two practical alternatives you can use on your machine. Both are genuine tools rather than limited trial programs that expire after a few days.</p>
 
         <ol>
-          <li>Whisper on the command line, or faster-whisper directly. Free, open source, runs entirely on your own hardware, and the transcript is the same quality. It stops at the setup: you need Python, a working ffmpeg on your PATH, and a working CUDA install if you want the GPU speed. The first time, that is an afternoon.</li>
-          <li>A browser tab that runs the model on your device. Nothing is posted anywhere and there is nothing to install. It stops at long files, because the tab has to stay open and your machine has to hold the whole model in memory for the length of the job.</li>
+          <li>You can run Whisper or faster-whisper directly from the command line. Both are free and open source, they run on your own hardware, and the transcript is the same quality. The hard part is the setup, because you need a working Python install, ffmpeg on your system PATH, and working CUDA drivers if you want the GPU speed. Getting all of that working the first time usually takes an afternoon.</li>
+          <li>You can also use a browser tab that runs the model on your own machine. Your audio stays private because nothing is sent to a server, and there is nothing to install. The downside shows up on long recordings, because the tab has to stay open the whole time and your machine has to hold the whole model in memory until the job finishes.</li>
         </ol>
 
-        <p>Both of those give you the words. Neither gives you the screen, and on a screen recording the screen is usually the half that carries the meaning.</p>
+        <p>Both options get the spoken words out of your file, but neither one captures what is on the screen. That matters on a screen recording, where the screen usually carries most of the meaning.</p>
 
         <h2 id="what-does-a-transcript-miss-when-the-mp4-is-a-screen-recording">What does a transcript miss when the MP4 is a screen recording?</h2>
 
-        <p>Transcription listens, and it never looks. If your MP4 is somebody demonstrating software, the sentence in the audio is "and then you click here", and here is a button that only exists in the picture. The transcript comes out correct and useless at the same time, which is a frustrating thing to discover after waiting eight minutes for it.</p>
+        <p>Transcription only listens to the audio, and it never looks at the picture. If your MP4 is somebody demonstrating software, the sentence in the audio is "and then you click here", and here is a button that only exists on the screen. The transcript comes out correct and useless at the same time, which is a frustrating thing to find out after waiting eight minutes for it.</p>
 
-        <p>That gap is the reason I built VideoDoc to save timestamped pictures of the screen next to the transcript and put both into one PDF or Markdown file. The words carry the explanation, the frames carry the screen, and an AI reading that document can use both. It runs on your own machine on Windows and on Apple Silicon Macs, and it is $19 once for two computers.</p>
+        <p>That gap is why I built VideoDoc to save timestamped screenshots next to the transcript and put both into one PDF or Markdown file. The text carries what was said, the screenshots carry what was shown, and an AI reading that document can use both. It runs on your own machine, on Windows and on Apple Silicon Macs, and it is $19 once for two computers.</p>
 
         <div class="callout">
           <span class="lbl">Honest limits</span>
-          <p>The first transcription needs the internet to fetch the speech model, so a PC that has never been online cannot start. VideoDoc also asks GitHub once per launch whether a newer version exists, and activating Pro sends your licence key to Gumroad. Neither of those carries your video or your text. Accuracy is still decided by your audio: a quiet speaker, people talking over each other, or a strong accent on the small model will give you a transcript you have to fix by hand, and moving up to medium buys accuracy with time. The speed figures here come from a published benchmark on a fast desktop chip, not from your laptop.</p>
+          <p>The first transcription needs the internet to download the speech model, so a computer that has never been online cannot start. VideoDoc also checks with GitHub each time you open it to see whether a newer version is out, and activating Pro sends your licence key to Gumroad. Neither of those connections carries your video or your transcript. Accuracy still depends on your audio, so a quiet speaker, people talking over each other, or a strong accent on the small model will need fixing by hand, and moving up to medium buys accuracy with extra time. The speed figures here come from a published benchmark on a fast desktop chip, not from your laptop.</p>
         </div>
 
         <div class="ctabox">
@@ -169,23 +169,23 @@
         <div class="faq" id="faqlist">
           <details open>
             <summary>Can I convert an MP4 to text on Windows with no internet at all?</summary>
-            <p>Yes, once the speech model has been downloaded and cached on the first run. After that, a file on your own disk transcribes with the network switched off. A PC that has never been online cannot do that first run.</p>
+            <p>Yes, you can do this once the software downloads and stores the speech model during its first run. After that initial setup is complete, any video stored on your local disk can be transcribed with your network completely switched off. A computer that has never had an internet connection cannot complete that first download on its own.</p>
           </details>
           <details>
             <summary>How big is the download the first time?</summary>
-            <p>About 484 MB for the Whisper small model, which is the default. On my own Windows machine the cache folder it lives in came to 973 MB, because it kept a second copy of the file.</p>
+            <p>About 484 MB for the Whisper small model, which is the default. On my Windows PC the cache folder came to 973 MB, because the cache kept a second copy of the model file.</p>
           </details>
           <details>
             <summary>How long does an hour of MP4 take to transcribe offline?</summary>
-            <p>Roughly eight minutes with the small model on a fast desktop processor, going by the faster-whisper project's own published benchmark. A thin laptop can take two or three times longer, and an NVIDIA graphics card is about 5 to 10 times faster than the processor.</p>
+            <p>An hour of audio takes roughly eight minutes with the small model on a fast desktop processor, going by the faster-whisper project's own published benchmark. A thin laptop with fewer cores can take two or three times longer, and an NVIDIA graphics card is about 5 to 10 times faster than the processor.</p>
           </details>
           <details>
             <summary>Does offline transcription pick up text shown on the screen?</summary>
-            <p>No. Transcription only hears the audio, so anything written on a slide or in a code editor never reaches the transcript. For that you need the video frames saved alongside the words.</p>
+            <p>No. Transcription tools only listen to the sound track, so text shown on slides or inside application windows never reaches the transcript. To keep that on-screen information, you need the video frames saved alongside the words.</p>
           </details>
         </div>
 
-        <p>Pick the shortest recording you have and run it once tonight with the internet on, so the model lands. From tomorrow that PC can do this with the cable out.</p>
+        <p>Pick a short video on your computer and run it once tonight with the internet on, so the speech model downloads. Once the model is on your disk, that PC can do this with the cable out.</p>
       </div>
 
       <section class="related">
