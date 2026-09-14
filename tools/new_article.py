@@ -131,15 +131,29 @@ def render_body(spec: dict) -> str:
                 "        </div>"
             )
         elif t == "image":
-            # A real screenshot, with a caption that says what it is. Lazy and
-            # async so a page full of them still loads fast, and width/height
-            # are required so nothing jumps as they arrive.
+            # A real screenshot or an article photo, with a caption that says
+            # what it is. Lazy and async so a page full of them still loads
+            # fast, and width/height are required so nothing jumps as they
+            # arrive. When seo_images.py made AVIF and WebP sets, the browser
+            # takes the lightest format and size it can use; without them the
+            # markup is exactly what it always was.
             cap = b.get("caption")
-            fig = ['        <figure class="shot">',
-                   f'          <img src="{esc(b["src"])}"'
+            img = (f'<img src="{esc(b["src"])}"'
                    f' alt="{html.escape(b["alt"], quote=True)}"'
                    f' width="{b.get("w", 945)}" height="{b.get("h", 1012)}"'
-                   ' loading="lazy" decoding="async">']
+                   ' loading="lazy" decoding="async">')
+            fig = ['        <figure class="shot">']
+            if b.get("avif") or b.get("webp"):
+                fig.append("          <picture>")
+                for fmt in ("avif", "webp"):
+                    if b.get(fmt):
+                        fig.append(f'            <source type="image/{fmt}"'
+                                   f' srcset="{esc(", ".join(b[fmt]))}"'
+                                   ' sizes="(max-width: 720px) 100vw, 960px">')
+                fig.append(f"            {img}")
+                fig.append("          </picture>")
+            else:
+                fig.append(f"          {img}")
             if cap:
                 fig.append(f"          <figcaption>{inline(cap)}</figcaption>")
             fig.append("        </figure>")
@@ -366,7 +380,21 @@ def check_rendered(page: str, slug: str, pending: set[str] | None = None) -> Non
 
 def _hero_for(spec: dict) -> str:
     # Every article gets its OWN banner, drawn by make_article_art.py from the
-    # slug. A spec may override with an explicit "hero" filename in assets/art/.
+    # slug. A spec may override with an explicit "hero" filename in assets/art/,
+    # or with a "hero_image" made by seo_images.py --hero: a real photo with its
+    # own alt text and AVIF/WebP sets. It is the largest thing on screen, so it
+    # loads eagerly with high fetch priority.
+    h = spec.get("hero_image")
+    if h:
+        img = (f'<img src="{esc(h["src"])}" alt="{html.escape(h["alt"], quote=True)}"'
+               f' width="{h["w"]}" height="{h["h"]}"'
+               ' loading="eager" fetchpriority="high" decoding="async">')
+        sources = "".join(
+            f'\n        <source type="image/{fmt}" srcset="{esc(", ".join(h[fmt]))}"'
+            ' sizes="(max-width: 720px) 100vw, 960px">'
+            for fmt in ("avif", "webp") if h.get(fmt))
+        return ('\n    <figure class="arthero">\n      <picture>' + sources
+                + f'\n        {img}\n      </picture>\n    </figure>')
     img = spec.get("hero") or f'{spec["slug"]}.jpg'
     return ('\n    <figure class="arthero">\n'
             f'      <img src="../../assets/art/{img}"'
@@ -386,7 +414,7 @@ def build_page(spec: dict, index: dict, today: str, published: str | None = None
         "author": {"@type": "Person", "name": "Inam Ul Haq"},
         "publisher": {"@type": "Organization", "name": "VideoDoc",
                       "logo": {"@type": "ImageObject", "url": f"{SITE}/assets/og.png"}},
-        "image": f"{SITE}/assets/og.png",
+        "image": (spec.get("hero_image") or {}).get("schema_images") or f"{SITE}/assets/og.png",
         "mainEntityOfPage": f"{SITE}/articles/{spec['slug']}/",
     }
     faq_ld = {
@@ -601,7 +629,7 @@ def main() -> int:
             published = m.group(1) if m else None
         page = build_page(spec, index, args.date, published)
         banner = f"../../assets/art/{spec['slug']}.jpg"
-        pending = set() if spec.get("hero") else {banner}
+        pending = set() if spec.get("hero") or spec.get("hero_image") else {banner}
         check_rendered(page, spec["slug"], pending)
         minutes = read_minutes(spec)
         existed = (ARTICLES / spec["slug"]).exists()
@@ -624,7 +652,7 @@ def main() -> int:
     (out / "index.html").write_text(page, encoding="utf-8", newline="\n")
 
     # Draw this article's banner unless the spec pointed at an existing one.
-    if not spec.get("hero"):
+    if not spec.get("hero") and not spec.get("hero_image"):
         try:
             import make_article_art
             art = ROOT / "assets" / "art" / f"{spec['slug']}.jpg"
