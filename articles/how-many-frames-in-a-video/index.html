@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How Many Frames Are in a Video? Real Counts and Sizes</title>
+<meta name="description" content="An hour at 30 fps is 108,000 frames. How to count them exactly on Windows, why the math can be off, and what saving them really costs on disk.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/how-many-frames-in-a-video/">
+<meta property="og:title" content="How many frames are in a video">
+<meta property="og:description" content="The math, the exact count, and what the frames cost on disk, measured on real recordings.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/how-many-frames-in-a-video/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How many frames are in a video, and how many you actually need", "description": "An hour at 30 fps is 108,000 frames. How to count them exactly on Windows, why the math can be off, and what saving them really costs on disk.", "datePublished": "2026-09-16", "dateModified": "2026-09-16", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/how-many-frames-in-a-video-hero-16x9.jpg", "https://videostodoc.com/assets/art/how-many-frames-in-a-video-hero-4x3.jpg", "https://videostodoc.com/assets/art/how-many-frames-in-a-video-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/how-many-frames-in-a-video/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many frames are in a 1 minute video?", "acceptedAnswer": {"@type": "Answer", "text": "A 1 minute video has 1,800 frames at 30 fps. It has 1,440 frames at 24 fps, and 3,600 frames at 60 fps. Sampling at four a second instead gives you 240 pictures."}}, {"@type": "Question", "name": "How many frames are in an hour of video?", "acceptedAnswer": {"@type": "Answer", "text": "You get 86,400 at 24 fps, 108,000 at 30 fps and 216,000 at 60 fps. It is 107,892 frames at the 29.97 rate that a lot of camera and TV footage uses. If you saved all 108,000 as 1080p JPEGs, it would take somewhere around 15 to 18 GB of space."}}, {"@type": "Question", "name": "Why does ffprobe say N/A for the number of frames?", "acceptedAnswer": {"@type": "Answer", "text": "The quick check tries to read a frame count stored in the file's header. MKV files usually do not store a frame count there. You can count the packets instead with the -count_packets option and read nb_read_packets. That command took under a tenth of a second on my test files."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How many frames are in a video, and how many you actually need"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">how-many-frames-in-a-video</span></div>
+
+    <figure class="arthero">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/how-many-frames-in-a-video-hero-640.avif 640w, ../../assets/art/how-many-frames-in-a-video-hero-960.avif 960w, ../../assets/art/how-many-frames-in-a-video-hero-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/how-many-frames-in-a-video-hero-640.webp 640w, ../../assets/art/how-many-frames-in-a-video-hero-960.webp 960w, ../../assets/art/how-many-frames-in-a-video-hero-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/how-many-frames-in-a-video-hero.jpg" alt="A strip of film frames lying on a wooden desk, each frame one still picture from a video" width="1280" height="714" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Guide</span>
+        <h1>How many frames are in a video, and how many you actually need</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 16, 2026</span><span class="dotsep">·</span><span>9 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>Multiply the frame rate by the length in seconds. A minute of video at 30 frames a second gives you 1,800 frames, and an hour gives you 108,000. An hour at 24 fps is 86,400 frames, and at 60 fps you get 216,000. This math usually gives a close answer. The exact number comes from counting them, and a free tool called ffprobe counts them for you in a fraction of a second.</p>
+      </div>
+
+      <div class="prose">
+        <p>You usually ask this right before you do something with those frames. You might want to pull pictures out of a recording or hand a video to an AI as images. Maybe a tool asks you how many frames to save. You just want to know if you will get fifty files or fifty thousand.</p>
+
+        <p>The count is always bigger than you expect. I checked this on my own screen recordings before I wrote this. A 51 second clip in a 7.4 MB video file turned into 3,085 pictures taking 518.6 MB when I saved every frame. That is about 70 times the size of the original video, and the clip was not even a minute long.</p>
+
+        <p>So there are really two questions here. The first is how many frames the video has. That is simple math, plus a free command if you need the exact number. The second is how many of those frames you actually need, and that choice saves almost all of your disk space.</p>
+
+        <h2 id="how-do-you-work-out-how-many-frames-a-video-has">How do you work out how many frames a video has?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/how-many-frames-in-a-video-flipbook-640.avif 640w, ../../assets/art/how-many-frames-in-a-video-flipbook-960.avif 960w, ../../assets/art/how-many-frames-in-a-video-flipbook-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/how-many-frames-in-a-video-flipbook-640.webp 640w, ../../assets/art/how-many-frames-in-a-video-flipbook-960.webp 960w, ../../assets/art/how-many-frames-in-a-video-flipbook-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/how-many-frames-in-a-video-flipbook.jpg" alt="A hand flipping a paper flipbook, the way a video shows many still frames every second" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
+        <p>A video works like a very fast flipbook. The player shows a fixed number of still pictures one after another every second. Your eye blends these pictures into movement. That number is the frame rate, and you will see it written as fps, meaning frames per second.</p>
+
+        <p>The total count is just the frame rate multiplied by the length in seconds. A 10 minute video lasts 600 seconds. At 30 fps you multiply 600 by 30 to get 18,000 frames. <strong>Frames = frame rate times the length in seconds.</strong></p>
+
+        <p>Films and most everyday videos run at 24, 25 or 30 fps. Gaming, sports and many screen recordings use 60 fps instead. This table shows what you get for common lengths. I added a final column for sampling at 4 a second, and I explain that part further down.</p>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>Length</th><th>24 fps</th><th>25 fps</th><th>30 fps</th><th>60 fps</th><th>4 a second</th></tr></thead>
+            <tbody>
+              <tr><td>1 minute</td><td>1,440</td><td>1,500</td><td>1,800</td><td>3,600</td><td>240</td></tr>
+              <tr><td>10 minutes</td><td>14,400</td><td>15,000</td><td>18,000</td><td>36,000</td><td>2,400</td></tr>
+              <tr><td>1 hour</td><td>86,400</td><td>90,000</td><td>108,000</td><td>216,000</td><td>14,400</td></tr>
+            </tbody>
+        </table></div>
+
+        <p>There is a small catch in the math. Some videos use the old North American TV rates of 23.976 and 29.97 instead of 24 and 30. These run <a href="https://en.wikipedia.org/wiki/Frame_rate">0.1% slower</a> than the clean numbers. An hour at 29.97 gives you 107,892 frames, and that is 108 fewer than the clean math shows. That small gap matters if you need to match frame numbers to an editing timeline.</p>
+
+        <h2 id="how-do-i-find-a-video-s-frame-rate-and-length-on-windows">How do I find a video's frame rate and length on Windows?</h2>
+
+        <p>You do not need extra software to get an estimate. Right-click the video file on Windows and open Properties. Go to the Details tab. An MP4 file lists the Length and the Frame rate right there, and you just multiply them.</p>
+
+        <p>Right-click a YouTube video while it plays and click Stats for nerds. Look for the line called Current / Optimal Res. It ends in something like @30 or @60, and that number is your frame rate. You can also see this in VLC by clicking Tools and opening Codec Information.</p>
+
+        <h2 id="why-is-the-frame-count-sometimes-wrong-and-how-do-you-get-the-exact-number">Why is the frame count sometimes wrong, and how do you get the exact number?</h2>
+
+        <p>This math assumes two things. It assumes the length you see is the length of the picture track, and it assumes the frame rate never changes. Both of these assumptions can be wrong.</p>
+
+        <p>I tested an 8 minute OBS screen recording on my computer. The file showed 517.27 seconds at 30 fps, which means 15,518 frames. The real count was 15,452, so my math was 66 frames too high. A file gets its length from its longest track, and my audio track kept running for 2.2 seconds after the picture stopped. The video track by itself was 515.07 seconds. That exact length times 30 gives you the true 15,452 count.</p>
+
+        <p>The other issue is a variable frame rate. Phones and some screen recorders let the frame rate drift up and down while they record. This makes the number in Properties an average, so multiplying it only gives you an estimate.</p>
+
+        <p>You can get the exact number using ffprobe. This is a free file inspector that comes packaged with FFmpeg. You can install both on Windows by typing <code>winget install Gyan.FFmpeg</code>. Open a terminal and run one of these commands with your file name at the end:</p>
+
+        <ol>
+          <li>This is the fast count, and it reads the file without playing it: <code>ffprobe -v error -select_streams v:0 -count_packets -show_entries stream=nb_read_packets -of csv=p=0 video.mp4</code></li>
+          <li>This is the slow count, and it decodes every single frame: <code>ffprobe -v error -select_streams v:0 -count_frames -show_entries stream=nb_read_frames -of csv=p=0 video.mp4</code></li>
+        </ol>
+
+        <p>The fast count took under a tenth of a second on all four test files using my Ryzen 5 5600. The slow count took 23.7 seconds on the 8 minute recording, because it plays the entire thing to check it. Both commands gave me 15,452. The two counts matched exactly on all four files, so I use the fast command now. I only run the slow one if a number looks strange to me. You can read about both options in the <a href="https://ffmpeg.org/ffprobe.html">ffprobe documentation</a>.</p>
+
+        <p>You will probably run into one more thing. A quick header check using <code>-show_entries stream=nb_frames</code> prints N/A on MKV files. These files usually do not carry a frame count in their header. My 51 second MKV said N/A when I tried it, but the fast count command still gave me 3,085 right away.</p>
+
+        <h2 id="do-you-need-every-frame-or-is-4-a-second-enough">Do you need every frame, or is 4 a second enough?</h2>
+
+        <p>You rarely need all of those frames for anything you want to read. Each frame is on screen for a thirtieth of a second at 30 fps. Nearly every frame looks almost the same as the one before it, so saving them all mostly buys you copies of the same picture.</p>
+
+        <p>I settled on four frames a second for VideoDoc, and the reason is simple. A slide or a menu that you are meant to read stays on screen for more than a quarter of a second. Taking a picture every 250 milliseconds cannot miss it. <strong>For reading what is on screen, 4 a second is enough.</strong> That change turns an hour of 30 fps video from 108,000 frames into just 14,400.</p>
+
+        <p>This rule holds up well on long and fast footage. The 27 minute GTA 6 Extended Look turned into <a href="../gta-6-extended-look-frame-by-frame/">6,418 frames at four a second</a>.</p>
+
+        <p>You can do this sampling for free using FFmpeg. Running <code>ffmpeg -i video.mp4 -vf fps=4 -q:v 3 frame_%06d.jpg</code> saves four sharp JPEGs a second. Each file is numbered in order, and this matches the exact sampling and JPEG quality VideoDoc uses. The free method stops helping after the files land on your drive. The file names carry a number instead of the exact moment in the video. There is no index and no check for duplicates, so you have to work out the timestamps by hand.</p>
+
+        <h2 id="how-much-disk-space-do-video-frames-take">How much disk space do video frames take?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/how-many-frames-in-a-video-drive-640.avif 640w, ../../assets/art/how-many-frames-in-a-video-drive-960.avif 960w, ../../assets/art/how-many-frames-in-a-video-drive-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/how-many-frames-in-a-video-drive-640.webp 640w, ../../assets/art/how-many-frames-in-a-video-drive-960.webp 960w, ../../assets/art/how-many-frames-in-a-video-drive-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/how-many-frames-in-a-video-drive.jpg" alt="An external drive plugged into a laptop showing a grid of image thumbnails, for storing frames" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
+        <p>This next part surprised me, so I decided to measure it instead of guessing. I saved frames from four real videos as JPEGs at that same quality, taking four a second. I also saved every single frame for two of those videos to compare.</p>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>Video I measured</th><th>Length</th><th>Every frame</th><th>At 4 a second</th><th>Duplicates removed</th></tr></thead>
+            <tbody>
+              <tr><td>OBS screen recording, 1080p at 60 fps, 7.4 MB file</td><td>51 seconds</td><td>3,085 frames, 518.6 MB</td><td>206 frames, 34.7 MB</td><td>1</td></tr>
+              <tr><td>Premiere Pro lesson from a video course, 1080p at 23.976 fps, 49.9 MB file</td><td>3 min 17 s</td><td>4,727 frames, 659.6 MB</td><td>789 frames, 110.3 MB</td><td>7</td></tr>
+              <tr><td>OBS screen recording, 1080p at 30 fps, 20.5 MB file</td><td>8 min 35 s</td><td>15,452 frames, not saved</td><td>2,061 frames, 352.9 MB</td><td>0</td></tr>
+              <tr><td>OBS screen recording, 720p at 30 fps, 65.5 MB file</td><td>1 min 27 s</td><td>2,615 frames, not saved</td><td>349 frames, 34.4 MB</td><td>38</td></tr>
+            </tbody>
+        </table></div>
+
+        <p>An average 1080p frame from a screen recording came out between 140 and 171 KB. A 720p frame was close to 100 KB. An hour at four a second gives you roughly 2 to 2.5 GB of pictures at 1080p, and about 1.4 GB at 720p. If you saved every single frame of an hour of 30 fps 1080p video, you would get somewhere around 15 to 18 GB. I would never save all of them unless I had a real reason.</p>
+
+        <p>Busy screens with a lot of text will run bigger than mine did. I have seen a sharp 1080p recording reach about 270 KB for a single frame. VideoDoc tells you how many images you are about to get per minute and per hour before it starts the job. It also weighs the real frames early on. This lets it warn you if the drive cannot hold them all, instead of failing hours later when it runs out of space.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>Removing duplicates did much less than I expected on my test recordings. VideoDoc only drops a frame when its bytes are identical to the one before it. Something almost always differed between two pictures a quarter of a second apart on my screen recordings. The tool removed 0 frames out of 2,061 on the longest video. Checking for exact bytes is safe and never throws away a real change. It just will not shrink a normal screen recording very much. It really only helps when the picture is completely frozen.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">Every frame, counted and named</span>
+          <h3>Know the count before you save a single frame.</h3>
+          <p>Try the free browser version on a file you already have. When you want every frame at 1, 2 or 4 a second, each one named by the moment it came from and listed in a CSV, Pro is $19 once, lifetime, 2 machines.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 lifetime</a>
+          </div>
+        </div>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>How many frames are in a 1 minute video?</summary>
+            <p>A 1 minute video has 1,800 frames at 30 fps. It has 1,440 frames at 24 fps, and 3,600 frames at 60 fps. Sampling at four a second instead gives you 240 pictures.</p>
+          </details>
+          <details>
+            <summary>How many frames are in an hour of video?</summary>
+            <p>You get 86,400 at 24 fps, 108,000 at 30 fps and 216,000 at 60 fps. It is 107,892 frames at the 29.97 rate that a lot of camera and TV footage uses. If you saved all 108,000 as 1080p JPEGs, it would take somewhere around 15 to 18 GB of space.</p>
+          </details>
+          <details>
+            <summary>Why does ffprobe say N/A for the number of frames?</summary>
+            <p>The quick check tries to read a frame count stored in the file's header. MKV files usually do not store a frame count there. You can count the packets instead with the -count_packets option and read nb_read_packets. That command took under a tenth of a second on my test files.</p>
+          </details>
+        </div>
+
+        <p>Check the frame rate and do the multiplication before you pull the pictures out of a video tonight. After that you can decide how many of those frames you actually need. The answer is almost never all of them.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../extract-every-frame-from-a-video/">
+            <span class="t">How to extract every frame from a video</span>
+            <p>Save a whole video as images, four every second, with identical frames dropped and each file named by the exac</p>
+            <span class="meta"><span>WORK · 7 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../video-frames-to-csv-index/">
+            <span class="t">How to read a video frames index, and what it tells you</span>
+            <p>The CSV beside your video frames has four columns and one trick: the gap between two rows is how long that pic</p>
+            <span class="meta"><span>WORK · 8 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../feed-video-to-chatgpt-or-claude/">
+            <span class="t">Can ChatGPT watch a video? The honest answer</span>
+            <p>No chat AI can truly watch a video today. What really happens when you paste a YouTube link into ChatGPT or Cl</p>
+            <span class="meta"><span>AI · 6 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
