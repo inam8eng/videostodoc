@@ -109,7 +109,7 @@
       "angle": "Why naive dedupe throws away real changes, why byte equality of JPEGs from one encode pass is both exact and safe, and why comparing only against the previous frame keeps an A to B to A sequence intact.",
       "hub_section": "work",
       "category": "Work",
-      "done": null
+      "done": "2026-09-17"
     },
     {
       "slug": "lecture-recording-to-searchable-notes",
