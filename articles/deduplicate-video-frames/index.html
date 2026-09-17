@@ -27,7 +27,7 @@
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to remove duplicate frames from a video without losing a change", "description": "Two different jobs hide behind this one search, and the popular ffmpeg fix re-encodes your whole video. Here is which one you want, measured on a real test.", "datePublished": "2026-09-17", "dateModified": "2026-09-17", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/deduplicate-video-frames/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to remove duplicate frames from a video without losing a change", "description": "Two different jobs hide behind this one search, and the popular ffmpeg fix re-encodes your whole video. Here is which one you want, measured on a real test.", "datePublished": "2026-09-17", "dateModified": "2026-09-18", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/deduplicate-video-frames-hero-16x9.jpg", "https://videostodoc.com/assets/art/deduplicate-video-frames-hero-4x3.jpg", "https://videostodoc.com/assets/art/deduplicate-video-frames-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/deduplicate-video-frames/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I remove duplicate frames in ffmpeg?", "acceptedAnswer": {"@type": "Answer", "text": "Run the command `ffmpeg -i input.mp4 -vf \"mpdecimate,setpts=N/FRAME_RATE/TB\" -an output.mp4`. The mpdecimate filter removes frames that look like the one before, while the setpts filter resets the timeline timestamps to shorten the file. If you omit setpts, ffmpeg outputs a video with the original duration containing frozen frames."}}, {"@type": "Question", "name": "Does removing duplicate frames reduce the quality?", "acceptedAnswer": {"@type": "Answer", "text": "Using the ffmpeg video method reduces quality slightly because the software decodes and re-encodes the video stream. Deduplicating a folder of extracted image files does not reduce quality, because the remaining image files are not re-compressed."}}, {"@type": "Question", "name": "Why did duplicate removal not remove anything?", "acceptedAnswer": {"@type": "Answer", "text": "Movement on screen prevents frames from matching, and small items like a mouse cursor, a clock, or a text cursor are enough to disrupt the process. In my testing, a single 12 pixel white square prevented 33 out of 36 images from being detected as duplicates. You can fix this by lowering your extraction rate to one frame per second instead of using a different filter."}}, {"@type": "Question", "name": "Will I lose a slide that comes back later in the video?", "acceptedAnswer": {"@type": "Answer", "text": "No, provided your tool compares each frame only to the previously saved frame. This preserves repeat views when a recording shifts from slide A to B and back to A. A utility that hashes the entire folder to eliminate global duplicates would delete the second view of slide A and distort your timeline sequence."}}]}
@@ -75,14 +75,18 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">deduplicate-video-frames</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/deduplicate-video-frames.jpg" alt="VideoDoc illustration for this guide" width="1280" height="720" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/deduplicate-video-frames-hero-640.avif 640w, ../../assets/art/deduplicate-video-frames-hero-960.avif 960w, ../../assets/art/deduplicate-video-frames-hero-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/deduplicate-video-frames-hero-640.webp 640w, ../../assets/art/deduplicate-video-frames-hero-960.webp 960w, ../../assets/art/deduplicate-video-frames-hero-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/deduplicate-video-frames-hero.jpg" alt="A laptop showing a still slide beside a stack of printed frames on a desk" width="1280" height="714" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
     </figure>
 
     <article class="art">
       <header class="art-head">
         <span class="cat">Work</span>
         <h1>How to remove duplicate frames from a video without losing a change</h1>
-        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 17, 2026</span><span class="dotsep">·</span><span>8 min read</span></div>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 18, 2026</span><span class="dotsep">·</span><span>8 min read</span></div>
       </header>
 
       <div class="answer">
@@ -98,6 +102,14 @@
         <p>I ran tests on this and found something surprising. I recorded a nine second clip with three still slides, and removing duplicates dropped 33 out of 36 extracted images. I recorded it again with a tiny white square, 12 pixels across, moving in the corner. That single moving square brought the number of dropped frames from 33 down to zero.</p>
 
         <h2 id="which-duplicates-do-you-want-gone-the-video-s-or-the-folder-s">Which duplicates do you want gone, the video's or the folder's?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/deduplicate-video-frames-two-piles-640.avif 640w, ../../assets/art/deduplicate-video-frames-two-piles-960.avif 960w, ../../assets/art/deduplicate-video-frames-two-piles-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/deduplicate-video-frames-two-piles-640.webp 640w, ../../assets/art/deduplicate-video-frames-two-piles-960.webp 960w, ../../assets/art/deduplicate-video-frames-two-piles-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/deduplicate-video-frames-two-piles.jpg" alt="A tall stack of printed frames beside a stack of only three" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
 
         <p>A screen recorder does not wait for something to change before it captures a frame. It saves 30 or 60 pictures every second continuously, because that is how video files work. The word duplicate ends up describing two different things here. Inside a video file, duplicates are frames in a stream, but inside an image folder, they are separate JPEG files stored on your hard drive.</p>
 
@@ -137,6 +149,14 @@
 
         <h2 id="what-happens-when-one-small-thing-on-screen-keeps-moving">What happens when one small thing on screen keeps moving?</h2>
 
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/deduplicate-video-frames-moving-cursor-640.avif 640w, ../../assets/art/deduplicate-video-frames-moving-cursor-960.avif 960w, ../../assets/art/deduplicate-video-frames-moving-cursor-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/deduplicate-video-frames-moving-cursor-640.webp 640w, ../../assets/art/deduplicate-video-frames-moving-cursor-960.webp 960w, ../../assets/art/deduplicate-video-frames-moving-cursor-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/deduplicate-video-frames-moving-cursor.jpg" alt="A hand on a mouse in front of a screen holding one still slide" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
         <p>Both ways of removing duplicates fail under the exact same conditions. I created two nine second test recordings at 30 frames a second, each containing three slides, generated entirely with ffmpeg. The first clip features completely static slides. The second clip is identical, except for a 12 pixel white square moving across the bottom corner to simulate a mouse cursor or clock.</p>
 
         <div class="statgrid" data-count>
@@ -151,6 +171,14 @@
         <p>No duplicate filter can fix this issue for you. If a small element moves continuously across the screen, your frames are not actual duplicates and no algorithm can treat them as such. I saw this on my own screen captures, where <a href="../how-many-frames-in-a-video/">not a single frame out of 2,061</a> was dropped on my longest file. The solution is to lower your capture rate to one frame a second instead of four.</p>
 
         <h2 id="how-do-i-drop-duplicates-from-frames-i-already-have">How do I drop duplicates from frames I already have?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/deduplicate-video-frames-contact-sheet-640.avif 640w, ../../assets/art/deduplicate-video-frames-contact-sheet-960.avif 960w, ../../assets/art/deduplicate-video-frames-contact-sheet-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/deduplicate-video-frames-contact-sheet-640.webp 640w, ../../assets/art/deduplicate-video-frames-contact-sheet-960.webp 960w, ../../assets/art/deduplicate-video-frames-contact-sheet-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/deduplicate-video-frames-contact-sheet.jpg" alt="A grid of near identical printed frames with three lifted out of it" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
 
         <p>If your goal is to extract static pictures, you should process the image files directly and leave the source video untouched. This is how VideoDoc operates while <a href="../extract-every-frame-from-a-video/">saving every frame</a>: it hashes each JPEG file during extraction and deletes it only if its exact byte content matches the previous saved image.</p>
 
