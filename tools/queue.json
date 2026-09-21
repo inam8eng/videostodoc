@@ -16,6 +16,22 @@
   ],
   "queue": [
     {
+      "slug": "instagram-reel-to-text",
+      "keyword": "instagram reel to text",
+      "angle": "Added 2026-09-21 by the weekly pass. Information gain: Instagram has no transcript panel you can copy text from (check this again before writing), so the audio has to be transcribed, and a reel often carries its real message as text on screen that no transcriber hears. Covers the public link route, what happens with a login-only reel (save the file and drop it in), and the words plus the on-screen text together. The site has TikTok but nothing on Instagram.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "extract-frames-from-video-on-mac",
+      "keyword": "extract frames from video on mac",
+      "angle": "Added 2026-09-21 by the weekly pass. Information gain: Mac-specific answer nobody gives straight. QuickTime can only copy one still at a time (check this again before writing), ffmpeg needs Homebrew and a terminal, and VideoDoc runs on Apple Silicon only (M1 to M4), with the one-time unlock. Honest that Intel Macs are not supported.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
       "slug": "extract-every-frame-from-a-video",
       "keyword": "extract every frame from a video",
       "angle": "The exhaustive case: 4 frames a second so nothing on screen can slip between two samples, byte-exact duplicate removal so a slide deck does not become 14,000 copies of the same slide, and a CSV index that maps every image back to its exact moment. Free browser tools cap out at low frame counts and short clips; this is the page for someone who needs all of it.",

@@ -138,7 +138,7 @@
 
         <p>Read the <code>timecode</code> column and type it into your player. <code>00h01m45.50s</code> is 1 minute 45.50 seconds, so in VLC, in QuickTime or on a YouTube page that is 1:45. The seconds column is there for the same job when you would rather work in plain seconds, which is what most command line tools and most video APIs want anyway.</p>
 
-        <p>I ended up doing this because of a two hour screen recording of an internal tool that I had already watched twice and still could not find the one screen I needed. The frames folder had about 900 images in it after duplicates were dropped, which is not a number anybody scrolls through. Sorting the index by how long each frame held put that screen in the top ten, because of course the person had sat on it while explaining what it did.</p>
+        <p>I ended up doing this because of <a href="../screen-recording-to-documentation/">a two hour screen recording of an internal tool</a> that I had already watched twice and still could not find the one screen I needed. The frames folder had about 900 images in it after duplicates were dropped, which is not a number anybody scrolls through. Sorting the index by how long each frame held put that screen in the top ten, because of course the person had sat on it while explaining what it did.</p>
 
         <div class="callout">
           <span class="lbl">Honest limits</span>
@@ -156,7 +156,7 @@
           <li>If you would rather have the real source timestamps than the arithmetic, add the <code>showinfo</code> filter as <code>-vf "fps=4,showinfo"</code> and FFmpeg prints a line per output frame including its <code>pts_time</code>. Save that output to a file and read the timestamps out of it.</li>
         </ol>
 
-        <p>Where the free route stops is duplicates. FFmpeg will happily write 14,400 images for an hour of video whether or not anything on screen ever changed, so a webinar of static slides becomes thousands of copies of the same slide and your index fills up with rows that say nothing. There is an <code>mpdecimate</code> filter that drops frames it judges too similar, but it works on a similarity threshold you have to tune, and it renumbers what it writes, which quietly breaks the arithmetic in step 3.</p>
+        <p>Where the free route stops is duplicates. FFmpeg will happily write 14,400 images for an hour of video whether or not anything on screen ever changed, so <a href="../extract-slides-from-a-recorded-webinar/">a webinar of static slides</a> becomes thousands of copies of the same slide and your index fills up with rows that say nothing. There is an <code>mpdecimate</code> filter that drops frames it judges too similar, but it works on a similarity threshold you have to tune, and it renumbers what it writes, which quietly breaks the arithmetic in step 3.</p>
 
         <p>The other thing the free route does not give you is the face blackout, and on a screen recording with the presenter's webcam bubble in the corner that is often the whole reason the folder is not allowed to leave your computer.</p>
 

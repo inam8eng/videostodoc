@@ -160,7 +160,7 @@
           <li>Keep the <code>frames_index.csv</code> that lands in the folder. It lists every image against the moment it came from, so a row in a spreadsheet takes you straight back to a minute in the recording.</li>
         </ol>
 
-        <p>An hour of lecture is about 14,400 pictures when you take four a second. That sounds absurd, but identical frames are thrown away as the process goes on. A lecture that sits on one slide for three minutes keeps one picture of that slide instead of 720.</p>
+        <p>An hour of lecture is <a href="../how-many-frames-in-a-video/">about 14,400 pictures when you take four a second</a>. That sounds absurd, but identical frames are thrown away as the process goes on. A lecture that sits on one slide for three minutes keeps one picture of that slide instead of 720.</p>
 
         <p>There is a catch here, and it is worth knowing before you start. A frame is only dropped when it is a pixel for pixel copy of the one before it. This test is exact, so it never quietly throws away something that changed. But this means a recording with a webcam bubble in the corner or a clock ticking on screen dedupes almost nothing, because something is always moving. On that kind of recording, you drop the sampling to one a second, and you get a quarter of the files.</p>
 
