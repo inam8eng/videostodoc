@@ -12,7 +12,7 @@
 
 ## Articles
 
-- [All articles](https://videostodoc.com/articles/): the full index of all 35 guides listed below
+- [All articles](https://videostodoc.com/articles/): the full index of all 36 guides listed below
 - [How to turn a YouTube video into a document](https://videostodoc.com/articles/youtube-video-to-document/): What are the free and paid ways to turn a YouTube video into a document, and which keeps the slides?
 - [Convert a YouTube video to PDF, slides included](https://videostodoc.com/articles/youtube-video-to-pdf/): How do you convert a YouTube video into a PDF that includes the on-screen slides, not just the words?
 - [YouTube video to text: 3 ways that actually work](https://videostodoc.com/articles/youtube-video-to-text/): What are the three working ways to get the text out of a YouTube video, and when does each one win?
@@ -30,6 +30,7 @@
 - [Turn a video into a blog post in your own words](https://videostodoc.com/articles/video-to-blog-post/): How do you turn one of your own videos into a blog post in your own writing voice?
 - [Download a YouTube video in HD or 4K](https://videostodoc.com/articles/download-youtube-video-hd-4k/): How do you download a YouTube video or playlist in HD or 4K, and what is allowed?
 - [TikTok video to text](https://videostodoc.com/articles/tiktok-video-to-text/): How do you get the spoken words and on-screen text out of a TikTok?
+- [Instagram reel to text](https://videostodoc.com/articles/instagram-reel-to-text/): Why is there no transcript to copy on Instagram, and how do you keep a reel's words and its on-screen text?
 - [Transcribe a video free, without uploading it](https://videostodoc.com/articles/transcribe-video-free-no-upload/): How can a browser transcribe a video for free without uploading it anywhere?
 - [Offline video transcription: why local beats the cloud](https://videostodoc.com/articles/offline-video-transcription-privacy/): What actually happens to a video you upload to a cloud transcriber, and when is local better?
 - [Best video to text converters in 2026](https://videostodoc.com/articles/best-video-to-text-converters/): Which video to text converter fits which job, including where VideoDoc loses?
