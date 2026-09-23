@@ -29,7 +29,7 @@
       "angle": "Added 2026-09-21 by the weekly pass. Information gain: Mac-specific answer nobody gives straight. QuickTime can only copy one still at a time (check this again before writing), ffmpeg needs Homebrew and a terminal, and VideoDoc runs on Apple Silicon only (M1 to M4), with the one-time unlock. Honest that Intel Macs are not supported.",
       "hub_section": "work",
       "category": "Work",
-      "done": null
+      "done": "2026-09-23"
     },
     {
       "slug": "extract-every-frame-from-a-video",

@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extract Frames From Video on Mac: All of Them, Not One</title>
+<meta name="description" content="Photos exports one frame at a time and names the file by today&#x27;s date. Here are the three routes to all of them on a Mac, and the honest limits of each.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/extract-frames-from-video-on-mac/">
+<meta property="og:title" content="Extract frames from a video on a Mac">
+<meta property="og:description" content="One at a time is all your Mac does by itself. Here is how to get the whole video as pictures.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/extract-frames-from-video-on-mac/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to extract frames from a video on a Mac", "description": "Photos exports one frame at a time and names the file by today's date. Here are the three routes to all of them on a Mac, and the honest limits of each.", "datePublished": "2026-09-24", "dateModified": "2026-09-24", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/extract-frames-from-video-on-mac/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can QuickTime export all the frames of a video?", "acceptedAnswer": {"@type": "Answer", "text": "No. QuickTime Player can copy the single frame you are paused on, which you then paste into Preview and save, so it is one image per go. Saving a whole video as images needs ffmpeg in Terminal or an app built for that job."}}, {"@type": "Question", "name": "Where does a Mac save an exported video frame?", "acceptedAnswer": {"@type": "Answer", "text": "Photos writes it into your Pictures folder as a TIFF named Frame followed by the export date. That name records the day you exported it, not the moment in the video it came from."}}, {"@type": "Question", "name": "Do I need Terminal to extract frames from a video on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Only for the ffmpeg route. Photos and QuickTime need no Terminal at all, and VideoDoc needs one pasted line on first launch and then never again."}}, {"@type": "Question", "name": "Does this work on an Intel Mac?", "acceptedAnswer": {"@type": "Answer", "text": "The free routes do. Photos, QuickTime and ffmpeg all run on Intel Macs. VideoDoc does not, because its Mac build is Apple Silicon only, M1 or newer."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to extract frames from a video on a Mac"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">extract-frames-from-video-on-mac</span></div>
+
+    <figure class="arthero">
+      <img src="../../assets/art/extract-frames-from-video-on-mac.jpg" alt="VideoDoc illustration for this guide" width="1280" height="720" loading="eager" decoding="async">
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Work</span>
+        <h1>How to extract frames from a video on a Mac</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 24, 2026</span><span class="dotsep">·</span><span>9 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>You want pictures from a video, and a Mac can export one video frame at a time. You open Photos and drag the playhead to the moment you want, then you choose File, Export, Export Frame to Pictures, and you get a single TIFF named by today's date. If you want more than a few frames you will need ffmpeg in Terminal, or an app that saves the whole video as timestamped images. VideoDoc does the second thing, but it only works on Apple Silicon Macs.</p>
+      </div>
+
+      <div class="prose">
+        <p>You might be on a Mac and looking to get pictures out of a video instead of words. By now you have probably seen the one thing your Mac can do by itself. You open the video in Photos and drag the playhead to the moment you want, and then you click File, Export, Export Frame to Pictures. It works and it is free, and the tool is already sitting on your machine.</p>
+
+        <p>The problem starts the second time you do this. This way gives you exactly one image every time you try, and the file is a TIFF called Frame plus today's date, which lands in your Pictures folder. The file name does not tell you which moment of the video it came from. So if you do this forty times while taking notes on a tutorial, you end up with forty names that look almost the same and you have no way to tell them apart.</p>
+
+        <p>I will give you the answer before the details. <strong>A Mac cannot save more than one frame at a time on its own.</strong> Photos, QuickTime Player and Preview are all made to help you pick one good still image out of a video, and none of them have a button to save every frame. When you want more than a few frames you have to choose between a Terminal command and an app, and I explain both of those below.</p>
+
+        <h2 id="what-can-a-mac-do-on-its-own-and-where-does-it-stop">What can a Mac do on its own, and where does it stop?</h2>
+
+        <p>Apple provides their own instructions for this and they are four lines long. That tells you roughly how much this feature is meant to do. The steps I show below are <a href="https://support.apple.com/guide/photos/export-a-still-photo-from-a-video-pht40a498373/mac">Apple's documented route</a>, and this is the cleanest of the free choices.</p>
+
+        <ol>
+          <li>You open the video in Photos and drag the playhead to the frame you want.</li>
+          <li>You choose File, and then Export, and then Export Frame to Pictures.</li>
+          <li>The image goes into your Pictures folder as a TIFF called Frame along with the date.</li>
+        </ol>
+
+        <p>QuickTime Player gets you to the same result by a longer path. You pause on the frame, choose Edit and then Copy (or press Cmd+C), open Preview, and choose File then New from Clipboard, and then Preview saves it in whatever format you want. Both of these ways are perfectly fine when you just want one picture from a video. I still use the QuickTime method myself for exactly that reason.</p>
+
+        <p>The problem with these tools is repetition. You cannot tell either of them to keep saving pictures, and you cannot make the file name record the moment the picture came from. A TIFF is also a large file, which is often several megabytes for a single 1080p frame. So if you have a folder of a few hundred of them, it gets very large very quickly.</p>
+
+        <h2 id="how-do-you-get-every-frame-for-free-using-ffmpeg">How do you get every frame for free, using ffmpeg?</h2>
+
+        <p>The tool that actually does this job on every operating system is called ffmpeg, and it is free. It is not installed on your Mac by default, and most guides do not mention that part. You install it using <a href="https://brew.sh">Homebrew</a>, which is a tool for managing software packages that you have to install first, and Homebrew needs Apple's command line developer tools, which means another download. If you do not want to use Homebrew, the <a href="https://ffmpeg.org/download.html">ffmpeg download page</a> lists the macOS options.</p>
+
+        <p>When it is installed the command is just one line, and it is better to understand it instead of just pasting it. The command <code>ffmpeg -i lecture.mp4 -vf fps=4 frame_%05d.jpg</code> reads your video, samples it four times a second, and writes numbered JPEGs into your current folder. Here <code>fps=4</code> is the sampling rate, meaning it takes four pictures for every second of video. The <code>%05d</code> part is a counter that adds zeros to make it five digits, so the files sort neatly in Finder.</p>
+
+        <p>What you do not get is the exact time in the file name. A name like <code>frame_00214.jpg</code> only tells you it was the 214th picture, so you have to divide by your sampling rate every time to find out where it came from. The command also saves every duplicate picture, and this is a bigger problem than it seems. If a slide sits still for two minutes you get 480 identical JPEGs, and ffmpeg will write every single one of those 480 files.</p>
+
+        <h2 id="which-of-the-three-routes-fits-what-you-are-doing">Which of the three routes fits what you are doing?</h2>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>Route</th><th>Frames per go</th><th>What the file name tells you</th><th>What you need first</th><th>Cost</th></tr></thead>
+            <tbody>
+              <tr><td>Photos or QuickTime</td><td>One</td><td>The day you exported it</td><td>Nothing, it is already installed</td><td>Free</td></tr>
+              <tr><td>ffmpeg in Terminal</td><td>All of them</td><td>A counter, not a moment</td><td>Homebrew, developer tools, one command</td><td>Free</td></tr>
+              <tr><td>VideoDoc</td><td>All of them</td><td>The exact moment, to the hundredth of a second</td><td>An Apple Silicon Mac and one pasted Terminal line</td><td>Free to try, $19 once for Pro</td></tr>
+            </tbody>
+        </table></div>
+
+        <p>When you just need one still picture for a message or a thumbnail, the first row is the right answer and buying anything would be silly. If you are comfortable using Terminal and you only need the pictures in order, the second row costs nothing but your time that afternoon. The third row exists because of the problems listed in the middle column.</p>
+
+        <h2 id="how-does-videodoc-handle-this-on-a-mac">How does VideoDoc handle this on a Mac?</h2>
+
+        <p>I build the tool called VideoDoc, so you should keep that in mind as you read this section. It is a normal app on a Mac that you double-click to open. Saving frames is one of the three options you pick at the top, along with a document for AI, or just the video file, or every frame as images. If you pick the third option it saves the entire video as pictures and stops without making a transcript, and this makes it much faster because processing the audio is always the slow part of the work.</p>
+
+        <ol>
+          <li>You drop in a video file from your Mac, or you paste a public link.</li>
+          <li>You choose Every frame as images, and then you pick 4, 2 or 1 a second. Before it starts, the app tells you how many images that will be per minute and per hour.</li>
+          <li>The folder appears with every picture named by its exact moment, like <code>frame_000123_00h01m45.50s.jpg</code>. It also includes a file called <code>frames_index.csv</code> that lists every single picture.</li>
+        </ol>
+
+        <p>There are two things in this process that explain why I built the tool this way. The file name carries the timestamp, so you can read the exact moment of a picture right in Finder without opening any files. The tool also drops identical frames as it works. When an image is a pixel for pixel copy of the one before it, only the first one is kept, so on a slide deck or a screen recording you throw away most of the pictures without losing anything that actually changed.</p>
+
+        <p>Your Mac documents are saved in your home folder under VideoDoc, so you can find them easily later on. The whole process runs locally on your own machine. The very first time you launch it the app downloads the speech engine, which is up to about 500 MB. After that first download, your own files work fine with no internet connection at all.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>VideoDoc on Mac needs Apple Silicon, like an M1 or newer, and there is no Intel Mac build. I want to tell you this plainly so you do not buy it and find out later. Apple blocks apps that are not registered with them, and registration costs $99 a year, which this tool has not earned yet, so the first launch needs one pasted Terminal line, once, explained on the <a href="../../mac/">Mac setup page</a>. Links work for public videos only, and if what you are capturing genuinely changes in every frame, duplicate removal will give you back almost nothing because there was nothing repeated to remove.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">Every frame, off one Mac</span>
+          <h3>Try it on a video already sitting on your Mac.</h3>
+          <p>Free in your browser to see what the output looks like. The Mac app is Apple Silicon, M1 or newer, and Pro is $19 once, lifetime, 2 machines.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 lifetime</a>
+          </div>
+        </div>
+
+        <h2 id="how-many-images-is-that-and-will-they-fit-on-your-mac">How many images is that, and will they fit on your Mac?</h2>
+
+        <p>People usually ask this question after the job has already filled their hard drive, so it is better to do the math beforehand. If you choose four frames a second, a minute of video gives you about 240 images, ten minutes gives about 2,400, and an hour gives about 14,400. When you drop down to one frame a second, those same numbers become 60, 600 and 3,600.</p>
+
+        <p>The size of the files depends on what you have on the screen. A 1080p JPEG of a slide usually sits somewhere between 100 and 300 KB, so an hour of lecture at four frames a second runs well into the gigabytes before the app removes anything. If you are recording a slide deck, dropping duplicates will usually give most of that space back. A slide that sits still for two minutes is just one picture repeated 480 times.</p>
+
+        <p>A good habit is to match your sampling rate to the thing you are actually capturing. Four frames a second is meant for something that moves, like a code editor being typed in or a demo being clicked through. One frame a second is plenty for a talk with slides, and it leaves you with a quarter of the files. There is no prize for having a bigger folder.</p>
+
+        <p>The sources for this are Apple's Photos User Guide page "Export a still photo from a video on Mac", the ffmpeg project's own download page and Homebrew's install page, and I have linked all of those above. The VideoDoc behaviour I describe here comes from its changelog, covering versions 0.1.20, 0.1.21 and 0.3.0.</p>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>Can QuickTime export all the frames of a video?</summary>
+            <p>No. QuickTime Player can copy the single frame you are paused on, which you then paste into Preview and save, so it is one image per go. Saving a whole video as images needs ffmpeg in Terminal or an app built for that job.</p>
+          </details>
+          <details>
+            <summary>Where does a Mac save an exported video frame?</summary>
+            <p>Photos writes it into your Pictures folder as a TIFF named Frame followed by the export date. That name records the day you exported it, not the moment in the video it came from.</p>
+          </details>
+          <details>
+            <summary>Do I need Terminal to extract frames from a video on a Mac?</summary>
+            <p>Only for the ffmpeg route. Photos and QuickTime need no Terminal at all, and VideoDoc needs one pasted line on first launch and then never again.</p>
+          </details>
+          <details>
+            <summary>Does this work on an Intel Mac?</summary>
+            <p>The free routes do. Photos, QuickTime and ffmpeg all run on Intel Macs. VideoDoc does not, because its Mac build is Apple Silicon only, M1 or newer.</p>
+          </details>
+        </div>
+
+        <p>You should open the video you keep scrubbing back and forth through, and decide if you need one frame or all of them. Then you can go ahead and do that job tonight.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../extract-every-frame-from-a-video/">
+            <span class="t">How to extract every frame from a video</span>
+            <p>Save a whole video as images, four every second, with identical frames dropped and each file named by the exac</p>
+            <span class="meta"><span>WORK · 7 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../how-many-frames-in-a-video/">
+            <span class="t">How many frames are in a video, and how many you actually need</span>
+            <p>An hour at 30 fps is 108,000 frames. How to count them exactly on Windows, why the math can be off, and what s</p>
+            <span class="meta"><span>GUIDE · 9 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../local-video-to-text-no-upload/">
+            <span class="t">What local really means in a video to text converter</span>
+            <p>Local means your video never leaves your machine, not that the app never touches the network. Exactly what min</p>
+            <span class="meta"><span>PRIVACY · 7 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
