@@ -12,7 +12,7 @@
 
 ## Articles
 
-- [All articles](https://videostodoc.com/articles/): the full index of all 37 guides listed below
+- [All articles](https://videostodoc.com/articles/): the full index of all 38 guides listed below
 - [How to turn a YouTube video into a document](https://videostodoc.com/articles/youtube-video-to-document/): What are the free and paid ways to turn a YouTube video into a document, and which keeps the slides?
 - [Convert a YouTube video to PDF, slides included](https://videostodoc.com/articles/youtube-video-to-pdf/): How do you convert a YouTube video into a PDF that includes the on-screen slides, not just the words?
 - [YouTube video to text: 3 ways that actually work](https://videostodoc.com/articles/youtube-video-to-text/): What are the three working ways to get the text out of a YouTube video, and when does each one win?
@@ -45,6 +45,7 @@
 - [How to convert a video into images only](https://videostodoc.com/articles/video-to-images-only-no-transcript/): How do you save a video as a folder of pictures with no transcript and no PDF?
 - [How many frames are in a video](https://videostodoc.com/articles/how-many-frames-in-a-video/): How many frames does a video have, and how much disk space do they take?
 - [How to extract frames from a video on a Mac](https://videostodoc.com/articles/extract-frames-from-video-on-mac/): What can a Mac do on its own, and how do you save every frame instead of one?
+- [How to turn a video into an SOP with screenshots](https://videostodoc.com/articles/video-to-sop-with-screenshots/): How do you build an SOP where each step is a screenshot from the recording, and pick the right frame for it?
 - [How to remove duplicate frames from a video](https://videostodoc.com/articles/deduplicate-video-frames/): How do you remove repeated frames without losing a real change on screen?
 - [How to read a video frames index](https://videostodoc.com/articles/video-frames-to-csv-index/): What does the CSV beside a folder of video frames tell you?
 - [How to black out faces in video screenshots](https://videostodoc.com/articles/blur-or-black-out-faces-in-video-frames/): How do you cover the presenter's webcam bubble in every frame and in the document?
