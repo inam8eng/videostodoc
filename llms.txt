@@ -12,7 +12,7 @@
 
 ## Articles
 
-- [All articles](https://videostodoc.com/articles/): the full index of all 38 guides listed below
+- [All articles](https://videostodoc.com/articles/): the full index of all 39 guides listed below
 - [How to turn a YouTube video into a document](https://videostodoc.com/articles/youtube-video-to-document/): What are the free and paid ways to turn a YouTube video into a document, and which keeps the slides?
 - [Convert a YouTube video to PDF, slides included](https://videostodoc.com/articles/youtube-video-to-pdf/): How do you convert a YouTube video into a PDF that includes the on-screen slides, not just the words?
 - [YouTube video to text: 3 ways that actually work](https://videostodoc.com/articles/youtube-video-to-text/): What are the three working ways to get the text out of a YouTube video, and when does each one win?
@@ -39,6 +39,7 @@
 - [How to turn images into a document your AI can read](https://videostodoc.com/articles/images-to-document-for-ai/): How do you combine screenshots or photographed pages into one ordered document an AI reads well?
 - [How to turn an MP4 into text on Windows, with the internet off](https://videostodoc.com/articles/mp4-to-text-offline-windows/): How do you get the words out of an MP4 offline on Windows, and how fast is it?
 - [How to turn a lecture recording into notes you can actually search](https://videostodoc.com/articles/lecture-recording-to-searchable-notes/): Why can a lecture transcript not find what was written on the board, and how do you keep both?
+- [How to turn a conference talk recording into notes you can actually cite](https://videostodoc.com/articles/conference-talk-to-notes/): How do you get the words, the slides and the exact minute of each point out of a recorded talk, so you can quote it?
 - [How to turn a screen recording into documentation](https://videostodoc.com/articles/screen-recording-to-documentation/): How do you get numbered steps with screenshots out of a screen recording?
 - [How to extract slides from a recorded webinar](https://videostodoc.com/articles/extract-slides-from-a-recorded-webinar/): How do you get the slides out of a webinar recording when the deck was never shared?
 - [How to extract every frame from a video](https://videostodoc.com/articles/extract-every-frame-from-a-video/): How do you save a whole video as timestamped images, four a second, with repeats dropped?
