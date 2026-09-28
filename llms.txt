@@ -12,7 +12,7 @@
 
 ## Articles
 
-- [All articles](https://videostodoc.com/articles/): the full index of all 39 guides listed below
+- [All articles](https://videostodoc.com/articles/): the full index of all 40 guides listed below
 - [How to turn a YouTube video into a document](https://videostodoc.com/articles/youtube-video-to-document/): What are the free and paid ways to turn a YouTube video into a document, and which keeps the slides?
 - [Convert a YouTube video to PDF, slides included](https://videostodoc.com/articles/youtube-video-to-pdf/): How do you convert a YouTube video into a PDF that includes the on-screen slides, not just the words?
 - [YouTube video to text: 3 ways that actually work](https://videostodoc.com/articles/youtube-video-to-text/): What are the three working ways to get the text out of a YouTube video, and when does each one win?
@@ -33,6 +33,7 @@
 - [Instagram reel to text](https://videostodoc.com/articles/instagram-reel-to-text/): Why is there no transcript to copy on Instagram, and how do you keep a reel's words and its on-screen text?
 - [Transcribe a video free, without uploading it](https://videostodoc.com/articles/transcribe-video-free-no-upload/): How can a browser transcribe a video for free without uploading it anywhere?
 - [Offline video transcription: why local beats the cloud](https://videostodoc.com/articles/offline-video-transcription-privacy/): What actually happens to a video you upload to a cloud transcriber, and when is local better?
+- [Is it safe to upload a video to a transcription site? Here is what their own terms say](https://videostodoc.com/articles/is-it-safe-to-upload-video-to-transcription-sites/): What do Otter, Rev and Descript say they do with an uploaded video, and which recordings should stay on your own computer?
 - [Best video to text converters in 2026](https://videostodoc.com/articles/best-video-to-text-converters/): Which video to text converter fits which job, including where VideoDoc loses?
 - [How to give Claude a long video](https://videostodoc.com/articles/feed-a-long-video-to-claude/): How much of a 3 hour video fits in Claude, and why do the pictures in a PDF over 100 pages get skipped?
 - [Turn a video into a PDF with screenshots your AI can read](https://videostodoc.com/articles/video-to-pdf-with-screenshots/): What screenshot resolution survives inside a PDF so an AI can still read the slide?
