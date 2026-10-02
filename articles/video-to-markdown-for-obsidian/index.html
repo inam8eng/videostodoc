@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video to Markdown Notes for Obsidian, With Pictures</title>
+<meta name="description" content="Turn a video into a Markdown note with timestamped text and screen pictures that open in Obsidian. What to drop in your vault, and what breaks.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/video-to-markdown-for-obsidian/">
+<meta property="og:title" content="Video to Markdown notes for Obsidian">
+<meta property="og:description" content="Timestamped words plus pictures of the screen, as a note your vault can open.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/video-to-markdown-for-obsidian/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a video into Markdown notes for Obsidian, pictures included", "description": "Turn a video into a Markdown note with timestamped text and screen pictures that open in Obsidian. What to drop in your vault, and what breaks.", "datePublished": "2026-10-02", "dateModified": "2026-10-02", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/video-to-markdown-for-obsidian-hero-16x9.jpg", "https://videostodoc.com/assets/art/video-to-markdown-for-obsidian-hero-4x3.jpg", "https://videostodoc.com/assets/art/video-to-markdown-for-obsidian-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/video-to-markdown-for-obsidian/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can Obsidian show images from a relative path?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A normal Markdown picture link that points to images/frame_000015s.jpg shows the picture as long as that images folder sits next to the note inside your vault. If the note moves without the folder, the link breaks."}}, {"@type": "Question", "name": "Why are my pictures missing after I moved the note?", "acceptedAnswer": {"@type": "Answer", "text": "The note looks for its pictures in a folder called images right beside it. Copy the whole video folder into the vault, or move files from inside Obsidian so it can fix the links for you."}}, {"@type": "Question", "name": "Is the Markdown note the full transcript or a summary?", "acceptedAnswer": {"@type": "Answer", "text": "It is the full transcript in timeline order, with pictures of the screen placed between the paragraphs. Nothing is summarised, so you can ask your AI for a summary later and still have every word."}}, {"@type": "Question", "name": "Does it work on a video file already on my computer?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Open the file in VideoDoc instead of pasting a link, and you get the same doc.md and images folder. That is how I do screen recordings and downloaded lectures."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to turn a video into Markdown notes for Obsidian, pictures included"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">video-to-markdown-for-obsidian</span></div>
+
+    <figure class="arthero">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/video-to-markdown-for-obsidian-hero-640.avif 640w, ../../assets/art/video-to-markdown-for-obsidian-hero-960.avif 960w, ../../assets/art/video-to-markdown-for-obsidian-hero-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/video-to-markdown-for-obsidian-hero-640.webp 640w, ../../assets/art/video-to-markdown-for-obsidian-hero-960.webp 960w, ../../assets/art/video-to-markdown-for-obsidian-hero-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/video-to-markdown-for-obsidian-hero.jpg" alt="A laptop on a study desk showing a dark notes app with video stills between the lines" width="1280" height="714" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Study</span>
+        <h1>How to turn a video into Markdown notes for Obsidian, pictures included</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 2, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>To turn a video into an Obsidian note, you need a Markdown file of the words and a folder of pictures of the screen, linked from the note. VideoDoc makes exactly that on your own computer: a doc.md with timestamped text and an images folder next to it. <strong>Drop the whole folder into your vault, not just the .md file</strong>, and the pictures show up in the note.</p>
+      </div>
+
+      <div class="prose">
+        <p>If your notes live in Obsidian, a PDF of a video is a dead end. You can open it, but you cannot link to a line in it, search it with the rest of your notes, or add your own thoughts under the part that mattered. What you actually want is a normal note: plain text you can edit, with the pictures of the screen sitting in it.</p>
+
+        <p>Markdown is that format, and it is just a text file with a few marks in it, like a <code>#</code> in front of a heading, plus a short line that points to a picture file, and Obsidian is built on it. The good news is that a video note can be ordinary Markdown with ordinary picture links, and Obsidian will show the pictures as long as the files sit where the links say they are.</p>
+
+        <h2 id="is-there-a-free-way-to-get-a-video-into-obsidian">Is there a free way to get a video into Obsidian?</h2>
+
+        <p>Yes, for one video at a time, and it is worth doing once by hand so you know what a good note looks like. For a YouTube video it goes like this.</p>
+
+        <ol>
+          <li>Open the video on a computer, open the description and click Show transcript.</li>
+          <li>Copy the transcript lines and paste them into a new Obsidian note.</li>
+          <li>Pause on each slide or screen you care about, take a screenshot and paste it into the note. Obsidian saves each pasted picture as a file in your vault and links it for you.</li>
+          <li>Put a heading above each part so you can find it later.</li>
+        </ol>
+
+        <p>This works, and for a ten minute video it is fine. It stops working on a long lecture or a coding stream, because you end up pausing a hundred times, and the pictures land in the note in whatever order you remembered to grab them. A video with no captions also has no Show transcript button at all, so step 2 is gone.</p>
+
+        <h2 id="what-does-videodoc-actually-put-in-the-folder">What does VideoDoc actually put in the folder?</h2>
+
+        <p>I built VideoDoc to make this note for me. You paste a public video link or open a file on your computer, choose A document for AI, and it writes everything into one folder for that video. Here is what is inside, straight from my own output folder:</p>
+
+        <ul>
+          <li><code>doc.md</code>, the Markdown note: the title, a short list with the source link, channel, duration and where the transcript came from, then the words in timeline order with the pictures placed between them.</li>
+          <li><code>images/</code>, the pictures of the screen, named by the second they came from, like <code>frame_000015s.jpg</code>.</li>
+          <li><code>doc.pdf</code>, the same thing as a PDF, for sharing or printing.</li>
+          <li><code>transcript.txt</code>, the plain words with timestamps, and <code>meta.json</code>, the details of the job.</li>
+        </ul>
+
+        <p>Each paragraph of words starts with its time, like 12:40, and each picture is a normal Markdown picture link that points to <code>images/frame_000015s.jpg</code>, with the time written under it. The link is relative, which means it says "look in the images folder next to me" instead of pointing at a full path on my disk. That is the whole reason it works in a vault.</p>
+
+        <p>To give you a real size, I ran a three hour coding tutorial from JavaScript Mastery through it. The note came out with 210 timestamped paragraphs and 123 pictures, and the images folder was 4.8 MB. It took about 16 minutes on my PC, because that video had captions and VideoDoc uses them first. A video without captions takes longer, since the app has to listen to the audio itself.</p>
+
+        <h2 id="how-do-i-put-it-in-my-obsidian-vault-so-the-pictures-show">How do I put it in my Obsidian vault so the pictures show?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/video-to-markdown-for-obsidian-folder-together-640.avif 640w, ../../assets/art/video-to-markdown-for-obsidian-folder-together-960.avif 960w, ../../assets/art/video-to-markdown-for-obsidian-folder-together-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/video-to-markdown-for-obsidian-folder-together-640.webp 640w, ../../assets/art/video-to-markdown-for-obsidian-folder-together-960.webp 960w, ../../assets/art/video-to-markdown-for-obsidian-folder-together-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/video-to-markdown-for-obsidian-folder-together.jpg" alt="An open paper folder holding typed note pages and printed video stills together" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
+        <p><strong>Copy the whole video folder into your vault, not just doc.md.</strong> The note only knows that its pictures are in a folder called images right beside it. If you move the note on its own in File Explorer or Finder, every picture link breaks and you see empty boxes.</p>
+
+        <ol>
+          <li>Open your VideoDoc output folder and find the folder named after the video.</li>
+          <li>Copy that whole folder into your vault, for example into a folder called Videos.</li>
+          <li>In Obsidian, rename <code>doc.md</code> to the video's name. Every VideoDoc note is called doc.md, so after three videos you would have three notes all called doc.</li>
+          <li>Open the note, and the pictures appear in place, between the words.</li>
+        </ol>
+
+        <p>Renaming or moving things inside Obsidian is safe, because Obsidian can update the links for you when a file is renamed, as its <a href="https://obsidian.md/help/links">help page on internal links</a> explains. Doing the same in File Explorer is not, because Obsidian never sees the change. The pictures are JPG files, which is on Obsidian's <a href="https://obsidian.md/help/file-formats">list of supported file formats</a>, so nothing needs converting.</p>
+
+        <h2 id="why-is-markdown-better-than-a-pdf-for-notes">Why is Markdown better than a PDF for notes?</h2>
+
+        <p>A PDF is a finished page. Markdown is a note you keep working on. For anyone whose notes live in Obsidian, that difference decides how much of the video you will ever use again.</p>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>What you want to do</th><th>PDF</th><th>Markdown note</th></tr></thead>
+            <tbody>
+              <tr><td>Search it with all your other notes</td><td class="bad">Only inside the PDF viewer</td><td class="good">Yes, it is plain text in the vault</td></tr>
+              <tr><td>Write your own thoughts under a part</td><td class="bad">Comments on top, at best</td><td class="good">Type straight under the paragraph</td></tr>
+              <tr><td>Link to it from another note</td><td>Links to the whole file</td><td class="good">Links to a heading inside it</td></tr>
+              <tr><td>Send it to a friend or print it</td><td class="good">One file, opens anywhere</td><td>Needs the images folder with it</td></tr>
+              <tr><td>Paste it into ChatGPT or Claude</td><td>Upload the file</td><td>Copy the text, then add pictures that matter</td></tr>
+            </tbody>
+        </table></div>
+
+        <p>So I keep both: the PDF goes to whoever I share with, and the Markdown note goes into my vault where I actually study from it.</p>
+
+        <h2 id="does-it-work-with-notion-or-logseq-too">Does it work with Notion or Logseq too?</h2>
+
+        <p>Logseq and other apps that read Markdown files from a folder work the same way: keep the note and its images folder together. Notion is different, because it imports a copy of your files instead of reading them from your disk. Notion's <a href="https://www.notion.com/help/import-data-into-notion">import help page</a> takes Markdown and zip files, and pictures only come along when the image files are part of the import. So zip the whole video folder and import the zip, then check the first few pictures before you trust the rest.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>The timestamps are plain text, not links that jump to that moment in the video, although the source link sits at the top of every note. The details at the top are a simple list, not Obsidian properties, so they will not show in the properties panel unless you add them yourself. Only public videos work by link, and a long video makes a big images folder, so a vault that syncs to the cloud will sync all of it.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">One video, one Obsidian note</span>
+          <h3>Try it on a lecture you keep meaning to take notes on.</h3>
+          <p>Try it free in your browser on a file you already have. Pro is one payment for a lifetime licence on 2 machines, and it runs on Windows and Apple Silicon Macs.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · lifetime</a>
+          </div>
+        </div>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>Can Obsidian show images from a relative path?</summary>
+            <p>Yes. A normal Markdown picture link that points to images/frame_000015s.jpg shows the picture as long as that images folder sits next to the note inside your vault. If the note moves without the folder, the link breaks.</p>
+          </details>
+          <details>
+            <summary>Why are my pictures missing after I moved the note?</summary>
+            <p>The note looks for its pictures in a folder called images right beside it. Copy the whole video folder into the vault, or move files from inside Obsidian so it can fix the links for you.</p>
+          </details>
+          <details>
+            <summary>Is the Markdown note the full transcript or a summary?</summary>
+            <p>It is the full transcript in timeline order, with pictures of the screen placed between the paragraphs. Nothing is summarised, so you can ask your AI for a summary later and still have every word.</p>
+          </details>
+          <details>
+            <summary>Does it work on a video file already on my computer?</summary>
+            <p>Yes. Open the file in VideoDoc instead of pasting a link, and you get the same doc.md and images folder. That is how I do screen recordings and downloaded lectures.</p>
+          </details>
+        </div>
+
+        <p>Pick one lecture you watched this week, make its note, and copy the whole folder into your vault tonight.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../lecture-recording-to-searchable-notes/">
+            <span class="t">How to turn a lecture recording into notes you can actually search</span>
+            <p>Your lecture transcript cannot find the thing you need, because the term was written on the board and never sa</p>
+            <span class="meta"><span>STUDY · 8 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../course-video-to-study-notes/">
+            <span class="t">Turn any course video into study notes you can search</span>
+            <p>That course you bought becomes searchable study notes with the slides included: transcript, captures and times</p>
+            <span class="meta"><span>STUDENTS · 6 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../youtube-playlist-to-one-document/">
+            <span class="t">Turn a YouTube playlist into one document</span>
+            <p>Convert an entire YouTube playlist into a single searchable document, or one document per video, built private</p>
+            <span class="meta"><span>GUIDE · 6 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
