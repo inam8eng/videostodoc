@@ -16,6 +16,14 @@
   ],
   "queue": [
     {
+      "slug": "zoom-recording-to-text",
+      "keyword": "zoom recording to text",
+      "angle": "Added 2026-10-05 by the weekly pass. Information gain: Zoom only writes a transcript for cloud recordings on paid plans with the audio transcript setting switched on (check this again on Zoom's own support page before writing), so a local recording or a free account has no transcript at all. Covers the local .mp4 Zoom saves to Documents/Zoom, turning it into words plus the shared screen on your own computer, and what to do with a meeting other people spoke in. The site has meeting and webinar pages but nothing that names Zoom.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
       "slug": "twitter-x-video-to-text",
       "keyword": "twitter video to text",
       "angle": "X has no transcript button at all. Paste the post link and VideoDoc listens to the audio on your own PC and keeps any on-screen text as images; honest that login-only posts need a local file instead. Information gain: the platform-specific walk-through nobody in the top results gives, since they are generic upload tools.",
@@ -197,7 +205,7 @@
       "angle": "Point it at a folder and walk away. Queue behaviour, what happens when one video fails, and the tracker that shows a client where things stand.",
       "hub_section": "work",
       "category": "Work",
-      "done": null
+      "done": "2026-10-05"
     },
     {
       "slug": "extract-text-from-video-screen-not-audio",
