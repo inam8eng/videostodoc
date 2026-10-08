@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://videostodoc.com/articles/</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -291,6 +291,12 @@
   <url>
     <loc>https://videostodoc.com/articles/batch-convert-videos-to-documents/</loc>
     <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://videostodoc.com/articles/zoom-recording-to-text/</loc>
+    <lastmod>2026-10-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

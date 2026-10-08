@@ -21,7 +21,7 @@
       "angle": "Added 2026-10-05 by the weekly pass. Information gain: Zoom only writes a transcript for cloud recordings on paid plans with the audio transcript setting switched on (check this again on Zoom's own support page before writing), so a local recording or a free account has no transcript at all. Covers the local .mp4 Zoom saves to Documents/Zoom, turning it into words plus the shared screen on your own computer, and what to do with a meeting other people spoke in. The site has meeting and webinar pages but nothing that names Zoom.",
       "hub_section": "work",
       "category": "Work",
-      "done": null
+      "done": "2026-10-08"
     },
     {
       "slug": "twitter-x-video-to-text",
