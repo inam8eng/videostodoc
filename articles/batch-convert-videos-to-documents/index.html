@@ -27,7 +27,7 @@
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to batch convert a folder of videos into documents without babysitting it", "description": "Load a folder of videos or a list of links once and get a document for each, screen included. Plus what happens when one video in the batch fails.", "datePublished": "2026-10-05", "dateModified": "2026-10-05", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/batch-convert-videos-to-documents/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to batch convert a folder of videos into documents without babysitting it", "description": "Load a folder of videos or a list of links once and get a document for each, screen included. Plus what happens when one video in the batch fails.", "datePublished": "2026-10-05", "dateModified": "2026-10-08", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/batch-convert-videos-to-documents-hero-16x9.jpg", "https://videostodoc.com/assets/art/batch-convert-videos-to-documents-hero-4x3.jpg", "https://videostodoc.com/assets/art/batch-convert-videos-to-documents-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/batch-convert-videos-to-documents/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I transcribe multiple videos at once for free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the free Whisper command line accepts multiple files in a single terminal command and generates a transcript for each one. It extracts only the spoken words, and any file error is only displayed inside the terminal log."}}, {"@type": "Question", "name": "Can VideoDoc convert a whole folder of videos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you point the desktop app at a folder on your drive, and it turns each video into a task to make individual files or one combined document. Everything processes locally on your computer."}}, {"@type": "Question", "name": "What happens if one video in a batch fails?", "acceptedAnswer": {"@type": "Answer", "text": "VideoDoc skips the problematic file, records the issue, and moves right to the next item in line. You get a Retry button for that failed video, and the Excel sheet marks which file had an issue."}}, {"@type": "Question", "name": "Are my videos uploaded when I batch convert them?", "acceptedAnswer": {"@type": "Answer", "text": "No, they stay on your system. Local files never leave your machine, and online links are downloaded over your own network connection. All transcription work and frame capture happen locally on your computer."}}]}
@@ -75,14 +75,18 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">batch-convert-videos-to-documents</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/batch-convert-videos-to-documents.jpg" alt="VideoDoc illustration for this guide" width="1280" height="720" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/batch-convert-videos-to-documents-hero-640.avif 640w, ../../assets/art/batch-convert-videos-to-documents-hero-960.avif 960w, ../../assets/art/batch-convert-videos-to-documents-hero-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/batch-convert-videos-to-documents-hero-640.webp 640w, ../../assets/art/batch-convert-videos-to-documents-hero-960.webp 960w, ../../assets/art/batch-convert-videos-to-documents-hero-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/batch-convert-videos-to-documents-hero.jpg" alt="A laptop on a desk beside an external drive, its screen showing a list of progress bars" width="1280" height="714" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
     </figure>
 
     <article class="art">
       <header class="art-head">
         <span class="cat">Work</span>
         <h1>How to batch convert a folder of videos into documents without babysitting it</h1>
-        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 5, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 8, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
       </header>
 
       <div class="answer">
@@ -124,6 +128,14 @@
 
         <h2 id="what-happens-when-one-video-in-the-batch-fails">What happens when one video in the batch fails?</h2>
 
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/batch-convert-videos-to-documents-one-skipped-640.avif 640w, ../../assets/art/batch-convert-videos-to-documents-one-skipped-960.avif 960w, ../../assets/art/batch-convert-videos-to-documents-one-skipped-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/batch-convert-videos-to-documents-one-skipped-640.webp 640w, ../../assets/art/batch-convert-videos-to-documents-one-skipped-960.webp 960w, ../../assets/art/batch-convert-videos-to-documents-one-skipped-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/batch-convert-videos-to-documents-one-skipped.jpg" alt="A row of identical page stacks on a desk with one stack pulled out of line" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
         <p>I paid extra attention to batch reliability because early versions of my own code failed here. An early build of VideoDoc could hang for an hour trying to merge audio and video tracks on a single file, leaving every queued video behind it stuck. The whole night of processing was lost just because one file got stuck.</p>
 
         <p>I added safety timers to every step of the process. If a task stalls, VideoDoc stops working on that specific video, logs that it skipped the file to save the queue, and starts the next item. You get a Retry button next to any failed task, so you can fix that single file in the morning without re-running the finished ones.</p>
@@ -153,6 +165,14 @@
         <p>If you only need to process one public YouTube course, using the playlist link is faster, and I wrote a short guide on <a href="../youtube-playlist-to-one-document/">turning a YouTube playlist into one document</a>.</p>
 
         <h2 id="how-do-i-set-up-an-overnight-batch-so-it-actually-finishes">How do I set up an overnight batch so it actually finishes?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/batch-convert-videos-to-documents-overnight-640.avif 640w, ../../assets/art/batch-convert-videos-to-documents-overnight-960.avif 960w, ../../assets/art/batch-convert-videos-to-documents-overnight-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/batch-convert-videos-to-documents-overnight-640.webp 640w, ../../assets/art/batch-convert-videos-to-documents-overnight-960.webp 960w, ../../assets/art/batch-convert-videos-to-documents-overnight-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/batch-convert-videos-to-documents-overnight.jpg" alt="A laptop left running on a desk in the evening, plugged into its charger" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
 
         <ol>
           <li>Keep your computer plugged in and set the operating system sleep timer to Never. A computer that goes to sleep halts your queue no matter which software you run.</li>
