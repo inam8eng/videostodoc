@@ -16,6 +16,22 @@
   ],
   "queue": [
     {
+      "slug": "facebook-video-to-text",
+      "keyword": "facebook video to text",
+      "angle": "Added 2026-10-12 by the weekly pass. Information gain: the site covers TikTok, Instagram, X, Shorts and now Vimeo, but not Facebook. Explain what a viewer can and cannot get from Facebook itself (captions only show if the uploader added them or Facebook made them, check Facebook's own help page before writing), the difference between a public video, a Reel and a video in a private group (a link tool cannot reach the group one), and turning a public one into words plus the screen on your own computer.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "extract-frames-from-video-on-windows",
+      "keyword": "extract frames from video windows",
+      "angle": "Added 2026-10-12 by the weekly pass. Information gain: the Mac version exists and is linked from nowhere on the Windows side. Cover what Windows can do by itself (pausing in the Media Player or Photos and saving one still, check the current menu names on Microsoft's own pages before writing), VLC's scene filter as the free bulk way and where it stops (no duplicate removal, no timestamps in names), then VideoDoc's every-frame mode at 1, 2 or 4 a second with the CSV index.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
       "slug": "zoom-recording-to-text",
       "keyword": "zoom recording to text",
       "angle": "Added 2026-10-05 by the weekly pass. Information gain: Zoom only writes a transcript for cloud recordings on paid plans with the audio transcript setting switched on (check this again on Zoom's own support page before writing), so a local recording or a free account has no transcript at all. Covers the local .mp4 Zoom saves to Documents/Zoom, turning it into words plus the shared screen on your own computer, and what to do with a meeting other people spoke in. The site has meeting and webinar pages but nothing that names Zoom.",
