@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extract Frames From a Video on Windows (Free and Bulk)</title>
+<meta name="description" content="Save one frame from a video on Windows with Photos or VLC, or every frame with VLC&#x27;s scene filter or ffmpeg. Where each free way stops, and what fixes it.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/extract-frames-from-video-on-windows/">
+<meta property="og:title" content="Extract frames from a video on Windows">
+<meta property="og:description" content="One frame with Photos or VLC, every frame with the scene filter or ffmpeg, and the exact point where each one stops.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/extract-frames-from-video-on-windows/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to extract frames from a video on Windows, one frame or all of them", "description": "Save one frame from a video on Windows with Photos or VLC, or every frame with VLC's scene filter or ffmpeg. Where each free way stops, and what fixes it.", "datePublished": "2026-10-14", "dateModified": "2026-10-14", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/extract-frames-from-video-on-windows-hero-16x9.jpg", "https://videostodoc.com/assets/art/extract-frames-from-video-on-windows-hero-4x3.jpg", "https://videostodoc.com/assets/art/extract-frames-from-video-on-windows-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/extract-frames-from-video-on-windows/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I save a frame from a video on Windows 11?", "acceptedAnswer": {"@type": "Answer", "text": "Pause your video in VLC and press Shift+S to save a full-resolution PNG file into your Pictures folder. Recent releases of the Photos app include a Save a frame option in the timeline menu. Snipping Tool works as well, but it captures screen pixels rather than original video resolution."}}, {"@type": "Question", "name": "How do I extract all frames from a video on Windows for free?", "acceptedAnswer": {"@type": "Answer", "text": "Run ffmpeg with a command like ffmpeg -i video.mp4 -vf fps=1 frame_%05d.jpg to output one image per second. VLC's scene video filter also handles this, but it requires playing the video through in real time. Neither of these free methods filters out duplicate pictures."}}, {"@type": "Question", "name": "Why does VLC's scene filter save so few images?", "acceptedAnswer": {"@type": "Answer", "text": "The recording ratio value measures frame counts rather than seconds, and its default value is set to 50. On a 25 frames per second video, that default gives you one image every two seconds. Reduce the ratio number to capture more frames, or set it to match your video's frame rate to get roughly one image per second."}}, {"@type": "Question", "name": "How many images is an hour of video?", "acceptedAnswer": {"@type": "Answer", "text": "Extracting 4 images per second generates roughly 14,400 files for an hour of video, while 1 image per second produces about 3,600 files. Dropping duplicate frames cuts those numbers down significantly on slide decks and screen recordings, but it makes little difference on continuous moving video."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to extract frames from a video on Windows, one frame or all of them"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">extract-frames-from-video-on-windows</span></div>
+
+    <figure class="arthero">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/extract-frames-from-video-on-windows-hero-640.avif 640w, ../../assets/art/extract-frames-from-video-on-windows-hero-960.avif 960w, ../../assets/art/extract-frames-from-video-on-windows-hero-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/extract-frames-from-video-on-windows-hero-640.webp 640w, ../../assets/art/extract-frames-from-video-on-windows-hero-960.webp 960w, ../../assets/art/extract-frames-from-video-on-windows-hero-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/extract-frames-from-video-on-windows-hero.jpg" alt="A laptop with a paused video beside a stack of printed stills, like frames saved from a video on Windows" width="1280" height="714" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Work</span>
+        <h1>How to extract frames from a video on Windows, one frame or all of them</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 14, 2026</span><span class="dotsep">·</span><span>9 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>If you need one frame from a video on Windows, pause it in VLC and press Shift+S, or use the Save a frame option inside the Photos app. To extract many frames without spending money, turn on the scene filter in VLC or run a quick ffmpeg command. Neither option tags the files with their place in the timeline or clears out extra copies. VideoDoc extracts every frame at 1, 2 or 4 frames per second, names each file by its timestamp, and drops duplicate pictures.</p>
+      </div>
+
+      <div class="prose">
+        <p>Last Updated: October 14, 2026.</p>
+
+        <p>You have a video saved on your Windows computer and you need image files from it instead of text. You might want a slide from a recorded class, a step from a software guide, or a quick picture from a family clip. Windows handles the simple part easily, but people run into trouble when they need to export pictures in bulk.</p>
+
+        <p><strong>To grab one image, open VLC and press Shift+S. To export hundreds of images, Windows has no built-in tool, so you need VLC's scene filter, ffmpeg or a dedicated application.</strong> I will walk through where each free method runs into limits, because those boundaries matter depending on what you need.</p>
+
+        <h2 id="what-can-windows-do-on-its-own">What can Windows do on its own?</h2>
+
+        <p>Newer updates to the Photos app let you pull a single picture out of a video file. Open your clip in Photos, pause where you want, and select Save a frame from the menu near the timeline. An answer on Microsoft's Q&amp;A forum says this feature is in <a href="https://learn.microsoft.com/en-us/answers/questions/3987265/windows-11-getting-a-still-photo-from-a-video-on-e">Photos version 2024.11070.31001.0</a> and higher, though several users in that thread missed it because the menu layout changed across updates.</p>
+
+        <p>Snipping Tool offers another simple way to capture a frame without extra software. Pause your clip, hit Windows+Shift+S, and crop a box over the display. This works on any playing video, but it grabs your screen resolution rather than the source video file. That means a 4K file playing on a 1080p display yields a 1080p picture, and a small video window leaves you with a tiny image.</p>
+
+        <p>Both choices output just one picture for every action you take. That works fine if you want a simple thumbnail or an image for a chat, but it gets tedious when you need forty clean pictures from a video presentation.</p>
+
+        <h2 id="how-do-you-save-one-frame-at-full-quality-with-vlc">How do you save one frame at full quality with VLC?</h2>
+
+        <p>VLC is a free media player that many Windows users already have, and it works better for taking a single picture. I use it myself whenever I only need one quick image. Pause the video on your frame and press Shift+S, or go to the Video menu and select Take Snapshot. VLC outputs a full-resolution PNG file directly from the video source into your Pictures folder, and it names the file starting with vlcsnap followed by the system date and time.</p>
+
+        <p>That naming habit creates a real headache later on. The output file tells you when you pushed the keyboard shortcut, but it gives no clue where that frame sits in the video. After a long study session, you end up with a folder full of vlcsnap files and no easy way to match a picture back to its original video timestamp without scrubbing through the clip again.</p>
+
+        <h2 id="can-vlc-save-every-frame-for-free">Can VLC save every frame for free?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/extract-frames-from-video-on-windows-scene-640.avif 640w, ../../assets/art/extract-frames-from-video-on-windows-scene-960.avif 960w, ../../assets/art/extract-frames-from-video-on-windows-scene-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/extract-frames-from-video-on-windows-scene-640.webp 640w, ../../assets/art/extract-frames-from-video-on-windows-scene-960.webp 960w, ../../assets/art/extract-frames-from-video-on-windows-scene-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/extract-frames-from-video-on-windows-scene.jpg" alt="A laptop screen full of near identical thumbnails, the pile a free frame filter leaves behind" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
+        <p>VLC can export continuous frames if you enable an advanced option called the scene video filter. Open VLC, go to Tools, then Preferences, select All at the bottom under Show settings, and go to Video, then Filters, where you tick Scene video filter. Next, go into the Filters subsection, click Scene filter, and enter your destination folder, file prefix, and recording ratio. The University of Michigan published a <a href="https://teamdynamix.umich.edu/TDClient/47/LSAPortal/KB/Article/4605/Extracting-high-resolution-image-stills">step by step guide</a> with screenshots covering every menu field.</p>
+
+        <p>The recording ratio value trips up almost everyone who tries it, so it helps to clarify how it works. This setting measures video frame counts instead of seconds. <a href="https://wiki.videolan.org/Documentation:Modules/scene">VLC's own documentation</a> explains that setting a ratio of 3 exports one image for every three frames played, while the default value is 50. If your video runs at 30 frames per second, a setting of 30 produces roughly one picture each second, while that same setting on a 25 frames per second file extracts slightly more than one image per second.</p>
+
+        <p>You have to play the clip through, and VLC writes out pictures while it runs. That means an hour-long recording takes a full hour to process completely. The output files save as scene00001.png and scene00002.png in PNG format, so they fill up storage quickly. The filter does not check for duplicate frames, and it never puts timestamps into file names. Users have also <a href="https://code.videolan.org/videolan/vlc/-/issues/18562">reported missed or repeated frames</a> when setting the ratio to 1, so do not count on it for capturing every single frame. Once you finish, remember to turn off the filter, or VLC will continue dumping images every time you play any file.</p>
+
+        <h2 id="how-do-you-extract-frames-with-ffmpeg-on-windows">How do you extract frames with ffmpeg on Windows?</h2>
+
+        <p>ffmpeg is a free command-line utility that underpins many popular media applications, and it gives you the most reliable free output. It does not come preinstalled with Windows. You download a Windows distribution from the <a href="https://ffmpeg.org/download.html">ffmpeg download page</a>, extract the archive, and either add its bin folder to your system PATH or execute the binary directly from Command Prompt.</p>
+
+        <p>Running a single command starts the process: <code>ffmpeg -i lecture.mp4 -vf fps=4 frame_%05d.jpg</code>. In this example, fps=4 tells the tool to write four images for each second of media, and %05d creates a five-digit numbered index so your pictures sort cleanly in File Explorer. Processing usually finishes much faster than real-time playback because the tool does not have to play the video on your display.</p>
+
+        <p>It shares the same major limitations as VLC. A file named frame_00214.jpg tells you it was the 214th picture exported, so you have to divide by 4 to work out the second it came from. It also writes out every frame regardless of content, so a static slide held for two minutes yields 480 identical JPEG images.</p>
+
+        <h2 id="which-way-fits-what-you-are-doing">Which way fits what you are doing?</h2>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>Way</th><th>Frames per go</th><th>What the file name tells you</th><th>What you need first</th><th>Cost</th></tr></thead>
+            <tbody>
+              <tr><td>Photos or Snipping Tool</td><td>One</td><td>Nothing about the moment</td><td>Already on Windows</td><td>Free</td></tr>
+              <tr><td>VLC snapshot (Shift+S)</td><td>One</td><td>When you pressed the key</td><td>VLC installed</td><td>Free</td></tr>
+              <tr><td>VLC scene filter</td><td>Many, in real time</td><td>A counter</td><td>Five menus deep in settings</td><td>Free</td></tr>
+              <tr><td>ffmpeg</td><td>All of them, fast</td><td>A counter</td><td>A download and one command</td><td>Free</td></tr>
+              <tr><td>VideoDoc</td><td>All of them</td><td>The exact moment in the video</td><td>The app on your PC</td><td>Free to try, Pro is $19 once</td></tr>
+            </tbody>
+        </table></div>
+
+        <p>If you only need a couple of pictures, use the single-frame methods mentioned earlier and save your money. If you feel comfortable using Command Prompt, ffmpeg gets the job done for free with a bit of setup time. Paid tools only make sense when you need automatic duplicate filtering and organized timestamp names.</p>
+
+        <h2 id="how-does-videodoc-handle-this-on-windows">How does VideoDoc handle this on Windows?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/extract-frames-from-video-on-windows-folder-640.avif 640w, ../../assets/art/extract-frames-from-video-on-windows-folder-960.avif 960w, ../../assets/art/extract-frames-from-video-on-windows-folder-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/extract-frames-from-video-on-windows-folder-640.webp 640w, ../../assets/art/extract-frames-from-video-on-windows-folder-960.webp 960w, ../../assets/art/extract-frames-from-video-on-windows-folder-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/extract-frames-from-video-on-windows-folder.jpg" alt="A neat row of printed stills each tagged with its moment, like frames named by timestamp" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
+        <p>I created VideoDoc, so keep that context in mind as you read this section. It works as a standard Windows desktop application where extracting images is one of three primary options at the top: generating an AI document, processing just the video file, or saving every frame as an image set. Choosing the image option processes your video file into still pictures and stops without running speech recognition, which finishes the job much faster.</p>
+
+        <ol>
+          <li>Drop in a video file from your PC, like a screen recording, or paste a link to a public video.</li>
+          <li>Choose Every frame as images and pick 4, 2 or 1 a second. Before it starts, the app tells you how many images that means per minute and per hour.</li>
+          <li>Open the folder. Every picture is named by its moment, like frame_000123_00h01m45.50s.jpg, and a frames_index.csv lists every image with its exact time.</li>
+        </ol>
+
+        <p>The application filters out identical frames automatically while it processes your file. When an incoming frame matches the previous frame pixel for pixel, the app discards the copy and saves only the first image. On recorded slide decks or online lectures, this removes most of the extra files because slides stay still for long stretches. If a presenter appears on camera in a corner box, you can black out faces across all exported images. Processing happens entirely on your local machine, and your file never uploads anywhere.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>Direct web links work for public videos only, so private or login-only videos must be on your disk as a file first. The duplicate filter drops exact matching pixels, which means high-motion content like gameplay recordings or moving camera footage will keep almost every frame. Extracting 4 pictures every second builds up files quickly, generating roughly 14,400 images for a one-hour video before duplicates get removed. VideoDoc runs on Windows and Apple Silicon Macs, and a single Pro license covers 2 computers.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">Every frame, on your own PC</span>
+          <h3>Try it on a video already sitting on your computer.</h3>
+          <p>Free to try. Pro is $19 once, for two machines.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · lifetime</a>
+          </div>
+        </div>
+
+        <p>Sources: VLC scene filter documentation on the VideoLAN wiki, the University of Michigan guide on exporting stills with VLC, Microsoft's Q&amp;A answer for the Photos app, and the official ffmpeg download page.</p>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>How do I save a frame from a video on Windows 11?</summary>
+            <p>Pause your video in VLC and press Shift+S to save a full-resolution PNG file into your Pictures folder. Recent releases of the Photos app include a Save a frame option in the timeline menu. Snipping Tool works as well, but it captures screen pixels rather than original video resolution.</p>
+          </details>
+          <details>
+            <summary>How do I extract all frames from a video on Windows for free?</summary>
+            <p>Run ffmpeg with a command like ffmpeg -i video.mp4 -vf fps=1 frame_%05d.jpg to output one image per second. VLC's scene video filter also handles this, but it requires playing the video through in real time. Neither of these free methods filters out duplicate pictures.</p>
+          </details>
+          <details>
+            <summary>Why does VLC's scene filter save so few images?</summary>
+            <p>The recording ratio value measures frame counts rather than seconds, and its default value is set to 50. On a 25 frames per second video, that default gives you one image every two seconds. Reduce the ratio number to capture more frames, or set it to match your video's frame rate to get roughly one image per second.</p>
+          </details>
+          <details>
+            <summary>How many images is an hour of video?</summary>
+            <p>Extracting 4 images per second generates roughly 14,400 files for an hour of video, while 1 image per second produces about 3,600 files. Dropping duplicate frames cuts those numbers down significantly on slide decks and screen recordings, but it makes little difference on continuous moving video.</p>
+          </details>
+        </div>
+
+        <p>Pick that long lecture or video guide you keep scrubbing through, and extract its image frames tonight using whichever method fits your setup.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../extract-frames-from-video-on-mac/">
+            <span class="t">How to extract frames from a video on a Mac</span>
+            <p>Photos exports one frame at a time and names the file by today's date. Here are the three routes to all of the</p>
+            <span class="meta"><span>WORK · 9 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../deduplicate-video-frames/">
+            <span class="t">How to remove duplicate frames from a video without losing a change</span>
+            <p>Two different jobs hide behind this one search, and the popular ffmpeg fix re-encodes your whole video. Here i</p>
+            <span class="meta"><span>WORK · 8 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../video-frames-to-csv-index/">
+            <span class="t">How to read a video frames index, and what it tells you</span>
+            <p>The CSV beside your video frames has four columns and one trick: the gap between two rows is how long that pic</p>
+            <span class="meta"><span>WORK · 8 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

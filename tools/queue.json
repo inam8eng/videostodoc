@@ -29,7 +29,7 @@
       "angle": "Added 2026-10-12 by the weekly pass. Information gain: the Mac version exists and is linked from nowhere on the Windows side. Cover what Windows can do by itself (pausing in the Media Player or Photos and saving one still, check the current menu names on Microsoft's own pages before writing), VLC's scene filter as the free bulk way and where it stops (no duplicate removal, no timestamps in names), then VideoDoc's every-frame mode at 1, 2 or 4 a second with the CSV index.",
       "hub_section": "work",
       "category": "Work",
-      "done": null
+      "done": "2026-10-14"
     },
     {
       "slug": "zoom-recording-to-text",
