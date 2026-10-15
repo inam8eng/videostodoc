@@ -245,7 +245,7 @@
       "angle": "The explainer that earns the AI-search citation: what these models actually accept, why a link in the chat box is not the same as the model seeing the video, and what the working substitute is.",
       "hub_section": "start",
       "category": "Guide",
-      "done": null
+      "done": "dropped-no-gain 2026-10-15"
     },
     {
       "slug": "video-to-document-vs-transcription-services",
@@ -253,7 +253,7 @@
       "angle": "An honest comparison page, including where the cloud services genuinely win: speaker diarisation, teams, and not owning a fast computer.",
       "hub_section": "start",
       "category": "Compare",
-      "done": null
+      "done": "2026-10-15"
     },
     {
       "slug": "extract-code-snippets-from-a-coding-stream",
