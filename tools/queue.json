@@ -16,6 +16,30 @@
   ],
   "queue": [
     {
+      "slug": "microsoft-teams-recording-to-text",
+      "keyword": "teams recording to text",
+      "angle": "Added 2026-10-19 by the weekly pass. Information gain: the site covers Zoom but not Teams. A Teams transcript only exists if someone turned on transcription during the meeting (check Microsoft's own help page before writing), and the recording lives in OneDrive or SharePoint, so a link tool cannot reach it. The honest path: download the .mp4 you have access to, drop it in as a local file, and keep the shared screen that a Teams transcript never has.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
+      "slug": "urdu-video-to-text",
+      "keyword": "urdu video to text",
+      "angle": "Added 2026-10-19 by the weekly pass. Information gain: firsthand from Pakistan. Urdu auto captions are weak or missing, and most PDF tools print Urdu as boxes or left to right. VideoDoc uses the video's own captions first when they exist, transcribes the audio otherwise, and since v0.1.4 prints Urdu right to left in the PDF and warns when the PC has no font. Say plainly that English is the strongest language today.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "google-meet-recording-to-text",
+      "keyword": "google meet recording to text",
+      "angle": "Added 2026-10-19 by the weekly pass. Information gain: same gap as Teams. Meet recordings and transcripts depend on the Workspace plan and on someone pressing record (check Google's own help page before writing), and the file sits in the organiser's Drive. Download the recording you can access, turn it into a document locally, and keep the slides that were presented.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
       "slug": "facebook-video-to-text",
       "keyword": "facebook video to text",
       "angle": "Added 2026-10-12 by the weekly pass. Information gain: the site covers TikTok, Instagram, X, Shorts and now Vimeo, but not Facebook. Explain what a viewer can and cannot get from Facebook itself (captions only show if the uploader added them or Facebook made them, check Facebook's own help page before writing), the difference between a public video, a Reel and a video in a private group (a link tool cannot reach the group one), and turning a public one into words plus the screen on your own computer.",

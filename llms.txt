@@ -12,7 +12,7 @@
 
 ## Articles
 
-- [All articles](https://videostodoc.com/articles/): the full index of all 40 guides listed below
+- [All articles](https://videostodoc.com/articles/): the full index of all 52 guides listed below
 - [How to turn a YouTube video into a document](https://videostodoc.com/articles/youtube-video-to-document/): What are the free and paid ways to turn a YouTube video into a document, and which keeps the slides?
 - [Convert a YouTube video to PDF, slides included](https://videostodoc.com/articles/youtube-video-to-pdf/): How do you convert a YouTube video into a PDF that includes the on-screen slides, not just the words?
 - [YouTube video to text: 3 ways that actually work](https://videostodoc.com/articles/youtube-video-to-text/): What are the three working ways to get the text out of a YouTube video, and when does each one win?
@@ -53,10 +53,22 @@
 - [How to black out faces in video screenshots](https://videostodoc.com/articles/blur-or-black-out-faces-in-video-frames/): How do you cover the presenter's webcam bubble in every frame and in the document?
 - [What local really means in a video to text converter](https://videostodoc.com/articles/local-video-to-text-no-upload/): What does a local converter still send over the network, and how do you prove the video stayed put?
 - [I put the GTA 6 Extended Look through my own tool](https://videostodoc.com/articles/gta-6-extended-look-frame-by-frame/): What comes out when a 27 minute 4K trailer is turned into frames and a document?
+- [How to turn a Twitter (X) video into text](https://videostodoc.com/articles/twitter-x-video-to-text/): X has no transcript button, so how do you get the words out of a Twitter video?
+- [How to turn a YouTube Short into text](https://videostodoc.com/articles/youtube-shorts-to-text/): Why does a Shorts transcript miss the captions typed onto the picture, and how do you keep both?
+- [How to turn a video into Markdown notes for Obsidian](https://videostodoc.com/articles/video-to-markdown-for-obsidian/): How do you get a timestamped Markdown note with screen pictures that opens in an Obsidian vault?
+- [How to batch convert a folder of videos into documents](https://videostodoc.com/articles/batch-convert-videos-to-documents/): How do you turn a folder of videos or a list of links into one document each, and what happens when one fails?
+- [How to turn a Zoom recording into text](https://videostodoc.com/articles/zoom-recording-to-text/): Zoom gave you no transcript, so how do you turn the saved .mp4 into text with the shared screen kept?
+- [How to extract the text shown on screen in a video](https://videostodoc.com/articles/extract-text-from-video-screen-not-audio/): Transcription only hears what is said, so how do you get the words shown on screen?
+- [How to turn a Vimeo or Dailymotion video into text](https://videostodoc.com/articles/vimeo-and-dailymotion-video-to-text/): Which Vimeo and Dailymotion privacy settings let any tool reach a video, and how do you get its words?
+- [How to turn a Facebook video into text](https://videostodoc.com/articles/facebook-video-to-text/): What can you get from Facebook's own captions, and why can no tool reach a private group video?
+- [How to extract frames from a video on Windows](https://videostodoc.com/articles/extract-frames-from-video-on-windows/): How do you save one frame with Photos or VLC, or every frame of a video, on Windows?
+- [Video to document or a transcription service](https://videostodoc.com/articles/video-to-document-vs-transcription-services/): When do you need a transcription service, and when do you need the screen kept as well?
+- [How to get code out of a six hour coding stream](https://videostodoc.com/articles/extract-code-snippets-from-a-coding-stream/): How do you find and read the few minutes of code inside a long coding stream without watching it all?
+- [How to turn a video into training images for an AI dataset](https://videostodoc.com/articles/video-frames-for-ai-training-data/): What frame rate, duplicate removal and train and test split make a clean image dataset from video?
 
 ## Facts
 
-- Link mode works with public videos from YouTube, TikTok, Instagram, Facebook and X, plus whole playlists.
+- Link mode works with public videos from YouTube, TikTok, Instagram, Facebook, X, Vimeo and Dailymotion, plus whole playlists.
 - Private or paywalled videos: save the file yourself and drop it in, everything runs locally.
 - Output is one document: a timestamped transcript plus the on-screen content captured as images, as PDF and Markdown.
 - Every frame as images is its own mode: the whole video saved as timestamped pictures at 1, 2 or 4 a second, exact repeats of the previous frame dropped, with a CSV index and no transcript.
