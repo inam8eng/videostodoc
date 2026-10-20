@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teams Recording to Text, and the Missing Download Button</title>
+<meta name="description" content="No transcript on your Teams recording, or no download button? Where the .mp4 is saved, who can download it, and how to turn it into text on your own PC.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/microsoft-teams-recording-to-text/">
+<meta property="og:title" content="Turn a Teams recording into text">
+<meta property="og:description" content="Where the .mp4 lives, why attendees often cannot download it, and how to keep the shared screen.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/microsoft-teams-recording-to-text/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a Teams meeting recording into text, and what to do when you cannot download it", "description": "No transcript on your Teams recording, or no download button? Where the .mp4 is saved, who can download it, and how to turn it into text on your own PC.", "datePublished": "2026-10-20", "dateModified": "2026-10-20", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/microsoft-teams-recording-to-text-hero-16x9.jpg", "https://videostodoc.com/assets/art/microsoft-teams-recording-to-text-hero-4x3.jpg", "https://videostodoc.com/assets/art/microsoft-teams-recording-to-text-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/microsoft-teams-recording-to-text/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I get a Teams transcript after the meeting has ended?", "acceptedAnswer": {"@type": "Answer", "text": "Not from Teams, if transcription was not running during the meeting, because Teams makes its transcript live. You can still make one afterwards from the recording's .mp4 with a tool on your own computer."}}, {"@type": "Question", "name": "Where are Teams meeting recordings saved?", "acceptedAnswer": {"@type": "Answer", "text": "A normal meeting's recording goes to the Recordings folder in the organizer's OneDrive. A channel meeting's recording goes to a Recordings folder on the team's SharePoint site, and a call goes to the OneDrive of whoever pressed Record."}}, {"@type": "Question", "name": "Why is there no download option on my Teams recording?", "acceptedAnswer": {"@type": "Answer", "text": "By default only the organizer and co-organizers can download a meeting recording, and an admin can block downloads completely. Everyone else from the company can usually watch it, so ask the organizer to send you the .mp4."}}, {"@type": "Question", "name": "Does a Teams transcript show who is speaking?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. A Teams transcript shows each speaker's name with a time stamp, unless a person chose to hide their identity in captions and transcripts. A transcript you make yourself from the .mp4 with Whisper or VideoDoc does not name the speakers."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to turn a Teams meeting recording into text, and what to do when you cannot download it"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">microsoft-teams-recording-to-text</span></div>
+
+    <figure class="arthero">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/microsoft-teams-recording-to-text-hero-640.avif 640w, ../../assets/art/microsoft-teams-recording-to-text-hero-960.avif 960w, ../../assets/art/microsoft-teams-recording-to-text-hero-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/microsoft-teams-recording-to-text-hero-640.webp 640w, ../../assets/art/microsoft-teams-recording-to-text-hero-960.webp 960w, ../../assets/art/microsoft-teams-recording-to-text-hero-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/microsoft-teams-recording-to-text-hero.jpg" alt="A laptop on a desk showing a paused video meeting, with a notebook beside it after the call" width="1280" height="714" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Work</span>
+        <h1>How to turn a Teams meeting recording into text, and what to do when you cannot download it</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 20, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>A Teams recording only has a transcript if transcription was running during the meeting. If there is none, you make the text yourself: download the .mp4 from the Recordings folder in the organizer's OneDrive and open it in a transcription tool on your own computer. If you see no download option, ask the organizer for the file, because by default attendees can watch a recording but not download it.</p>
+      </div>
+
+      <div class="prose">
+        <p>You were in a Teams meeting, someone recorded it, and now you want the words. You open the recording from the meeting chat and it plays fine, but there is no transcript, and when you look for a way to save the video there is no download option either. Nothing is broken on your side.</p>
+
+        <p>Teams decides what you get by two things: whether transcription was running in the meeting, and whether you were the organizer. <strong>If there is no transcript, you have to make the text from the .mp4 file. If you cannot download that file, ask the organizer to send it to you.</strong> The rest of this page explains both, and how to keep the shared screen, which a Teams transcript never has.</p>
+
+        <h2 id="does-teams-make-a-transcript-of-every-recording">Does Teams make a transcript of every recording?</h2>
+
+        <p>No, because Teams writes its transcript while the meeting is happening, and a transcript only exists if transcription was switched on at the time. Microsoft's <a href="https://support.microsoft.com/en-us/office/view-live-transcription-in-microsoft-teams-meetings-dc1a8f23-2e20-4684-885e-2152e06a4a8b">live transcription help page</a> says recording a meeting starts transcription automatically, but your IT admin's meeting policy has to allow it. If the policy turns transcription off, the recording arrives with nothing to read.</p>
+
+        <p>When a transcript does exist, it is good. It is saved in the organizer's OneDrive next to the recording, it can be downloaded as a .docx or a .vtt file, and it shows each speaker's name with a time stamp. VTT is a captions format, which means plain lines of text with a start and end time on each line. By default only the organizer and co-organizers can download it, and anyone else depends on what the admin allows.</p>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>What you have</th><th>Can Teams give you text?</th><th>What to do</th></tr></thead>
+            <tbody>
+              <tr><td>A transcript, and you organized the meeting</td><td>Yes, .docx or .vtt with speaker names</td><td>Download it from the meeting's Recap tab</td></tr>
+              <tr><td>A transcript, and you were an attendee</td><td>You can read it, downloading depends on your admin</td><td>Read it in Teams, or ask the organizer for the file</td></tr>
+              <tr><td>No transcript, and you organized the meeting</td><td>No</td><td>Download the .mp4 and turn it into text yourself</td></tr>
+              <tr><td>No transcript, and you were an attendee</td><td>No</td><td>Ask the organizer for the .mp4</td></tr>
+            </tbody>
+        </table></div>
+
+        <h2 id="where-is-a-teams-recording-saved-and-how-do-i-download-it">Where is a Teams recording saved, and how do I download it?</h2>
+
+        <p>For a normal meeting, the recording goes into a folder called Recordings in the organizer's OneDrive, even if the organizer never joined the call. A channel meeting is different, and its recording goes to the team's SharePoint site, into a Recordings folder inside the channel's documents. A one to one call or a group call goes to the OneDrive of whoever pressed Record. Microsoft lays all of this out on its <a href="https://learn.microsoft.com/en-us/microsoftteams/tmr-meeting-recording-change">recording storage page</a>.</p>
+
+        <ol>
+          <li>Find the recording in the meeting chat, or in the channel conversation for a channel meeting.</li>
+          <li>Open it in OneDrive or SharePoint in your web browser, rather than just playing it inside Teams.</li>
+          <li>Use Download in the bar at the top and save the .mp4 somewhere easy, like your Downloads folder.</li>
+        </ol>
+
+        <p>Two things are worth knowing before you start. Microsoft puts a one hour recording at about 400 MB, so a long workshop is a heavy download on a slow connection. And your admin can set recordings to expire after a while, so get the file while it is still there instead of planning to do it next month.</p>
+
+        <h2 id="why-can-t-i-download-the-teams-recording">Why can't I download the Teams recording?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/microsoft-teams-recording-to-text-locked-640.avif 640w, ../../assets/art/microsoft-teams-recording-to-text-locked-960.avif 960w, ../../assets/art/microsoft-teams-recording-to-text-locked-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/microsoft-teams-recording-to-text-locked-640.webp 640w, ../../assets/art/microsoft-teams-recording-to-text-locked-960.webp 960w, ../../assets/art/microsoft-teams-recording-to-text-locked-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/microsoft-teams-recording-to-text-locked.jpg" alt="A small padlock on a laptop keyboard, like a meeting recording you can watch but not download" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
+        <p>Usually because you were not the organizer. In a scheduled meeting the recording belongs to the organizer, the organizer and co-organizers can edit and share it, and everyone else from the same company can watch it. Microsoft's <a href="https://support.microsoft.com/en-us/office/record-a-meeting-in-microsoft-teams-34dfbe7f-b07d-4a27-b4c6-de62f1348c24">recording help page</a> says that by default only organizers and co-organizers can download it. On top of that, an admin can <a href="https://learn.microsoft.com/en-us/microsoftteams/block-download-meeting-recording">block downloads of recordings</a> for the whole company.</p>
+
+        <p><strong>So the fix is to ask the organizer to send you the .mp4.</strong> It takes them a minute from their own Recordings folder. Do not try to get around a blocked download with a screen recorder, because if the company turned downloads off it did that on purpose, and the recording has other people's faces and voices in it.</p>
+
+        <h2 id="what-is-the-free-way-to-turn-the-teams-mp4-into-text">What is the free way to turn the Teams .mp4 into text?</h2>
+
+        <p>OpenAI's <a href="https://github.com/openai/whisper">Whisper</a> is free and runs on your own computer, and nothing is uploaded. You use it from a terminal, which is the window where you type commands to your computer instead of clicking buttons. It needs Python and ffmpeg installed first, and the setup is explained on that page.</p>
+
+        <ol>
+          <li>Put the downloaded recording in its own folder and open a terminal there.</li>
+          <li>Type <code>whisper "meeting.mp4" --model small --output_format txt</code> with the real name of your file.</li>
+          <li>Leave it running, because Whisper has to listen to the whole meeting, so an hour of recording takes a while on an ordinary laptop.</li>
+          <li>Open the .txt file that appears beside the recording when it finishes.</li>
+        </ol>
+
+        <p>What you get is the words and nothing else. There are no speaker names, which the Teams transcript would have had, and nothing from the shared screen. That second part matters more than people expect in a work meeting.</p>
+
+        <h2 id="how-do-i-keep-the-shared-screen-as-well-as-the-words">How do I keep the shared screen as well as the words?</h2>
+
+        <p>Most Teams meetings are half talking and half screen sharing. Someone puts up the project plan, the budget sheet or the slide with the numbers, and then talks over it. A transcript keeps a line like "the red rows are the ones we are late on" and throws away the red rows, which were the reason you wanted the recording.</p>
+
+        <p>I built VideoDoc because I wanted my AI to read things that only made sense with the picture. You pick the recording on the Local tab, and VideoDoc gives you back a PDF plus a Markdown copy: the words with their times, and screenshots of whatever was shared, each sitting beside what was being said at that moment. It runs on your own computer, so a work recording is never uploaded to anyone's server. It only needs the file, so it makes no difference which Teams licence the company pays for.</p>
+
+        <p>Meetings also have colleagues on camera. If the document is going to a client or into an AI chat, VideoDoc can black out faces in both the saved pictures and the screenshots inside the document. When it finishes it gives you two counts, the faces it covered and the pictures where it found no face, so you know where to look twice.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>VideoDoc does not label who said what, and the Teams transcript does. If Teams made a transcript and you only need the words, its .docx is the better file. VideoDoc also cannot open a Teams, OneDrive or SharePoint link, because those sit behind your work sign in, so it needs the .mp4 on your computer. How long a job takes depends on your computer and the length of the meeting.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">One Teams recording, words and screen</span>
+          <h3>Try it on the meeting you recorded this week.</h3>
+          <p>Free to try on your own computer. Pro is $19 once, for two machines.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · lifetime</a>
+          </div>
+        </div>
+
+        <p>If your company uses Zoom as well, I wrote a separate guide on <a href="../zoom-recording-to-text/">turning a Zoom recording into text</a>, where the rules are different. And for recorded webinars, where the slides are the whole point, there is one on <a href="../webinar-recording-to-document/">turning a webinar recording into a document</a>.</p>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>Can I get a Teams transcript after the meeting has ended?</summary>
+            <p>Not from Teams, if transcription was not running during the meeting, because Teams makes its transcript live. You can still make one afterwards from the recording's .mp4 with a tool on your own computer.</p>
+          </details>
+          <details>
+            <summary>Where are Teams meeting recordings saved?</summary>
+            <p>A normal meeting's recording goes to the Recordings folder in the organizer's OneDrive. A channel meeting's recording goes to a Recordings folder on the team's SharePoint site, and a call goes to the OneDrive of whoever pressed Record.</p>
+          </details>
+          <details>
+            <summary>Why is there no download option on my Teams recording?</summary>
+            <p>By default only the organizer and co-organizers can download a meeting recording, and an admin can block downloads completely. Everyone else from the company can usually watch it, so ask the organizer to send you the .mp4.</p>
+          </details>
+          <details>
+            <summary>Does a Teams transcript show who is speaking?</summary>
+            <p>Yes. A Teams transcript shows each speaker's name with a time stamp, unless a person chose to hide their identity in captions and transcripts. A transcript you make yourself from the .mp4 with Whisper or VideoDoc does not name the speakers.</p>
+          </details>
+        </div>
+
+        <p>Find your last recorded Teams meeting tonight, get the .mp4 from the organizer or your own Recordings folder, and turn it into a document with the shared screen still in it.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../zoom-recording-to-text/">
+            <span class="t">How to turn a Zoom recording into text when Zoom gave you no transcript</span>
+            <p>No transcript came with your Zoom recording? Turn the .mp4 Zoom saved on your computer into text, with the sha</p>
+            <span class="meta"><span>WORK · 7 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../webinar-recording-to-document/">
+            <span class="t">Turn a webinar recording into a written guide</span>
+            <p>Turn an hour long webinar recording into a written guide with the slides included: summary, decisions and acti</p>
+            <span class="meta"><span>WORK · 6 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../blur-or-black-out-faces-in-video-frames/">
+            <span class="t">How to black out faces in video screenshots</span>
+            <p>Cover the presenter's webcam bubble in every extracted frame and in the document itself. Solid black, done on </p>
+            <span class="meta"><span>PRIVACY · 7 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
