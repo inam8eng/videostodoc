@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Urdu Video to Text, When YouTube Has No Urdu Captions</title>
+<meta name="description" content="YouTube makes no automatic Urdu captions, and many PDF tools print Urdu as boxes. How to get clean Urdu text from a video, free or on your own PC.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/urdu-video-to-text/">
+<meta property="og:title" content="Turn an Urdu video into text">
+<meta property="og:description" content="Why YouTube has no Urdu auto captions, why Urdu turns into boxes, and the fix for both.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/urdu-video-to-text/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn an Urdu video into text when YouTube has no Urdu captions", "description": "YouTube makes no automatic Urdu captions, and many PDF tools print Urdu as boxes. How to get clean Urdu text from a video, free or on your own PC.", "datePublished": "2026-10-21", "dateModified": "2026-10-21", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/urdu-video-to-text/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Does YouTube have automatic captions in Urdu?", "acceptedAnswer": {"@type": "Answer", "text": "No. Urdu is not on YouTube's list of automatic caption languages, though Hindi is. An Urdu video only has Urdu captions if the creator uploaded them."}}, {"@type": "Question", "name": "Can Whisper transcribe Urdu?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, Urdu is one of the languages Whisper supports. Set the language to Urdu so it does not write Hindi, and use the medium or large model, because the small ones make many more mistakes outside English."}}, {"@type": "Question", "name": "Why does Urdu show as boxes in my PDF?", "acceptedAnswer": {"@type": "Answer", "text": "The PDF has no font with Urdu letters, so it draws an empty box for each one. Use a tool that embeds an Urdu font, or add the Urdu fonts in Windows from Settings, Optional features."}}, {"@type": "Question", "name": "Can I get the text in Roman Urdu?", "acceptedAnswer": {"@type": "Answer", "text": "Not directly from Whisper or VideoDoc, which write Urdu in Urdu script. You can ask an AI chat to convert the Urdu text into Roman Urdu afterwards, and check names by hand."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to turn an Urdu video into text when YouTube has no Urdu captions"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">urdu-video-to-text</span></div>
+
+    <figure class="arthero">
+      <img src="../../assets/art/urdu-video-to-text.jpg" alt="VideoDoc illustration for this guide" width="1280" height="720" loading="eager" decoding="async">
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Guide</span>
+        <h1>How to turn an Urdu video into text when YouTube has no Urdu captions</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 21, 2026</span><span class="dotsep">·</span><span>5 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>YouTube does not make automatic captions in Urdu, so most Urdu videos have no transcript unless the creator uploaded one. To get the text, you transcribe the audio with a speech model such as Whisper, which supports Urdu, and set the language to Urdu so it does not write Hindi. Then open the text in an app with an Urdu font, or it shows as boxes.</p>
+      </div>
+
+      <div class="prose">
+        <p>You found an Urdu lecture, a talk show or a dars on YouTube and you want the words as text, to read, to search or to give to an AI. You click Show transcript and there is nothing, or the captions are in some other language. Your internet and your browser are fine.</p>
+
+        <p>The reason is simple and it surprises people here in Pakistan: <strong>YouTube does not make automatic captions in Urdu at all.</strong> Its own list has Hindi, Punjabi and Bengali but not Urdu. <strong>So you have to make the text from the audio yourself, and then make sure your PDF or app can show Urdu script.</strong> Both parts are explained below.</p>
+
+        <h2 id="does-youtube-make-automatic-captions-for-urdu-videos">Does YouTube make automatic captions for Urdu videos?</h2>
+
+        <p>No, and you can check it yourself. Google's <a href="https://support.google.com/youtube/answer/6373554">automatic captions help page</a> lists every language YouTube can caption by itself, and Urdu is not on it, although Hindi is. Spoken Urdu and Hindi sound almost the same, but they are written in completely different scripts, so a Hindi caption track is no use if you want Urdu text.</p>
+
+        <p>An Urdu video only has Urdu captions when the creator typed them or uploaded a captions file. Big news channels and some teachers do this. Most channels do not, so for most Urdu videos the only thing to work from is the sound.</p>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>What the video has</th><th>Can you get Urdu text from YouTube?</th><th>What to do</th></tr></thead>
+            <tbody>
+              <tr><td>Urdu captions uploaded by the creator</td><td>Yes, from Show transcript</td><td>Copy it, or use a tool that reads the captions</td></tr>
+              <tr><td>Only auto captions in another language</td><td>No, wrong language and script</td><td>Transcribe the audio</td></tr>
+              <tr><td>No captions at all</td><td>No</td><td>Transcribe the audio</td></tr>
+            </tbody>
+        </table></div>
+
+        <h2 id="what-is-the-free-way-to-turn-an-urdu-video-into-text">What is the free way to turn an Urdu video into text?</h2>
+
+        <p>OpenAI's <a href="https://github.com/openai/whisper">Whisper</a> is free, runs on your own computer, and Urdu is one of the languages it was trained on. You use it from a terminal, which is the window where you type commands instead of clicking buttons. It needs Python and ffmpeg installed first, and that page explains the setup.</p>
+
+        <ol>
+          <li>Save the video or its audio to your computer, and open a terminal in that folder.</li>
+          <li>Type <code>whisper "lecture.mp4" --model medium --language Urdu --output_format txt</code> with the real name of your file.</li>
+          <li>Wait, because Whisper listens to the whole thing, and an hour of Urdu on an ordinary laptop can take longer than the video itself.</li>
+          <li>Open the .txt file in Notepad or Word, which both show Urdu properly.</li>
+        </ol>
+
+        <p>The <code>--language Urdu</code> part matters more than it looks. Whisper guesses the language from the first few seconds, and because spoken Urdu and Hindi are so close, it can guess Hindi and write the whole lecture in Devanagari. Telling it the language stops that. Use the medium or large model for Urdu, because the small ones make far more mistakes in languages other than English, and the <a href="https://arxiv.org/abs/2212.04356">Whisper paper</a> shows accuracy varies a lot from one language to another.</p>
+
+        <h2 id="why-does-my-urdu-text-turn-into-boxes-or-come-out-backwards">Why does my Urdu text turn into boxes or come out backwards?</h2>
+
+        <p>Two separate problems cause this. Urdu is written right to left, and its letters join and change shape depending on the letter next to them. A tool that was built only for English lays the letters out left to right and does not join them, so the words come out reversed and broken.</p>
+
+        <p>The boxes are a font problem. Text is just numbers until a font draws it, and if the PDF or app has no font with Urdu letters in it, it draws an empty box for each one. Windows has Urdu fonts, but some are an extra you add yourself, from Settings, then Optional features, and Microsoft explains that on its <a href="https://learn.microsoft.com/en-us/windows/deployment/windows-10-missing-fonts">missing fonts page</a>.</p>
+
+        <h2 id="how-does-videodoc-handle-an-urdu-video">How does VideoDoc handle an Urdu video?</h2>
+
+        <p>I live in Pakistan and a lot of what I learn from is in Urdu, often with the slides in English. An early version of VideoDoc printed Urdu in the PDF as rows of empty boxes, which is exactly the problem above, and fixing it was one of the first things I did.</p>
+
+        <p>Now VideoDoc uses the video's own captions first when they exist, which is much faster. When there are none, it transcribes the audio on your own computer. The PDF prints Urdu right to left with the letters joined, and if your PC has no font for the language, VideoDoc warns you before it starts instead of handing you a page of boxes. You also get screenshots of the slides or the board, each beside the words that were being said, plus a Markdown copy to paste into an AI.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>English is still the strongest language in VideoDoc, and Urdu transcripts have more mistakes, especially with names and when the speaker mixes in English words, which nearly every Pakistani speaker does. VideoDoc writes Urdu in Urdu script, not Roman Urdu, and it does not translate. It does not label who is speaking. It works on public videos only, and how long it takes depends on your computer.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">One Urdu lecture, words and slides</span>
+          <h3>Try it on the Urdu video you keep rewatching.</h3>
+          <p>Free to try on your own computer. Pro is $19 once, for two machines.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · lifetime</a>
+          </div>
+        </div>
+
+        <p>If the video does have captions, my guide on <a href="../get-transcript-of-any-youtube-video/">getting the transcript of any YouTube video</a> covers the quick route. And for a full lecture you want to study from, there is one on <a href="../lecture-recording-to-searchable-notes/">turning a lecture recording into searchable notes</a>.</p>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>Does YouTube have automatic captions in Urdu?</summary>
+            <p>No. Urdu is not on YouTube's list of automatic caption languages, though Hindi is. An Urdu video only has Urdu captions if the creator uploaded them.</p>
+          </details>
+          <details>
+            <summary>Can Whisper transcribe Urdu?</summary>
+            <p>Yes, Urdu is one of the languages Whisper supports. Set the language to Urdu so it does not write Hindi, and use the medium or large model, because the small ones make many more mistakes outside English.</p>
+          </details>
+          <details>
+            <summary>Why does Urdu show as boxes in my PDF?</summary>
+            <p>The PDF has no font with Urdu letters, so it draws an empty box for each one. Use a tool that embeds an Urdu font, or add the Urdu fonts in Windows from Settings, Optional features.</p>
+          </details>
+          <details>
+            <summary>Can I get the text in Roman Urdu?</summary>
+            <p>Not directly from Whisper or VideoDoc, which write Urdu in Urdu script. You can ask an AI chat to convert the Urdu text into Roman Urdu afterwards, and check names by hand.</p>
+          </details>
+        </div>
+
+        <p>Pick the Urdu lecture you keep going back to, set the language to Urdu, and turn it into text you can actually search tonight.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../get-transcript-of-any-youtube-video/">
+            <span class="t">Get the transcript of any YouTube video, even without captions</span>
+            <p>Captions on, off, or missing, you can still get a full timestamped transcript of any YouTube video. The button</p>
+            <span class="meta"><span>GUIDE · 5 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../youtube-video-to-text/">
+            <span class="t">YouTube video to text: 3 ways that actually work</span>
+            <p>Turn a YouTube video into text with the transcript button, a free private browser tool, or a desktop app. Plai</p>
+            <span class="meta"><span>GUIDE · 6 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../lecture-recording-to-searchable-notes/">
+            <span class="t">How to turn a lecture recording into notes you can actually search</span>
+            <p>Your lecture transcript cannot find the thing you need, because the term was written on the board and never sa</p>
+            <span class="meta"><span>STUDY · 8 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

@@ -29,7 +29,7 @@
       "angle": "Added 2026-10-19 by the weekly pass. Information gain: firsthand from Pakistan. Urdu auto captions are weak or missing, and most PDF tools print Urdu as boxes or left to right. VideoDoc uses the video's own captions first when they exist, transcribes the audio otherwise, and since v0.1.4 prints Urdu right to left in the PDF and warns when the PC has no font. Say plainly that English is the strongest language today.",
       "hub_section": "start",
       "category": "Guide",
-      "done": null
+      "done": "2026-10-21"
     },
     {
       "slug": "google-meet-recording-to-text",
