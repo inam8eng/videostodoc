@@ -1,9 +1,17 @@
 // Runs entirely in the visitor's browser. No upload, no server, $0 compute for us.
 // Loads Whisper via transformers.js, tries WebGPU first, falls back to CPU (WASM).
-import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1";
+// Imported as a namespace so an optional export (the live-text streamer) can be
+// missing without breaking the import itself.
+import * as T from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1";
+
+const { pipeline, env } = T;
 
 // We pull the model from the HF hub (cached by the browser after first run).
 env.allowLocalModels = false;
+// onnxruntime prints routine placement notes ("Some nodes were not assigned
+// to the preferred execution providers") through console.error. Keep the
+// console for real problems only.
+try { if (env.backends && env.backends.onnx) env.backends.onnx.logLevel = "error"; } catch (e) { /* older runtime */ }
 
 let transcriberPromise = null;
 let backend = "cpu";
@@ -18,7 +26,12 @@ async function getTranscriber(progress_callback) {
           "automatic-speech-recognition",
           "onnx-community/whisper-base",
           { device: "webgpu",
-            dtype: { encoder_model: "fp16", decoder_model_merged: "q4" },
+            // fp32, not fp16: on an NVIDIA card (Oct 2026 test) the fp16
+            // encoder turned clear speech into one looping line ("I'm going
+            // to be a good friend. ...") that the page then reported as "no
+            // clear speech". fp32 gave the exact words, in 4 s for 27 s of
+            // audio. It is about 40 MB more to download, once.
+            dtype: { encoder_model: "fp32", decoder_model_merged: "q4" },
             progress_callback }
         );
         backend = "gpu";
@@ -40,6 +53,21 @@ async function getTranscriber(progress_callback) {
   return transcriberPromise;
 }
 
+// The words as they are heard, sent to the page so the visitor sees the
+// transcript forming. Purely a nicety: if anything about it fails, the plain
+// call below runs exactly as before.
+function liveStreamer(transcriber) {
+  if (!T.WhisperTextStreamer || !transcriber.tokenizer) return null;
+  try {
+    return new T.WhisperTextStreamer(transcriber.tokenizer, {
+      skip_prompt: true,
+      callback_function: (text) => { if (text) postMessage({ type: "partial", text }); },
+    });
+  } catch (e) {
+    return null;
+  }
+}
+
 self.onmessage = async (e) => {
   const { audio } = e.data;
   try {
@@ -53,11 +81,16 @@ self.onmessage = async (e) => {
 
     postMessage({ type: "status", message: `Transcribing on your ${backend === "gpu" ? "GPU" : "CPU"} ... longer files take a little longer.` });
 
-    const output = await transcriber(audio, {
-      chunk_length_s: 30,
-      stride_length_s: 5,
-      return_timestamps: true,
-    });
+    const opts = { chunk_length_s: 30, stride_length_s: 5, return_timestamps: true };
+    const streamer = liveStreamer(transcriber);
+    let output;
+    try {
+      output = await transcriber(audio, streamer ? { ...opts, streamer } : opts);
+    } catch (err) {
+      if (!streamer) throw err;
+      postMessage({ type: "partial-reset" });
+      output = await transcriber(audio, opts);
+    }
 
     postMessage({ type: "done", text: output.text || "", chunks: output.chunks || [], backend });
   } catch (err) {
