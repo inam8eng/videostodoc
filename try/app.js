@@ -103,6 +103,8 @@ function buildView() {
 // ---------- step, timer, encouragement ----------
 let step = "";
 let t0 = 0;
+let listenAt = 0;        // when listening began: "made in" counts only that
+let fetchedModel = false; // the AI was downloaded during this run
 let audioSecs = 0;
 let clockTimer = 0;
 let heardText = "";
@@ -110,6 +112,8 @@ let lastCheer = "";
 
 function setStep(s) {
   step = s;
+  if (s === "listen" && !listenAt) listenAt = performance.now();
+  if (s === "model") fetchedModel = true;
   V.steps.hidden = false;
   const at = STEPS.findIndex(([k]) => k === s);
   V.steps.querySelectorAll("li").forEach((li, i) => {
@@ -139,6 +143,7 @@ function tickClock() {
 }
 function startWork() {
   t0 = performance.now();
+  listenAt = 0; fetchedModel = false;
   heardText = ""; lastCheer = ""; audioSecs = 0;
   V.heard.hidden = true; V.heard.textContent = "";
   V.done.hidden = true;
@@ -225,7 +230,7 @@ function setStatus(msg, pct) {
 
 function ensureWorker() {
   if (worker) return worker;
-  worker = new Worker("worker.js?v=20261026b", { type: "module" });
+  worker = new Worker("worker.js?v=20261027", { type: "module" });
   worker.onmessage = (e) => {
     const d = e.data;
     if (d.type === "model") {
@@ -372,11 +377,14 @@ function renderResult(text, chunks, backendUsed) {
   setStatus("Done. Your transcript was made entirely on your own machine.");
   // What was made, in numbers: a small, honest moment of "it worked".
   const words = lastText.trim().split(/\s+/).filter(Boolean).length;
-  const took = Math.max(1, Math.round((performance.now() - t0) / 1000));
+  // Time spent listening, not downloading: a first visit's one-time model
+  // download is not how long transcription takes, and should not read so.
+  const took = Math.max(1, Math.round((performance.now() - (listenAt || t0)) / 1000));
   const chips = [`${words.toLocaleString()} words`];
   if (audioSecs) chips.push(`${fmtClock(audioSecs)} of audio`);
-  chips.push(`made in ${took} s`);
+  chips.push(`transcribed in ${took} s`);
   chips.push(backendUsed === "gpu" ? "on your GPU" : "on your CPU");
+  if (fetchedModel) chips.push("AI saved for next time");
   V.done.querySelector(".vdt-chips").innerHTML = chips.map((c) => `<span class="vdt-chip">${escapeHtml(c)}</span>`).join("");
   V.done.hidden = false;
   $("dlTxt").hidden = false; $("dlMd").hidden = false;

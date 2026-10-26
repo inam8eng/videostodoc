@@ -12,6 +12,9 @@ env.allowLocalModels = false;
 // to the preferred execution providers") through console.error. Keep the
 // console for real problems only.
 try { if (env.backends && env.backends.onnx) env.backends.onnx.logLevel = "error"; } catch (e) { /* older runtime */ }
+// The same, per model session: the placement note is printed while a session
+// is created, before the global level is applied on a first load.
+const QUIET = { logSeverityLevel: 3 };
 
 let transcriberPromise = null;
 let backend = "cpu";
@@ -32,6 +35,7 @@ async function getTranscriber(progress_callback) {
             // clear speech". fp32 gave the exact words, in 4 s for 27 s of
             // audio. It is about 40 MB more to download, once.
             dtype: { encoder_model: "fp32", decoder_model_merged: "q4" },
+            session_options: QUIET,
             progress_callback }
         );
         backend = "gpu";
@@ -44,7 +48,7 @@ async function getTranscriber(progress_callback) {
     const t = await pipeline(
       "automatic-speech-recognition",
       "Xenova/whisper-base",
-      { progress_callback }
+      { session_options: QUIET, progress_callback }
     );
     backend = "cpu";
     return t;
