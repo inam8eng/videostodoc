@@ -12,7 +12,7 @@
 
 ## Articles
 
-- [All articles](https://videostodoc.com/articles/): the full index of all 52 guides listed below
+- [All articles](https://videostodoc.com/articles/): the full index of all 55 guides listed below
 - [How to turn a YouTube video into a document](https://videostodoc.com/articles/youtube-video-to-document/): What are the free and paid ways to turn a YouTube video into a document, and which keeps the slides?
 - [Convert a YouTube video to PDF, slides included](https://videostodoc.com/articles/youtube-video-to-pdf/): How do you convert a YouTube video into a PDF that includes the on-screen slides, not just the words?
 - [YouTube video to text: 3 ways that actually work](https://videostodoc.com/articles/youtube-video-to-text/): What are the three working ways to get the text out of a YouTube video, and when does each one win?
@@ -58,6 +58,9 @@
 - [How to turn a video into Markdown notes for Obsidian](https://videostodoc.com/articles/video-to-markdown-for-obsidian/): How do you get a timestamped Markdown note with screen pictures that opens in an Obsidian vault?
 - [How to batch convert a folder of videos into documents](https://videostodoc.com/articles/batch-convert-videos-to-documents/): How do you turn a folder of videos or a list of links into one document each, and what happens when one fails?
 - [How to turn a Zoom recording into text](https://videostodoc.com/articles/zoom-recording-to-text/): Zoom gave you no transcript, so how do you turn the saved .mp4 into text with the shared screen kept?
+- [How to turn a Teams meeting recording into text](https://videostodoc.com/articles/microsoft-teams-recording-to-text/): Teams made no transcript or will not let you download the recording, so where is the .mp4 and how do you turn it into text?
+- [How to turn a Google Meet recording into text](https://videostodoc.com/articles/google-meet-recording-to-text/): Nobody switched on Transcripts in Meet, so where is the recording saved, who can download it, and how do you keep the slides?
+- [Turn an Urdu video into text](https://videostodoc.com/articles/urdu-video-to-text/): How do you get Urdu text out of a video when YouTube has no Urdu captions?
 - [How to extract the text shown on screen in a video](https://videostodoc.com/articles/extract-text-from-video-screen-not-audio/): Transcription only hears what is said, so how do you get the words shown on screen?
 - [How to turn a Vimeo or Dailymotion video into text](https://videostodoc.com/articles/vimeo-and-dailymotion-video-to-text/): Which Vimeo and Dailymotion privacy settings let any tool reach a video, and how do you get its words?
 - [How to turn a Facebook video into text](https://videostodoc.com/articles/facebook-video-to-text/): What can you get from Facebook's own captions, and why can no tool reach a private group video?
