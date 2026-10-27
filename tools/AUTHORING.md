@@ -44,7 +44,8 @@ target. In short:
   product is a small honest desktop tool and the writing should sound like it.
 - **Never promise what the app does not do.** Cross-check any capability claim
   against `CHANGELOG.md` in the app repo. Public videos only. Two machines per
-  licence. Apple Silicon only on Mac. $19 once.
+  licence, freed only by replying to the Gumroad receipt (there is no in-app
+  move). Apple Silicon only on Mac, macOS 14 or newer. $19 once.
 
 ## Structure of a good page
 
