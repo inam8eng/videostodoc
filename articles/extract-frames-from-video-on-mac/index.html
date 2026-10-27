@@ -27,10 +27,10 @@
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to extract frames from a video on a Mac", "description": "Photos exports one frame at a time and names the file by today's date. Here are the three routes to all of them on a Mac, and the honest limits of each.", "datePublished": "2026-09-24", "dateModified": "2026-09-24", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/extract-frames-from-video-on-mac/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to extract frames from a video on a Mac", "description": "Photos exports one frame at a time and names the file by today's date. Here are the three routes to all of them on a Mac, and the honest limits of each.", "datePublished": "2026-09-24", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/extract-frames-from-video-on-mac/"}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can QuickTime export all the frames of a video?", "acceptedAnswer": {"@type": "Answer", "text": "No. QuickTime Player can copy the single frame you are paused on, which you then paste into Preview and save, so it is one image per go. Saving a whole video as images needs ffmpeg in Terminal or an app built for that job."}}, {"@type": "Question", "name": "Where does a Mac save an exported video frame?", "acceptedAnswer": {"@type": "Answer", "text": "Photos writes it into your Pictures folder as a TIFF named Frame followed by the export date. That name records the day you exported it, not the moment in the video it came from."}}, {"@type": "Question", "name": "Do I need Terminal to extract frames from a video on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Only for the ffmpeg route. Photos and QuickTime need no Terminal at all, and VideoDoc needs one pasted line on first launch and then never again."}}, {"@type": "Question", "name": "Does this work on an Intel Mac?", "acceptedAnswer": {"@type": "Answer", "text": "The free routes do. Photos, QuickTime and ffmpeg all run on Intel Macs. VideoDoc does not, because its Mac build is Apple Silicon only, M1 or newer."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can QuickTime export all the frames of a video?", "acceptedAnswer": {"@type": "Answer", "text": "No. QuickTime Player can copy the single frame you are paused on, which you then paste into Preview and save, so it is one image per go. Saving a whole video as images needs ffmpeg in Terminal or an app built for that job."}}, {"@type": "Question", "name": "Where does a Mac save an exported video frame?", "acceptedAnswer": {"@type": "Answer", "text": "Photos writes it into your Pictures folder as a TIFF named Frame followed by the export date. That name records the day you exported it, not the moment in the video it came from."}}, {"@type": "Question", "name": "Do I need Terminal to extract frames from a video on a Mac?", "acceptedAnswer": {"@type": "Answer", "text": "Only for the ffmpeg route. Photos and QuickTime need no Terminal at all, and VideoDoc needs one pasted line on first launch and then never again."}}, {"@type": "Question", "name": "Does this work on an Intel Mac?", "acceptedAnswer": {"@type": "Answer", "text": "The free routes do. Photos, QuickTime and ffmpeg all run on Intel Macs. VideoDoc does not, because its Mac build is Apple Silicon only, M1 or newer, on macOS 14 Sonoma or newer."}}]}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to extract frames from a video on a Mac"}]}
@@ -82,12 +82,12 @@
       <header class="art-head">
         <span class="cat">Work</span>
         <h1>How to extract frames from a video on a Mac</h1>
-        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 24, 2026</span><span class="dotsep">·</span><span>9 min read</span></div>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 28, 2026</span><span class="dotsep">·</span><span>9 min read</span></div>
       </header>
 
       <div class="answer">
         <span class="lbl">The short answer</span>
-        <p>You want pictures from a video, and a Mac can export one video frame at a time. You open Photos and drag the playhead to the moment you want, then you choose File, Export, Export Frame to Pictures, and you get a single TIFF named by today's date. If you want more than a few frames you will need ffmpeg in Terminal, or an app that saves the whole video as timestamped images. VideoDoc does the second thing, but it only works on Apple Silicon Macs.</p>
+        <p>You want pictures from a video, and a Mac can export one video frame at a time. You open Photos and drag the playhead to the moment you want, then you choose File, Export, Export Frame to Pictures, and you get a single TIFF named by today's date. If you want more than a few frames you will need ffmpeg in Terminal, or an app that saves the whole video as timestamped images. VideoDoc does the second thing, but it only works on Apple Silicon Macs with macOS 14 or newer.</p>
       </div>
 
       <div class="prose">
@@ -126,7 +126,7 @@
             <tbody>
               <tr><td>Photos or QuickTime</td><td>One</td><td>The day you exported it</td><td>Nothing, it is already installed</td><td>Free</td></tr>
               <tr><td>ffmpeg in Terminal</td><td>All of them</td><td>A counter, not a moment</td><td>Homebrew, developer tools, one command</td><td>Free</td></tr>
-              <tr><td>VideoDoc</td><td>All of them</td><td>The exact moment, to the hundredth of a second</td><td>An Apple Silicon Mac and one pasted Terminal line</td><td>Free to try, one payment for Pro</td></tr>
+              <tr><td>VideoDoc</td><td>All of them</td><td>The exact moment, to the hundredth of a second</td><td>An Apple Silicon Mac on macOS 14 or newer, and one pasted Terminal line</td><td>Free to try, one payment for Pro</td></tr>
             </tbody>
         </table></div>
 
@@ -134,7 +134,7 @@
 
         <h2 id="how-does-videodoc-handle-this-on-a-mac">How does VideoDoc handle this on a Mac?</h2>
 
-        <p>I build the tool called VideoDoc, so you should keep that in mind as you read this section. It is a normal app on a Mac that you double-click to open. Saving frames is one of the three options you pick at the top, along with a document for AI, or just the video file, or every frame as images. If you pick the third option it saves the entire video as pictures and stops without making a transcript, and this makes it much faster because processing the audio is always the slow part of the work.</p>
+        <p>I build the tool called VideoDoc, so you should keep that in mind as you read this section. It is a normal app on a Mac that you double-click to open. Saving frames is one of the three options you pick at the top: A document for AI, Every frame as images, or Just the video file. If you pick Every frame as images it saves the entire video as pictures and stops without making a transcript, and this makes it much faster because processing the audio is always the slow part of the work.</p>
 
         <ol>
           <li>You drop in a video file from your Mac, or you paste a public link.</li>
@@ -144,18 +144,18 @@
 
         <p>There are two things in this process that explain why I built the tool this way. The file name carries the timestamp, so you can read the exact moment of a picture right in Finder without opening any files. The tool also drops identical frames as it works. When an image is a pixel for pixel copy of the one before it, only the first one is kept, so on a slide deck or a screen recording you throw away most of the pictures without losing anything that actually changed.</p>
 
-        <p>Your Mac documents are saved in your home folder under VideoDoc, so you can find them easily later on. The whole process runs locally on your own machine. The very first time you launch it the app downloads the speech engine, which is up to about 500 MB. After that first download, your own files work fine with no internet connection at all.</p>
+        <p>Your Mac documents are saved in your home folder, then VideoDoc, then output, so you can find them easily later on. The whole process runs locally on your own machine. The very first time you launch it the app downloads the speech engine, which is about 500 MB (about 1.5 GB for Best quality). After that first download, your own files work fine with no internet connection at all.</p>
 
         <div class="callout">
           <span class="lbl">Honest limits</span>
-          <p>VideoDoc on Mac needs Apple Silicon, like an M1 or newer, and there is no Intel Mac build. I want to tell you this plainly so you do not buy it and find out later. Apple blocks apps that are not registered with them, and registration costs $99 a year, which this tool has not earned yet, so the first launch needs one pasted Terminal line, once, explained on the <a href="../../mac/">Mac setup page</a>. Links work for public videos only, and if what you are capturing genuinely changes in every frame, duplicate removal will give you back almost nothing because there was nothing repeated to remove.</p>
+          <p>VideoDoc on Mac needs Apple Silicon, like an M1 or newer, running macOS 14 Sonoma or newer, and there is no Intel Mac build. I want to tell you this plainly so you do not buy it and find out later. Apple blocks apps that are not registered with them, and registration costs $99 a year, which this tool has not earned yet, so the first launch needs one pasted Terminal line, once, explained on the <a href="../../mac/">Mac setup page</a>. Links work for public videos only, and if what you are capturing genuinely changes in every frame, duplicate removal will give you back almost nothing because there was nothing repeated to remove.</p>
         </div>
 
         <div class="ctabox">
           <div class="halo" aria-hidden="true"></div>
           <span class="k">Every frame, off one Mac</span>
           <h3>Try it on a video already sitting on your Mac.</h3>
-          <p>Free in your browser to see what the output looks like. The Mac app is Apple Silicon, M1 or newer, and Pro is one payment for a lifetime licence that covers 2 machines.</p>
+          <p>Free in your browser to see what the output looks like. The Mac app is Apple Silicon, M1 or newer, on macOS 14 or newer, and Pro is one payment for a lifetime licence that covers 2 machines.</p>
           <div class="row">
             <a class="btn solid" href="../../try/">Try free in your browser</a>
             <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · lifetime</a>
@@ -188,7 +188,7 @@
           </details>
           <details>
             <summary>Does this work on an Intel Mac?</summary>
-            <p>The free routes do. Photos, QuickTime and ffmpeg all run on Intel Macs. VideoDoc does not, because its Mac build is Apple Silicon only, M1 or newer.</p>
+            <p>The free routes do. Photos, QuickTime and ffmpeg all run on Intel Macs. VideoDoc does not, because its Mac build is Apple Silicon only, M1 or newer, on macOS 14 Sonoma or newer.</p>
           </details>
         </div>
 

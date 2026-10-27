@@ -1,6 +1,6 @@
 # VideoDoc
 
-> VideoDoc turns any video into one document your AI can read. ChatGPT and Claude cannot watch videos, so VideoDoc gives them a timestamped transcript plus the on-screen slides, code and diagrams captured as images, built entirely on your own computer with nothing uploaded. The free version runs in the browser. Pro is the desktop app for Windows 10/11 and Apple Silicon Macs, $19 one time, use on 2 computers, 30 day money back.
+> VideoDoc turns any video into one document your AI can read. ChatGPT and Claude cannot watch videos, so VideoDoc gives them a timestamped transcript plus the on-screen slides, code and diagrams captured as images, built entirely on your own computer with nothing uploaded. The free version runs in the browser. Pro is the desktop app for Windows 10/11 and Apple Silicon Macs on macOS 14 or newer, $19 one time, use on 2 computers, 30 day money back.
 
 ## Product
 
