@@ -27,7 +27,7 @@
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to batch convert a folder of videos into documents without babysitting it", "description": "Load a folder of videos or a list of links once and get a document for each, screen included. Plus what happens when one video in the batch fails.", "datePublished": "2026-10-05", "dateModified": "2026-10-08", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/batch-convert-videos-to-documents-hero-16x9.jpg", "https://videostodoc.com/assets/art/batch-convert-videos-to-documents-hero-4x3.jpg", "https://videostodoc.com/assets/art/batch-convert-videos-to-documents-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/batch-convert-videos-to-documents/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to batch convert a folder of videos into documents without babysitting it", "description": "Load a folder of videos or a list of links once and get a document for each, screen included. Plus what happens when one video in the batch fails.", "datePublished": "2026-10-05", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/batch-convert-videos-to-documents-hero-16x9.jpg", "https://videostodoc.com/assets/art/batch-convert-videos-to-documents-hero-4x3.jpg", "https://videostodoc.com/assets/art/batch-convert-videos-to-documents-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/batch-convert-videos-to-documents/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I transcribe multiple videos at once for free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the free Whisper command line accepts multiple files in a single terminal command and generates a transcript for each one. It extracts only the spoken words, and any file error is only displayed inside the terminal log."}}, {"@type": "Question", "name": "Can VideoDoc convert a whole folder of videos?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you point the desktop app at a folder on your drive, and it turns each video into a task to make individual files or one combined document. Everything processes locally on your computer."}}, {"@type": "Question", "name": "What happens if one video in a batch fails?", "acceptedAnswer": {"@type": "Answer", "text": "VideoDoc skips the problematic file, records the issue, and moves right to the next item in line. You get a Retry button for that failed video, and the Excel sheet marks which file had an issue."}}, {"@type": "Question", "name": "Are my videos uploaded when I batch convert them?", "acceptedAnswer": {"@type": "Answer", "text": "No, they stay on your system. Local files never leave your machine, and online links are downloaded over your own network connection. All transcription work and frame capture happen locally on your computer."}}]}
@@ -86,7 +86,7 @@
       <header class="art-head">
         <span class="cat">Work</span>
         <h1>How to batch convert a folder of videos into documents without babysitting it</h1>
-        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 8, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 28, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
       </header>
 
       <div class="answer">
@@ -95,7 +95,7 @@
       </div>
 
       <div class="prose">
-        <p>You might have thirty video files sitting in a folder, or a list of course links saved in a note, and you need each one turned into a document for searching or passing to an AI tool. Doing that one video at a time takes hours of sitting at your desk. It is much easier to load everything at once, click Start, and let the computer handle the work.</p>
+        <p>You might have thirty video files sitting in a folder, or a list of course links saved in a note, and you need each one turned into a document for searching or passing to an AI tool. Doing that one video at a time takes hours of sitting at your desk. It is much easier to load everything at once, start it with one click, and let the computer handle the work.</p>
 
         <p><strong>Load your entire batch at once, and make sure a broken video skips itself instead of stopping the queue.</strong> That simple point is what determines whether you wake up to 30 finished documents or 4. Most batch tools manage good files easily, but you see the real difference when video number five happens to be corrupted.</p>
 
@@ -178,7 +178,7 @@
           <li>Keep your computer plugged in and set the operating system sleep timer to Never. A computer that goes to sleep halts your queue no matter which software you run.</li>
           <li>Check your available storage before starting. Text documents take up very little space, but downloading and saving many large video files can fill a hard drive.</li>
           <li>Set your PC power profile to Auto. The app checks your processor and graphics card automatically to select a fast, safe processing speed.</li>
-          <li>Process a short sample video first to check the formatting. Once the document looks right, load your entire list and click Start.</li>
+          <li>Process a short sample video first to check the formatting. Once the document looks right, load your entire list and click Add all to queue (or Make document for a folder).</li>
         </ol>
 
         <div class="callout">
