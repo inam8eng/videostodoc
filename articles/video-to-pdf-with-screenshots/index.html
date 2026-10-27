@@ -27,7 +27,7 @@
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "Turn a video into a PDF with screenshots your AI can read", "description": "Most video to PDF tools shrink the screenshots until your AI cannot read the slide. Here is the resolution that survives, and how to get it from a local file.", "datePublished": "2026-09-04", "dateModified": "2026-09-04", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/video-to-pdf-with-screenshots/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "Turn a video into a PDF with screenshots your AI can read", "description": "Most video to PDF tools shrink the screenshots until your AI cannot read the slide. Here is the resolution that survives, and how to get it from a local file.", "datePublished": "2026-09-04", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/video-to-pdf-with-screenshots/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I convert a video to PDF without uploading it anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. VideoDoc reads the file straight off your drive and builds the PDF on your own machine, so nothing leaves the computer. The free ffmpeg route in this article is fully local too."}}, {"@type": "Question", "name": "What resolution should the screenshots in the PDF be?", "acceptedAnswer": {"@type": "Answer", "text": "1080p on the long edge is the practical target. Vision models cap the long edge somewhere around 1456 to 1568 pixels anyway, so going higher buys little, and going lower loses small text for good."}}, {"@type": "Question", "name": "Why does my AI get slide details wrong from a PDF?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always because the screenshot was too small by the time the model read it. Open that image at 100 percent zoom, and if you cannot read the smallest text on it, the model is guessing as well."}}, {"@type": "Question", "name": "Does the PDF include timestamps?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. VideoDoc timestamps the transcript and places each screenshot beside the words spoken over it. In the free ffmpeg route your timestamp is the file number multiplied by the sampling interval you chose."}}]}
@@ -82,7 +82,7 @@
       <header class="art-head">
         <span class="cat">Guide</span>
         <h1>Turn a video into a PDF with screenshots your AI can read</h1>
-        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 4, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 28, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
       </header>
 
       <div class="answer">
@@ -147,12 +147,12 @@
 
         <h2 id="how-does-videodoc-build-the-pdf-from-a-file-on-your-computer">How does VideoDoc build the PDF from a file on your computer?</h2>
 
-        <p>VideoDoc has a Local tab. You point it at a file already sitting on your drive, no link and no upload, and it builds the document on your own machine.</p>
+        <p>VideoDoc has a Use a local file tab. You point it at a file already sitting on your drive, no link and no upload, and it builds the document on your own machine.</p>
 
         <ol>
-          <li>Open VideoDoc, choose the Local tab, and pick your video file.</li>
-          <li>Set quality to Best, which keeps the screenshots large and sharp instead of small and quick.</li>
-          <li>Press Start. It transcribes on your CPU or graphics card and watches the picture as it goes.</li>
+          <li>Open VideoDoc, click Use a local file, and pick your video file.</li>
+          <li>Click Adjust and set Engine quality to Best, which keeps the screenshots large and sharp instead of small and quick. Best downloads a larger speech engine once, about 1.5 GB.</li>
+          <li>Click Make document. It transcribes on your CPU or graphics card and watches the picture as it goes.</li>
           <li>You get a PDF and a matching Markdown file in the same folder.</li>
         </ol>
 

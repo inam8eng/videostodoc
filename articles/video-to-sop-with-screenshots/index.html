@@ -27,7 +27,7 @@
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a video into an SOP with screenshots", "description": "Make an SOP where every step is a real screenshot from your recording, with one line under it. Pick the right frame, cover private data, upload nothing.", "datePublished": "2026-09-24", "dateModified": "2026-09-24", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/video-to-sop-with-screenshots-hero-16x9.jpg", "https://videostodoc.com/assets/art/video-to-sop-with-screenshots-hero-4x3.jpg", "https://videostodoc.com/assets/art/video-to-sop-with-screenshots-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/video-to-sop-with-screenshots/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a video into an SOP with screenshots", "description": "Make an SOP where every step is a real screenshot from your recording, with one line under it. Pick the right frame, cover private data, upload nothing.", "datePublished": "2026-09-24", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/video-to-sop-with-screenshots-hero-16x9.jpg", "https://videostodoc.com/assets/art/video-to-sop-with-screenshots-hero-4x3.jpg", "https://videostodoc.com/assets/art/video-to-sop-with-screenshots-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/video-to-sop-with-screenshots/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I make an SOP with screenshots from a video I already recorded?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can run the file through VideoDoc on your own computer, and it gives you a capture of every screen change next to the narration. Your AI then turns those images into one step per picture, and nothing gets uploaded to the internet."}}, {"@type": "Question", "name": "Will the tool add arrows and highlights to the screenshots?", "acceptedAnswer": {"@type": "Answer", "text": "No, VideoDoc just gives you clean pictures. Drawing one red box or arrow per screenshot yourself in Word, Google Docs or Paint takes only a few seconds for each image."}}, {"@type": "Question", "name": "What if my recording has no voice?", "acceptedAnswer": {"@type": "Answer", "text": "You still get the automatic captures, and choosing every frame as images gives you the entire recording as a set of pictures. You can ask your AI to write one plain line per screenshot, or you can write the text yourself."}}, {"@type": "Question", "name": "Does it hide passwords and customer data on screen?", "acceptedAnswer": {"@type": "Answer", "text": "No, it only covers faces. Anything private on the screen stays in the picture, so you must crop or cover it before you share the SOP. I always suggest recording with test data in the first place to avoid this problem."}}]}
@@ -86,7 +86,7 @@
       <header class="art-head">
         <span class="cat">Work</span>
         <h1>How to turn a video into an SOP with screenshots</h1>
-        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 24, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 28, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
       </header>
 
       <div class="answer">
@@ -133,11 +133,11 @@
         <h2 id="how-do-i-make-the-screenshot-sop-on-my-own-computer">How do I make the screenshot SOP on my own computer?</h2>
 
         <ol>
-          <li>Open VideoDoc, choose the Local tab, pick the recording, and choose A document for AI.</li>
-          <li>Set quality to Best, so small text in menus and dialogs stays readable in the pictures.</li>
-          <li>Set density to Detailed. It keeps a capture when the screen changes, at least four seconds after the last one, up to 320 captures. That is the right spacing for clicking through menus.</li>
+          <li>Open VideoDoc, click Use a local file, pick the recording, and choose A document for AI.</li>
+          <li>Click Adjust and set Engine quality to Best, so small text in menus and dialogs stays readable in the pictures. Best downloads a larger speech engine once, about 1.5 GB.</li>
+          <li>Still under Adjust, set Image detail to Detailed. It keeps a capture when the screen changes, at least four seconds after the last one, up to 320 captures. That is the right spacing for clicking through menus.</li>
           <li>If a webcam bubble is in the corner, tick the face cover. It fills the face with solid black in the pictures and in the document.</li>
-          <li>Press Start. You get a PDF and a Markdown copy with every capture sitting beside the sentence that was said over it.</li>
+          <li>Click Make document. You get a PDF and a Markdown copy with every capture sitting beside the sentence that was said over it.</li>
           <li>Press Copy for AI and paste it into ChatGPT or Claude with this: write one step per capture, one short instruction line each, keep my reasons as notes, and quote the timestamp so I can find the picture.</li>
         </ol>
 

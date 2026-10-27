@@ -27,10 +27,10 @@
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a screen recording into documentation", "description": "Someone recorded how to do the thing and nobody wrote it down. Get numbered steps with screenshots out of that recording, free by hand or on your own machine.", "datePublished": "2026-09-03", "dateModified": "2026-09-03", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/screen-recording-to-documentation/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a screen recording into documentation", "description": "Someone recorded how to do the thing and nobody wrote it down. Get numbered steps with screenshots out of that recording, free by hand or on your own machine.", "datePublished": "2026-09-03", "dateModified": "2026-10-28", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/screen-recording-to-documentation/"}
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can VideoDoc detect my clicks and write the steps by itself?", "acceptedAnswer": {"@type": "Answer", "text": "No. It captures every distinct screen beside the timestamped narration, and your AI writes the numbered steps from that document. Cloud converters such as Docsie do detect clicks, at the cost of uploading the recording."}}, {"@type": "Question", "name": "Is the screen recording uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. VideoDoc reads the file from your disk, and the transcription and captures run on your own processor or graphics card. That is the reason to use it for recordings of internal systems."}}, {"@type": "Question", "name": "What if the screen recording has no voice over?", "acceptedAnswer": {"@type": "Answer", "text": "Then there is nothing to transcribe and the screen captures are the whole document. Have your AI write a line for each screen, because a caption beside each image is what a model can actually use."}}, {"@type": "Question", "name": "Which settings should I use for a screen recording?", "acceptedAnswer": {"@type": "Answer", "text": "A document for AI, quality Best, density Detailed, and the face cover ticked if there is a webcam bubble. For a click too fast for the four second gap, add the every-frame export and use its CSV index."}}]}
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can VideoDoc detect my clicks and write the steps by itself?", "acceptedAnswer": {"@type": "Answer", "text": "No. It captures every distinct screen beside the timestamped narration, and your AI writes the numbered steps from that document. Cloud converters such as Docsie do detect clicks, at the cost of uploading the recording."}}, {"@type": "Question", "name": "Is the screen recording uploaded anywhere?", "acceptedAnswer": {"@type": "Answer", "text": "No. VideoDoc reads the file from your disk, and the transcription and captures run on your own processor or graphics card. That is the reason to use it for recordings of internal systems."}}, {"@type": "Question", "name": "What if the screen recording has no voice over?", "acceptedAnswer": {"@type": "Answer", "text": "Then there is nothing to transcribe and the screen captures are the whole document. Have your AI write a line for each screen, because a caption beside each image is what a model can actually use."}}, {"@type": "Question", "name": "Which settings should I use for a screen recording?", "acceptedAnswer": {"@type": "Answer", "text": "A document for AI, Engine quality Best, Image detail Detailed (both under Adjust), and the face cover ticked if there is a webcam bubble. For a click too fast for the four second gap, add the every-frame export and use its CSV index."}}]}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to turn a screen recording into documentation"}]}
@@ -82,7 +82,7 @@
       <header class="art-head">
         <span class="cat">Work</span>
         <h1>How to turn a screen recording into documentation</h1>
-        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated September 3, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 28, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
       </header>
 
       <div class="answer">
@@ -135,11 +135,11 @@
         <h2 id="how-do-i-turn-the-recording-into-a-document-on-my-own-machine">How do I turn the recording into a document on my own machine?</h2>
 
         <ol>
-          <li>Open VideoDoc, pick the Local tab, choose the recording, and choose <strong>A document for AI</strong>.</li>
-          <li>Set quality to Best, which keeps the captures larger, so small text in a settings dialog stays readable.</li>
-          <li>Set density to <strong>Detailed</strong>. It keeps a screen change at least four seconds after the last one kept, up to 320 captures. Smart waits eight seconds and stops at 160, right for a lecture and too sparse for menus.</li>
+          <li>Open VideoDoc, click <strong>Use a local file</strong>, choose the recording, and choose <strong>A document for AI</strong>.</li>
+          <li>Click <strong>Adjust</strong> and set <strong>Engine quality</strong> to Best, which keeps the captures larger, so small text in a settings dialog stays readable. Best downloads a larger speech engine once, about 1.5 GB.</li>
+          <li>Still under Adjust, set <strong>Image detail</strong> to <strong>Detailed</strong>. It keeps a screen change at least four seconds after the last one kept, up to 320 captures. Smart waits eight seconds and stops at 160, right for a lecture and too sparse for menus.</li>
           <li>If there is a webcam bubble, tick the face cover. It fills the face with solid black in the frames and in the document.</li>
-          <li>Press Start. The slow half is listening to the audio, since a screen recording has no captions, so without a graphics card expect a fair fraction of the recording's own length.</li>
+          <li>Click <strong>Make document</strong>. The slow half is listening to the audio, since a screen recording has no captions, so without a graphics card expect a fair fraction of the recording's own length.</li>
         </ol>
 
         <p>You get a PDF and a Markdown copy: the narration in timestamped blocks, each capture beside the sentence being said over it. The words and the screen are already matched, the half of the job the by-hand method spends its hour on.</p>
@@ -173,7 +173,7 @@
           <div class="halo" aria-hidden="true"></div>
           <span class="k">One recording, written down</span>
           <h3>Get it on paper before the person who made it leaves.</h3>
-          <p>Free in your browser: the narration as text from a file you already have, nothing uploaded. Pro adds the screen captures, the density modes, face covering and the every-frame export. $19 once, lifetime, two machines.</p>
+          <p>Free in your browser: the narration as text from a file you already have, nothing uploaded. Pro adds the screen captures, the Image detail modes, face covering and the every-frame export. $19 once, lifetime, two machines.</p>
           <div class="row">
             <a class="btn solid" href="../../try/">Try free in your browser</a>
             <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · $19 lifetime</a>
@@ -196,7 +196,7 @@
           </details>
           <details>
             <summary>Which settings should I use for a screen recording?</summary>
-            <p>A document for AI, quality Best, density Detailed, and the face cover ticked if there is a webcam bubble. For a click too fast for the four second gap, add the every-frame export and use its CSV index.</p>
+            <p>A document for AI, Engine quality Best, Image detail Detailed (both under Adjust), and the face cover ticked if there is a webcam bubble. For a click too fast for the four second gap, add the every-frame export and use its CSV index.</p>
           </details>
         </div>
 
