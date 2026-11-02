@@ -16,6 +16,30 @@
   ],
   "queue": [
     {
+      "slug": "kaltura-lecture-to-notes",
+      "keyword": "kaltura video to notes",
+      "angle": "Added 2026-11-02 by the weekly pass. Information gain: Kaltura (often inside Canvas, Moodle or Blackboard as My Media) lets the owner switch downloads on or off per video, so most students see no download option; check Kaltura's own knowledge center before writing. Honest path: the captions Kaltura shows, asking the lecturer, never getting around a switched off download, then words and slides together locally from a file you are allowed to have.",
+      "hub_section": "study",
+      "category": "Study",
+      "done": null
+    },
+    {
+      "slug": "canvas-studio-recording-to-notes",
+      "keyword": "canvas studio video to notes",
+      "angle": "Added 2026-11-02 by the weekly pass. Information gain: Canvas Studio has its own download setting per media item and its own captions, separate from Panopto and Kaltura; check Instructure's community guides before writing. Same honest path as the Panopto page, written for the student who only sees a Studio player inside a course.",
+      "hub_section": "study",
+      "category": "Study",
+      "done": null
+    },
+    {
+      "slug": "youtube-video-to-notion",
+      "keyword": "youtube video to notion",
+      "angle": "Added 2026-11-02 by the weekly pass. Information gain: Notion imports Markdown, so the VideoDoc Markdown with its timestamps and images becomes a Notion page; test the real import and say exactly what survives (headings, images, links) and what does not. Free route: paste a transcript, and where it stops.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
       "slug": "loom-video-to-text",
       "keyword": "loom video to text",
       "angle": "Added 2026-10-26 by the weekly pass. Information gain: the meeting pages cover Zoom, Teams and Meet but not async video. Loom makes its own transcript, but whether a viewer can copy it or download the video depends on the creator's settings and plan (check Loom's own help pages before writing). Cover what you can get from Loom itself, getting the file when the creator allows it, and keeping the screen, which is the whole point of a Loom and which a transcript drops.",

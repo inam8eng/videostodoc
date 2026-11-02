@@ -12,7 +12,7 @@
 
 ## Articles
 
-- [All articles](https://videostodoc.com/articles/): the full index of all 55 guides listed below
+- [All articles](https://videostodoc.com/articles/): the full index of all 58 guides listed below
 - [How to turn a YouTube video into a document](https://videostodoc.com/articles/youtube-video-to-document/): What are the free and paid ways to turn a YouTube video into a document, and which keeps the slides?
 - [Convert a YouTube video to PDF, slides included](https://videostodoc.com/articles/youtube-video-to-pdf/): How do you convert a YouTube video into a PDF that includes the on-screen slides, not just the words?
 - [YouTube video to text: 3 ways that actually work](https://videostodoc.com/articles/youtube-video-to-text/): What are the three working ways to get the text out of a YouTube video, and when does each one win?
@@ -68,6 +68,9 @@
 - [Video to document or a transcription service](https://videostodoc.com/articles/video-to-document-vs-transcription-services/): When do you need a transcription service, and when do you need the screen kept as well?
 - [How to get code out of a six hour coding stream](https://videostodoc.com/articles/extract-code-snippets-from-a-coding-stream/): How do you find and read the few minutes of code inside a long coding stream without watching it all?
 - [How to turn a video into training images for an AI dataset](https://videostodoc.com/articles/video-frames-for-ai-training-data/): What frame rate, duplicate removal and train and test split make a clean image dataset from video?
+- [How to turn a Loom video into text without losing the screen](https://videostodoc.com/articles/loom-video-to-text/): Who can download a Loom by plan and role, the free transcript, and how do you keep the screen?
+- [How to turn a Webex recording into text, even when Webex made no transcript](https://videostodoc.com/articles/webex-recording-to-text/): Why does Webex skip some transcripts, who can get the MP4, and how do you keep the shared screen?
+- [How to turn a Panopto lecture into notes, even when the download button is missing](https://videostodoc.com/articles/panopto-lecture-recording-to-notes/): Why is a Panopto download often switched off, what free transcript and notes does Panopto give you, and how do you keep the slides?
 
 ## Facts
 
