@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://videostodoc.com/articles/</loc>
-    <lastmod>2026-10-31</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -68,7 +68,7 @@
   </url>
   <url>
     <loc>https://videostodoc.com/articles/feed-video-to-chatgpt-or-claude/</loc>
-    <lastmod>2026-08-27</lastmod>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -369,6 +369,12 @@
   <url>
     <loc>https://videostodoc.com/articles/webex-recording-to-text/</loc>
     <lastmod>2026-10-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://videostodoc.com/articles/panopto-lecture-recording-to-notes/</loc>
+    <lastmod>2026-11-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

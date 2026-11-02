@@ -27,7 +27,7 @@
   (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
 </script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a Webex recording into text, even when Webex made no transcript", "description": "No transcript on your Webex recording? Who can get the MP4, why Webex skips some transcripts, and how to turn it into text with the shared screen kept.", "datePublished": "2026-10-31", "dateModified": "2026-10-31", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": "https://videostodoc.com/assets/og.png", "mainEntityOfPage": "https://videostodoc.com/articles/webex-recording-to-text/"}
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a Webex recording into text, even when Webex made no transcript", "description": "No transcript on your Webex recording? Who can get the MP4, why Webex skips some transcripts, and how to turn it into text with the shared screen kept.", "datePublished": "2026-10-31", "dateModified": "2026-11-02", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/webex-recording-to-text-hero-16x9.jpg", "https://videostodoc.com/assets/art/webex-recording-to-text-hero-4x3.jpg", "https://videostodoc.com/assets/art/webex-recording-to-text-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/webex-recording-to-text/"}
 </script>
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does my Webex recording have no transcript?", "acceptedAnswer": {"@type": "Answer", "text": "Either your site admin has not switched on recording transcripts, or it was a local recording, which never gets one. Webex also skips the transcript when it expects poor results, for example noisy audio, heavy accents or words that are not English."}}, {"@type": "Question", "name": "How long does a Webex transcript take?", "acceptedAnswer": {"@type": "Answer", "text": "Cisco says it usually appears within about twice the length of the meeting. In rare cases it can take up to 24 hours, so check again later before you give up on it."}}, {"@type": "Question", "name": "Can I download a Webex recording if I was not the host?", "acceptedAnswer": {"@type": "Answer", "text": "Usually you need the host to share the recording link and its password, or to send you the file. If the meeting was linked to a space in the Webex App, everyone in the space is treated as the host and can open it."}}, {"@type": "Question", "name": "Can I record a Webex meeting on the free plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, but only to your own computer and only from the desktop app. Cloud recording, and with it the Webex transcript, needs a paid plan."}}]}
@@ -75,14 +75,18 @@
     <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">webex-recording-to-text</span></div>
 
     <figure class="arthero">
-      <img src="../../assets/art/webex-recording-to-text.jpg" alt="VideoDoc illustration for this guide" width="1280" height="720" loading="eager" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/webex-recording-to-text-hero-640.avif 640w, ../../assets/art/webex-recording-to-text-hero-960.avif 960w, ../../assets/art/webex-recording-to-text-hero-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/webex-recording-to-text-hero-640.webp 640w, ../../assets/art/webex-recording-to-text-hero-960.webp 960w, ../../assets/art/webex-recording-to-text-hero-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/webex-recording-to-text-hero.jpg" alt="A laptop on a desk showing a paused video meeting with a shared diagram, a notebook beside it" width="1280" height="714" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
     </figure>
 
     <article class="art">
       <header class="art-head">
         <span class="cat">Work</span>
         <h1>How to turn a Webex recording into text, even when Webex made no transcript</h1>
-        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated October 31, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated November 2, 2026</span><span class="dotsep">·</span><span>7 min read</span></div>
       </header>
 
       <div class="answer">
@@ -115,6 +119,14 @@
 
         <h2 id="where-is-a-webex-recording-saved-and-who-can-download-it">Where is a Webex recording saved, and who can download it?</h2>
 
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/webex-recording-to-text-padlock-640.avif 640w, ../../assets/art/webex-recording-to-text-padlock-960.avif 960w, ../../assets/art/webex-recording-to-text-padlock-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/webex-recording-to-text-padlock-640.webp 640w, ../../assets/art/webex-recording-to-text-padlock-960.webp 960w, ../../assets/art/webex-recording-to-text-padlock-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/webex-recording-to-text-padlock.jpg" alt="A small padlock resting on a closed laptop, like a recording only the host can hand out" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
         <p>Webex has two kinds of recording, and Cisco's <a href="https://help.webex.com/en-us/article/n62735y/Webex-Record-a-Meeting">Record a meeting page</a> says your plan decides which one you can use. Cloud recording is not available on the free plan. It works on the Starter, Plus and Business plans, and on enterprise plans it is whatever the site administrator configured. Recording to your own computer works on the free, Starter, Plus and Business plans, and on the free plan only from the desktop app.</p>
 
         <p>Both kinds save as MP4. A cloud recording goes to the host's Webex site, and the host finds it in User Hub under Recordings, where they can play, download and share it. Cisco says it can take up to 24 hours to arrive. A local recording just sits in a folder on the computer of the person who pressed Record, and it leaves out the chat and participants panels.</p>
@@ -135,6 +147,14 @@
         <p>This also works on the calls Webex refused to transcribe, because Whisper understands many languages, not only English. But it gives you the spoken words and nothing else. It does not know who was speaking, and it cannot see the screen.</p>
 
         <h2 id="how-do-i-keep-the-shared-screen-not-just-the-words">How do I keep the shared screen, not just the words?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/webex-recording-to-text-screen-640.avif 640w, ../../assets/art/webex-recording-to-text-screen-960.avif 960w, ../../assets/art/webex-recording-to-text-screen-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/webex-recording-to-text-screen-640.webp 640w, ../../assets/art/webex-recording-to-text-screen-960.webp 960w, ../../assets/art/webex-recording-to-text-screen-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/webex-recording-to-text-screen.jpg" alt="Printed screenshots of a shared spreadsheet laid beside typed meeting notes, the part a transcript leaves out" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
 
         <p>Cisco says a cloud recording includes the audio, the video and anything shared during the meeting. So the slides, the spreadsheet and the network diagram are all inside the MP4. The transcript only has the words, and that is a real problem in a work meeting, where someone says "this row here is the one that failed" and the row is only on the screen.</p>
 
