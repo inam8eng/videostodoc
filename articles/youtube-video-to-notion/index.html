@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YouTube Video to Notion: Notes With the Pictures (2026)</title>
+<meta name="description" content="Turn a YouTube video into a Notion page with the words, timestamps and screen pictures. The free way, the zip import that keeps the images, and the limits.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/youtube-video-to-notion/">
+<meta property="og:title" content="Turn a YouTube video into a Notion page">
+<meta property="og:description" content="The free transcript way, the zip import that keeps the pictures, and what Notion drops.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/youtube-video-to-notion/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a YouTube video into a Notion page, pictures included", "description": "Turn a YouTube video into a Notion page with the words, timestamps and screen pictures. The free way, the zip import that keeps the images, and the limits.", "datePublished": "2026-11-06", "dateModified": "2026-11-06", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/youtube-video-to-notion-hero-16x9.jpg", "https://videostodoc.com/assets/art/youtube-video-to-notion-hero-4x3.jpg", "https://videostodoc.com/assets/art/youtube-video-to-notion-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/youtube-video-to-notion/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can Notion transcribe a YouTube video?", "acceptedAnswer": {"@type": "Answer", "text": "No. Pasting a YouTube link into Notion gives you an embedded player, not the words. You have to bring in a transcript or a document made from the video."}}, {"@type": "Question", "name": "How do I import a Markdown file with images into Notion?", "acceptedAnswer": {"@type": "Answer", "text": "Keep the Markdown file and its images folder together. Zip the whole folder and import the zip with Convert Zip to pages. If you import the Markdown file alone, the picture links point at files Notion never received."}}, {"@type": "Question", "name": "What is the file size limit for a Notion import?", "acceptedAnswer": {"@type": "Answer", "text": "Notion's help page gives 5 MB per file on the Free plan and 50 MB per file on paid plans. A ZIP import can be up to 5 GB, but very large file counts can sometimes fail."}}, {"@type": "Question", "name": "Do the timestamps stay clickable in Notion?", "acceptedAnswer": {"@type": "Answer", "text": "They come in as bold text, like [04:12], not as links to that moment. The video's source link stays at the top of the page, so you can open it and skip to the time yourself."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to turn a YouTube video into a Notion page, pictures included"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">youtube-video-to-notion</span></div>
+
+    <figure class="arthero">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/youtube-video-to-notion-hero-640.avif 640w, ../../assets/art/youtube-video-to-notion-hero-960.avif 960w, ../../assets/art/youtube-video-to-notion-hero-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/youtube-video-to-notion-hero-640.webp 640w, ../../assets/art/youtube-video-to-notion-hero-960.webp 960w, ../../assets/art/youtube-video-to-notion-hero-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/youtube-video-to-notion-hero.jpg" alt="A laptop showing a paused video beside a notes page that holds the words and small screen pictures" width="1280" height="714" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Work</span>
+        <h1>How to turn a YouTube video into a Notion page, pictures included</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated November 6, 2026</span><span class="dotsep">·</span><span>6 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>Notion cannot read a YouTube video for you, but it can import a Markdown file. The free way is to paste the video's transcript into a page below the embedded video. To get the screen pictures too, you turn the video into a Markdown file with an images folder. Then you zip that whole folder and import it using Notion's Convert Zip to pages option.</p>
+      </div>
+
+      <div class="prose">
+        <p>You watch a good tutorial or a talk on YouTube and you want it in Notion. That is where the rest of your notes already live. You paste the link and Notion shows a nice video player, but the page is still empty. Nothing from the video itself is searchable, and you cannot find the line you need without watching it again.</p>
+
+        <p><strong>Notion stores what you give it, and a link is not the content.</strong> To make the video useful inside Notion you have to bring in the words and the screen pictures. I will explain the free way to do this. I will also explain the way that keeps the pictures, and the part where Notion drops things.</p>
+
+        <h2 id="what-is-the-free-way-to-put-a-youtube-video-in-notion">What is the free way to put a YouTube video in Notion?</h2>
+
+        <p>The free way uses two things you already have: Notion's video embed and YouTube's own transcript. The embed keeps the video playable right on the page. The transcript gives you text that Notion can search.</p>
+
+        <ol>
+          <li>You paste the YouTube link into a Notion page and choose to embed it. This puts the player at the top.</li>
+          <li>Go to YouTube and open the description under the video. Press Show transcript if the video has captions.</li>
+          <li>You select the transcript text and copy it. Then you paste it into the Notion page under the player.</li>
+          <li>Turn the main moments into headings. You can keep the time marks beside the lines you care about.</li>
+        </ol>
+
+        <p>This works, and it costs nothing. It stops in two places. A video with no captions has no transcript to copy. The transcript is also just words, so a code sample or a slide the speaker points at never reaches your page. In a tutorial, that missing half is often the part you came for.</p>
+
+        <h2 id="what-file-types-does-notion-import">What file types does Notion import?</h2>
+
+        <p>Notion's own <a href="https://www.notion.com/help/import-data-into-notion">import help page</a> lists plain text, Text and Markdown (.txt, .md or .markdown), Word, CSV, HTML, PDF and ZIP. You start an import from Settings and then Import. You can also type a slash on a page and search for the importer. These imports work on the desktop and the web, but they do not work on the phone app yet.</p>
+
+        <p>The same page says what survives a Markdown import: plain text, standard Markdown, headings, lists and code blocks. It says anchor links and nonstandard Markdown extensions may not come through well. The size limit is <strong>5 MB per file on the Free plan and 50 MB on a paid plan</strong>, and a ZIP import can hold up to 5 GB.</p>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>What you import</th><th>What you get in Notion</th><th>Where it falls short</th></tr></thead>
+            <tbody>
+              <tr><td>A pasted transcript</td><td>Searchable words under the video</td><td>No pictures, and nothing without captions</td></tr>
+              <tr><td>The doc.md file on its own</td><td>Headings, timestamps and words</td><td>The picture links point at files Notion never got</td></tr>
+              <tr><td>The whole folder as a zip</td><td>Words and the screen pictures in order</td><td>Check the first pictures before trusting the rest</td></tr>
+              <tr><td>The doc.pdf file</td><td>The finished document as a PDF</td><td>Better to read than to edit</td></tr>
+            </tbody>
+        </table></div>
+
+        <h2 id="how-do-i-get-the-screen-pictures-into-notion-as-well">How do I get the screen pictures into Notion as well?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/youtube-video-to-notion-pictures-640.avif 640w, ../../assets/art/youtube-video-to-notion-pictures-960.avif 960w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/youtube-video-to-notion-pictures-640.webp 640w, ../../assets/art/youtube-video-to-notion-pictures-960.webp 960w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/youtube-video-to-notion-pictures.jpg" alt="Printed video frames laid in order next to typed notes, the pictures kept together with the words" width="1024" height="572" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
+        <p>I built VideoDoc because I wanted my notes and my AI to see the slides, not just hear the speaker. You paste a public YouTube link and press Make document. It writes a PDF and a Markdown file of the words with their timestamps. It also places a picture of the screen at the moment it changes, so a slide that stays up for ten minutes appears once, not forty times.</p>
+
+        <p>Here is the detail that decides how you import it. VideoDoc's Markdown is a file called <code>doc.md</code>, and its pictures sit next to it in an <code>images</code> folder. Each picture is a plain Markdown image line such as <code>!<a href="images/frame_000252s.jpg">Frame at 04:12</a></code>, and each piece of speech starts with its time in bold, like <strong>[04:12]</strong>. That is all standard Markdown, with no tool-specific extensions.</p>
+
+        <p>If you import <code>doc.md</code> by itself, Notion gets the words but not the pictures. This happens because the image files were never part of the upload. Notion's help page says the same thing about HTML, because images come in only when their files are included. The fix is to send the whole folder, not just the file.</p>
+
+        <ol>
+          <li>Make the document in VideoDoc, then open its output folder. You will see <code>doc.md</code>, <code>doc.pdf</code> and the <code>images</code> folder.</li>
+          <li>Zip the whole output folder, not the loose files inside it, so <code>doc.md</code> and <code>images</code> stay side by side.</li>
+          <li>In Notion, type <code>/zip</code> on a page or go to Settings, then Import, and upload the zip to Convert Zip to pages.</li>
+          <li>Open the new page and check the first few pictures sit beside the right lines before you rely on the rest.</li>
+        </ol>
+
+        <p>A YouTube playlist works the same way. VideoDoc can put a whole playlist into one document. It makes each video its own section and puts its pictures in numbered folders inside <code>images</code>. The contents list at the top is a plain numbered list instead of anchor links, so it comes into Notion exactly as written.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>VideoDoc only reads public videos by link, so a private or members-only video will not work. Each time mark arrives in Notion as bold text, not a link, so you open the video from the source line at the top of the page instead. Notion makes a copy when it imports, so a later change to the files on your disk will not update the Notion page. A long video makes a big images folder, so a free Notion plan will hit its limits sooner, and Notion can change its importer at any time, which is why I suggest checking the first pictures.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">One video, one Notion page</span>
+          <h3>Try it on the tutorial you keep going back to.</h3>
+          <p>Try it free in your browser on a file you already have. Pro is $19 once for a lifetime licence on 2 machines, on Windows and Apple Silicon Macs.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">Get Pro · lifetime</a>
+          </div>
+        </div>
+
+        <p>If your notes live in files on your own disk instead, the <a href="../video-to-markdown-for-obsidian/">Obsidian version of this guide</a> is simpler. This is because Obsidian reads the images folder right where it sits.</p>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>Can Notion transcribe a YouTube video?</summary>
+            <p>No. Pasting a YouTube link into Notion gives you an embedded player, not the words. You have to bring in a transcript or a document made from the video.</p>
+          </details>
+          <details>
+            <summary>How do I import a Markdown file with images into Notion?</summary>
+            <p>Keep the Markdown file and its images folder together. Zip the whole folder and import the zip with Convert Zip to pages. If you import the Markdown file alone, the picture links point at files Notion never received.</p>
+          </details>
+          <details>
+            <summary>What is the file size limit for a Notion import?</summary>
+            <p>Notion's help page gives 5 MB per file on the Free plan and 50 MB per file on paid plans. A ZIP import can be up to 5 GB, but very large file counts can sometimes fail.</p>
+          </details>
+          <details>
+            <summary>Do the timestamps stay clickable in Notion?</summary>
+            <p>They come in as bold text, like [04:12], not as links to that moment. The video's source link stays at the top of the page, so you can open it and skip to the time yourself.</p>
+          </details>
+        </div>
+
+        <p>Pick the one tutorial you keep reopening. Turn it into a document tonight and import the zipped folder into Notion. Check the first three pictures, and you will know whether to do the rest the same way.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../video-to-markdown-for-obsidian/">
+            <span class="t">How to turn a video into Markdown notes for Obsidian, pictures included</span>
+            <p>Turn a video into a Markdown note with timestamped text and screen pictures that open in Obsidian. What to dro</p>
+            <span class="meta"><span>STUDY · 7 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../youtube-playlist-to-one-document/">
+            <span class="t">Turn a YouTube playlist into one document</span>
+            <p>Convert an entire YouTube playlist into a single searchable document, or one document per video, built private</p>
+            <span class="meta"><span>GUIDE · 6 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../feed-video-to-chatgpt-or-claude/">
+            <span class="t">Can ChatGPT watch a video? The honest answer</span>
+            <p>ChatGPT and Claude cannot watch a video. A pasted link gives them the page and captions at best. Turn it into </p>
+            <span class="meta"><span>AI · 6 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

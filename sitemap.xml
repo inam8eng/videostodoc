@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://videostodoc.com/articles/</loc>
-    <lastmod>2026-11-04</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -387,6 +387,12 @@
   <url>
     <loc>https://videostodoc.com/articles/canvas-studio-recording-to-notes/</loc>
     <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://videostodoc.com/articles/youtube-video-to-notion/</loc>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

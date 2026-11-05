@@ -37,7 +37,7 @@
       "angle": "Added 2026-11-02 by the weekly pass. Information gain: Notion imports Markdown, so the VideoDoc Markdown with its timestamps and images becomes a Notion page; test the real import and say exactly what survives (headings, images, links) and what does not. Free route: paste a transcript, and where it stops.",
       "hub_section": "work",
       "category": "Work",
-      "done": null
+      "done": "2026-11-05"
     },
     {
       "slug": "loom-video-to-text",
