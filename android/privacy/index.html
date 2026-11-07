@@ -30,12 +30,13 @@
 <body>
 
 <h1>Privacy Policy: VideoDoc for Android</h1>
-<p class="updated">Last updated: 7 November 2026</p>
+<p class="updated">Last updated: 8 November 2026</p>
 
 <p class="lede">
-  VideoDoc does not collect, store, transmit, sell or share any personal
-  information. There is no account, no sign-up, and no server of ours that your
-  device talks to.
+  VideoDoc does not collect, store, sell or share any personal information.
+  There is no account and no sign-up. The only thing that can ever leave your
+  phone through us is the link to a YouTube video, in one case explained below,
+  and that link is not stored.
 </p>
 
 <h2>What we collect</h2>
@@ -68,6 +69,11 @@
     <td><code>Download/VideoDoc</code> on your phone</td>
     <td>Only you</td>
   </tr>
+  <tr>
+    <td>Videos you pick from your phone</td>
+    <td>Read on your phone only, never uploaded. A short working copy is deleted when the job ends.</td>
+    <td>Only you</td>
+  </tr>
 </table>
 <p>
   Uninstalling the app removes your settings. Files you have already saved stay
@@ -78,18 +84,31 @@
 <p>
   When you paste a link and tap a button, your device connects directly to the
   website that link points to, in order to fetch the media. It is the same
-  connection your browser would make. We operate no intermediary server, and
-  nothing you paste is sent to us or to any third party of ours.
+  connection your browser would make. Apart from the one YouTube case below,
+  nothing you paste is sent to us or to anyone else.
 </p>
 <p>
-  Two more connections can happen, and neither carries anything about you:
+  A few more connections can happen, and none carries anything about you:
 </p>
 <ul>
   <li>When a video has no subtitles, the app downloads a speech model file once
     from Hugging Face (<code>huggingface.co</code>), so it can listen to the video
     on your phone. The listening itself happens on your phone.</li>
-  <li>If you buy the unlock, Google Play handles the payment. We never see your
-    payment details.</li>
+  <li><strong>Play Store version, YouTube videos with no subtitles only.</strong>
+    When you ask for the text of a YouTube video that has no subtitles, the app
+    sends that video's link, and nothing else, to a small relay of ours
+    (a Cloudflare Worker). The relay passes the link to Google's Gemini API,
+    which listens to the public video and sends the words back to your phone.
+    The relay stores nothing and keeps no logs. Google receives the link under
+    its own <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>,
+    and on the free tier Google may use what it receives to improve its products.
+    No account, name, device ID or file is sent. The website version never does
+    this; it listens on your phone.</li>
+  <li>When a YouTube link's page cannot be read, the Play Store version may ask
+    YouTube's public oEmbed address for the video's title, so the file gets a
+    proper name.</li>
+  <li>If you buy the unlock, Google Play (Play Store version) or Gumroad
+    (website version) handles the payment. We never see your payment details.</li>
 </ul>
 
 <h2>Clipboard</h2>
@@ -110,7 +129,8 @@
 </table>
 <p>
   The app does <strong>not</strong> request access to your photos, files,
-  storage, contacts, location, camera or microphone.
+  storage, contacts, location, camera or microphone. When you pick a video from
+  your phone, Android's own picker hands the app that one video only.
 </p>
 
 <h2>Children</h2>
