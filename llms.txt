@@ -12,7 +12,7 @@
 
 ## Articles
 
-- [All articles](https://videostodoc.com/articles/): the full index of all 58 guides listed below
+- [All articles](https://videostodoc.com/articles/): the full index of all 63 guides listed below
 - [How to turn a YouTube video into a document](https://videostodoc.com/articles/youtube-video-to-document/): What are the free and paid ways to turn a YouTube video into a document, and which keeps the slides?
 - [Convert a YouTube video to PDF, slides included](https://videostodoc.com/articles/youtube-video-to-pdf/): How do you convert a YouTube video into a PDF that includes the on-screen slides, not just the words?
 - [YouTube video to text: 3 ways that actually work](https://videostodoc.com/articles/youtube-video-to-text/): What are the three working ways to get the text out of a YouTube video, and when does each one win?
@@ -71,6 +71,11 @@
 - [How to turn a Loom video into text without losing the screen](https://videostodoc.com/articles/loom-video-to-text/): Who can download a Loom by plan and role, the free transcript, and how do you keep the screen?
 - [How to turn a Webex recording into text, even when Webex made no transcript](https://videostodoc.com/articles/webex-recording-to-text/): Why does Webex skip some transcripts, who can get the MP4, and how do you keep the shared screen?
 - [How to turn a Panopto lecture into notes, even when the download button is missing](https://videostodoc.com/articles/panopto-lecture-recording-to-notes/): Why is a Panopto download often switched off, what free transcript and notes does Panopto give you, and how do you keep the slides?
+- [How to turn a Canvas Studio lecture into notes, when you only see a player](https://videostodoc.com/articles/canvas-studio-recording-to-notes/): Canvas Studio lecture with no download button? Why only the video's owner can turn it on, the free transcript students can save, and notes that keep the slides.
+- [How to turn a Kaltura lecture into notes, when the course player has no download button](https://videostodoc.com/articles/kaltura-lecture-to-notes/): Kaltura lecture with no download button? Why the course player is view only, the free transcript you can search and save, and notes that keep the slides.
+- [How to turn a YouTube video into a Notion page, pictures included](https://videostodoc.com/articles/youtube-video-to-notion/): Turn a YouTube video into a Notion page with the words, timestamps and screen pictures. The free way, the zip import that keeps the images, and the limits.
+- [How to cite a video with timestamps, and get the second right](https://videostodoc.com/articles/how-to-cite-a-video-with-timestamps/): The exact timestamp format for APA, MLA and Chicago, and how to find the right second, so a reader can land on the moment you quoted and check it.
+- [How to convert a video to a Word document and keep the pictures](https://videostodoc.com/articles/convert-video-to-word-document/): A video cannot become a Word file on its own. Get the words free, or keep the screen pictures too with a PDF or Markdown step. The steps and the limits.
 
 ## Facts
 
