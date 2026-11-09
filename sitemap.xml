@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://videostodoc.com/articles/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -405,6 +405,12 @@
   <url>
     <loc>https://videostodoc.com/articles/how-to-cite-a-video-with-timestamps/</loc>
     <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://videostodoc.com/articles/convert-video-to-word-document/</loc>
+    <lastmod>2026-11-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
