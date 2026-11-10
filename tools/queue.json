@@ -16,44 +16,44 @@
   ],
   "queue": [
     {
-        "slug": "convert-video-to-google-docs",
-        "keyword": "convert video to google doc",
-        "angle": "Information gain: the top pages only paste a transcript. Search Console shows 'video to doc' at 55 impressions, and the real question is how to keep the screen pictures. Test what Google Docs does when it opens a PDF with pictures, and say what survives.",
-        "hub_section": "start",
-        "category": "Guide",
-        "done": null
+      "slug": "convert-video-to-google-docs",
+      "keyword": "convert video to google doc",
+      "angle": "Information gain: the top pages only paste a transcript. Search Console shows 'video to doc' at 55 impressions, and the real question is how to keep the screen pictures. Test what Google Docs does when it opens a PDF with pictures, and say what survives.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": "2026-11-10"
     },
     {
-        "slug": "video-to-powerpoint-slides",
-        "keyword": "convert video to powerpoint",
-        "angle": "Information gain: VideoDoc saves the slides as image files but writes no PPTX, so show the honest route from an images folder into a deck, and where a picture of a slide stops being editable.",
-        "hub_section": "work",
-        "category": "Work",
-        "done": null
+      "slug": "video-to-powerpoint-slides",
+      "keyword": "convert video to powerpoint",
+      "angle": "Information gain: VideoDoc saves the slides as image files but writes no PPTX, so show the honest route from an images folder into a deck, and where a picture of a slide stops being editable.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
     },
     {
-        "slug": "silent-screen-recording-to-document",
-        "keyword": "screen recording with no audio to document",
-        "angle": "Information gain: transcription sites fail or return nothing on a recording with no speech. Since v0.3.1 VideoDoc makes a document of the pictures instead. Show what that document looks like and what it cannot tell you.",
-        "hub_section": "work",
-        "category": "Work",
-        "done": null
+      "slug": "silent-screen-recording-to-document",
+      "keyword": "screen recording with no audio to document",
+      "angle": "Information gain: transcription sites fail or return nothing on a recording with no speech. Since v0.3.1 VideoDoc makes a document of the pictures instead. Show what that document looks like and what it cannot tell you.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
     },
     {
-        "slug": "whiteboard-lecture-video-to-notes",
-        "keyword": "whiteboard lecture video to notes",
-        "angle": "Information gain: a transcript of a whiteboard lecture is mostly 'this one here'. Explain how frames are kept when the board changes, and be honest that handwriting is only as readable as the camera made it.",
-        "hub_section": "study",
-        "category": "Study",
-        "done": null
+      "slug": "whiteboard-lecture-video-to-notes",
+      "keyword": "whiteboard lecture video to notes",
+      "angle": "Information gain: a transcript of a whiteboard lecture is mostly 'this one here'. Explain how frames are kept when the board changes, and be honest that handwriting is only as readable as the camera made it.",
+      "hub_section": "study",
+      "category": "Study",
+      "done": null
     },
     {
-        "slug": "video-to-text-with-timestamps",
-        "keyword": "video to text with timestamps",
-        "angle": "Information gain: most tools add time marks only on a paid plan or at long intervals. Show the free YouTube route, the exact time format VideoDoc writes, and why a time from auto captions can be slightly late.",
-        "hub_section": "start",
-        "category": "Guide",
-        "done": null
+      "slug": "video-to-text-with-timestamps",
+      "keyword": "video to text with timestamps",
+      "angle": "Information gain: most tools add time marks only on a paid plan or at long intervals. Show the free YouTube route, the exact time format VideoDoc writes, and why a time from auto captions can be slightly late.",
+      "hub_section": "start",
+      "category": "Guide",
+      "done": null
     },
     {
       "slug": "kaltura-lecture-to-notes",
