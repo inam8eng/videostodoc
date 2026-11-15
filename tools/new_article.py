@@ -556,7 +556,11 @@ def verify_site() -> int:
     hub = HUB.read_text(encoding="utf-8")
 
     for slug in index:
-        if f"/articles/{slug}/" not in sitemap:
+        page_raw = (ARTICLES / slug / "index.html").read_text(encoding="utf-8")
+        noindex = re.search(r'<meta name="robots" content="[^"]*noindex', page_raw) is not None
+        if noindex and f"/articles/{slug}/" in sitemap:
+            problems.append(f"articles/{slug}/ is noindex but still listed in sitemap.xml")
+        if not noindex and f"/articles/{slug}/" not in sitemap:
             problems.append(f"articles/{slug}/ is live but missing from sitemap.xml")
         if f'href="{slug}/"' not in hub:
             problems.append(f"articles/{slug}/ has no card on the articles hub")
