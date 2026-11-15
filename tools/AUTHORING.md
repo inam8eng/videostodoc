@@ -45,18 +45,47 @@ target. In short:
 - **Never promise what the app does not do.** Cross-check any capability claim
   against `CHANGELOG.md` in the app repo. Public videos only. Two machines per
   licence, freed only by replying to the Gumroad receipt (there is no in-app
-  move). Apple Silicon only on Mac, macOS 14 or newer. $19 once.
+  move). Apple Silicon only on Mac, macOS 14 or newer.
+- **Price: write no number.** Say Pro is a one time payment and link to the
+  pricing on the home page. The price is not settled (Gumroad showed $10 on
+  2026-11-14 while older pages said $19), so a number in an article goes stale.
+- **Claim only released versions.** The live version is the one in
+  https://github.com/inam8eng/videodoc-releases/releases/latest/download/videodoc_version.json.
+  `CHANGELOG.md` can carry a newer, unreleased version at its top, so check the
+  feed before describing the top entry. v0.5.0 was released on 2026-11-15.
+- **Video to shorts (v0.5.0, released 2026-11-15, Windows and Apple Silicon
+  Macs).** A second tab turns a long video into vertical shorts. It finds the
+  best parts with 1 to 5 dots and a plain reason for each, trims on a simple
+  timeline, and the frame follows the face, shows the whole picture, puts a
+  facecam on top, or stays where the reader drags it. Word by word captions are
+  on by default. It exports 1080x1920, or square, 4:5 or the original shape.
+  Lite takes videos up to 20 minutes and adds a small "Made with VideoDoc"
+  mark; Pro has no limit and no mark. The first run downloads the speech engine
+  once (about 486 MB for Balanced). Do not claim shorts on iPhone or Android
+  (not released), never promise views or income, and only show clipping
+  someone else's video when they allow it. The product page for shorts is
+  https://videostodoc.com/shorts/ (live since 2026-11-15): every shorts
+  article links to it once, in the cta or in a sentence after the reader has
+  been helped. Never link /iphone/ from an article while it is a beta.
+- **More formats (v0.4.0, released 2026-11-13).** Every finished document has
+  a More formats button: Word (words and pictures), PowerPoint, Excel and 25
+  more. Lite's free ones are SRT, VTT, CSV and JSON, the rest are Pro. The AI
+  kits are prompt files the reader pastes into their own ChatGPT or Claude;
+  VideoDoc has no AI that writes. Do not name Premiere Pro or DaVinci Resolve
+  for the cut list (it was never tried in them). Do not say VideoDoc sends
+  nothing anywhere (the licence and update checks use the internet).
 
 ## Structure of a good page
 
 - **The short answer** up top, 40–70 words, answering the query outright.
-  Someone who reads only this box should leave satisfied. This box is what
-  AI search engines quote.
+  Someone who reads only this box should leave satisfied.
 - **3 to 6 `h2` sections.** At least one must be a genuinely useful free
   method that does not involve buying anything — including where it stops.
 - **One `callout`** with honest limits.
 - **One `cta`**, placed after the value is delivered, never before.
-- **3 to 6 FAQ entries**, phrased as real queries. These become FAQPage schema.
+- **3 FAQ entries** (the script needs at least 3): short, only questions readers
+  really ask, never padded. FAQ rich results ended in May 2026; they are not
+  there for Google (mandate retired on Inam's yes, 2026-11-15).
 - **A closer**: one or two sentences telling the reader the single next thing
   to do tonight.
 
@@ -103,7 +132,7 @@ so the new article is never an orphan. Prefer articles in the same
     { "type": "callout", "label": "Honest limits", "text": "What this does not do." },
     { "type": "cta", "kicker": "One video, every frame",
       "heading": "Try it on a file you already have.",
-      "text": "Free in your browser. Pro is $19 once." }
+      "text": "Free in your browser. Pro is a one time payment." }
   ],
   "faq": [
     { "q": "How many images is an hour of video?", "a": "About 14,400 at four a second." }
@@ -125,8 +154,12 @@ On top of the day's article:
 2. Check Search Console for queries the site is getting impressions but no
    clicks on. Those are title and description problems, not content problems;
    rewrite the meta and note it.
-3. Any query the site ranks 8–20 for is worth a dedicated page — add it to the
-   **top** of the queue, above the planned items.
+3. A query the site ranks 8 to 20 for means: improve the page that already ranks
+   for it. Queue a new page only when no existing page answers that query, and
+   name in the queue row the page it would otherwise compete with. (Changed on
+   Inam's yes, 2026-11-15: a new page for every ranked query made near twins.)
+   `download-youtube-video-hd-4k` is noindex since 2026-11-15: keep it out of
+   the sitemap and llms.txt, and never link to it from a new article.
 4. Re-read the two oldest articles. If a claim has gone stale against
    `CHANGELOG.md`, fix it and bump `dateModified` in the Article schema.
 

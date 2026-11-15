@@ -6,6 +6,8 @@
 
 - [Home](https://videostodoc.com/): what VideoDoc is, what it outputs, features, pricing and the FAQ
 - [Try free](https://videostodoc.com/try/): transcribe your own video or audio file in the browser, nothing uploaded, no signup
+- [Video to shorts](https://videostodoc.com/shorts/): turn a long video or stream into vertical 1080x1920 clips with word by word captions, on your own computer
+- [Android app](https://videostodoc.com/android/): VideoDoc for Android phones, get the text or a document with pictures from a video link or a video on your phone
 - [Mac first launch](https://videostodoc.com/mac/): the one-time Terminal unlock for Apple Silicon Macs, in three steps
 - [Support](https://videostodoc.com/support/): first run, licence keys, antivirus warnings, slow jobs and where files are saved
 - [Get Pro](https://designesh.gumroad.com/l/videodoc): buy VideoDoc Pro on Gumroad, $19 one time
@@ -28,7 +30,6 @@
 - [How to extract slides from a video presentation](https://videostodoc.com/articles/extract-slides-from-video/): How do you pull the slides out of a recorded talk as images matched to what was said?
 - [How to extract code from a video tutorial](https://videostodoc.com/articles/extract-code-from-video-tutorial/): How do you read the code from a video tutorial without squinting at paused frames?
 - [Turn a video into a blog post in your own words](https://videostodoc.com/articles/video-to-blog-post/): How do you turn one of your own videos into a blog post in your own writing voice?
-- [Download a YouTube video in HD or 4K](https://videostodoc.com/articles/download-youtube-video-hd-4k/): How do you download a YouTube video or playlist in HD or 4K, and what is allowed?
 - [TikTok video to text](https://videostodoc.com/articles/tiktok-video-to-text/): How do you get the spoken words and on-screen text out of a TikTok?
 - [Instagram reel to text](https://videostodoc.com/articles/instagram-reel-to-text/): Why is there no transcript to copy on Instagram, and how do you keep a reel's words and its on-screen text?
 - [Transcribe a video free, without uploading it](https://videostodoc.com/articles/transcribe-video-free-no-upload/): How can a browser transcribe a video for free without uploading it anywhere?
