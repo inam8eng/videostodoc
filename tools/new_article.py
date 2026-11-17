@@ -200,7 +200,7 @@ def render_body(spec: dict) -> str:
                 f'          <p>{inline(b["text"])}</p>\n'
                 '          <div class="row">\n'
                 '            <a class="btn solid" href="../../try/">Try free in your browser</a>\n'
-                '            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc">'
+                '            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc/GTA6">'
                 # No price on the button. The home page runs a 50% offer and
                 # read $10 from $20 on 2026-09-23, so a number baked in here is
                 # wrong the moment the offer moves. The price lives on the one
