@@ -30,7 +30,7 @@
 <body>
 
 <h1>Privacy Policy: VideoDoc for Android</h1>
-<p class="updated">Last updated: 8 November 2026</p>
+<p class="updated">Last updated: 18 November 2026</p>
 
 <p class="lede">
   VideoDoc does not collect, store, sell or share any personal information.
@@ -70,6 +70,11 @@
     <td>Only you</td>
   </tr>
   <tr>
+    <td>The words and pictures of your newest 40 documents (at most 600 MB), so More formats can make other files from them later</td>
+    <td>The app's private storage on your phone. Settings, Storage, Clear temporary files removes them; uninstalling does too.</td>
+    <td>Only you</td>
+  </tr>
+  <tr>
     <td>Videos you pick from your phone</td>
     <td>Read on your phone only, never uploaded. A short working copy is deleted when the job ends.</td>
     <td>Only you</td>
@@ -94,21 +99,31 @@
   <li>When a video has no subtitles, the app downloads a speech model file once
     from Hugging Face (<code>huggingface.co</code>), so it can listen to the video
     on your phone. The listening itself happens on your phone.</li>
-  <li><strong>Play Store version, YouTube videos with no subtitles only.</strong>
-    When you ask for the text of a YouTube video that has no subtitles, the app
-    sends that video's link, and nothing else, to a small relay of ours
+  <li><strong>Play Store version, YouTube videos only.</strong>
+    When you ask for the text of a YouTube video that has no subtitles, or whose
+    page or subtitles the app cannot read, the app sends the video's plain link
+    (without any share tracking code), the language you chose and a length limit
+    to a small relay of ours
     (a Cloudflare Worker). The relay passes the link to Google's Gemini API,
     which listens to the public video and sends the words back to your phone.
     The relay stores nothing and keeps no logs. Google receives the link under
     its own <a href="https://ai.google.dev/gemini-api/terms">Gemini API terms</a>,
-    and on the free tier Google may use what it receives to improve its products.
-    No account, name, device ID or file is sent. The website version never does
+    and on the free tier Google may use what it receives to improve its products,
+    and people at Google may read it. Like any website, the relay's host
+    (Cloudflare) sees your internet address.
+    No account, name, device ID or file is sent. This is not offered to people
+    in the European Economic Area, the United Kingdom or Switzerland: there,
+    only videos with subtitles get their text from YouTube. The website version never does
     this; it listens on your phone.</li>
   <li>When a YouTube link's page cannot be read, the Play Store version may ask
     YouTube's public oEmbed address for the video's title, so the file gets a
     proper name.</li>
   <li>If you buy the unlock, Google Play (Play Store version) or Gumroad
-    (website version) handles the payment. We never see your payment details.</li>
+    (website version) handles the payment. We never see your payment details.
+    The website version checks its unlock code with Gumroad now and then.</li>
+  <li>Website version only: once a day it reads the public list of VideoDoc
+    releases on GitHub to tell you when a new version is ready, and it keeps its
+    download engine up to date from GitHub. Nothing about you is sent.</li>
 </ul>
 
 <h2>Clipboard</h2>
