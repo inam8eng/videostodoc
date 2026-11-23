@@ -16,20 +16,12 @@
   ],
   "queue": [
     {
-      "slug": "live-stream-to-shorts",
-      "keyword": "live stream to shorts",
-      "angle": "A 3 hour stream is too long to watch again. Show how Video to shorts (v0.5.0) finds the best parts with dots and a reason each, follows the face or keeps the facecam on top, and adds word by word captions, all on the streamer's own PC with nothing uploaded. Honest: Lite stops at 20 minutes, so a full stream needs Pro or cutting first. Only the streamer's own video or one they have written permission to clip. GTA 6 launch streams can be the example in the body, not in the title. Free route and where it stops. First check in the app whether Video to shorts takes a Twitch, Kick or YouTube link or only a file, and say it plainly. Added by the SEO manager 2026-11-15.",
-      "hub_section": "work",
-      "category": "Guide",
-      "done": null
-    },
-    {
       "slug": "can-i-clip-someone-elses-youtube-video",
       "keyword": "can i clip someone else's youtube video",
       "angle": "The trust page behind every clipping article: permission, written clip policies, YouTube's reused content rule, and why your own captions and commentary matter. Not legal advice: link YouTube's own help pages. Point to the tool only after the reader knows when clipping is allowed. Added by the SEO manager 2026-11-15.",
       "hub_section": "work",
       "category": "Guide",
-      "done": null
+      "done": "2026-11-23"
     },
     {
       "slug": "convert-video-to-google-docs",
