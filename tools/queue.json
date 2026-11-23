@@ -16,6 +16,22 @@
   ],
   "queue": [
     {
+      "slug": "landscape-video-to-vertical",
+      "keyword": "convert horizontal video to vertical",
+      "angle": "Information gain: most tools crop the middle of the wide picture, which cuts the speaker out whenever they sit to one side. Show the four ways Video to shorts frames a tall clip (follow the face, show the whole picture, facecam on top, or stay where you drag it), the shapes it exports (1080x1920, square, 4:5, original), and when each one is the right pick. Free route: a phone editor's crop, and where it stops (one fixed crop for the whole clip). Honest: Lite takes videos up to 20 minutes with a small mark, Windows and Apple Silicon Mac only, and a screen recording with tiny text does not get readable by being made tall. Only videos the reader may use; link can-i-clip-someone-elses-youtube-video once. No existing page answers this search; the shorts pages cover finding moments, not the framing choice. Added by the Monday pass 2026-11-23.",
+      "hub_section": "work",
+      "category": "Guide",
+      "done": null
+    },
+    {
+      "slug": "video-to-excel-spreadsheet",
+      "keyword": "video to excel",
+      "angle": "Information gain: what ranks is about putting a video inside a workbook, or reading a table off the screen. Say plainly what VideoDoc's Excel file is (v0.4.0 More formats, Pro): a shots sheet, a transcript sheet and small pictures, so a long video can be sorted, filtered and searched by time. CSV is the free route in Lite and opens correctly in Excel, including for Urdu, Hindi, Arabic and Chinese. Honest: it does not turn a table shown on screen into cells. Would otherwise compete with video-frames-to-csv-index (that page is the frame index from the images mode); link it and do not repeat it. Check the More formats facts in the CHANGELOG before writing. Added by the Monday pass 2026-11-23.",
+      "hub_section": "work",
+      "category": "Work",
+      "done": null
+    },
+    {
       "slug": "can-i-clip-someone-elses-youtube-video",
       "keyword": "can i clip someone else's youtube video",
       "angle": "The trust page behind every clipping article: permission, written clip policies, YouTube's reused content rule, and why your own captions and commentary matter. Not legal advice: link YouTube's own help pages. Point to the tool only after the reader knows when clipping is allowed. Added by the SEO manager 2026-11-15.",
@@ -34,7 +50,7 @@
     {
       "slug": "video-to-powerpoint-slides",
       "keyword": "convert video to powerpoint",
-      "angle": "Information gain: VideoDoc saves the slides as image files but writes no PPTX, so show the honest route from an images folder into a deck, and where a picture of a slide stops being editable.",
+      "angle": "Changed by the Monday pass 2026-11-23, because the old angle went stale: since v0.4.0 (2026-11-13) the More formats button writes a PowerPoint file in Pro, one slide for every shot, with the picture on the left and the words on the right. Information gain: show what that deck really is, that a picture of a slide is still a picture and its text cannot be edited, and the free route (the slides as image files, dropped into a deck by hand) with where it stops. Check the CHANGELOG before writing.",
       "hub_section": "work",
       "category": "Work",
       "done": null
