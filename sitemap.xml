@@ -38,7 +38,7 @@
   </url>
   <url>
     <loc>https://videostodoc.com/articles/</loc>
-    <lastmod>2026-11-23</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -483,6 +483,12 @@
   <url>
     <loc>https://videostodoc.com/articles/can-i-clip-someone-elses-youtube-video/</loc>
     <lastmod>2026-11-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://videostodoc.com/articles/landscape-video-to-vertical/</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
