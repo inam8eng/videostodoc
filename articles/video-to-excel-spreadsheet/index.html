@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video to Excel: Turn a Video Into a Spreadsheet</title>
+<meta name="description" content="A video can become an Excel sheet with one row for every shot: the time, the words and a small picture. The free CSV way, and what Excel cannot get.">
+
+<link rel="canonical" href="https://videostodoc.com/articles/video-to-excel-spreadsheet/">
+<meta property="og:title" content="Video to Excel: one row for every shot">
+<meta property="og:description" content="The time, the words and a small picture in every row. The free CSV way, and what it cannot do.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://videostodoc.com/articles/video-to-excel-spreadsheet/">
+<meta property="og:image" content="https://videostodoc.com/assets/og.png">
+<meta property="og:site_name" content="VideoDoc">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F4F5F7">
+
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,500&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="../../article.css">
+
+<script>
+  (function(){var e=document.documentElement;e.classList.add('js');var t=null;try{t=localStorage.getItem('vd-theme');}catch(x){}if(t!=='light'&&t!=='dark')t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';e.setAttribute('data-theme',t);var m=document.querySelector('meta[name="theme-color"]')||document.querySelector('meta[name=theme-color]');if(m)m.setAttribute('content',t==='dark'?'#0E1217':'#F4F5F7');})();
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "How to turn a video into an Excel spreadsheet you can sort and filter", "description": "A video can become an Excel sheet with one row for every shot: the time, the words and a small picture. The free CSV way, and what Excel cannot get.", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "author": {"@type": "Person", "name": "Inam Ul Haq"}, "publisher": {"@type": "Organization", "name": "VideoDoc", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}}, "image": ["https://videostodoc.com/assets/art/video-to-excel-spreadsheet-hero-16x9.jpg", "https://videostodoc.com/assets/art/video-to-excel-spreadsheet-hero-4x3.jpg", "https://videostodoc.com/assets/art/video-to-excel-spreadsheet-hero-1x1.jpg"], "mainEntityOfPage": "https://videostodoc.com/articles/video-to-excel-spreadsheet/"}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can Excel open a video file?", "acceptedAnswer": {"@type": "Answer", "text": "No. Excel can hold a link to a video or show one inside a workbook, but it cannot read what is said or shown in it. To work with a video in Excel you first turn it into rows, which means a transcript with times, a list of shots, or both."}}, {"@type": "Question", "name": "Is the CSV really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. In VideoDoc Lite the free formats are SRT, VTT, CSV and JSON. The Excel workbook, Word and PowerPoint are part of Pro."}}, {"@type": "Question", "name": "Can it read a table from the screen into cells?", "acceptedAnswer": {"@type": "Answer", "text": "No. A table shown in the video stays a picture. You get that picture next to the words spoken while it was on screen, and typing the numbers into cells is still up to you."}}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://videostodoc.com/"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://videostodoc.com/articles/"}, {"@type": "ListItem", "position": 3, "name": "How to turn a video into an Excel spreadsheet you can sort and filter"}]}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Organization", "name": "VideoDoc", "url": "https://videostodoc.com/", "logo": {"@type": "ImageObject", "url": "https://videostodoc.com/assets/og.png"}, "founder": {"@type": "Person", "name": "Inam Ul Haq", "url": "https://designesh.com/about"}, "sameAs": ["https://designesh.com/", "https://designesh.gumroad.com", "https://www.youtube.com/@DesigneshYT", "https://x.com/designeshYT", "https://www.upwork.com/freelancers/~01450d7fa89e21b80f"]}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#top">Skip to content</a>
+
+<nav class="nav" id="nav">
+  <a class="brand" href="../../" aria-label="VideoDoc home">
+    <span class="mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+    <span class="wm">VideoDoc</span>
+  </a>
+  <div class="navlinks" id="navlinks">
+    <a href="../">Articles</a>
+    <a href="../../#features">Features</a>
+    <a href="../../#pricing">Pricing</a>
+    <a href="../../#faq">FAQ</a>
+    <a class="mobonly" href="../../try/">Try free in your browser</a>
+  </div>
+  <span class="navspacer"></span>
+  <div class="navcta">
+    <button class="themetoggle" id="theme" aria-label="Toggle theme" title="Toggle theme">
+      <svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+    </button>
+    <a class="btn ghost" href="../../try/">Try free</a>
+    <a class="btn solid" href="https://designesh.gumroad.com/l/videodoc/GTA6">Get Pro</a>
+    <button class="menutoggle" id="menu" aria-label="Menu" aria-expanded="false" aria-controls="navlinks">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main id="top">
+  <div class="wrap">
+
+    <div class="crumbs"><a class="tilde" href="../../">~</a><span class="sep">/</span><a href="../">articles</a><span class="sep">/</span><span class="here">video-to-excel-spreadsheet</span></div>
+
+    <figure class="arthero">
+      <picture>
+        <source type="image/avif" srcset="../../assets/art/video-to-excel-spreadsheet-hero-640.avif 640w, ../../assets/art/video-to-excel-spreadsheet-hero-960.avif 960w, ../../assets/art/video-to-excel-spreadsheet-hero-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <source type="image/webp" srcset="../../assets/art/video-to-excel-spreadsheet-hero-640.webp 640w, ../../assets/art/video-to-excel-spreadsheet-hero-960.webp 960w, ../../assets/art/video-to-excel-spreadsheet-hero-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+        <img src="../../assets/art/video-to-excel-spreadsheet-hero.jpg" alt="An open laptop on a pale desk showing a grey grid of rows with one blue row, a small video camera beside it" width="1280" height="714" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
+    </figure>
+
+    <article class="art">
+      <header class="art-head">
+        <span class="cat">Work</span>
+        <h1>How to turn a video into an Excel spreadsheet you can sort and filter</h1>
+        <div class="art-meta"><span class="who"><a href="https://designesh.com/about" rel="author">Inam Ul Haq</a></span><span class="dotsep">·</span><span>Updated November 26, 2026</span><span class="dotsep">·</span><span>8 min read</span></div>
+      </header>
+
+      <div class="answer">
+        <span class="lbl">The short answer</span>
+        <p>Excel cannot open a video file directly, but you can turn the contents of that video into spreadsheet rows. The setup that actually helps puts one shot on each row, along with its start time, the spoken words and a small picture of the screen. If the video is on YouTube and has captions, you can copy and paste the transcript for free. VideoDoc can also export this for you as a free CSV file, or as a complete Excel workbook in Pro.</p>
+      </div>
+
+      <div class="prose">
+        <p>Suppose you are sitting with a long recording, maybe a training session or a two hour meeting, and you want to work with it in Excel. You might want to find every spot where a specific word came up, mark off sections as you review them, or share a list of key moments with a colleague. When you search online for how to turn a video into Excel, most of the results solve a completely different problem.</p>
+
+        <p>Those search results usually show how to embed a video player inside a sheet, or how to scan a data table that happens to appear on screen. You will also run into hobby scripts that turn video frames into coloured spreadsheet cells. None of those approaches give you rows you can filter and sort. <strong>What you actually need is one row for every part of the video, with its time and its words.</strong></p>
+
+        <p>I build a small desktop tool called VideoDoc that converts videos into readable documents, and starting with version 0.4.0, I added spreadsheet exports as well. Here I will walk through the free manual method first, then show you what my Excel file actually contains, and finally be upfront about what it cannot do.</p>
+
+        <h2 id="what-does-a-video-look-like-once-it-is-in-excel">What does a video look like once it is in Excel?</h2>
+
+        <p>There are two pieces of information in a video that make sense in a spreadsheet: what people said, and what was showing on the screen. The spoken part is the transcript, which is just the speech written out line by line with a timestamp next to each line. The visual part is the shots, meaning each stretch of the video where the picture stays mostly unchanged, such as a single presentation slide or one window of a program.</p>
+
+        <p>Once those two parts are sitting in rows, you can use Excel for the things it handles best. You can filter the spoken words column for "invoice" and immediately see every moment that word was mentioned, along with its exact time. You can also sort the shots by duration so the slides that stayed on screen the longest move straight to the top. On top of that, you have room to add your own columns right next to the data for notes, an owner, or a simple done check.</p>
+
+        <h2 id="the-free-way-and-where-it-stops">The free way, and where it stops</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/video-to-excel-spreadsheet-paste-rows-640.avif 640w, ../../assets/art/video-to-excel-spreadsheet-paste-rows-960.avif 960w, ../../assets/art/video-to-excel-spreadsheet-paste-rows-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/video-to-excel-spreadsheet-paste-rows-640.webp 640w, ../../assets/art/video-to-excel-spreadsheet-paste-rows-960.webp 960w, ../../assets/art/video-to-excel-spreadsheet-paste-rows-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/video-to-excel-spreadsheet-paste-rows.jpg" alt="A phone showing grey lines lying on a desk beside an open notebook with empty ruled rows" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
+        <p>If the video is already up on YouTube and has captions turned on, you do not need to install anything. YouTube keeps the spoken words paired with their timestamps, and you can grab them directly.</p>
+
+        <ol>
+          <li>Open the video page on YouTube and expand the description box below the video player.</li>
+          <li>Click Show transcript, and a side panel will appear listing every spoken line next to its timestamp.</li>
+          <li>Highlight all the text inside that panel, copy it, and paste it into cell A1 of a blank worksheet.</li>
+          <li>Insert a header row at the top, and then switch on the filter from the Data tab.</li>
+        </ol>
+
+        <p>This method is completely free, but you run into its limits pretty quickly. The timestamps and the spoken lines usually paste into the same column on alternating rows, so you have to separate them manually before sorting works properly. You also get zero pictures of the screen. And if the video has no captions, or if it is a local file sitting on your own computer, this option is not available at all.</p>
+
+        <p>There is another free route that saves you from cleaning up pasted text. VideoDoc Lite, which is the free version of my app, exports the same breakdown as CSV files. A CSV is just a plain text file where each line acts as a row and commas separate the columns, so Excel opens it straight up like a normal sheet. You generate a document from your video first, click More formats on that document, and tick CSV.</p>
+
+        <h2 id="what-is-in-the-csv-files">What is in the CSV files?</h2>
+
+        <p>VideoDoc places two files inside a folder named exports right next to your document. The first file, transcript.csv, puts one spoken line on each row, while shots.csv puts one shot on each row. Both files include the time in two columns: one in plain seconds so you can sort cleanly, and another formatted like 0:01:45 so it is easy to read.</p>
+
+        <p>I always include the hours digit in that readable time, because Excel has a frustrating habit here. If you give Excel 00:06, it treats that as six minutes rather than six seconds, so short timestamps break the second you open the file. Writing it out as 0:00:06 makes Excel read it properly.</p>
+
+        <p>The second problem I ran into during development was other scripts. When you open a standard CSV containing Urdu, Hindi, Arabic or Chinese in Excel, the text often turns into question marks because Excel guesses the wrong alphabet. To stop that from happening, VideoDoc writes a tiny hidden marker at the very beginning of the file, called a byte order mark, which tells Excel the file uses UTF-8 encoding, so those languages open properly with no extra import steps.</p>
+
+        <p>The one thing a CSV file cannot do is store images inside the cells. The picture column only lists the file name of the screenshot from that moment, so if you want to see the screen, you still have to open that image file yourself.</p>
+
+        <h2 id="what-does-the-excel-workbook-add">What does the Excel workbook add?</h2>
+
+        <figure class="shot">
+          <picture>
+            <source type="image/avif" srcset="../../assets/art/video-to-excel-spreadsheet-picture-rows-640.avif 640w, ../../assets/art/video-to-excel-spreadsheet-picture-rows-960.avif 960w, ../../assets/art/video-to-excel-spreadsheet-picture-rows-1280.avif 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <source type="image/webp" srcset="../../assets/art/video-to-excel-spreadsheet-picture-rows-640.webp 640w, ../../assets/art/video-to-excel-spreadsheet-picture-rows-960.webp 960w, ../../assets/art/video-to-excel-spreadsheet-picture-rows-1280.webp 1280w" sizes="(max-width: 720px) 100vw, 960px">
+            <img src="../../assets/art/video-to-excel-spreadsheet-picture-rows.jpg" alt="A sheet of paper with a faint grid of rows and five small photo prints laid along its edge" width="1280" height="714" loading="lazy" decoding="async">
+          </picture>
+        </figure>
+
+        <p>The full Excel export comes with Pro, and it gives you a single workbook named document.xlsx containing three sheets. The main difference compared to the CSV is that the screenshots sit right inside the workbook, and the layout is already prepared before you open it.</p>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>Sheet</th><th>One row is</th><th>Columns</th></tr></thead>
+            <tbody>
+              <tr><td>Shots</td><td>One shot of the video</td><td>Shot, Start, End, Seconds, Picture, Narration</td></tr>
+              <tr><td>Transcript</td><td>One spoken line</td><td>Start, End, Start seconds, End seconds, Text</td></tr>
+              <tr><td>Info</td><td>One fact about the video</td><td>Title, source, channel, duration, language, word count, picture count</td></tr>
+            </tbody>
+        </table></div>
+
+        <p>On the Shots sheet, the Picture column displays a small copy of the screen directly inside the row, and the Narration column holds whatever was spoken during that shot. The top header row is frozen so it stays visible while you scroll, and the filter arrows are switched on by default. If the video is in a right to left language like Urdu or Arabic, the sheets are set to open right to left as well.</p>
+
+        <p>Two small fixes came directly out of testing before version 0.4.0 went out. Testers tried to break the new spreadsheet exports, and they noticed that if a spoken line happened to start with an equals sign, Excel could try to run it as a formula. Because of that, VideoDoc now stores all text from a video strictly as plain text so it never executes as a formula. The other limit is that a single Excel cell can only hold 32,767 characters, which is listed on <a href="https://support.microsoft.com/en-us/office/excel-specifications-and-limits-1672b34d-7043-467e-8e27-269d656771c3">Microsoft's Excel limits page</a>, so if a long stretch of speech goes past that, it continues into the next row instead of getting cut off.</p>
+
+        <h2 id="which-way-should-you-use">Which way should you use?</h2>
+
+        <div class="tablewrap"><table>
+            <thead><tr><th>Way</th><th>What lands in Excel</th><th>What you give up</th></tr></thead>
+            <tbody>
+              <tr><td>YouTube transcript, pasted</td><td>Words and times in one column</td><td>Pictures, clean columns, and any video with no captions</td></tr>
+              <tr><td>VideoDoc CSV, free in Lite</td><td>Words, times and shots in clean columns</td><td>Pictures inside the sheet</td></tr>
+              <tr><td>VideoDoc Excel workbook, Pro</td><td>Three sheets with a small picture in every shot row</td><td>It is a paid format</td></tr>
+            </tbody>
+        </table></div>
+
+        <p><strong>If you only need the spoken words and their timestamps, stick with the free CSV. If you want to see the screen right beside the words, use the Excel workbook.</strong> And if what you really want is a list of every saved frame along with its exact timestamp, that uses a separate file, which I walk through in <a href="https://videostodoc.com/articles/video-frames-to-csv-index/">how to read a video frames index</a>.</p>
+
+        <div class="callout">
+          <span class="lbl">Honest limits</span>
+          <p>There are a few clear limits to keep in mind. This will not convert a table shown inside a video into live spreadsheet cells, so if someone shares a spreadsheet or a price list on screen, you get a screenshot of it in the row rather than editable numbers. The Excel workbook embeds small pictures for the first 400 shots, and any shots after that still keep their timestamps and spoken words without an image. Video links only work for public videos, whereas a file saved on your own computer always works. Finally, the text is only as accurate as the captions or the speech engine that picked it up, so double check important names and numbers before you trust a filter.</p>
+        </div>
+
+        <div class="ctabox">
+          <div class="halo" aria-hidden="true"></div>
+          <span class="k">One video, one sheet</span>
+          <h3>Make the CSV from a video you already have.</h3>
+          <p>CSV is free in Lite, on Windows and Apple Silicon Macs. The Excel workbook is part of Pro, which is a one time payment. GTA 6 week: the Pro button below adds code GTA6, which takes 50% off for the first 100 buyers.</p>
+          <div class="row">
+            <a class="btn solid" href="../../try/">Try free in your browser</a>
+            <a class="btn onink" href="https://designesh.gumroad.com/l/videodoc/GTA6">Get Pro · lifetime</a>
+          </div>
+        </div>
+
+        <h2 id="faq-h">Quick questions</h2>
+        <div class="faq" id="faqlist">
+          <details open>
+            <summary>Can Excel open a video file?</summary>
+            <p>No. Excel can hold a link to a video or show one inside a workbook, but it cannot read what is said or shown in it. To work with a video in Excel you first turn it into rows, which means a transcript with times, a list of shots, or both.</p>
+          </details>
+          <details>
+            <summary>Is the CSV really free?</summary>
+            <p>Yes. In VideoDoc Lite the free formats are SRT, VTT, CSV and JSON. The Excel workbook, Word and PowerPoint are part of Pro.</p>
+          </details>
+          <details>
+            <summary>Can it read a table from the screen into cells?</summary>
+            <p>No. A table shown in the video stays a picture. You get that picture next to the words spoken while it was on screen, and typing the numbers into cells is still up to you.</p>
+          </details>
+        </div>
+
+        <p>Tonight, pick one long recording that you keep having to scrub through, export the CSV, and filter the words column for the one detail you always end up searching for.</p>
+      </div>
+
+      <section class="related">
+        <div class="rk">Keep reading</div>
+        <div class="relgrid">
+          <a class="artcard" href="../video-frames-to-csv-index/">
+            <span class="t">How to read a video frames index, and what it tells you</span>
+            <p>The CSV beside your video frames has four columns and one trick: the gap between two rows is how long that pic</p>
+            <span class="meta"><span>WORK · 8 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../convert-video-to-word-document/">
+            <span class="t">How to convert a video to a Word document and keep the pictures</span>
+            <p>VideoDoc Pro now saves a video as a Word file with its words and screen pictures. Or do it free in two steps t</p>
+            <span class="meta"><span>GUIDE · 7 min</span><span class="go">→</span></span>
+          </a>
+          <a class="artcard" href="../get-transcript-of-any-youtube-video/">
+            <span class="t">Get the transcript of any YouTube video, even without captions</span>
+            <p>Captions on, off, or missing, you can still get a full timestamped transcript of any YouTube video. The button</p>
+            <span class="meta"><span>GUIDE · 5 min</span><span class="go">→</span></span>
+          </a>
+        </div>
+      </section>
+
+      <div class="bio">
+        <span class="avatar" aria-hidden="true"><img src="../../assets/designesh-mark.svg" alt=""></span>
+        <div>
+          <div class="name">Inam Ul Haq</div>
+          <p>I am a telecom engineer and business analyst from Pakistan, and I build small honest desktop tools under <a href="https://designesh.gumroad.com">Designesh</a>. I made VideoDoc because I wanted my AI to read the lectures I study from. Everything here is tested on my own machine first.</p>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="foot-brand">
+          <span class="mark" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="2.6" fill="#fff" stroke="none"/></svg></span>
+          <span class="wm">VideoDoc</span>
+        </span>
+        <p class="tag">Turn any video into an AI-ready document, privately on your own machine.</p>
+        <p class="by"><img src="../../assets/designesh-mark.svg" width="14" height="14" alt="" style="vertical-align:-2px;margin-right:6px;opacity:.85">A tool by <a href="https://designesh.gumroad.com">Inam Ul Haq · Designesh</a></p>
+      </div>
+      <div>
+        <h3>Product</h3>
+        <ul>
+          <li><a href="../../try/">Try free</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc/GTA6">Get Pro</a></li>
+          <li><a href="../../#pricing">VideoDoc for Android</a></li>
+          <li><a href="../../#features">Features</a></li>
+          <li><a href="../../#pricing">Pricing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Learn</h3>
+        <ul>
+          <li><a href="../">All articles</a></li>
+          <li><a href="../../#how">How it works</a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="../../support/">Help &amp; fixes</a></li>
+          <li><a href="https://designesh.gumroad.com/l/videodoc/GTA6">Buy on Gumroad</a></li>
+          <li><a href="mailto:inam4ch@gmail.com">Email support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="year">2026</span> Inam Ul Haq.</span>
+      <span>VideoDoc runs 100% on your own machine · not affiliated with YouTube.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var doc=document.documentElement,btn=document.getElementById('theme'),meta=document.querySelector('meta[name="theme-color"]');
+  function cur(){return doc.getAttribute('data-theme')||'light'}
+  function sync(){var d=cur()==='dark';if(btn){btn.setAttribute('aria-pressed',d?'true':'false');btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');}if(meta){meta.setAttribute('content',d?'#0E1217':'#F4F5F7');}}
+  sync();if(btn){btn.addEventListener('click',function(){var n=cur()==='dark'?'light':'dark';doc.setAttribute('data-theme',n);try{localStorage.setItem('vd-theme',n)}catch(e){}sync();});}
+  var nav=document.getElementById('nav');function os(){nav.classList.toggle('stuck',window.scrollY>8)}os();window.addEventListener('scroll',os,{passive:true});
+  var menu=document.getElementById('menu');function sm(o){nav.classList.toggle('mobile-open',o);if(menu)menu.setAttribute('aria-expanded',o?'true':'false')}
+  if(menu){menu.addEventListener('click',function(){sm(!nav.classList.contains('mobile-open'))});}
+  document.querySelectorAll('.navlinks a').forEach(function(a){a.addEventListener('click',function(){sm(false)})});
+  var f=document.querySelectorAll('#faqlist details');f.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)f.forEach(function(o){if(o!==d)o.open=false})})});
+  /* Count the stat numbers up once, when they scroll into view. If there is
+     no IntersectionObserver, or the reader asked for reduced motion, the
+     final number is already in the HTML and nothing happens. */
+  (function(){
+    var grids = document.querySelectorAll('.statgrid[data-count]');
+    if (!grids.length) return;
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) return;
+    function run(el){
+      var raw = el.getAttribute('data-to') || '';
+      var target = parseFloat(raw.replace(/[^0-9.]/g, ''));
+      if (!isFinite(target) || target <= 0) return;
+      var suffix = raw.replace(/[0-9.,]/g, '');
+      var t0 = null, dur = 900;
+      function tick(ts){
+        if (t0 === null) t0 = ts;
+        var k = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - k, 3);
+        var v = target * eased;
+        el.textContent = (target % 1 ? v.toFixed(1) : Math.round(v)).toLocaleString() + suffix;
+        if (k < 1) requestAnimationFrame(tick);
+        else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        e.target.querySelectorAll('.n[data-to]').forEach(run);
+      });
+    }, {threshold: 0.35});
+    grids.forEach(function(g){ io.observe(g); });
+  })();
+
+  var y=document.getElementById('year');if(y)y.textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
